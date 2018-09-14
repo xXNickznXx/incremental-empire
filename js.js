@@ -872,26 +872,26 @@ $(document).ready(function () {
     }
     
     $("#slider").click(function () {
-        if ($("#switch input").not(":checked")) {
+        if ($("#switch input").prop("checked") !== true) {
             setCookie("dark", "true", 30);
             document.documentElement.style.setProperty("--bg", "black");
             document.documentElement.style.setProperty("--fg", "white");
-            $("#switch input").prop("checked", "checked");
+            $("#switch input").prop("checked", true);
         } else {
             setCookie("dark", "false", 30);
             document.documentElement.style.setProperty("--bg", "white");
             document.documentElement.style.setProperty("--fg", "black");
-            $("#switch input").prop("checked", "");
+            $("#switch input").prop("checked", false);
         }
     });
     if (getCookie("dark") === "true") {
         document.documentElement.style.setProperty("--bg", "black");
         document.documentElement.style.setProperty("--fg", "white");
-        $("#switch input").prop("checked", "checked");
+        $("#switch input").prop("checked", true);
     } else {
         document.documentElement.style.setProperty("--bg", "white");
         document.documentElement.style.setProperty("--fg", "black");
-        $("#switch input").prop("checked", "");
+        $("#switch input").prop("checked", false);
     }
 
     function refresh() {
