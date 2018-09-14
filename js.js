@@ -872,12 +872,14 @@ $(document).ready(function () {
     }
     
     $("#slider").click(function () {
-        if ($("#switch input").is(":checked")) {
-            setCookie("dark", "false", 30);
-            location.reload();
-        } else {
+        if ($("#switch input").not(":checked")) {
             setCookie("dark", "true", 30);
-            location.reload();
+            document.documentElement.style.setProperty("--bg", "black");
+            document.documentElement.style.setProperty("--fg", "white");
+        } else {
+            setCookie("dark", "false", 30);
+        document.documentElement.style.setProperty("--bg", "white");
+        document.documentElement.style.setProperty("--fg", "black");
         }
     });
     if (getCookie("dark") === 'true') {
