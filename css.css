@@ -1,0 +1,174 @@
+:root {
+    --bg: white;
+    --fg: black;
+    --disabled: #777777;
+}
+* {
+    background: none;
+    border: none;
+    color: var(--fg);
+    font: 14px sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+body {
+    background: var(--bg);
+    margin: auto;
+    width: 900px;
+}
+button:disabled {
+    border-color: var(--disabled) !important;
+    color: var(--disabled);
+}
+ul {
+    list-style-position: inside;
+}
+#first, #second, #third {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+	display: flow-root;
+}
+#vr_1, #vr_2, #vr_3, #vr_4 {
+    background: var(--fg);
+    float: left;
+    height: 100%;
+    position: absolute;
+    width: 1px;
+}
+#vr_1 {
+    left: calc(100% / 3);
+}
+#vr_2 {
+    left: calc(100% / 3 * 2);
+}
+#vr_3 {
+    left: 700px;
+}
+#vr_4 {
+    left: 50%;
+}
+/*--------First---------*/
+#first table {
+    float: left;
+    width: 33.3%;
+}
+table {
+    border-collapse: collapse;
+}
+table tr {
+    height: 24px;
+}
+table th{
+    font-weight: bold;
+    text-align: left;
+}
+table td {
+    border-top: 1px solid var(--fg);
+}
+table td:last-child {
+    width: 40px;
+}
+table td:nth-child(even) {
+    width: 40px;
+}
+table thead td {
+    border: none;
+}
+table p {
+    text-align: right;
+    width: 100%;
+}
+#jobs button {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+}
+#second button {
+    border-bottom: 1px solid var(--fg);
+    padding: 5px;
+	width: 90px;
+}
+#nav {
+    float: left;
+	text-align: center;
+	width: 700px;
+}
+#content {
+    float: left;
+    height: calc(100vh - 451px);
+    overflow: auto;
+    width: 700px;
+}
+#content table {
+    white-space: nowrap;
+    width: 100%;
+}
+#content button {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+}
+#third {
+    height: 298px;
+}
+#msg, #info {
+    float: left;
+    height: 288px;
+    width: 50%;
+}
+#msg {
+    overflow: hidden;
+}
+#msg p, #info p {
+    height: 24px;
+}
+#phase {
+    height: 50px;
+}
+#phase p {
+    border: 1px solid var(--fg);
+    float: left;
+    width: 50px;
+}
+/*------Toggle----------*/
+#switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+#switch input {display:none;}
+
+#slider {
+    background-color: #ccc;
+    border-radius: 34px;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+#slider:before {
+    background-color: white;
+    border-radius: 50%;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+input:checked + #slider {
+    background-color: #2196F3;
+}
+
+input:checked + #slider:before {
+    transform: translateX(26px);
+}
