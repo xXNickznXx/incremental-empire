@@ -872,22 +872,22 @@ $(document).ready(function () {
     }
     
     $("#slider").click(function () {
-    var dark;
         if ($("#switch input").is(":checked")) {
             setCookie("dark", "false", 30);
-            alert(getCookie("dark"));
+            location.reload();
         } else {
             setCookie("dark", "true", 30);
-            alert(getCookie("dark"));
+            location.reload();
         }
     });
-    var dark = Cookies.get('dark');
-    if (dark === 'true') {
+    if (getCookie("dark") === 'true') {
         document.documentElement.style.setProperty("--bg", "black");
         document.documentElement.style.setProperty("--fg", "white");
+        $("#switch input").prop("checked", "checked");
     } else {
         document.documentElement.style.setProperty("--bg", "white");
         document.documentElement.style.setProperty("--fg", "black");
+        $("#switch input").prop("checked", "");
     }
 
     function refresh() {
