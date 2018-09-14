@@ -876,10 +876,12 @@ $(document).ready(function () {
             setCookie("dark", "true", 30);
             document.documentElement.style.setProperty("--bg", "black");
             document.documentElement.style.setProperty("--fg", "white");
+        $("#switch input").prop("checked", "checked");
         } else {
             setCookie("dark", "false", 30);
-        document.documentElement.style.setProperty("--bg", "white");
-        document.documentElement.style.setProperty("--fg", "black");
+            document.documentElement.style.setProperty("--bg", "white");
+            document.documentElement.style.setProperty("--fg", "black");
+            $("#switch input").prop("checked", "");
         }
     });
     if (getCookie("dark") === 'true') {
