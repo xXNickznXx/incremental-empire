@@ -876,7 +876,7 @@ $(document).ready(function () {
             setCookie("dark", "true", 30);
             document.documentElement.style.setProperty("--bg", "black");
             document.documentElement.style.setProperty("--fg", "white");
-        $("#switch input").prop("checked", "checked");
+            $("#switch input").prop("checked", "checked");
         } else {
             setCookie("dark", "false", 30);
             document.documentElement.style.setProperty("--bg", "white");
@@ -884,7 +884,7 @@ $(document).ready(function () {
             $("#switch input").prop("checked", "");
         }
     });
-    if (getCookie("dark") === 'true') {
+    if (getCookie("dark") === "true") {
         document.documentElement.style.setProperty("--bg", "black");
         document.documentElement.style.setProperty("--fg", "white");
         $("#switch input").prop("checked", "checked");
