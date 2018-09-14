@@ -30,11 +30,10 @@ ul {
 	display: flow-root;
 }
 #vr_1, #vr_2, #vr_3, #vr_4 {
-    background: var(--fg);
+	border-left: 1px solid var(--fg);
     float: left;
     height: 100%;
     position: absolute;
-    width: 1px;
 }
 #vr_1 {
     left: calc(100% / 3);
@@ -51,7 +50,7 @@ ul {
 /*--------First---------*/
 #first table {
     float: left;
-    width: 33.3%;
+    width: calc(100% / 3);
 }
 table {
     border-collapse: collapse;
