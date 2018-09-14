@@ -1502,4 +1502,75 @@ $(document).ready(function () {
     }
     temperature();
     temperat = setInterval(temperature, speed * 30);
+    
+    $("#btn_save").click(function () {
+        var saveFile = {
+            _food: "food",
+            _wood: wood,
+            _stone: stone,
+            _leather: leather,
+            _cloth: cloth,
+            _coal: coal,
+            _iron: iron,
+            _clothes: clothes,
+            _armor: armor,
+            _sword: sword,
+            _resources_max: resources_max,
+
+            _villager: villager,
+            _villager_unused: villager_unused,
+            _villager_max: villager_max,
+
+            _gatherer: gatherer,
+            _lumberjack: lumberjack,    _wood_bonus: wood_bonus,
+            _quarryman: quarryman,      _stone_bonus: stone_bonus,
+            _worker: worker,
+            _hunter: hunter,            _leather_bonus: leather_bonus,
+            _shepherd: shepherd,        _cloth_bonus: cloth_bonus,
+            _coalminer: coalminer,      _coal_bonus: coal_bonus,
+            _ironminer: ironminer,      _iron_bonus: iron_bonus,
+            _tailor: tailor,            _clothes_bonus: clothes_bonus,
+            _smith: smith,              _craft_time: craft_time,
+            _scout: scout,              _travel_time: travel_time,
+            _knight: knight,            _damage_bonus: damage_bonus,
+
+            _trade_bonus: trade_bonus,
+
+            _hut: hut,
+            _huntinghut: huntinghut,
+            _storage: storage,              _lvl_storage: lvl_storage,
+            _lumberjackhut: lumberjackhut,
+            _sheepstall: sheepstall,
+            _quarry: quarry,
+            _coalmine: coalmine,
+            _ironmine: ironmine,
+            _tailorhouse: tailorhouse,
+            _forge: forge,
+            _market: market,
+            _scoutpost: scoutpost,
+            _barracks: barracks
+        };
+        var saveJson = JSON.stringify(saveFile);
+        var link = $("<a></a>");
+        var text = encodeURIComponent(saveJson);
+
+        link.prop("id", "save");
+        link.prop("download", "savefile.txt");
+        link.prop("href", "data:application/octet-stream," + text);
+        link.appendTo("#options");
+        link.get(0).click();
+    });
+    
+    $("#btn_load").click(function () {
+        var file = $("#load").files[0];
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            var contents = JSON.parse(decodeURIComponent(e.target.result));
+            $("#options").append(contents);
+        }
+        reader.readAsText(file);
+    });
+    
+    //load.on("change", function() {});
 });

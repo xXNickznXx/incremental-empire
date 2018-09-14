@@ -138,11 +138,11 @@ table p {
     position: relative;
     width: 60px;
 }
-
-#switch input {display:none;}
-
+#switch input {
+    display:none;
+}
 #slider {
-    background-color: #ccc;
+    background-color: var(--fg);
     border-radius: 34px;
     bottom: 0;
     cursor: pointer;
@@ -150,25 +150,23 @@ table p {
     position: absolute;
     right: 0;
     top: 0;
-    transition: .4s;
+    transition: .2s;
 }
-
 #slider:before {
-    background-color: white;
+    background-color: var(--bg);
     border-radius: 50%;
     bottom: 4px;
     content: "";
     height: 26px;
     left: 4px;
     position: absolute;
-    transition: .4s;
+    transition: .2s;
     width: 26px;
 }
-
 input:checked + #slider {
-    background-color: #2196F3;
+    background-color: var(--fg);
 }
-
 input:checked + #slider:before {
+    background-color: var(--bg);
     transform: translateX(26px);
 }
