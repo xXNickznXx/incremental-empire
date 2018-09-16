@@ -1,0 +1,4 @@
+Jobs->bessere Darstellung->Butttons werden verschoben
+Nav kleiner
+Aktivitaeten kleiner
+Rechte  Spalte anders
