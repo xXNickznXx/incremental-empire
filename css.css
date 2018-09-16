@@ -1,7 +1,7 @@
 :root {
-    --bg: white;
-    --fg: black;
-    --disabled: #777777;
+    --bg: lightgray;
+    --bg2: white;
+    --fg: #222222;
 }
 * {
     background: none;
@@ -10,125 +10,170 @@
     font: 14px sans-serif;
     margin: 0;
     padding: 0;
-    position: relative;
 }
-body {
-    background: var(--bg);
-    margin: auto;
-    width: 900px;
-}
+/* Allgemein */
 button:disabled {
-    border-color: var(--disabled) !important;
-    color: var(--disabled);
+    border-color: var(--bg) !important;
+    color: var(--bg);
 }
 ul {
     list-style-position: inside;
 }
-#first, #second, #third {
-    border: 1px solid var(--fg);
-    border-radius: 5px;
-	display: flow-root;
-}
-#vr_1, #vr_2, #vr_3, #vr_4 {
-	border-left: 1px solid var(--fg);
-    float: left;
-    height: 100%;
-    position: absolute;
-}
-#vr_1 {
-    left: calc(100% / 3);
-}
-#vr_2 {
-    left: calc(100% / 3 * 2);
-}
-#vr_3 {
-    left: 700px;
-}
-#vr_4 {
-    left: 50%;
-}
-/*--------First---------*/
-#first table {
-    float: left;
-    width: calc(100% / 3);
-}
 table {
     border-collapse: collapse;
-}
-table tr {
-    height: 24px;
 }
 table th{
     font-weight: bold;
     text-align: left;
 }
-table td {
-    border-top: 1px solid var(--fg);
-}
 table td:last-child {
-    width: 40px;
+    width: 90px;
 }
-table td:nth-child(even) {
-    width: 40px;
+/* Body */
+body {
+    background: var(--bg);
+    margin: auto;
+    width: 900px;
 }
-table thead td {
-    border: none;
+/* Main */
+#main:after {
+	clear: both;
+	content: "";
+	display: table;
 }
-table p {
-    text-align: right;
-    width: 100%;
+/* Header */
+#header {
+	background: var(--bg2);
+	height: 40px;
+	padding: 10px;
+	text-align: center;
 }
-#jobs button {
+#header h1 {
+	font-size: 30px;
+}
+/* Left */
+#left {
+	float: left;
+	width: 650px;
+}
+#left #nav {
+	background: var(--bg2);
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+}
+#left button {
+    border-bottom: 1px solid var(--fg);
+	height: 32px;
+    padding: 5px;
+	width: 90px;
+}
+#left #content {
+	background: var(--bg2);
+    height: 360px;
+	margin-top: 10px;
+	padding: 10px;
+    overflow: auto;
+}
+#left table {
+	width: 100%
+}
+#left #activities {
+	background: var(--bg2);
+    height: 100px;
+	margin-top: 10px;
+	padding: 10px;
+}
+#left #content button {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+}
+/* Right */
+#right {
+	float: left;
+	margin-left: 10px;
+	width: 240px;
+}
+#right #resources {
+	background: var(--bg2);
+	margin-top: 10px;
+	padding: 10px;
+}
+#right #villagers {
+	background: var(--bg2);
+	margin-top: 10px;
+	padding: 10px;
+}
+#right #jobs {
+	background: var(--bg2);
+	margin-top: 10px;
+	padding: 10px;
+}
+#right #row {
+	clear: both;
+	content: "";
+	display: flow-root;
+}
+#right #row p:first-child {
+	float: left;
+}
+#right #row p:nth-child(even) {
+	float: right;
+}
+#right #jobs #row p:nth-child(even) {
+	position: relative;
+	right: 40px;
+}
+#right #jobs #row div {
+	float: right;
+	position: relative;
+	right: -10px;
+}
+#right #jobs button {
     border: 1px solid var(--fg);
     border-radius: 5px;
     height: 20px;
     width: 20px;
 }
-#second button {
-    border-bottom: 1px solid var(--fg);
-    padding: 5px;
-	width: 90px;
+#right #th {
+    font-weight: bold;
 }
-#nav {
-    float: left;
-	text-align: center;
-	width: 700px;
+#right table td {
+	height: 30px;
+	vertical-align: top;
 }
-#content {
-    float: left;
-    height: calc(100vh - 451px);
-    overflow: auto;
-    width: 700px;
+/* bottom */
+#bottom {
+	margin-top: 10px;
 }
-#content table {
-    white-space: nowrap;
-    width: 100%;
+#bottom:after {
+	clear: both;
+	content: "";
+	display: table;
 }
-#content button {
-    border: 1px solid var(--fg);
-    border-radius: 5px;
+#bottom #msg {
+	background: var(--bg2);
+	float: left;
+	height: 280px;
+	overflow: hidden;
+	padding: 10px;
+	width: 425px;
 }
-#third {
-    height: 298px;
+#bottom #info {
+	background: var(--bg2);
+	float: left;
+	height: 280px;
+	margin-left: 10px;
+	padding: 10px;
+	width: 425px;
 }
-#msg, #info {
-    float: left;
-    height: 288px;
-    width: 50%;
-}
-#msg {
-    overflow: hidden;
-}
-#msg p, #info p {
+#bottom #msg p, #bottom #info p {
     height: 24px;
-}
-#phase {
-    height: 50px;
 }
 #phase p {
     border: 1px solid var(--fg);
     float: left;
-    width: 50px;
+    width: 40px;
 }
 /*------Toggle----------*/
 #switch {
@@ -141,7 +186,7 @@ table p {
     display:none;
 }
 #slider {
-    background-color: var(--fg);
+    background-color: var(--bg);
     border-radius: 34px;
     bottom: 0;
     cursor: pointer;
@@ -152,7 +197,7 @@ table p {
     transition: .2s;
 }
 #slider:before {
-    background-color: var(--bg);
+    background-color: var(--bg2);
     border-radius: 50%;
     bottom: 4px;
     content: "";
@@ -162,10 +207,7 @@ table p {
     transition: .2s;
     width: 26px;
 }
-input:checked + #slider {
-    background-color: var(--fg);
-}
 input:checked + #slider:before {
-    background-color: var(--bg);
+    background-color: var(--bg2);
     transform: translateX(26px);
 }
