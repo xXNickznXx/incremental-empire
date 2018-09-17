@@ -255,31 +255,34 @@ input:checked + #slider:before {
 		width: 375px;
 	}
 	#header {
-		height: 30px;
-		width: 355px;
 		border-bottom: 1px solid var(--fg);
+		height: 20px;
+		width: 355px;
+	}
+	#header h1 {
+		font-size: 20px;
 	}
 	#left {
 		width: 375px;
 	}
 	#left #nav {
-		margin: 0;
 		border-bottom: 1px solid var(--fg);
+		margin: 0;
 	}
 	#left #nav button {
 		padding: 0;
 		width: 80px;
 	}
 	#left #content {
-		height: 260px;
-		margin: 0;
 		border-bottom: 1px solid var(--fg);
+		height: 220px;
+		margin: 0;
 	}
 	#left #left_bottom {
 		margin: 0;
-		border-bottom: 1px solid var(--fg);
 	}
 	#left #tasks, #left #phase {
+		border-bottom: 1px solid var(--fg);
 		float: none;
 		width: 355px;
 	}
