@@ -257,12 +257,14 @@ input:checked + #slider:before {
 	#header {
 		height: 30px;
 		width: 355px;
+		border-bottom: 1px solid var(--fg);
 	}
 	#left {
 		width: 375px;
 	}
 	#left #nav {
 		margin: 0;
+		border-bottom: 1px solid var(--fg);
 	}
 	#left #nav button {
 		padding: 0;
@@ -271,9 +273,11 @@ input:checked + #slider:before {
 	#left #content {
 		height: 260px;
 		margin: 0;
+		border-bottom: 1px solid var(--fg);
 	}
 	#left #left_bottom {
 		margin: 0;
+		border-bottom: 1px solid var(--fg);
 	}
 	#left #tasks, #left #phase {
 		float: none;
