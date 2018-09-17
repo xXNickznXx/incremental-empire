@@ -246,3 +246,50 @@ input:checked + #slider:before {
     background-color: var(--bg2);
     transform: translateX(26px);
 }
+
+@media only screen and (max-width: 376px) {
+	* {
+		font-size: 12px;
+	}
+	body {
+		width: 375px;
+	}
+	#header {
+		height: 30px;
+		width: 355px;
+	}
+	#left {
+		width: 375px;
+	}
+	#left #nav {
+		margin: 0;
+	}
+	#left #nav button {
+		padding: 0;
+		width: 80px;
+	}
+	#left #content {
+		height: 260px;
+		margin: 0;
+	}
+	#left #left_bottom {
+		margin: 0;
+	}
+	#left #tasks, #left #phase {
+		float: none;
+		width: 355px;
+	}
+	#left #phase {
+		margin: 0;
+	}
+	#right {
+		display: none;
+	}
+	#bottom {
+		margin: 0;
+	}
+	#bottom #msg {
+		height: 100px;
+		width: 355px;
+	}
+}
