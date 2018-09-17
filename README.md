@@ -1,7 +1,7 @@
 # Idle
 Link zum [Spiel](https://nickweyermann.github.io).
 
-`Ein Spiel bei dem man Bewohner verwalter, Gebäude baut, auf Erkundungsreisen geht, andere Dörfer trifft und mit diesen interagieren kann.`
+`Ein Spiel bei dem man Bewohner verwalten, Gebäude bauen, auf Erkundungsreisen gehen, andere Dörfer treffen und mit diesen interagieren kann.`
 
 ### Features:
 - Bewohnerverwaltung
@@ -10,9 +10,9 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Beginn von Speichern und Laden
 
 ### Kommende Features:
-- **Tooltip**
+- **Tooltips für Gebäude und Upgrades**
 - **Möglichkeit zu Speichern und zu Laden**
-- **Zuteilung von Arbeitern auf Aufträge**
+- **Zuteilung von Arbeitern auf Bauaufträge**
 - Weitere Optionen
 - Crafting
   - Rüstungen
