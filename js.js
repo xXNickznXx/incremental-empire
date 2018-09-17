@@ -1199,6 +1199,74 @@ $(document).ready(function () {
                 $("#btn_barracks").prop("disabled", true);
             }
             //endregion
+            
+            //region
+            if (wood >= 25 && stone >= 5) {
+                $("#btn_hut").closest("tr").show();
+            } else {
+                $("#btn_hut").closest("tr").hide();
+            }
+            if (wood >= 75 && stone >= 15 && huntinghut === false) {
+                $("#btn_huntinghut").closest("tr").show();
+            } else {
+                $("#btn_huntinghut").closest("tr").hide();
+            }
+            if (wood >= 50 && stone >= 50 && storage === false) {
+                $("#btn_storage").closest("tr").show();
+            } else {
+                $("#btn_storage").closest("tr").hide();
+            }
+            if (wood >= 100 && stone >= 25 && lumberjackhut === false) {
+                $("#btn_lumberjackhut").closest("tr").show();
+            } else {
+                $("#btn_lumberjackhut").closest("tr").hide();
+            }
+            if (wood >= 125 && stone >= 37 && sheepstall === false) {
+                $("#btn_sheepstall").closest("tr").show();
+            } else {
+                $("#btn_sheepstall").closest("tr").hide();
+            }
+            if (wood >= 150 && stone >= 50 && quarry === false) {
+                $("#btn_quarry").closest("tr").show();
+            } else {
+                $("#btn_quarry").closest("tr").hide();
+            }
+            if (wood >= 150 && stone >= 75 && coalmine === false) {
+                $("#btn_coalmine").closest("tr").show();
+            } else {
+                $("#btn_coalmine").closest("tr").hide();
+            }
+            if (wood >= 200 && stone >= 100 && coal >= 25 && ironmine === false) {
+                $("#btn_ironmine").closest("tr").show();
+            } else {
+                $("#btn_ironmine").closest("tr").hide();
+            }
+            if (wood >= 250 && stone >= 200 && coal >= 100 && tailorhouse === false) {
+                $("#btn_tailorhouse").closest("tr").show();
+            } else {
+                $("#btn_tailorhouse").closest("tr").hide();
+            }
+            if (wood >= 300 && stone >= 225 && coal >= 125 && iron >= 25 && forge === false) {
+                $("#btn_forge").closest("tr").show();
+            } else {
+                $("#btn_forge").closest("tr").hide();
+            }
+            if (wood >= 375 && stone >= 250 && coal >= 150 && iron >= 50 && market === false) {
+                $("#btn_market").closest("tr").show();
+            } else {
+                $("#btn_market").closest("tr").hide();
+            }
+            if (wood >= 500 && stone >= 375 && coal >= 200 && iron >= 125 && scoutpost === false) {
+                $("#btn_scoutpost").closest("tr").show();
+            } else {
+                $("#btn_scoutpost").closest("tr").hide();
+            }
+            if (wood >= 750 && stone >= 600 && coal >= 500 && iron >= 400 && barracks === false) {
+                $("#btn_barracks").closest("tr").show();
+            } else {
+                $("#btn_barracks").closest("tr").hide();
+            }
+            //endregion
 
             //region
             if (wood >= 100 && stone >= 20 && worker > 0 && slot_building === false && hut > 0) {
