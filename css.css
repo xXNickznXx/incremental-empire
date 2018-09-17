@@ -97,7 +97,13 @@ body {
 	padding: 10px;
 	text-align: center;
 }
-#left button {
+#left #nav button {
+    border-bottom: 1px solid var(--fg);
+	height: 32px;
+    padding: 5px;
+	width: 90px;
+}
+#left #content button {
     border-bottom: 1px solid var(--fg);
 	height: 32px;
     padding: 5px;

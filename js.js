@@ -1395,6 +1395,30 @@ $(document).ready(function () {
                             } else if (worker > 0) {
                                 worker -= 1;
                                 msg.prepend("<p>Arbeiter ist verhungert.</p>");
+                            } else if (hunter > 0) {
+                                hunter -= 1;
+                                msg.prepend("<p>Jäger ist verhungert.</p>");
+                            } else if (shepherd > 0) {
+                                shepherd -= 1;
+                                msg.prepend("<p>Schäfer ist verhungert.</p>");
+                            } else if (coalminer > 0) {
+                                coalminer -= 1;
+                                msg.prepend("<p>Kohleminenarbeiter ist verhungert.</p>");
+                            } else if (ironminer > 0) {
+                                ironminer -= 1;
+                                msg.prepend("<p>Eisenminenarbeiter ist verhungert.</p>");
+                            } else if (tailor > 0) {
+                                tailor -= 1;
+                                msg.prepend("<p>Schneider ist verhungert.</p>");
+                            } else if (smith > 0) {
+                                smith -= 1;
+                                msg.prepend("<p>Schmied ist verhungert.</p>");
+                            } else if (scout > 0) {
+                                scout -= 1;
+                                msg.prepend("<p>Kundschafter ist verhungert.</p>");
+                            } else if (knight > 0) {
+                                knight -= 1;
+                                msg.prepend("<p>Krieger ist verhungert.</p>");
                             }
                         }
                         if (villager === 0) {
@@ -1422,6 +1446,30 @@ $(document).ready(function () {
                             } else if (worker > 0) {
                                 worker -= 1;
                                 msg.prepend("<p>Arbeiter ist erfroren.</p>");
+                            } else if (hunter > 0) {
+                                hunter -= 1;
+                                msg.prepend("<p>Jäger ist erfroren.</p>");
+                            } else if (shepherd > 0) {
+                                shepherd -= 1;
+                                msg.prepend("<p>Schäfer ist erfroren.</p>");
+                            } else if (coalminer > 0) {
+                                coalminer -= 1;
+                                msg.prepend("<p>Kohleminenarbeiter ist erfroren.</p>");
+                            } else if (ironminer > 0) {
+                                ironminer -= 1;
+                                msg.prepend("<p>Eisenminenarbeiter ist erfroren.</p>");
+                            } else if (tailor > 0) {
+                                tailor -= 1;
+                                msg.prepend("<p>Schneider ist erfroren.</p>");
+                            } else if (smith > 0) {
+                                smith -= 1;
+                                msg.prepend("<p>Schmied ist erfroren.</p>");
+                            } else if (scout > 0) {
+                                scout -= 1;
+                                msg.prepend("<p>Kundschafter ist erfroren.</p>");
+                            } else if (knight > 0) {
+                                knight -= 1;
+                                msg.prepend("<p>Krieger ist erfroren.</p>");
                             }
                         }
                         if (villager === 0) {
