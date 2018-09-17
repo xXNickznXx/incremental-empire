@@ -10,7 +10,12 @@
         <script type="text/javascript" src="js.js"></script>
     </head>
 <body>
-	<div id="main">
+    <div id="start">
+        <label>Geschwindigkeit: (Standard: 1000)</label>
+        <input type="number" value="1000" min="100" max="10000" step="100" id="speed" />
+        <button id="btn_start">Start</button>
+    </div>
+	<div id="main" hidden>
 		<div id="header"><h1>Idle</h1></div>
 		<div id="left">
 			<div id="nav">
@@ -213,7 +218,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
+							<tr hidden>
 								<td>Hütte</td>
 								<td>
 									<ul>
@@ -225,7 +230,7 @@
 								<td id="time_upgrade_hut"></td>
 								<td><button id="btn_upgrade_hut">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Jagdhütte</td>
 								<td>
 									<ul>
@@ -237,7 +242,7 @@
 								<td id="time_upgrade_huntinghut"></td>
 								<td><button id="btn_upgrade_huntinghut">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Lagerhütte</td>
 								<td>
 									<ul>
@@ -249,7 +254,7 @@
 								<td id="time_upgrade_storage"></td>
 								<td><button id="btn_upgrade_storage">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Holzfällerhütte</td>
 								<td>
 									<ul>
@@ -261,7 +266,7 @@
 								<td id="time_upgrade_lumberjackhut"></td>
 								<td><button id="btn_upgrade_lumberjackhut">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Schafstall</td>
 								<td>
 									<ul>
@@ -273,7 +278,7 @@
 								<td id="time_upgrade_sheepstall"></td>
 								<td><button id="btn_upgrade_sheepstall">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Steinbruch</td>
 								<td>
 									<ul>
@@ -285,7 +290,7 @@
 								<td id="time_upgrade_quarry"></td>
 								<td><button id="btn_upgrade_quarry">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Kohlemine</td>
 								<td>
 									<ul>
@@ -297,7 +302,7 @@
 								<td id="time_upgrade_coalmine"></td>
 								<td><button id="btn_upgrade_coalmine">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Eisenmine</td>
 								<td>
 									<ul>
@@ -310,7 +315,7 @@
 								<td id="time_upgrade_ironmine"></td>
 								<td><button id="btn_upgrade_ironmine">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Schneiderhaus</td>
 								<td>
 									<ul>
@@ -323,7 +328,7 @@
 								<td id="time_upgrade_tailorhouse"></td>
 								<td><button id="btn_upgrade_tailorhouse">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Schmiede</td>
 								<td>
 									<ul>
@@ -337,7 +342,7 @@
 								<td id="time_upgrade_forge"></td>
 								<td><button id="btn_upgrade_forge">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Markt</td>
 								<td>
 									<ul>
@@ -351,7 +356,7 @@
 								<td id="time_upgrade_market"></td>
 								<td><button id="btn_upgrade_market">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Erkundungsposten</td>
 								<td>
 									<ul>
@@ -365,7 +370,7 @@
 								<td id="time_upgrade_scoutpost"></td>
 								<td><button id="btn_upgrade_scoutpost">Starten</button></td>
 							</tr>
-							<tr>
+							<tr hidden>
 								<td>Kaserne</td>
 								<td>
 									<ul>
@@ -406,19 +411,23 @@
 					<button id="btn_load">Laden</button>
 				</div>
 			</div>
-			<div id="activities">
-				<table>
-					<thead>
-						<tr>
-							<th>Aktiv</th>
-							<th>Dauer</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr id="activity">
-						</tr>
-					</tbody>
-				</table>
+			<div id="left_bottom">
+                <div id="activities">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aktiv</th>
+                                <th>Dauer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="activity">
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="phase">
+                </div>
 			</div>
 		</div>
 		<div id="right">
@@ -436,31 +445,31 @@
 					<p>Stein</p>
 					<p id="stone"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Leder</p>
 					<p id="leather"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Wolle</p>
 					<p id="cloth"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Kohle</p>
 					<p id="coal"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Eisen</p>
 					<p id="iron"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Kleider</p>
 					<p id="clothes"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Rüstung</p>
 					<p id="armor"></p>
 				</div>
-				<div id="row">
+				<div id="row" hidden>
 					<p>Schwert</p>
 					<p id="sword"></p>
 				</div>
@@ -479,227 +488,118 @@
 			<div id="jobs">
 				<p id="th">Jobs</p>
 				<div id="row">
-					<p>Sammler</p>
-					<p id="gatherer"></p>
+                    <div>
+                        <p>Sammler</p>
+                        <p id="gatherer"></p>
+                    </div>
 					<div>
-						<button id="up_gatherer">+</button><button id="dwn_gatherer">-</button>
+						<button id="dwn_gatherer">-</button><button id="up_gatherer">+</button>
 					</div>
 				</div>
 				<div id="row">
-					<p>Holzfäller</p>
-					<p id="lumberjack"></p>
+                    <div>
+                        <p>Holzfäller</p>
+                        <p id="lumberjack"></p>
+                    </div>
 					<div>
-						<button id="up_lumberjack">+</button><button id="dwn_lumberjack">-</button>
+						<button id="dwn_lumberjack">-</button><button id="up_lumberjack">+</button>
 					</div>
 				</div>
 				<div id="row">
-					<p>Steinbrucharbeiter</p>
-					<p id="quarryman"></p>
+                    <div>
+                        <p>Steinbrucharbeiter</p>
+                        <p id="quarryman"></p>
+                    </div>
 					<div>
-						<button id="up_quarryman">+</button><button id="dwn_quarryman">-</button>
+						<button id="dwn_quarryman">-</button><button id="up_quarryman">+</button>
 					</div>
 				</div>
 				<div id="row">
-					<p>Arbeiter</p>
-					<p id="worker"></p>
+                    <div>
+                        <p>Arbeiter</p>
+                        <p id="worker"></p>
+                    </div>
 					<div>
-						<button id="up_worker">+</button><button id="dwn_worker">-</button>
+						<button id="dwn_worker">-</button><button id="up_worker">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Jäger</p>
-					<p id="hunter"></p>
+                    <div>
+                        <p>Jäger</p>
+                        <p id="hunter"></p>
+                    </div>
 					<div>
-						<button id="up_hunter">+</button><button id="dwn_hunter">-</button>
+						<button id="dwn_hunter">-</button><button id="up_hunter">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Schäfer</p>
-					<p id="shepherd"></p>
+                    <div>
+                        <p>Schäfer</p>
+                        <p id="shepherd"></p>
+                    </div>
 					<div>
-						<button id="up_shepherd">+</button><button id="dwn_shepherd">-</button>
+						<button id="dwn_shepherd">-</button><button id="up_shepherd">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Kohleminenarbeiter</p>
-					<p id="coalminer"></p>
+                    <div>
+                        <p>Kohleminenarbeiter</p>
+                        <p id="coalminer"></p>
+                    </div>
 					<div>
-						<button id="up_coalminer">+</button><button id="dwn_coalminer">-</button>
+						<button id="dwn_coalminer">-</button><button id="up_coalminer">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Eisenminenarbeiter</p>
-					<p id="ironminer"></p>
+                    <div>
+                        <p>Eisenminenarbeiter</p>
+                        <p id="ironminer"></p>
+                    </div>
 					<div>
-						<button id="up_ironminer">+</button><button id="dwn_ironminer">-</button>
+						<button id="dwn_ironminer">-</button><button id="up_ironminer">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Schneider</p>
-					<p id="tailor"></p>
+                    <div>
+                        <p>Schneider</p>
+                        <p id="tailor"></p>
+                    </div>
 					<div>
-						<button id="up_tailor">+</button><button id="dwn_tailor">-</button>
+						<button id="dwn_tailor">-</button><button id="up_tailor">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Schmied</p>
-					<p id="smith"></p>
+                    <div>
+                        <p>Schmied</p>
+                        <p id="smith"></p>
+                    </div>
 					<div>
-						<button id="up_smith">+</button><button id="dwn_smith">-</button>
+						<button id="dwn_smith">-</button><button id="up_smith">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Kundschafter</p>
-					<p id="scout"></p>
+                    <div>
+                        <p>Kundschafter</p>
+                        <p id="scout"></p>
+                    </div>
 					<div>
-						<button id="up_scout">+</button><button id="dwn_scout">-</button>
+						<button id="dwn_scout">-</button><button id="up_scout">+</button>
 					</div>
 				</div>
 				<div id="row" hidden>
-					<p>Krieger</p>
-					<p id="knight"></p>
+                    <div>
+                        <p>Krieger</p>
+                        <p id="knight"></p>
+                    </div>
 					<div>
-						<button id="up_knight">+</button><button id="dwn_knight">-</button>
+						<button id="dwn_knight">-</button><button id="up_knight">+</button>
 					</div>
 				</div>
 			</div>
-			<!--<table id="resources">
-				<thead>
-					<tr><th>Ressourcen</th><th></th></tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Nahrung:</td>
-						<td><p id="food"></p></td>
-					</tr>
-					<tr>
-						<td>Holz:</td>
-						<td><p id="wood"></p></td>
-					</tr>
-					<tr>
-						<td>Stein:</td>
-						<td><p id="stone"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Leder:</td>
-						<td><p id="leather"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Wolle:</td>
-						<td><p id="cloth"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Kohle:</td>
-						<td><p id="coal"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Eisen:</td>
-						<td><p id="iron"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Kleider:</td>
-						<td><p id="clothes"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Rüstung:</td>
-						<td><p id="armor"></p></td>
-					</tr>
-					<tr hidden>
-						<td>Schwert:</td>
-						<td><p id="sword"></p></td>
-					</tr>
-				</tbody>
-			</table>
-			<table id="villagers">
-				<thead>
-					<tr><th>Bewohner</th><th></th></tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Gesamt:</td>
-						<td><p id="villager"></p></td>
-					</tr>
-					<tr>
-						<td>Verfügbar:</td>
-						<td><p id="villager_unused"></p></td>
-					</tr>
-				</tbody>
-			</table>
-			<table id="jobs">
-				<thead>
-					<tr><th>Jobs</th><th></th><th></th></tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Sammler:</td>
-						<td><p id="gatherer"></p></td>
-						<td><button id="up_gatherer">+</button><button id="dwn_gatherer">-</button></td>
-					</tr>
-					<tr>
-						<td>Holzfäller:</td>
-						<td><p id="lumberjack"></p></td>
-						<td><button id="up_lumberjack">+</button><button id="dwn_lumberjack">-</button></td>
-					</tr>
-					<tr>
-						<td>Steinbrucharbeiter:</td>
-						<td><p id="quarryman"></p></td>
-						<td><button id="up_quarryman">+</button><button id="dwn_quarryman">-</button></td>
-					</tr>
-					<tr>
-						<td>Arbeiter:</td>
-						<td><p id="worker"></p></td>
-						<td><button id="up_worker">+</button><button id="dwn_worker">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Jäger:</td>
-						<td><p id="hunter"></p></td>
-						<td><button id="up_hunter">+</button><button id="dwn_hunter">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Schäfer:</td>
-						<td><p id="shepherd"></p></td>
-						<td><button id="up_shepherd">+</button><button id="dwn_shepherd">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Kohleminenarbeiter:</td>
-						<td><p id="coalminer"></p></td>
-						<td><button id="up_coalminer">+</button><button id="dwn_coalminer">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Eisenminenarbeiter:</td>
-						<td><p id="ironminer"></p></td>
-						<td><button id="up_ironminer">+</button><button id="dwn_ironminer">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Schneider:</td>
-						<td><p id="tailor"></p></td>
-						<td><button id="up_tailor">+</button><button id="dwn_tailor">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Schmied:</td>
-						<td><p id="smith"></p></td>
-						<td><button id="up_smith">+</button><button id="dwn_smith">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Kundschafter:</td>
-						<td><p id="scout"></p></td>
-						<td><button id="up_scout">+</button><button id="dwn_scout">-</button></td>
-					</tr>
-					<tr hidden>
-						<td>Krieger:</td>
-						<td><p id="knight"></p></td>
-						<td><button id="up_knight">+</button><button id="dwn_knight">-</button></td>
-					</tr>
-				</tbody>
-			</table>-->
 		</div>
 	</div>
-	<div id="bottom">
+	<div id="bottom" hidden>
 		<div id="msg"></div>
-		<div id="info">
-			<div id="phase">
-			</div>
-		</div>
 	</div>
 </body>
 </html>
