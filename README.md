@@ -1,7 +1,7 @@
 # Idle
 Link zum [Spiel](https://nickweyermann.github.io).
 
-Im Spiel geht es darum, seine Bewohner so zu managen, damit man überlebt und neue Gebäude errichten kann.
+`Im Spiel geht es darum, seine Bewohner so zu managen, damit man überlebt und neue Gebäude errichten kann.`
 
 **Kommende Features:**
 - Weitere Optionen
@@ -27,3 +27,12 @@ Im Spiel geht es darum, seine Bewohner so zu managen, damit man überlebt und ne
   - Schätze
   - Dörfer
 - Kämpfen
+- Events
+  - Kundschafter
+    - Tod
+    - Armee entdeckt
+    - nichts
+  - Du wurdest angegriffen
+  - Krankheit
+    - ausgebrochen
+    - geheilt
