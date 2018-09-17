@@ -32,38 +32,42 @@
 						<thead>
 							<tr>
 								<th>Gebäude</th>
-								<th>Kosten</th>
-								<th>Verbesserung</th>
+                                <th>Zuteilung</th>
 								<th>Bauzeit</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>Hütte</td>
 								<td>
-									<ul>
-										<li>50 Holz</li>
-										<li>10 Stein</li>
-									</ul>
-								</td>
-								<td>Erhöht max Bewohner um 2</td>
+                                    <button id="btn_hut">Hütte
+                                        <span id="tooltip">
+                                            <ul>
+                                                <li>50 Holz</li>
+                                                <li>10 Stein</li>
+                                            </ul>
+                                            <p>Erhöht max Bewohner um 2</p>
+                                        </span>
+                                    </button>
+                                </td>
+                                <td>Arbeiter 4/10</td>
 								<td id="time_hut"></td>
-								<td><button id="btn_hut">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Jagdhütte</td>
 								<td>
-									<ul>
-										<li>150 Holz</li>
-										<li>30 Stein</li>
-									</ul>
-								</td>
-								<td>Ausbildung: Jäger</td>
+                                    <button id="btn_huntinghut">Jagdhütte
+                                        <span id="tooltip">
+                                            <ul>
+                                                <li>150 Holz</li>
+                                                <li>30 Stein</li>
+                                            </ul>
+                                            <p>Ausbildung: Jäger</p>
+                                        </span>
+                                    </button>
+                                </td>
 								<td id="time_huntinghut"></td>
-								<td><button id="btn_huntinghut">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Lager</td>
+								<td><button id="btn_storage">Lager</button></td>
 								<td>
 									<ul>
 										<li>100 Holz</li>
@@ -72,10 +76,9 @@
 								</td>
 								<td>Max aller Ressourcen: + 400</td>
 								<td id="time_storage"></td>
-								<td><button id="btn_storage">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Holzfällerhütte</td>
+								<td><button id="btn_lumberjackhut">Holzfällerhütte</button></td>
 								<td>
 									<ul>
 										<li>200 Holz</li>
@@ -84,10 +87,9 @@
 								</td>
 								<td>Holz sammeln: + 1</td>
 								<td id="time_lumberjackhut"></td>
-								<td><button id="btn_lumberjackhut">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Schafstall</td>
+								<td><button id="btn_sheepstall">Schafstall</button></td>
 								<td>
 									<ul>
 										<li>250 Holz</li>
@@ -96,10 +98,9 @@
 								</td>
 								<td>Ausbildung: Schäfer</td>
 								<td id="time_sheepstall"></td>
-								<td><button id="btn_sheepstall">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Steinbruch</td>
+								<td><button id="btn_quarry">Steinbruch</button></td>
 								<td>
 									<ul>
 										<li>300 Holz</li>
@@ -108,10 +109,9 @@
 								</td>
 								<td>Stein sammeln: + 1</td>
 								<td id="time_quarry"></td>
-								<td><button id="btn_quarry">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Kohlemine</td>
+								<td><button id="btn_coalmine">Kohlemine</button></td>
 								<td>
 									<ul>
 										<li>300 Holz</li>
@@ -120,10 +120,9 @@
 								</td>
 								<td>Ausbildung: Kohleminenarbeiter</td>
 								<td id="time_coalmine"></td>
-								<td><button id="btn_coalmine">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Eisenmine</td>
+								<td><button id="btn_ironmine">Eisenmine</button></td>
 								<td>
 									<ul>
 										<li>400 Holz</li>
@@ -133,10 +132,9 @@
 								</td>
 								<td>Ausbildung: Eisenminenarbeiter</td>
 								<td id="time_ironmine"></td>
-								<td><button id="btn_ironmine">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Schneiderhaus</td>
+								<td><button id="btn_tailorhouse">Schneiderhaus</button></td>
 								<td>
 									<ul>
 										<li>500 Holz</li>
@@ -146,10 +144,9 @@
 								</td>
 								<td>Ausbildung: Schneider</td>
 								<td id="time_tailorhouse"></td>
-								<td><button id="btn_tailorhouse">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Schmiede</td>
+								<td><button id="btn_forge">Schmiede</button></td>
 								<td>
 									<ul>
 										<li>600 Holz</li>
@@ -160,10 +157,9 @@
 								</td>
 								<td>Ausbildung: Schmied</td>
 								<td id="time_forge"></td>
-								<td><button id="btn_forge">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Markt</td>
+								<td><button id="btn_market">Markt</button></td>
 								<td>
 									<ul>
 										<li>750 Holz</li>
@@ -174,10 +170,9 @@
 								</td>
 								<td>Möglichkeit: Handeln</td>
 								<td id="time_market"></td>
-								<td><button id="btn_market">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Erkundungsposten</td>
+								<td><button id="btn_scoutpost">Erkundungsposten</button></td>
 								<td>
 									<ul>
 										<li>1000 Holz</li>
@@ -188,10 +183,9 @@
 								</td>
 								<td>Ausbildung: Kundschafter</td>
 								<td id="time_scoutpost"></td>
-								<td><button id="btn_scoutpost">Starten</button></td>
 							</tr>
 							<tr>
-								<td>Kaserne</td>
+								<td><button id="btn_barracks">Kaserne</button></td>
 								<td>
 									<ul>
 										<li>1500 Holz</li>
@@ -202,7 +196,6 @@
 								</td>
 								<td>Ausbildung: Krieger</td>
 								<td id="time_barracks"></td>
-								<td><button id="btn_barracks">Starten</button></td>
 							</tr>
 						</tbody>
 					</table>

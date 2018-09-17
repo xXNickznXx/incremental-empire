@@ -1376,7 +1376,7 @@ $(document).ready(function () {
         function die(type) {
             var rnd = Math.floor((Math.random() * 3) + 1);
             if (type === "starve") {
-                if (rnd === 1) {
+                if (rnd === 1 || rnd === 2) {
                     if (villager > 0) {
                         villager -= 1;
                         if (villager_unused > 0) {
@@ -1403,7 +1403,7 @@ $(document).ready(function () {
                     }
                 }
             } else if (type === "freeze") {
-                if (rnd === 1) {
+                if (rnd === 1 || rnd === 2) {
                     if (villager > 0) {
                         villager -= 1;
                         if (villager_unused > 0) {
@@ -1448,7 +1448,7 @@ $(document).ready(function () {
             } else {
                 food = 0;
                 if (typeof starve === 'undefined') {
-                    starve = setInterval(function () {die("starve"); }, speed * 20);
+                    starve = setInterval(function () {die("starve"); }, speed * 15);
                 }
             }
             if (wood < resources_max) {
@@ -1579,7 +1579,7 @@ $(document).ready(function () {
                     } else {
                         wood = 0;
                         if (typeof freeze === 'undefined') {
-                            freeze = setInterval(function () {die("freeze"); }, speed * 20);
+                            freeze = setInterval(function () {die("freeze"); }, speed * 15);
                         }
                     }
                 }

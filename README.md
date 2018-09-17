@@ -4,9 +4,10 @@ Link zum [Spiel](https://nickweyermann.github.io).
 `Im Spiel geht es darum, seine Bewohner so zu managen, damit man überlebt und neue Gebäude errichten kann.`
 
 **Kommende Features:**
+- **Tooltip**
+- **Möglichkeit zu Speichern und zu laden**
+- **Zuteilung von Arbeitern auf Aufträge**
 - Weitere Optionen
-- Möglichkeit zu Speichern und zu laden
-- Zuteilung von Arbeitern auf Aufträge
 - Crafting
   - Rüstungen
     - Eisenrüstung
