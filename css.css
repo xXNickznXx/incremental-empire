@@ -113,7 +113,7 @@ body {
 	content: "";
     display: block;
 }
-#left #activities, #left #phase {
+#left #tasks, #left #phase {
 	background: var(--bg2);
     float: left;
     height: 60px;

@@ -91,7 +91,7 @@ $(document).ready(function () {
         
         speed,
         
-        activity = $("#activity"),
+        task = $("#task"),
         msg = $("#msg");
     
     $("#btn_start").click(function () {
@@ -260,8 +260,8 @@ $(document).ready(function () {
 
         /*--------Gebäude bauen------------*/
         $("#btn_hut").click(function () {
-            activity.append("<td class='hut'>Bau einer Hütte</td>");
-            activity.append("<td class='hut time'></td>");
+            task.append("<td class='hut'>Bau einer Hütte</td>");
+            task.append("<td class='hut time'></td>");
             wood -= 50;
             stone -= 10;
             slot_building = true;
@@ -269,7 +269,7 @@ $(document).ready(function () {
             build = setInterval(build_hut, speed / 10);
         });
         function build_hut() {
-            $("#activity .hut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 hut += 1;
@@ -278,13 +278,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Hütte wurde fertiggestellt.</p>");
-                $("#activity .hut").remove();
+                $("#task .hut").remove();
             }
         }
 
         $("#btn_huntinghut").click(function () {
-            activity.append("<td class='huntinghut'>Bau einer Jagdhütte</td>");
-            activity.append("<td class='huntinghut time'></td>");
+            task.append("<td class='huntinghut'>Bau einer Jagdhütte</td>");
+            task.append("<td class='huntinghut time'></td>");
             wood -= 150;
             stone -= 30;
             slot_building = true;
@@ -292,7 +292,7 @@ $(document).ready(function () {
             build = setInterval(build_huntinghut, speed / 10);
         });
         function build_huntinghut() {
-            $("#activity .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 huntinghut = true;
@@ -303,13 +303,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Jagdhütte wurde fertiggestellt.</p>");
-                $("#activity .huntinghut").remove();
+                $("#task .huntinghut").remove();
             }
         }
 
         $("#btn_storage").click(function () {
-            activity.append("<td class='storage'>Bau eines Lager</td>");
-            activity.append("<td class='storage time'></td>");
+            task.append("<td class='storage'>Bau eines Lager</td>");
+            task.append("<td class='storage time'></td>");
             wood -= 100;
             stone -= 100;
             slot_building = true;
@@ -317,7 +317,7 @@ $(document).ready(function () {
             build = setInterval(build_storage, speed / 10);
         });
         function build_storage() {
-            $("#activity .storage.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .storage.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 storage = true;
@@ -327,13 +327,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Lager wurde fertiggestellt.</p>");
-                $("#activity .storage").remove();
+                $("#task .storage").remove();
             }
         }
 
         $("#btn_lumberjackhut").click(function () {
-            activity.append("<td class='lumberjackhut'>Bau einer Holzfällerhütte</td>");
-            activity.append("<td class='lumberjackhut time'></td>");
+            task.append("<td class='lumberjackhut'>Bau einer Holzfällerhütte</td>");
+            task.append("<td class='lumberjackhut time'></td>");
             wood -= 200;
             stone -= 50;
             slot_building = true;
@@ -341,7 +341,7 @@ $(document).ready(function () {
             build = setInterval(build_lumberjackhut, speed / 10);
         });
         function build_lumberjackhut() {
-            $("#activity .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 lumberjackhut = true;
@@ -351,13 +351,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Holzfällerhütte wurde fertiggestellt.</p>");
-                $("#activity .lumberjackhut").remove();
+                $("#task .lumberjackhut").remove();
             }
         }
 
         $("#btn_sheepstall").click(function () {
-            activity.append("<td class='sheepstall'>Bau eines Schafstall</td>");
-            activity.append("<td class='sheepstall time'></td>");
+            task.append("<td class='sheepstall'>Bau eines Schafstall</td>");
+            task.append("<td class='sheepstall time'></td>");
             wood -= 250;
             stone -= 75;
             slot_building = true;
@@ -365,7 +365,7 @@ $(document).ready(function () {
             build = setInterval(build_sheepstall, speed / 10);
         });
         function build_sheepstall() {
-            $("#activity .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 sheepstall = true;
@@ -376,13 +376,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Schafstall wurde fertiggestellt.</p>");
-                $("#activity .sheepstall").remove();
+                $("#task .sheepstall").remove();
             }
         }
 
         $("#btn_quarry").click(function () {
-            activity.append("<td class='quarry'>Bau eines Steinbruch</td>");
-            activity.append("<td class='quarry time'></td>");
+            task.append("<td class='quarry'>Bau eines Steinbruch</td>");
+            task.append("<td class='quarry time'></td>");
             wood -= 300;
             stone -= 100;
             slot_building = true;
@@ -390,7 +390,7 @@ $(document).ready(function () {
             build = setInterval(build_quarry, speed / 10);
         });
         function build_quarry() {
-            $("#activity .quarry.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .quarry.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 quarry = true;
@@ -400,13 +400,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Steinbruch wurde fertiggestellt.</p>");
-                $("#activity .quarry").remove();
+                $("#task .quarry").remove();
             }
         }
 
         $("#btn_coalmine").click(function () {
-            activity.append("<td class='coalmine'>Bau einer Kohlemine</td>");
-            activity.append("<td class='coalmine time'></td>");
+            task.append("<td class='coalmine'>Bau einer Kohlemine</td>");
+            task.append("<td class='coalmine time'></td>");
             wood -= 300;
             stone -= 150;
             slot_building = true;
@@ -414,7 +414,7 @@ $(document).ready(function () {
             build = setInterval(build_coalmine, speed / 10);
         });
         function build_coalmine() {
-            $("#activity .coalmine.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .coalmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 coalmine = true;
@@ -425,13 +425,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Kohlemine wurde fertiggestellt.</p>");
-                $("#activity .coalmine").remove();
+                $("#task .coalmine").remove();
             }
         }
 
         $("#btn_ironmine").click(function () {
-            activity.append("<td class='ironmine'>Bau einer Eisenmine</td>");
-            activity.append("<td class='ironmine time'></td>");
+            task.append("<td class='ironmine'>Bau einer Eisenmine</td>");
+            task.append("<td class='ironmine time'></td>");
             wood -= 400;
             stone -= 200;
             coal -= 50;
@@ -440,7 +440,7 @@ $(document).ready(function () {
             build = setInterval(build_ironmine, speed / 10);
         });
         function build_ironmine() {
-            $("#activity .ironmine.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .ironmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 ironmine = true;
@@ -451,13 +451,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Eisenmine wurde fertiggestellt.</p>");
-                $("#activity .ironmine").remove();
+                $("#task .ironmine").remove();
             }
         }
 
         $("#btn_tailorhouse").click(function () {
-            activity.append("<td class='tailorhouse'>Bau eines Schneiderhaus</td>");
-            activity.append("<td class='tailorhouse time'></td>");
+            task.append("<td class='tailorhouse'>Bau eines Schneiderhaus</td>");
+            task.append("<td class='tailorhouse time'></td>");
             wood -= 500;
             stone -= 400;
             coal -= 200;
@@ -466,7 +466,7 @@ $(document).ready(function () {
             build = setInterval(build_tailorhouse, speed / 10);
         });
         function build_tailorhouse() {
-            $("#activity .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 tailorhouse = true;
@@ -477,13 +477,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Schneiderhaus wurde fertiggestellt.</p>");
-                $("#activity .tailorhouse").remove();
+                $("#task .tailorhouse").remove();
             }
         }
 
         $("#btn_forge").click(function () {
-            activity.append("<td class='forge'>Bau einer Schmiede</td>");
-            activity.append("<td class='forge time'></td>");
+            task.append("<td class='forge'>Bau einer Schmiede</td>");
+            task.append("<td class='forge time'></td>");
             wood -= 600;
             stone -= 450;
             coal -= 250;
@@ -493,7 +493,7 @@ $(document).ready(function () {
             build = setInterval(build_forge, speed / 10);
         });
         function build_forge() {
-            $("#activity .forge.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 forge = true;
@@ -506,13 +506,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Schmiede wurde fertiggestellt.</p>");
-                $("#activity .forge").remove();
+                $("#task .forge").remove();
             }
         }
 
         $("#btn_market").click(function () {
-            activity.append("<td class='market'>Bau eines Markt</td>");
-            activity.append("<td class='market time'></td>");
+            task.append("<td class='market'>Bau eines Markt</td>");
+            task.append("<td class='market time'></td>");
             wood -= 750;
             stone -= 500;
             coal -= 300;
@@ -522,7 +522,7 @@ $(document).ready(function () {
             build = setInterval(build_market, speed / 10);
         });
         function build_market() {
-            $("#activity .market.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .market.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 market = true;
@@ -532,13 +532,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Markt wurde fertiggestellt.</p>");
-                $("#activity .market").remove();
+                $("#task .market").remove();
             }
         }
 
         $("#btn_scoutpost").click(function () {
-            activity.append("<td class='scoutpost'>Bau eines Erkundungsposten</td>");
-            activity.append("<td class='scoutpost time'></td>");
+            task.append("<td class='scoutpost'>Bau eines Erkundungsposten</td>");
+            task.append("<td class='scoutpost time'></td>");
             wood -= 1000;
             stone -= 750;
             coal -= 400;
@@ -548,7 +548,7 @@ $(document).ready(function () {
             build = setInterval(build_scoutpost, speed / 10);
         });
         function build_scoutpost() {
-            $("#activity .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 scoutpost = true;
@@ -559,13 +559,13 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Erkundungsposten wurde fertiggestellt.</p>");
-                $("#activity .scoutpost").remove();
+                $("#task .scoutpost").remove();
             }
         }
 
         $("#btn_barracks").click(function () {
-            activity.append("<td class='barracks'>Bau einer Kaserne</td>");
-            activity.append("<td class='barracks time'></td>");
+            task.append("<td class='barracks'>Bau einer Kaserne</td>");
+            task.append("<td class='barracks time'></td>");
             wood -= 1500;
             stone -= 1200;
             coal -= 1000;
@@ -575,7 +575,7 @@ $(document).ready(function () {
             build = setInterval(build_barracks, speed / 10);
         });
         function build_barracks() {
-            $("#activity .barracks.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .barracks.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 barracks = true;
@@ -585,14 +585,14 @@ $(document).ready(function () {
                 clearInterval(build);
                 slot_building = false;
                 msg.prepend("<p>Kaserne wurde fertiggestellt.</p>");
-                $("#activity .barracks").remove();
+                $("#task .barracks").remove();
             }
         }
 
         /*-------Gebäude upgraden----------*/
         $("#btn_upgrade_hut").click(function () {
-            activity.append("<td class='hut'>Ausbau einer Hütte</td>");
-            activity.append("<td class='hut time'></td>");
+            task.append("<td class='hut'>Ausbau einer Hütte</td>");
+            task.append("<td class='hut time'></td>");
             wood -= 100;
             stone -= 20;
             slot_building = true;
@@ -600,7 +600,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_hut, speed / 10);
         });
         function upgrade_hut() {
-            $("#activity .hut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 hut -= 1;
@@ -608,13 +608,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Hütte wurde ausgebaut.</p>");
-                $("#activity .hut").remove();
+                $("#task .hut").remove();
             }
         }
 
         $("#btn_upgrade_huntinghut").click(function () {
-            activity.append("<td class='huntinghut'>Ausbau einer Jagdhütte</td>");
-            activity.append("<td class='huntinghut time'></td>");
+            task.append("<td class='huntinghut'>Ausbau einer Jagdhütte</td>");
+            task.append("<td class='huntinghut time'></td>");
             wood -= 300;
             stone -= 60;
             slot_building = true;
@@ -622,7 +622,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_huntinghut, speed / 10);
         });
         function upgrade_huntinghut() {
-            $("#activity .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 leather_bonus += 1;
@@ -630,13 +630,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Jagdhütte wurde ausgebaut.</p>");
-                $("#activity .huntinghut").remove();
+                $("#task .huntinghut").remove();
             }
         }
 
         $("#btn_upgrade_storage").click(function () {
-            activity.append("<td class='storage'>Ausbau eines Lager</td>");
-            activity.append("<td class='storage time'></td>");
+            task.append("<td class='storage'>Ausbau eines Lager</td>");
+            task.append("<td class='storage time'></td>");
             wood -= 300;
             stone -= 300;
             slot_building = true;
@@ -644,7 +644,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_storage, speed / 10);
         });
         function upgrade_storage() {
-            $("#activity .storage.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .storage.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 resources_max += 500;
@@ -655,13 +655,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Lager wurde ausgebaut.</p>");
-                $("#activity .storage").remove();
+                $("#task .storage").remove();
             }
         }
 
         $("#btn_upgrade_lumberjackhut").click(function () {
-            activity.append("<td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>");
-            activity.append("<td class='lumberjackhut time'></td>");
+            task.append("<td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>");
+            task.append("<td class='lumberjackhut time'></td>");
             wood -= 400;
             stone -= 100;
             slot_building = true;
@@ -669,7 +669,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_lumberjackhut, speed / 10);
         });
         function upgrade_lumberjackhut() {
-            $("#activity .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 wood_bonus += 1;
@@ -677,13 +677,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Holzfällerhütte wurde ausgebaut.</p>");
-                $("#activity .lumberjackhut").remove();
+                $("#task .lumberjackhut").remove();
             }
         }
 
         $("#btn_upgrade_sheepstall").click(function () {
-            activity.append("<td class='sheepstall'>Ausbau eines Schafstall</td>");
-            activity.append("<td class='sheepstall time'></td>");
+            task.append("<td class='sheepstall'>Ausbau eines Schafstall</td>");
+            task.append("<td class='sheepstall time'></td>");
             wood -= 500;
             stone -= 150;
             slot_building = true;
@@ -691,7 +691,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_sheepstall, speed / 10);
         });
         function upgrade_sheepstall() {
-            $("#activity .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 cloth_bonus += 1;
@@ -699,13 +699,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Schafstall wurde ausgebaut.</p>");
-                $("#activity .sheepstall").remove();
+                $("#task .sheepstall").remove();
             }
         }
 
         $("#btn_upgrade_quarry").click(function () {
-            activity.append("<td class='quarry'>Ausbau eines Steinbruch</td>");
-            activity.append("<td class='quarry time'></td>");
+            task.append("<td class='quarry'>Ausbau eines Steinbruch</td>");
+            task.append("<td class='quarry time'></td>");
             wood -= 600;
             stone -= 200;
             slot_building = true;
@@ -713,7 +713,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_quarry, speed / 10);
         });
         function upgrade_quarry() {
-            $("#activity .quarry.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .quarry.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 stone_bonus += 1;
@@ -721,13 +721,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Steinbruch wurde ausgebaut.</p>");
-                $("#activity .quarry").remove();
+                $("#task .quarry").remove();
             }
         }
 
         $("#btn_upgrade_coalmine").click(function () {
-            activity.append("<td class='coalmine'>Ausbau einer Kohlemine</td>");
-            activity.append("<td class='coalmine time'></td>");
+            task.append("<td class='coalmine'>Ausbau einer Kohlemine</td>");
+            task.append("<td class='coalmine time'></td>");
             wood -= 600;
             stone -= 300;
             slot_building = true;
@@ -735,7 +735,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_coalmine, speed / 10);
         });
         function upgrade_coalmine() {
-            $("#activity .coalmine.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .coalmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 coal_bonus += 1;
@@ -743,13 +743,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Kohlemine wurde ausgebaut.</p>");
-                $("#activity .coalmine").remove();
+                $("#task .coalmine").remove();
             }
         }
 
         $("#btn_upgrade_ironmine").click(function () {
-            activity.append("<td class='ironmine'>Ausbau einer Eisenmine</td>");
-            activity.append("<td class='ironmine time'></td>");
+            task.append("<td class='ironmine'>Ausbau einer Eisenmine</td>");
+            task.append("<td class='ironmine time'></td>");
             wood -= 800;
             stone -= 400;
             coal -= 100;
@@ -758,7 +758,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_ironmine, speed / 10);
         });
         function upgrade_ironmine() {
-            $("#activity .ironmine.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .ironmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 iron_bonus += 1;
@@ -766,13 +766,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Eisenmine wurde ausgebaut.</p>");
-                $("#activity .ironmine").remove();
+                $("#task .ironmine").remove();
             }
         }
 
         $("#btn_upgrade_tailorhouse").click(function () {
-            activity.append("<td class='tailorhouse'>Ausbau eines Schneiderhaus</td>");
-            activity.append("<td class='tailorhouse time'></td>");
+            task.append("<td class='tailorhouse'>Ausbau eines Schneiderhaus</td>");
+            task.append("<td class='tailorhouse time'></td>");
             wood -= 1000;
             stone -= 800;
             coal -= 400;
@@ -781,7 +781,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_tailorhouse, speed / 10);
         });
         function upgrade_tailorhouse() {
-            $("#activity .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 clothes_bonus += 1;
@@ -789,13 +789,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Schneiderhaus wurde ausgebaut.</p>");
-                $("#activity .tailorhouse").remove();
+                $("#task .tailorhouse").remove();
             }
         }
 
         $("#btn_upgrade_forge").click(function () {
-            activity.append("<td class='forge'>Ausbau einer Schmiede</td>");
-            activity.append("<td class='forge time'></td>");
+            task.append("<td class='forge'>Ausbau einer Schmiede</td>");
+            task.append("<td class='forge time'></td>");
             wood -= 1200;
             stone -= 900;
             coal -= 500;
@@ -805,7 +805,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_forge, speed / 10);
         });
         function upgrade_forge() {
-            $("#activity .forge.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 craft_time += 1;
@@ -813,13 +813,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Schmiede wurde ausgebaut.</p>");
-                $("#activity .forge").remove();
+                $("#task .forge").remove();
             }
         }
 
         $("#btn_upgrade_market").click(function () {
-            activity.append("<td class='market'>Ausbau eines Markt</td>");
-            activity.append("<td class='market time'></td>");
+            task.append("<td class='market'>Ausbau eines Markt</td>");
+            task.append("<td class='market time'></td>");
             wood -= 1500;
             stone -= 1000;
             coal -= 600;
@@ -829,7 +829,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_market, speed / 10);
         });
         function upgrade_market() {
-            $("#activity .market.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .market.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 trade_bonus += 1;
@@ -837,13 +837,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Markt wurde ausgebaut.</p>");
-                $("#activity .market").remove();
+                $("#task .market").remove();
             }
         }
 
         $("#btn_upgrade_scoutpost").click(function () {
-            activity.append("<td class='scoutpost'>Ausbau eines Erkundungsposten</td>");
-            activity.append("<td class='scoutpost time'></td>");
+            task.append("<td class='scoutpost'>Ausbau eines Erkundungsposten</td>");
+            task.append("<td class='scoutpost time'></td>");
             wood -= 2000;
             stone -= 1500;
             coal -= 800;
@@ -853,7 +853,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_scoutpost, speed / 10);
         });
         function upgrade_scoutpost() {
-            $("#activity .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 travel_time += 1;
@@ -861,13 +861,13 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Erkundungsposten wurde ausgebaut.</p>");
-                $("#activity .scoutpost").remove();
+                $("#task .scoutpost").remove();
             }
         }
 
         $("#btn_upgrade_barracks").click(function () {
-            activity.append("<td class='barracks'>Ausbau einer Kaserne</td>");
-            activity.append("<td class='barracks time'></td>");
+            task.append("<td class='barracks'>Ausbau einer Kaserne</td>");
+            task.append("<td class='barracks time'></td>");
             wood -= 3000;
             stone -= 2400;
             coal -= 2000;
@@ -877,7 +877,7 @@ $(document).ready(function () {
             upgrade = setInterval(upgrade_barracks, speed / 10);
         });
         function upgrade_barracks() {
-            $("#activity .barracks.time").text(secondsTommss(timer.toFixed(1)));
+            $("#task .barracks.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
             if (timer < 0) {
                 damage_bonus += 1;
@@ -885,7 +885,7 @@ $(document).ready(function () {
                 clearInterval(upgrade);
                 slot_building = false;
                 msg.prepend("<p>Kaserne wurde ausgebaut.</p>");
-                $("#activity .barracks").remove();
+                $("#task .barracks").remove();
             }
         }
 
