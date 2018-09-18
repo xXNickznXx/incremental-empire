@@ -256,7 +256,7 @@ input:checked + #slider:before {
 	}
 	#header {
 		border-bottom: 1px solid var(--fg);
-		height: 200px;
+		height: 20px;
 		width: 355px;
 	}
 	#header h1 {
@@ -275,7 +275,7 @@ input:checked + #slider:before {
 	}
 	#left #content {
 		border-bottom: 1px solid var(--fg);
-		height: 220px;
+		height: 200px;
 		margin: 0;
 	}
 	#left #left_bottom {
