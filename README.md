@@ -7,12 +7,11 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Bewohnerverwaltung
 - Gebäude bauen
 - Einige Optionen
-- Beginn von Speichern und Laden
+- Möglichkeit zu Speichern und zu Laden
+- Tooltips für Gebäude
 
 ### Kommende Features:
-- **Tooltips für Gebäude und Upgrades**
-- **Möglichkeit zu Speichern und zu Laden**
-- **Zuteilung von Arbeitern auf Bauaufträge**
+- **Tooltips für Upgrades**
 - Weitere Optionen
 - Crafting
   - Rüstungen

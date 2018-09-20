@@ -96,6 +96,61 @@ $(document).ready(function () {
     
     $("#btn_start").click(function () {
         speed = $("#speed").val();
+        
+        if ($("#load")[0].files.length !== 0) {
+            var file = $("#load")[0].files[0],
+                reader = new FileReader();
+
+            reader.onload = function (e) {
+                var contents = JSON.parse(e.target.result);
+                food = contents._food;
+                wood = contents._wood;
+                stone = contents._stone;
+                leather = contents._leather;
+                cloth = contents._cloth;
+                coal = contents._coal;
+                iron = contents._iron;
+                clothes = contents._clothes;
+                armor = contents._armor;
+                sword = contents._sword;
+                resources_max = contents._resources_max;
+
+                villager = contents._villager;
+                villager_unused = contents._villager_unused;
+                villager_max = contents._villager_max;
+
+                gatherer = contents._gatherer;
+                lumberjack = contents._lumberjack;    wood_bonus = contents._wood_bonus;
+                quarryman = contents._quarryman;      stone_bonus = contents._stone_bonus;
+                worker = contents._worker;
+                hunter = contents._hunter;            leather_bonus = contents._leather_bonus;
+                shepherd = contents._shepherd;        cloth_bonus = contents._cloth_bonus;
+                coalminer = contents._coalminer;      coal_bonus = contents._coal_bonus;
+                ironminer = contents._ironminer;      iron_bonus = contents._iron_bonus;
+                tailor = contents._tailor;            clothes_bonus = contents._clothes_bonus;
+                smith = contents._smith;              craft_time = contents._craft_time;
+                scout = contents._scout;              travel_time = contents._travel_time;
+                knight = contents._knight;            damage_bonus = contents._damage_bonus;
+
+                trade_bonus = contents._trade_bonus;
+
+                hut = contents._hut;
+                huntinghut = contents._huntinghut;
+                storage = contents._storage;              lvl_storage = contents._lvl_storage;
+                lumberjackhut = contents._lumberjackhut;
+                sheepstall = contents._sheepstall;
+                quarry = contents._quarry;
+                coalmine = contents._coalmine;
+                ironmine = contents._ironmine;
+                tailorhouse = contents._tailorhouse;
+                forge = contents._forge;
+                market = contents._market;
+                scoutpost = contents._scoutpost;
+                barracks = contents._barracks
+            }
+            reader.readAsText(file);
+        }
+        
         $("#main").show();
         $("#bottom").show();
         $("#start").hide();
@@ -1643,7 +1698,7 @@ $(document).ready(function () {
 
         $("#btn_save").click(function () {
             var saveFile = {
-                _food: "food",
+                _food: food,
                 _wood: wood,
                 _stone: stone,
                 _leather: leather,
@@ -1697,17 +1752,6 @@ $(document).ready(function () {
             link.prop("href", "data:application/octet-stream," + text);
             link.appendTo("#options");
             link.get(0).click();
-        });
-
-        $("#btn_load").click(function () {
-            var file = $("#load").files[0];
-            var reader = new FileReader();
-
-            reader.onload = function(e) {
-                var contents = JSON.parse(decodeURIComponent(e.target.result));
-                $("#options").append(contents);
-            }
-            reader.readAsText(file);
         });
     });
 });
