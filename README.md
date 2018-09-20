@@ -26,18 +26,33 @@ Link zum [Spiel](https://nickweyermann.github.io).
       - Kurzbogen
       - Langbogen
       - Armbrust
+  - Geschenk
+    - Handelsgeschenk
+    - Friedensgeschenk
+    - Vergiftetes Geschenk
 - Handeln
   - Mit lokalem Händler
-  - Mit KI Dörfern
-- Erkunden
-  - Schätze
-  - Dörfer
-- Kämpfen
+  - Mit Dörfern
+- Neue Berufe
+  - Stallbetreuer
+    -Pferde(Schnellere Fortbewegung)
+  - Alchemist
+    - Heilmittel
+    - Gifte
 - Events
   - Kundschafter
-    - Tod
-    - Armee entdeckt
     - nichts
+    - Schätze (Rohstoffe)
+    - Tod
+      - Getötet
+      - Verdurstet/Verhungert
+    - Dörfer
+      - Handelsantrag
+        - Annahme
+        - Ablehnung
+        - Tod
+      - Armee entdeckt
+  - Deine Krieger sind zurück
   - Du wurdest angegriffen
   - Krankheit
     - ausgebrochen
