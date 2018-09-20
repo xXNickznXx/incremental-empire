@@ -1,4 +1,5 @@
 /*eslint-disable no-undef*/
+/*jslint white:true*/
 $(document).ready(function () {
     "use strict";
     var food = 0,
@@ -103,51 +104,51 @@ $(document).ready(function () {
 
             reader.onload = function (e) {
                 var contents = JSON.parse(e.target.result);
-                food = contents._food;
-                wood = contents._wood;
-                stone = contents._stone;
-                leather = contents._leather;
-                cloth = contents._cloth;
-                coal = contents._coal;
-                iron = contents._iron;
-                clothes = contents._clothes;
-                armor = contents._armor;
-                sword = contents._sword;
-                resources_max = contents._resources_max;
+                food = contents.$food;
+                wood = contents.$wood;
+                stone = contents.$stone;
+                leather = contents.$leather;
+                cloth = contents.$cloth;
+                coal = contents.$coal;
+                iron = contents.$iron;
+                clothes = contents.$clothes;
+                armor = contents.$armor;
+                sword = contents.$sword;
+                resources_max = contents.$resources_max;
 
-                villager = contents._villager;
-                villager_unused = contents._villager_unused;
-                villager_max = contents._villager_max;
+                villager = contents.$villager;
+                villager_unused = contents.$villager_unused;
+                villager_max = contents.$villager_max;
 
-                gatherer = contents._gatherer;
-                lumberjack = contents._lumberjack;    wood_bonus = contents._wood_bonus;
-                quarryman = contents._quarryman;      stone_bonus = contents._stone_bonus;
-                worker = contents._worker;
-                hunter = contents._hunter;            leather_bonus = contents._leather_bonus;
-                shepherd = contents._shepherd;        cloth_bonus = contents._cloth_bonus;
-                coalminer = contents._coalminer;      coal_bonus = contents._coal_bonus;
-                ironminer = contents._ironminer;      iron_bonus = contents._iron_bonus;
-                tailor = contents._tailor;            clothes_bonus = contents._clothes_bonus;
-                smith = contents._smith;              craft_time = contents._craft_time;
-                scout = contents._scout;              travel_time = contents._travel_time;
-                knight = contents._knight;            damage_bonus = contents._damage_bonus;
+                gatherer = contents.$gatherer;
+                lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
+                quarryman = contents.$quarryman;      stone_bonus = contents.$stone_bonus;
+                worker = contents.$worker;
+                hunter = contents.$hunter;            leather_bonus = contents.$leather_bonus;
+                shepherd = contents.$shepherd;        cloth_bonus = contents.$cloth_bonus;
+                coalminer = contents.$coalminer;      coal_bonus = contents.$coal_bonus;
+                ironminer = contents.$ironminer;      iron_bonus = contents.$iron_bonus;
+                tailor = contents.$tailor;            clothes_bonus = contents.$clothes_bonus;
+                smith = contents.$smith;              craft_time = contents.$craft_time;
+                scout = contents.$scout;              travel_time = contents.$travel_time;
+                knight = contents.$knight;            damage_bonus = contents.$damage_bonus;
 
-                trade_bonus = contents._trade_bonus;
+                trade_bonus = contents.$trade_bonus;
 
-                hut = contents._hut;
-                huntinghut = contents._huntinghut;
-                storage = contents._storage;              lvl_storage = contents._lvl_storage;
-                lumberjackhut = contents._lumberjackhut;
-                sheepstall = contents._sheepstall;
-                quarry = contents._quarry;
-                coalmine = contents._coalmine;
-                ironmine = contents._ironmine;
-                tailorhouse = contents._tailorhouse;
-                forge = contents._forge;
-                market = contents._market;
-                scoutpost = contents._scoutpost;
-                barracks = contents._barracks
-            }
+                hut = contents.$hut;
+                huntinghut = contents.$huntinghut;
+                storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
+                lumberjackhut = contents.$lumberjackhut;
+                sheepstall = contents.$sheepstall;
+                quarry = contents.$quarry;
+                coalmine = contents.$coalmine;
+                ironmine = contents.$ironmine;
+                tailorhouse = contents.$tailorhouse;
+                forge = contents.$forge;
+                market = contents.$market;
+                scoutpost = contents.$scoutpost;
+                barracks = contents.$barracks;
+            };
             reader.readAsText(file);
         }
         
@@ -312,17 +313,26 @@ $(document).ready(function () {
             $("#travel").slideUp();
             $("#options").slideToggle();
         });
+        
+        
+        /* Convert int to time*/
+        function secondsTommss(total) {
+            var m = Math.floor(total / 60),
+                s = total - (m * 60),
+                result;
+
+            s = Math.round(s * 100) / 100;
+
+            if (total < 60) {
+                result = s + "s";
+            } else {
+                result = m + "min ";
+                result += (s < 10 ? "0" + s : s) + "s";
+            }
+            return result;
+        }
 
         /*--------Gebäude bauen------------*/
-        $("#btn_hut").click(function () {
-            task.append("<td class='hut'>Bau einer Hütte</td>");
-            task.append("<td class='hut time'></td>");
-            wood -= 50;
-            stone -= 10;
-            slot_building = true;
-            timer = curr_time_hut;
-            build = setInterval(build_hut, speed / 10);
-        });
         function build_hut() {
             $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -336,16 +346,16 @@ $(document).ready(function () {
                 $("#task .hut").remove();
             }
         }
-
-        $("#btn_huntinghut").click(function () {
-            task.append("<td class='huntinghut'>Bau einer Jagdhütte</td>");
-            task.append("<td class='huntinghut time'></td>");
-            wood -= 150;
-            stone -= 30;
+        $("#btn_hut").click(function () {
+            task.append("<td class='hut'>Bau einer Hütte</td>");
+            task.append("<td class='hut time'></td>");
+            wood -= 50;
+            stone -= 10;
             slot_building = true;
-            timer = curr_time_huntinghut;
-            build = setInterval(build_huntinghut, speed / 10);
+            timer = curr_time_hut;
+            build = setInterval(build_hut, speed / 10);
         });
+
         function build_huntinghut() {
             $("#task .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -361,16 +371,16 @@ $(document).ready(function () {
                 $("#task .huntinghut").remove();
             }
         }
-
-        $("#btn_storage").click(function () {
-            task.append("<td class='storage'>Bau eines Lager</td>");
-            task.append("<td class='storage time'></td>");
-            wood -= 100;
-            stone -= 100;
+        $("#btn_huntinghut").click(function () {
+            task.append("<td class='huntinghut'>Bau einer Jagdhütte</td>");
+            task.append("<td class='huntinghut time'></td>");
+            wood -= 150;
+            stone -= 30;
             slot_building = true;
-            timer = curr_time_storage;
-            build = setInterval(build_storage, speed / 10);
+            timer = curr_time_huntinghut;
+            build = setInterval(build_huntinghut, speed / 10);
         });
+
         function build_storage() {
             $("#task .storage.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -385,16 +395,16 @@ $(document).ready(function () {
                 $("#task .storage").remove();
             }
         }
-
-        $("#btn_lumberjackhut").click(function () {
-            task.append("<td class='lumberjackhut'>Bau einer Holzfällerhütte</td>");
-            task.append("<td class='lumberjackhut time'></td>");
-            wood -= 200;
-            stone -= 50;
+        $("#btn_storage").click(function () {
+            task.append("<td class='storage'>Bau eines Lager</td>");
+            task.append("<td class='storage time'></td>");
+            wood -= 100;
+            stone -= 100;
             slot_building = true;
-            timer = curr_time_lumberjackhut;
-            build = setInterval(build_lumberjackhut, speed / 10);
+            timer = curr_time_storage;
+            build = setInterval(build_storage, speed / 10);
         });
+
         function build_lumberjackhut() {
             $("#task .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -409,16 +419,16 @@ $(document).ready(function () {
                 $("#task .lumberjackhut").remove();
             }
         }
-
-        $("#btn_sheepstall").click(function () {
-            task.append("<td class='sheepstall'>Bau eines Schafstall</td>");
-            task.append("<td class='sheepstall time'></td>");
-            wood -= 250;
-            stone -= 75;
+        $("#btn_lumberjackhut").click(function () {
+            task.append("<td class='lumberjackhut'>Bau einer Holzfällerhütte</td>");
+            task.append("<td class='lumberjackhut time'></td>");
+            wood -= 200;
+            stone -= 50;
             slot_building = true;
-            timer = curr_time_sheepstall;
-            build = setInterval(build_sheepstall, speed / 10);
+            timer = curr_time_lumberjackhut;
+            build = setInterval(build_lumberjackhut, speed / 10);
         });
+
         function build_sheepstall() {
             $("#task .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -434,16 +444,16 @@ $(document).ready(function () {
                 $("#task .sheepstall").remove();
             }
         }
-
-        $("#btn_quarry").click(function () {
-            task.append("<td class='quarry'>Bau eines Steinbruch</td>");
-            task.append("<td class='quarry time'></td>");
-            wood -= 300;
-            stone -= 100;
+        $("#btn_sheepstall").click(function () {
+            task.append("<td class='sheepstall'>Bau eines Schafstall</td>");
+            task.append("<td class='sheepstall time'></td>");
+            wood -= 250;
+            stone -= 75;
             slot_building = true;
-            timer = curr_time_quarry;
-            build = setInterval(build_quarry, speed / 10);
+            timer = curr_time_sheepstall;
+            build = setInterval(build_sheepstall, speed / 10);
         });
+
         function build_quarry() {
             $("#task .quarry.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -458,16 +468,16 @@ $(document).ready(function () {
                 $("#task .quarry").remove();
             }
         }
-
-        $("#btn_coalmine").click(function () {
-            task.append("<td class='coalmine'>Bau einer Kohlemine</td>");
-            task.append("<td class='coalmine time'></td>");
+        $("#btn_quarry").click(function () {
+            task.append("<td class='quarry'>Bau eines Steinbruch</td>");
+            task.append("<td class='quarry time'></td>");
             wood -= 300;
-            stone -= 150;
+            stone -= 100;
             slot_building = true;
-            timer = curr_time_coalmine;
-            build = setInterval(build_coalmine, speed / 10);
+            timer = curr_time_quarry;
+            build = setInterval(build_quarry, speed / 10);
         });
+
         function build_coalmine() {
             $("#task .coalmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -483,17 +493,16 @@ $(document).ready(function () {
                 $("#task .coalmine").remove();
             }
         }
-
-        $("#btn_ironmine").click(function () {
-            task.append("<td class='ironmine'>Bau einer Eisenmine</td>");
-            task.append("<td class='ironmine time'></td>");
-            wood -= 400;
-            stone -= 200;
-            coal -= 50;
+        $("#btn_coalmine").click(function () {
+            task.append("<td class='coalmine'>Bau einer Kohlemine</td>");
+            task.append("<td class='coalmine time'></td>");
+            wood -= 300;
+            stone -= 150;
             slot_building = true;
-            timer = curr_time_ironmine;
-            build = setInterval(build_ironmine, speed / 10);
+            timer = curr_time_coalmine;
+            build = setInterval(build_coalmine, speed / 10);
         });
+
         function build_ironmine() {
             $("#task .ironmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -509,17 +518,17 @@ $(document).ready(function () {
                 $("#task .ironmine").remove();
             }
         }
-
-        $("#btn_tailorhouse").click(function () {
-            task.append("<td class='tailorhouse'>Bau eines Schneiderhaus</td>");
-            task.append("<td class='tailorhouse time'></td>");
-            wood -= 500;
-            stone -= 400;
-            coal -= 200;
+        $("#btn_ironmine").click(function () {
+            task.append("<td class='ironmine'>Bau einer Eisenmine</td>");
+            task.append("<td class='ironmine time'></td>");
+            wood -= 400;
+            stone -= 200;
+            coal -= 50;
             slot_building = true;
-            timer = curr_time_tailorhouse;
-            build = setInterval(build_tailorhouse, speed / 10);
+            timer = curr_time_ironmine;
+            build = setInterval(build_ironmine, speed / 10);
         });
+
         function build_tailorhouse() {
             $("#task .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -535,18 +544,17 @@ $(document).ready(function () {
                 $("#task .tailorhouse").remove();
             }
         }
-
-        $("#btn_forge").click(function () {
-            task.append("<td class='forge'>Bau einer Schmiede</td>");
-            task.append("<td class='forge time'></td>");
-            wood -= 600;
-            stone -= 450;
-            coal -= 250;
-            iron -= 50;
+        $("#btn_tailorhouse").click(function () {
+            task.append("<td class='tailorhouse'>Bau eines Schneiderhaus</td>");
+            task.append("<td class='tailorhouse time'></td>");
+            wood -= 500;
+            stone -= 400;
+            coal -= 200;
             slot_building = true;
-            timer = curr_time_forge;
-            build = setInterval(build_forge, speed / 10);
+            timer = curr_time_tailorhouse;
+            build = setInterval(build_tailorhouse, speed / 10);
         });
+
         function build_forge() {
             $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -564,18 +572,18 @@ $(document).ready(function () {
                 $("#task .forge").remove();
             }
         }
-
-        $("#btn_market").click(function () {
-            task.append("<td class='market'>Bau eines Markt</td>");
-            task.append("<td class='market time'></td>");
-            wood -= 750;
-            stone -= 500;
-            coal -= 300;
-            iron -= 100;
+        $("#btn_forge").click(function () {
+            task.append("<td class='forge'>Bau einer Schmiede</td>");
+            task.append("<td class='forge time'></td>");
+            wood -= 600;
+            stone -= 450;
+            coal -= 250;
+            iron -= 50;
             slot_building = true;
-            timer = curr_time_market;
-            build = setInterval(build_market, speed / 10);
+            timer = curr_time_forge;
+            build = setInterval(build_forge, speed / 10);
         });
+
         function build_market() {
             $("#task .market.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -590,18 +598,18 @@ $(document).ready(function () {
                 $("#task .market").remove();
             }
         }
-
-        $("#btn_scoutpost").click(function () {
-            task.append("<td class='scoutpost'>Bau eines Erkundungsposten</td>");
-            task.append("<td class='scoutpost time'></td>");
-            wood -= 1000;
-            stone -= 750;
-            coal -= 400;
-            iron -= 250;
+        $("#btn_market").click(function () {
+            task.append("<td class='market'>Bau eines Markt</td>");
+            task.append("<td class='market time'></td>");
+            wood -= 750;
+            stone -= 500;
+            coal -= 300;
+            iron -= 100;
             slot_building = true;
-            timer = curr_time_scoutpost;
-            build = setInterval(build_scoutpost, speed / 10);
+            timer = curr_time_market;
+            build = setInterval(build_market, speed / 10);
         });
+
         function build_scoutpost() {
             $("#task .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -617,18 +625,18 @@ $(document).ready(function () {
                 $("#task .scoutpost").remove();
             }
         }
-
-        $("#btn_barracks").click(function () {
-            task.append("<td class='barracks'>Bau einer Kaserne</td>");
-            task.append("<td class='barracks time'></td>");
-            wood -= 1500;
-            stone -= 1200;
-            coal -= 1000;
-            iron -= 800;
+        $("#btn_scoutpost").click(function () {
+            task.append("<td class='scoutpost'>Bau eines Erkundungsposten</td>");
+            task.append("<td class='scoutpost time'></td>");
+            wood -= 1000;
+            stone -= 750;
+            coal -= 400;
+            iron -= 250;
             slot_building = true;
-            timer = curr_time_barracks;
-            build = setInterval(build_barracks, speed / 10);
+            timer = curr_time_scoutpost;
+            build = setInterval(build_scoutpost, speed / 10);
         });
+
         function build_barracks() {
             $("#task .barracks.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -643,17 +651,19 @@ $(document).ready(function () {
                 $("#task .barracks").remove();
             }
         }
+        $("#btn_barracks").click(function () {
+            task.append("<td class='barracks'>Bau einer Kaserne</td>");
+            task.append("<td class='barracks time'></td>");
+            wood -= 1500;
+            stone -= 1200;
+            coal -= 1000;
+            iron -= 800;
+            slot_building = true;
+            timer = curr_time_barracks;
+            build = setInterval(build_barracks, speed / 10);
+        });
 
         /*-------Gebäude upgraden----------*/
-        $("#btn_upgrade_hut").click(function () {
-            task.append("<td class='hut'>Ausbau einer Hütte</td>");
-            task.append("<td class='hut time'></td>");
-            wood -= 100;
-            stone -= 20;
-            slot_building = true;
-            timer = curr_time_upgrade_hut;
-            upgrade = setInterval(upgrade_hut, speed / 10);
-        });
         function upgrade_hut() {
             $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -666,16 +676,16 @@ $(document).ready(function () {
                 $("#task .hut").remove();
             }
         }
-
-        $("#btn_upgrade_huntinghut").click(function () {
-            task.append("<td class='huntinghut'>Ausbau einer Jagdhütte</td>");
-            task.append("<td class='huntinghut time'></td>");
-            wood -= 300;
-            stone -= 60;
+        $("#btn_upgrade_hut").click(function () {
+            task.append("<td class='hut'>Ausbau einer Hütte</td>");
+            task.append("<td class='hut time'></td>");
+            wood -= 100;
+            stone -= 20;
             slot_building = true;
-            timer = curr_time_upgrade_huntinghut;
-            upgrade = setInterval(upgrade_huntinghut, speed / 10);
+            timer = curr_time_upgrade_hut;
+            upgrade = setInterval(upgrade_hut, speed / 10);
         });
+
         function upgrade_huntinghut() {
             $("#task .huntinghut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -688,16 +698,16 @@ $(document).ready(function () {
                 $("#task .huntinghut").remove();
             }
         }
-
-        $("#btn_upgrade_storage").click(function () {
-            task.append("<td class='storage'>Ausbau eines Lager</td>");
-            task.append("<td class='storage time'></td>");
+        $("#btn_upgrade_huntinghut").click(function () {
+            task.append("<td class='huntinghut'>Ausbau einer Jagdhütte</td>");
+            task.append("<td class='huntinghut time'></td>");
             wood -= 300;
-            stone -= 300;
+            stone -= 60;
             slot_building = true;
-            timer = curr_time_upgrade_storage;
-            upgrade = setInterval(upgrade_storage, speed / 10);
+            timer = curr_time_upgrade_huntinghut;
+            upgrade = setInterval(upgrade_huntinghut, speed / 10);
         });
+
         function upgrade_storage() {
             $("#task .storage.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -713,16 +723,16 @@ $(document).ready(function () {
                 $("#task .storage").remove();
             }
         }
-
-        $("#btn_upgrade_lumberjackhut").click(function () {
-            task.append("<td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>");
-            task.append("<td class='lumberjackhut time'></td>");
-            wood -= 400;
-            stone -= 100;
+        $("#btn_upgrade_storage").click(function () {
+            task.append("<td class='storage'>Ausbau eines Lager</td>");
+            task.append("<td class='storage time'></td>");
+            wood -= 300;
+            stone -= 300;
             slot_building = true;
-            timer = curr_time_upgrade_lumberjackhut;
-            upgrade = setInterval(upgrade_lumberjackhut, speed / 10);
+            timer = curr_time_upgrade_storage;
+            upgrade = setInterval(upgrade_storage, speed / 10);
         });
+
         function upgrade_lumberjackhut() {
             $("#task .lumberjackhut.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -735,16 +745,16 @@ $(document).ready(function () {
                 $("#task .lumberjackhut").remove();
             }
         }
-
-        $("#btn_upgrade_sheepstall").click(function () {
-            task.append("<td class='sheepstall'>Ausbau eines Schafstall</td>");
-            task.append("<td class='sheepstall time'></td>");
-            wood -= 500;
-            stone -= 150;
+        $("#btn_upgrade_lumberjackhut").click(function () {
+            task.append("<td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>");
+            task.append("<td class='lumberjackhut time'></td>");
+            wood -= 400;
+            stone -= 100;
             slot_building = true;
-            timer = curr_time_upgrade_sheepstall;
-            upgrade = setInterval(upgrade_sheepstall, speed / 10);
+            timer = curr_time_upgrade_lumberjackhut;
+            upgrade = setInterval(upgrade_lumberjackhut, speed / 10);
         });
+
         function upgrade_sheepstall() {
             $("#task .sheepstall.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -757,16 +767,16 @@ $(document).ready(function () {
                 $("#task .sheepstall").remove();
             }
         }
-
-        $("#btn_upgrade_quarry").click(function () {
-            task.append("<td class='quarry'>Ausbau eines Steinbruch</td>");
-            task.append("<td class='quarry time'></td>");
-            wood -= 600;
-            stone -= 200;
+        $("#btn_upgrade_sheepstall").click(function () {
+            task.append("<td class='sheepstall'>Ausbau eines Schafstall</td>");
+            task.append("<td class='sheepstall time'></td>");
+            wood -= 500;
+            stone -= 150;
             slot_building = true;
-            timer = curr_time_upgrade_quarry;
-            upgrade = setInterval(upgrade_quarry, speed / 10);
+            timer = curr_time_upgrade_sheepstall;
+            upgrade = setInterval(upgrade_sheepstall, speed / 10);
         });
+
         function upgrade_quarry() {
             $("#task .quarry.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -779,16 +789,16 @@ $(document).ready(function () {
                 $("#task .quarry").remove();
             }
         }
-
-        $("#btn_upgrade_coalmine").click(function () {
-            task.append("<td class='coalmine'>Ausbau einer Kohlemine</td>");
-            task.append("<td class='coalmine time'></td>");
+        $("#btn_upgrade_quarry").click(function () {
+            task.append("<td class='quarry'>Ausbau eines Steinbruch</td>");
+            task.append("<td class='quarry time'></td>");
             wood -= 600;
-            stone -= 300;
+            stone -= 200;
             slot_building = true;
-            timer = curr_time_upgrade_coalmine;
-            upgrade = setInterval(upgrade_coalmine, speed / 10);
+            timer = curr_time_upgrade_quarry;
+            upgrade = setInterval(upgrade_quarry, speed / 10);
         });
+
         function upgrade_coalmine() {
             $("#task .coalmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -801,17 +811,16 @@ $(document).ready(function () {
                 $("#task .coalmine").remove();
             }
         }
-
-        $("#btn_upgrade_ironmine").click(function () {
-            task.append("<td class='ironmine'>Ausbau einer Eisenmine</td>");
-            task.append("<td class='ironmine time'></td>");
-            wood -= 800;
-            stone -= 400;
-            coal -= 100;
+        $("#btn_upgrade_coalmine").click(function () {
+            task.append("<td class='coalmine'>Ausbau einer Kohlemine</td>");
+            task.append("<td class='coalmine time'></td>");
+            wood -= 600;
+            stone -= 300;
             slot_building = true;
-            timer = curr_time_upgrade_ironmine;
-            upgrade = setInterval(upgrade_ironmine, speed / 10);
+            timer = curr_time_upgrade_coalmine;
+            upgrade = setInterval(upgrade_coalmine, speed / 10);
         });
+
         function upgrade_ironmine() {
             $("#task .ironmine.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -824,17 +833,17 @@ $(document).ready(function () {
                 $("#task .ironmine").remove();
             }
         }
-
-        $("#btn_upgrade_tailorhouse").click(function () {
-            task.append("<td class='tailorhouse'>Ausbau eines Schneiderhaus</td>");
-            task.append("<td class='tailorhouse time'></td>");
-            wood -= 1000;
-            stone -= 800;
-            coal -= 400;
+        $("#btn_upgrade_ironmine").click(function () {
+            task.append("<td class='ironmine'>Ausbau einer Eisenmine</td>");
+            task.append("<td class='ironmine time'></td>");
+            wood -= 800;
+            stone -= 400;
+            coal -= 100;
             slot_building = true;
-            timer = curr_time_upgrade_tailorhouse;
-            upgrade = setInterval(upgrade_tailorhouse, speed / 10);
+            timer = curr_time_upgrade_ironmine;
+            upgrade = setInterval(upgrade_ironmine, speed / 10);
         });
+
         function upgrade_tailorhouse() {
             $("#task .tailorhouse.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -847,18 +856,17 @@ $(document).ready(function () {
                 $("#task .tailorhouse").remove();
             }
         }
-
-        $("#btn_upgrade_forge").click(function () {
-            task.append("<td class='forge'>Ausbau einer Schmiede</td>");
-            task.append("<td class='forge time'></td>");
-            wood -= 1200;
-            stone -= 900;
-            coal -= 500;
-            iron -= 100;
+        $("#btn_upgrade_tailorhouse").click(function () {
+            task.append("<td class='tailorhouse'>Ausbau eines Schneiderhaus</td>");
+            task.append("<td class='tailorhouse time'></td>");
+            wood -= 1000;
+            stone -= 800;
+            coal -= 400;
             slot_building = true;
-            timer = curr_time_upgrade_forge;
-            upgrade = setInterval(upgrade_forge, speed / 10);
+            timer = curr_time_upgrade_tailorhouse;
+            upgrade = setInterval(upgrade_tailorhouse, speed / 10);
         });
+
         function upgrade_forge() {
             $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -871,18 +879,18 @@ $(document).ready(function () {
                 $("#task .forge").remove();
             }
         }
-
-        $("#btn_upgrade_market").click(function () {
-            task.append("<td class='market'>Ausbau eines Markt</td>");
-            task.append("<td class='market time'></td>");
-            wood -= 1500;
-            stone -= 1000;
-            coal -= 600;
-            iron -= 200;
+        $("#btn_upgrade_forge").click(function () {
+            task.append("<td class='forge'>Ausbau einer Schmiede</td>");
+            task.append("<td class='forge time'></td>");
+            wood -= 1200;
+            stone -= 900;
+            coal -= 500;
+            iron -= 100;
             slot_building = true;
-            timer = curr_time_upgrade_market;
-            upgrade = setInterval(upgrade_market, speed / 10);
+            timer = curr_time_upgrade_forge;
+            upgrade = setInterval(upgrade_forge, speed / 10);
         });
+
         function upgrade_market() {
             $("#task .market.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -895,18 +903,18 @@ $(document).ready(function () {
                 $("#task .market").remove();
             }
         }
-
-        $("#btn_upgrade_scoutpost").click(function () {
-            task.append("<td class='scoutpost'>Ausbau eines Erkundungsposten</td>");
-            task.append("<td class='scoutpost time'></td>");
-            wood -= 2000;
-            stone -= 1500;
-            coal -= 800;
-            iron -= 500;
+        $("#btn_upgrade_market").click(function () {
+            task.append("<td class='market'>Ausbau eines Markt</td>");
+            task.append("<td class='market time'></td>");
+            wood -= 1500;
+            stone -= 1000;
+            coal -= 600;
+            iron -= 200;
             slot_building = true;
-            timer = curr_time_upgrade_scoutpost;
-            upgrade = setInterval(upgrade_scoutpost, speed / 10);
+            timer = curr_time_upgrade_market;
+            upgrade = setInterval(upgrade_market, speed / 10);
         });
+
         function upgrade_scoutpost() {
             $("#task .scoutpost.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -919,18 +927,18 @@ $(document).ready(function () {
                 $("#task .scoutpost").remove();
             }
         }
-
-        $("#btn_upgrade_barracks").click(function () {
-            task.append("<td class='barracks'>Ausbau einer Kaserne</td>");
-            task.append("<td class='barracks time'></td>");
-            wood -= 3000;
-            stone -= 2400;
-            coal -= 2000;
-            iron -= 1600;
+        $("#btn_upgrade_scoutpost").click(function () {
+            task.append("<td class='scoutpost'>Ausbau eines Erkundungsposten</td>");
+            task.append("<td class='scoutpost time'></td>");
+            wood -= 2000;
+            stone -= 1500;
+            coal -= 800;
+            iron -= 500;
             slot_building = true;
-            timer = curr_time_upgrade_barracks;
-            upgrade = setInterval(upgrade_barracks, speed / 10);
+            timer = curr_time_upgrade_scoutpost;
+            upgrade = setInterval(upgrade_scoutpost, speed / 10);
         });
+
         function upgrade_barracks() {
             $("#task .barracks.time").text(secondsTommss(timer.toFixed(1)));
             timer -= 0.1;
@@ -943,6 +951,17 @@ $(document).ready(function () {
                 $("#task .barracks").remove();
             }
         }
+        $("#btn_upgrade_barracks").click(function () {
+            task.append("<td class='barracks'>Ausbau einer Kaserne</td>");
+            task.append("<td class='barracks time'></td>");
+            wood -= 3000;
+            stone -= 2400;
+            coal -= 2000;
+            iron -= 1600;
+            slot_building = true;
+            timer = curr_time_upgrade_barracks;
+            upgrade = setInterval(upgrade_barracks, speed / 10);
+        });
 
         $("#slider").click(function () {
             if ($("#switch input").prop("checked") !== true) {
@@ -967,6 +986,12 @@ $(document).ready(function () {
             document.documentElement.style.setProperty("--bg2", "white");
             document.documentElement.style.setProperty("--fg", "#222222");
             $("#switch input").prop("checked", false);
+        }
+
+        function check_msg() {
+            while ($("#msg p").length > 12) {
+                $("#msg p").last().remove();
+            }
         }
 
         function refresh() {
@@ -1393,28 +1418,6 @@ $(document).ready(function () {
         }
         refr = setInterval(refresh, 100);
 
-        function secondsTommss(total) {
-            var m = Math.floor(total / 60),
-                s = total - (m * 60),
-                result;
-
-            s = Math.round(s * 100) / 100;
-
-            if (total < 60) {
-                result = s + "s";
-            } else {
-                result = m + "min ";
-                result += (s < 10 ? "0" + s : s) + "s";
-            }
-            return result;
-        }
-
-        function check_msg() {
-            while ($("#msg p").length > 12) {
-                $("#msg p").last().remove();
-            }
-        }
-
         function game_over() {
             msg.prepend("<p>Dein Dorf ist gestorben.</p>");
             refresh();
@@ -1698,54 +1701,54 @@ $(document).ready(function () {
 
         $("#btn_save").click(function () {
             var saveFile = {
-                _food: food,
-                _wood: wood,
-                _stone: stone,
-                _leather: leather,
-                _cloth: cloth,
-                _coal: coal,
-                _iron: iron,
-                _clothes: clothes,
-                _armor: armor,
-                _sword: sword,
-                _resources_max: resources_max,
+                $food: food,
+                $wood: wood,
+                $stone: stone,
+                $leather: leather,
+                $cloth: cloth,
+                $coal: coal,
+                $iron: iron,
+                $clothes: clothes,
+                $armor: armor,
+                $sword: sword,
+                $resources_max: resources_max,
 
-                _villager: villager,
-                _villager_unused: villager_unused,
-                _villager_max: villager_max,
+                $villager: villager,
+                $villager_unused: villager_unused,
+                $villager_max: villager_max,
 
-                _gatherer: gatherer,
-                _lumberjack: lumberjack,    _wood_bonus: wood_bonus,
-                _quarryman: quarryman,      _stone_bonus: stone_bonus,
-                _worker: worker,
-                _hunter: hunter,            _leather_bonus: leather_bonus,
-                _shepherd: shepherd,        _cloth_bonus: cloth_bonus,
-                _coalminer: coalminer,      _coal_bonus: coal_bonus,
-                _ironminer: ironminer,      _iron_bonus: iron_bonus,
-                _tailor: tailor,            _clothes_bonus: clothes_bonus,
-                _smith: smith,              _craft_time: craft_time,
-                _scout: scout,              _travel_time: travel_time,
-                _knight: knight,            _damage_bonus: damage_bonus,
+                $gatherer: gatherer,
+                $lumberjack: lumberjack,    $wood_bonus: wood_bonus,
+                $quarryman: quarryman,      $stone_bonus: stone_bonus,
+                $worker: worker,
+                $hunter: hunter,            $leather_bonus: leather_bonus,
+                $shepherd: shepherd,        $cloth_bonus: cloth_bonus,
+                $coalminer: coalminer,      $coal_bonus: coal_bonus,
+                $ironminer: ironminer,      $iron_bonus: iron_bonus,
+                $tailor: tailor,            $clothes_bonus: clothes_bonus,
+                $smith: smith,              $craft_time: craft_time,
+                $scout: scout,              $travel_time: travel_time,
+                $knight: knight,            $damage_bonus: damage_bonus,
 
-                _trade_bonus: trade_bonus,
+                $trade_bonus: trade_bonus,
 
-                _hut: hut,
-                _huntinghut: huntinghut,
-                _storage: storage,              _lvl_storage: lvl_storage,
-                _lumberjackhut: lumberjackhut,
-                _sheepstall: sheepstall,
-                _quarry: quarry,
-                _coalmine: coalmine,
-                _ironmine: ironmine,
-                _tailorhouse: tailorhouse,
-                _forge: forge,
-                _market: market,
-                _scoutpost: scoutpost,
-                _barracks: barracks
-            };
-            var saveJson = JSON.stringify(saveFile);
-            var link = $("<a></a>");
-            var text = encodeURIComponent(saveJson);
+                $hut: hut,
+                $huntinghut: huntinghut,
+                $storage: storage,              $lvl_storage: lvl_storage,
+                $lumberjackhut: lumberjackhut,
+                $sheepstall: sheepstall,
+                $quarry: quarry,
+                $coalmine: coalmine,
+                $ironmine: ironmine,
+                $tailorhouse: tailorhouse,
+                $forge: forge,
+                $market: market,
+                $scoutpost: scoutpost,
+                $barracks: barracks
+            },
+                saveJson = JSON.stringify(saveFile),
+                link = $("<a></a>"),
+                text = encodeURIComponent(saveJson);
 
             link.prop("id", "save");
             link.prop("download", "savefile.txt");
