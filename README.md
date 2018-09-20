@@ -1,6 +1,5 @@
 # Idle
 Link zum [Spiel](https://nickweyermann.github.io).
-<a href="https://nickweyermann.github.io" target="_blank">Spiel</a>
 
 `Ein Spiel bei dem man Bewohner verwalten, Gebäude bauen, auf Erkundungsreisen gehen, andere Dörfer treffen und mit diesen interagieren kann.`
 
