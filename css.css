@@ -30,9 +30,10 @@ button #tooltip {
     background-color: var(--bg);
     border-radius: 5px;
     display: none;
-    margin: 8px 0 0 -6px;
+    margin: -24px 0 0 124px;
+    padding: 5px;
     position: absolute;
-    width: 200px;
+    text-align: left;
     z-index: 1;
 }
 button:hover #tooltip {
@@ -104,10 +105,18 @@ body {
 	width: 90px;
 }
 #left #content button {
-    border-bottom: 1px solid var(--fg);
+    border: 1px solid var(--fg);
+    border-radius: 5px;
 	height: 32px;
     padding: 5px;
 	width: 130px;
+}
+#left #options button {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+	height: 32px;
+    padding: 5px;
+	width: 90px;
 }
 #left #content {
 	background: var(--bg2);
@@ -115,10 +124,6 @@ body {
 	margin-top: 10px;
     overflow: auto;
 	padding: 10px;
-}
-#left #content button {
-    border: 1px solid var(--fg);
-    border-radius: 5px;
 }
 #left #left_bottom {
     margin-top: 10px;
@@ -287,7 +292,7 @@ input:checked + #slider:before {
 		width: 355px;
 	}
 	#left #phase {
-		height: 20px;
+		height: 15px;
 		margin: 0;
 	}
 	#right {

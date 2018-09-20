@@ -1556,15 +1556,15 @@ $(document).ready(function () {
         res_prod = setInterval(resource_prod, speed * 5);
 
         function new_villagers() {
-            var rnd = Math.floor((Math.random() * 8) + 1), amount;
+            var rnd = Math.floor((Math.random() * 6) + 1), amount;
             if (rnd === 1) {
-                amount = Math.floor((Math.random() * 3) + 2);
+                amount = Math.floor((Math.random() * 2) + 2);
                 if (villager + amount <= villager_max) {
                     villager += amount;
                     villager_unused += amount;
                     msg.prepend("<p>" + amount + " Fremde sind aufgetaucht.</p>");
                 }
-            } else if (rnd === 2 || rnd === 3 || rnd === 4) {
+            } else if (rnd === 2 || rnd === 3) {
                 if (villager < villager_max) {
                     villager += 1;
                     villager_unused += 1;
