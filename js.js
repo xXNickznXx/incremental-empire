@@ -1711,6 +1711,10 @@ $(document).ready(function () {
 
     /* Start */
     $("#btn_start").click(function () {
+        if ($("#speed").val() < 200 || $("#speed").val() > 5000) {
+            $("#start p").remove();
+            $("#start").append("<p>Geschwindigkeit zwischen 200 und 5000.</p>");
+        } else {
         speed = $("#speed").val();
         
         if ($("#load")[0].files.length !== 0) {
@@ -1776,6 +1780,7 @@ $(document).ready(function () {
         new_vil = setInterval(new_villagers, speed * 30);
         temperature();
         temperat = setInterval(temperature, speed * 30);
+        }
     });
 
     /* Save */
