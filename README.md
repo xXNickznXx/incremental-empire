@@ -8,10 +8,9 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Gebäude bauen
 - Einige Optionen
 - Möglichkeit zu Speichern und zu Laden
-- Tooltips für Gebäude
+- Tooltips für Gebäude und Upgrades
 
 ### Kommende Features:
-- **Tooltips für Upgrades**
 - Weitere Optionen
 - Crafting
   - Rüstungen

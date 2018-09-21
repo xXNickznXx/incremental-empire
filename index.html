@@ -249,171 +249,197 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr hidden>
-                                    <td>Hütte</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>100 Holz</li>
-                                            <li>20 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_hut">Hütte
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>100 Holz</li>
+                                                    <li>20 Stein</li>
+                                                </ul>
+                                                <p>Max Bewohner: + 3</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Max Bewohner: + 3</td>
                                     <td id="time_upgrade_hut"></td>
-                                    <td><button id="btn_upgrade_hut">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Jagdhütte</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>300 Holz</li>
-                                            <li>60 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_huntinghut">Jagdhütte
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>300 Holz</li>
+                                                    <li>60 Stein</li>
+                                                </ul>
+                                                <p>Leder sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Leder sammeln: + 1</td>
                                     <td id="time_upgrade_huntinghut"></td>
-                                    <td><button id="btn_upgrade_huntinghut">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Lagerhütte</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>300 Holz</li>
-                                            <li>300 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_storage">Lager
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>300 Holz</li>
+                                                    <li>300 Stein</li>
+                                                </ul>
+                                                <p>Max aller Ressourcen: + 500</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Max aller Ressourcen: + 500</td>
                                     <td id="time_upgrade_storage"></td>
-                                    <td><button id="btn_upgrade_storage">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Holzfällerhütte</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>400 Holz</li>
-                                            <li>100 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_lumberjackhut">Holzfällerhütte
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>400 Holz</li>
+                                                    <li>100 Stein</li>
+                                                </ul>
+                                                <p>Holz sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Holz sammeln: + 1</td>
                                     <td id="time_upgrade_lumberjackhut"></td>
-                                    <td><button id="btn_upgrade_lumberjackhut">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Schafstall</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>500 Holz</li>
-                                            <li>150 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_sheepstall">Schafstall
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>500 Holz</li>
+                                                    <li>150 Stein</li>
+                                                </ul>
+                                                <p>Wolle sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Wolle sammeln: + 1</td>
                                     <td id="time_upgrade_sheepstall"></td>
-                                    <td><button id="btn_upgrade_sheepstall">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Steinbruch</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>600 Holz</li>
-                                            <li>200 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_quarry">Steinbruch
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>600 Holz</li>
+                                                    <li>200 Stein</li>
+                                                </ul>
+                                                <p>Stein sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Stein sammeln: + 1</td>
                                     <td id="time_upgrade_quarry"></td>
-                                    <td><button id="btn_upgrade_quarry">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Kohlemine</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>600 Holz</li>
-                                            <li>300 Stein</li>
-                                        </ul>
+                                        <button id="btn_upgrade_coalmine">Kohlemine
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>600 Holz</li>
+                                                    <li>300 Stein</li>
+                                                </ul>
+                                                <p>Kohle sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Kohle sammeln: + 1</td>
                                     <td id="time_upgrade_coalmine"></td>
-                                    <td><button id="btn_upgrade_coalmine">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Eisenmine</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>800 Holz</li>
-                                            <li>400 Stein</li>
-                                            <li>100 Kohle</li>
-                                        </ul>
+                                        <button id="btn_upgrade_ironmine">Eisenmine
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>800 Holz</li>
+                                                    <li>400 Stein</li>
+                                                    <li>100 Kohle</li>
+                                                </ul>
+                                                <p>Eisen sammeln: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Eisen sammeln: + 1</td>
                                     <td id="time_upgrade_ironmine"></td>
-                                    <td><button id="btn_upgrade_ironmine">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Schneiderhaus</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>1000 Holz</li>
-                                            <li>800 Stein</li>
-                                            <li>400 Kohle</li>
-                                        </ul>
+                                        <button id="btn_upgrade_tailorhouse">Schneiderhaus
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>1000 Holz</li>
+                                                    <li>800 Stein</li>
+                                                    <li>400 Kohle</li>
+                                                </ul>
+                                                <p>Kleider herstellen: + 1</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Kleider herstellen: + 1</td>
                                     <td id="time_upgrade_tailorhouse"></td>
-                                    <td><button id="btn_upgrade_tailorhouse">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Schmiede</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>1200 Holz</li>
-                                            <li>900 Stein</li>
-                                            <li>500 Kohle</li>
-                                            <li>100 Eisen</li>
-                                        </ul>
+                                        <button id="btn_upgrade_forge">Schmiede
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>1200 Holz</li>
+                                                    <li>900 Stein</li>
+                                                    <li>500 Kohle</li>
+                                                    <li>100 Eisen</li>
+                                                </ul>
+                                                <p>Herstellzeit / 2</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Herstellzeit / 2</td>
                                     <td id="time_upgrade_forge"></td>
-                                    <td><button id="btn_upgrade_forge">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Markt</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>1500 Holz</li>
-                                            <li>1000 Stein</li>
-                                            <li>600 Kohle</li>
-                                            <li>200 Eisen</li>
-                                        </ul>
+                                        <button id="btn_upgrade_market">Markt
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>1500 Holz</li>
+                                                    <li>1000 Stein</li>
+                                                    <li>600 Kohle</li>
+                                                    <li>200 Eisen</li>
+                                                </ul>
+                                                <p>Preise / 2</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Preise / 2</td>
                                     <td id="time_upgrade_market"></td>
-                                    <td><button id="btn_upgrade_market">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Erkundungsposten</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>2000 Holz</li>
-                                            <li>1500 Stein</li>
-                                            <li>800 Kohle</li>
-                                            <li>500 Eisen</li>
-                                        </ul>
+                                        <button id="btn_upgrade_scoutpost">Erkundungsposten
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>2000 Holz</li>
+                                                    <li>1500 Stein</li>
+                                                    <li>800 Kohle</li>
+                                                    <li>500 Eisen</li>
+                                                </ul>
+                                                <p>Erkundungszeit / 2</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Erkundungszeit / 2</td>
                                     <td id="time_upgrade_scoutpost"></td>
-                                    <td><button id="btn_upgrade_scoutpost">Starten</button></td>
                                 </tr>
-                                <tr hidden>
-                                    <td>Kaserne</td>
+                                <tr>
                                     <td>
-                                        <ul>
-                                            <li>3000 Holz</li>
-                                            <li>2400 Stein</li>
-                                            <li>2000 Kohle</li>
-                                            <li>1600 Eisen</li>
-                                        </ul>
+                                        <button id="btn_upgrade_barracks">Kaserne
+                                            <span id="tooltip">
+                                                <ul>
+                                                    <li>3000 Holz</li>
+                                                    <li>2400 Stein</li>
+                                                    <li>2000 Kohle</li>
+                                                    <li>1600 Eisen</li>
+                                                </ul>
+                                                <p>Schaden * 2</p>
+                                            </span>
+                                        </button>
                                     </td>
-                                    <td>Schaden * 2</td>
                                     <td id="time_upgrade_barracks"></td>
-                                    <td><button id="btn_upgrade_barracks">Starten</button></td>
                                 </tr>
                             </tbody>
                         </table>

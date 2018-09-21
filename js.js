@@ -1194,8 +1194,10 @@ $(document).ready(function () {
             $("#btn_huntinghut").closest("tr").show();
         } else {
             $("#btn_huntinghut").closest("tr").hide();
-            $("#leather").closest("#row").show();
-            $("#hunter").closest("#row").show();
+            if (huntinghut === true) {
+                $("#leather").closest("#row").show();
+                $("#hunter").closest("#row").show();
+            }
         }
         if (wood >= 50 && stone >= 50 && storage === false) {
             $("#btn_storage").closest("tr").show();
@@ -1211,8 +1213,10 @@ $(document).ready(function () {
             $("#btn_sheepstall").closest("tr").show();
         } else {
             $("#btn_sheepstall").closest("tr").hide();
-            $("#cloth").closest("#row").show();
-            $("#shepherd").closest("#row").show();
+            if (sheepstall === true) {
+                $("#cloth").closest("#row").show();
+                $("#shepherd").closest("#row").show();
+            }
         }
         if (wood >= 150 && stone >= 50 && quarry === false) {
             $("#btn_quarry").closest("tr").show();
@@ -1223,50 +1227,64 @@ $(document).ready(function () {
             $("#btn_coalmine").closest("tr").show();
         } else {
             $("#btn_coalmine").closest("tr").hide();
-            $("#coal").closest("#row").show();
-            $("#coalminer").closest("#row").show();
+            if (coalmine === true) {
+                $("#coal").closest("#row").show();
+                $("#coalminer").closest("#row").show();
+            }
         }
         if (wood >= 200 && stone >= 100 && coal >= 25 && ironmine === false) {
             $("#btn_ironmine").closest("tr").show();
         } else {
             $("#btn_ironmine").closest("tr").hide();
-            $("#iron").closest("#row").show();
-            $("#ironminer").closest("#row").show();
+            if (ironmine === true) {
+                $("#iron").closest("#row").show();
+                $("#ironminer").closest("#row").show();
+            }
         }
         if (wood >= 250 && stone >= 200 && coal >= 100 && tailorhouse === false) {
             $("#btn_tailorhouse").closest("tr").show();
         } else {
             $("#btn_tailorhouse").closest("tr").hide();
-            $("#clothes").closest("#row").show();
-            $("#tailor").closest("#row").show();
+            if (tailorhouse === true) {
+                $("#clothes").closest("#row").show();
+                $("#tailor").closest("#row").show();
+            }
         }
         if (wood >= 300 && stone >= 225 && coal >= 125 && iron >= 25 && forge === false) {
             $("#btn_forge").closest("tr").show();
         } else {
             $("#btn_forge").closest("tr").hide();
-            $("#btn_craft").show();
-            $("#armor").closest("#row").show();
-            $("#sword").closest("#row").show();
-            $("#smith").closest("#row").show();
+            if (forge === true) {
+                $("#btn_craft").show();
+                $("#armor").closest("#row").show();
+                $("#sword").closest("#row").show();
+                $("#smith").closest("#row").show();
+            }
         }
         if (wood >= 375 && stone >= 250 && coal >= 150 && iron >= 50 && market === false) {
             $("#btn_market").closest("tr").show();
         } else {
             $("#btn_market").closest("tr").hide();
-            $("#btn_trade").show();
+            if (market === true) {
+                $("#btn_trade").show();
+            }
         }
         if (wood >= 500 && stone >= 375 && coal >= 200 && iron >= 125 && scoutpost === false) {
             $("#btn_scoutpost").closest("tr").show();
         } else {
             $("#btn_scoutpost").closest("tr").hide();
-            $("#btn_travel").show();
-            $("#scout").closest("#row").show();
+            if (scoutpost === true) {
+                $("#btn_travel").show();
+                $("#scout").closest("#row").show();
+            }
         }
         if (wood >= 750 && stone >= 600 && coal >= 500 && iron >= 400 && barracks === false) {
             $("#btn_barracks").closest("tr").show();
         } else {
             $("#btn_barracks").closest("tr").hide();
-            $("#knight").closest("#row").show();
+            if (barracks === true) {
+                $("#knight").closest("#row").show();
+            }
         }
         //endregion
 
@@ -1808,7 +1826,7 @@ $(document).ready(function () {
             $scoutpost: scoutpost,          $up_scoutpost: up_scoutpost,
             $barracks: barracks,            $up_barracks: up_barracks
         },
-            saveJson = JSON.stringify(saveFile),
+            saveJson = JSON.stringify(saveFile, undefined, 3),
             link = $("<a></a>"),
             text = encodeURIComponent(saveJson);
 
