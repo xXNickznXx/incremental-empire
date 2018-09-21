@@ -1364,7 +1364,7 @@ $(document).ready(function () {
         } else {
             $("#btn_upgrade_hut").closest("tr").hide();
         }
-        if (wood >= 150 && stone >= 30 && huntinghut === true && upgrade_huntinghut === false) {
+        if (wood >= 150 && stone >= 30 && huntinghut === true && up_huntinghut === false) {
             $("#btn_upgrade_huntinghut").closest("tr").show();
         } else {
             $("#btn_upgrade_huntinghut").closest("tr").hide();
