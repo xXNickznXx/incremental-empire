@@ -1374,52 +1374,52 @@ $(document).ready(function () {
         } else {
             $("#btn_upgrade_storage").closest("tr").hide();
         }
-        if (wood >= 200 && stone >= 50 && lumberjackhut === true && upgrade_lumberjackhut === false) {
+        if (wood >= 200 && stone >= 50 && lumberjackhut === true && up_lumberjackhut === false) {
             $("#btn_upgrade_lumberjackhut").closest("tr").show();
         } else {
             $("#btn_upgrade_lumberjackhut").closest("tr").hide();
         }
-        if (wood >= 250 && stone >= 75 && sheepstall === true && upgrade_sheepstall === false) {
+        if (wood >= 250 && stone >= 75 && sheepstall === true && up_sheepstall === false) {
             $("#btn_upgrade_sheepstall").closest("tr").show();
         } else {
             $("#btn_upgrade_sheepstall").closest("tr").hide();
         }
-        if (wood >= 300 && stone >= 100 && quarry === true && upgrade_quarry === false) {
+        if (wood >= 300 && stone >= 100 && quarry === true && up_quarry === false) {
             $("#btn_upgrade_quarry").closest("tr").show();
         } else {
             $("#btn_upgrade_quarry").closest("tr").hide();
         }
-        if (wood >= 300 && stone >= 150 && coalmine === true && upgrade_coalmine === false) {
+        if (wood >= 300 && stone >= 150 && coalmine === true && up_coalmine === false) {
             $("#btn_upgrade_coalmine").closest("tr").show();
         } else {
             $("#btn_upgrade_coalmine").closest("tr").hide();
         }
-        if (wood >= 400 && stone >= 200 && coal >= 50 && ironmine === true && upgrade_ironmine === false) {
+        if (wood >= 400 && stone >= 200 && coal >= 50 && ironmine === true && up_ironmine === false) {
             $("#btn_upgrade_ironmine").closest("tr").show();
         } else {
             $("#btn_upgrade_ironmine").closest("tr").hide();
         }
-        if (wood >= 500 && stone >= 400 && coal >= 200 && tailorhouse === true && upgrade_tailorhouse === false) {
+        if (wood >= 500 && stone >= 400 && coal >= 200 && tailorhouse === true && up_tailorhouse === false) {
             $("#btn_upgrade_tailorhouse").closest("tr").show();
         } else {
             $("#btn_upgrade_tailorhouse").closest("tr").hide();
         }
-        if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && forge === true && upgrade_forge === false) {
+        if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && forge === true && up_forge === false) {
             $("#btn_upgrade_forge").closest("tr").show();
         } else {
             $("#btn_upgrade_forge").closest("tr").hide();
         }
-        if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && market === true && upgrade_market === false) {
+        if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && market === true && up_market === false) {
             $("#btn_upgrade_market").closest("tr").show();
         } else {
             $("#btn_upgrade_market").closest("tr").hide();
         }
-        if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && scoutpost === true && upgrade_scoutpost === false) {
+        if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && scoutpost === true && up_scoutpost === false) {
             $("#btn_upgrade_scoutpost").closest("tr").show();
         } else {
             $("#btn_upgrade_scoutpost").closest("tr").hide();
         }
-        if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && barracks === true && upgrade_barracks === false) {
+        if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && barracks === true && up_barracks === false) {
             $("#btn_upgrade_barracks").closest("tr").show();
         } else {
             $("#btn_upgrade_barracks").closest("tr").hide();
