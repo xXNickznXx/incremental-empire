@@ -24,7 +24,7 @@ button:disabled {
     border: 1px solid var(--fg);
     border-radius: 5px;
     padding: 5px;
-    width: 40px;
+    width: 50px;
 }
 ul {
     list-style-position: inside;
@@ -190,7 +190,7 @@ h1 {
 	margin-left: 10px;
 	width: 240px;
 }
-.right .resources, .right .villagers, .right .jobs {
+.resources, .villagers, .jobs {
 	background: var(--bg2);
 	margin-top: 10px;
 	padding: 10px;
@@ -203,25 +203,25 @@ h1 {
 	content: "";
     display: block;
 }
-.right .row p:first-child {
+.row p:first-child {
 	float: left;
 }
-.right .row p:nth-child(even) {
+.row p:nth-child(even) {
 	float: right;
 }
-.right .jobs .row div:after {
+.jobs .row div:after {
 	clear: both;
 	content: "";
     display: block;
 }
-.right .jobs .row div:first-child {
+.jobs .row div:first-child {
     float: left;
     width: 170px;
 }
-.right .jobs .row div:last-child {
+.jobs .row div:last-child {
 	float: right;
 }
-.right .th {
+.th {
     font-weight: bold;
 }
 /* bottom */
@@ -233,13 +233,13 @@ h1 {
 	content: "";
 	display: table;
 }
-.bottom .msg {
+.msg {
 	background: var(--bg2);
 	height: 280px;
 	overflow: hidden;
 	padding: 10px;
 }
-.bottom .msg p {
+.msg p {
     height: 24px;
 }
 /*------Toggle----------*/
@@ -278,6 +278,10 @@ input:checked + .slider:before {
     background-color: var(--bg2);
     transform: translateX(26px);
 }
+/* Mobile */
+.btn_mobile {
+    display: none;
+}
 
 @media only screen and (max-width: 376px) {
 	* {
@@ -297,38 +301,45 @@ input:checked + .slider:before {
 	.left {
 		width: 375px;
 	}
-	.left .nav {
+	.nav {
 		border-bottom: 1px solid var(--fg);
 		margin: 0;
 	}
-	.left .nav button {
-		padding: 0;
-		width: 80px;
-	}
-	.left .content {
+	.content {
 		border-bottom: 1px solid var(--fg);
 		height: 200px;
 		margin: 0;
 	}
-	.left .left_bottom {
+	.left_bottom {
 		margin: 0;
 	}
-	.left .tasks, .left .phase {
+	.tasks, .phase {
 		border-bottom: 1px solid var(--fg);
 		float: none;
 		width: 355px;
 	}
-	.left .phase {
+	.phase {
 		height: 15px;
 		margin: 0;
 	}
+    .btn_mobile {
+        display: inline-block;
+        width: 330px !important;
+    }
 	.right {
-		display: none;
+        display: none;
+        height: 220px;
+		margin: -338px 0 0 0;
+        overflow: auto;
+        width: 100%;
 	}
+    .resources, .villagers, .jobs {
+        margin-top: 0;
+    }
 	.bottom {
 		margin: 0;
 	}
-	.bottom .msg {
+	.msg {
 		height: 100px;
 		width: 355px;
 	}

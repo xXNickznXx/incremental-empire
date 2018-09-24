@@ -206,6 +206,7 @@ $(document).ready(function () {
 
     /* Navigation */
     $("#btn_build").click(function () {
+        $("#right").slideUp();
         $("#build").slideToggle();
         $("#upgrade").slideUp();
         $("#craft").slideUp();
@@ -214,6 +215,7 @@ $(document).ready(function () {
         $("#options").slideUp();
     });
     $("#btn_upgrade").click(function () {
+        $("#right").slideUp();
         $("#build").slideUp();
         $("#upgrade").slideToggle();
         $("#craft").slideUp();
@@ -222,6 +224,7 @@ $(document).ready(function () {
         $("#options").slideUp();
     });
     $("#btn_craft").click(function () {
+        $("#right").slideUp();
         $("#build").slideUp();
         $("#upgrade").slideUp();
         $("#craft").slideToggle();
@@ -230,6 +233,7 @@ $(document).ready(function () {
         $("#options").slideUp();
     });
     $("#btn_trade").click(function () {
+        $("#right").slideUp();
         $("#build").slideUp();
         $("#upgrade").slideUp();
         $("#craft").slideUp();
@@ -238,6 +242,7 @@ $(document).ready(function () {
         $("#options").slideUp();
     });
     $("#btn_travel").click(function () {
+        $("#right").slideUp();
         $("#build").slideUp();
         $("#upgrade").slideUp();
         $("#craft").slideUp();
@@ -246,12 +251,23 @@ $(document).ready(function () {
         $("#options").slideUp();
     });
     $("#btn_options").click(function () {
+        $("#right").slideUp();
         $("#build").slideUp();
         $("#upgrade").slideUp();
         $("#craft").slideUp();
         $("#trade").slideUp();
         $("#travel").slideUp();
         $("#options").slideToggle();
+    });
+    
+    $("#btn_mobile").click(function () {
+        $("#right").slideToggle();
+        $("#build").slideUp();
+        $("#upgrade").slideUp();
+        $("#craft").slideUp();
+        $("#trade").slideUp();
+        $("#travel").slideUp();
+        $("#options").slideUp();
     });
 
     /* Convert int to time */
