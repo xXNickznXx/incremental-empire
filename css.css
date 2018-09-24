@@ -12,9 +12,13 @@
     padding: 0;
 }
 /* Allgemein */
+button:hover {
+    cursor: pointer;
+}
 button:disabled {
     border-color: var(--bg) !important;
     color: var(--bg);
+    cursor: not-allowed;
 }
 ul {
     list-style-position: inside;
@@ -26,7 +30,7 @@ table th{
     font-weight: bold;
     text-align: left;
 }
-button #tooltip {
+button .tooltip {
     background-color: var(--bg);
     border-radius: 5px;
     display: none;
@@ -36,8 +40,15 @@ button #tooltip {
     text-align: left;
     z-index: 1;
 }
-button:hover #tooltip {
+button:hover .tooltip {
     display: block;
+}
+.btn_dwn_up {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+    height: 20px;
+    padding: 0;
+    width: 20px;
 }
 /* Body */
 body {
@@ -78,123 +89,144 @@ body {
 	display: table;
 }
 /* Header */
-#header {
+.header {
 	background: var(--bg2);
 	height: 40px;
 	padding: 10px;
 	text-align: center;
 }
-#header h1 {
+.header h1 {
 	font-size: 30px;
 }
 /* Left */
-#left {
+.left {
 	float: left;
 	width: 650px;
 }
-#left #nav {
+.nav {
 	background: var(--bg2);
 	margin-top: 10px;
 	padding: 10px;
 	text-align: center;
 }
-#left #nav button {
+.nav button {
     border-bottom: 1px solid var(--fg);
 	height: 32px;
     padding: 5px;
 	width: 90px;
 }
-#left #content button {
+.btn_build, .btn_upgrade {
     border: 1px solid var(--fg);
     border-radius: 5px;
 	height: 32px;
     padding: 5px;
 	width: 130px;
 }
-#left #options button {
+.btn_craft {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+    height: 32px;
+    padding: 5px;
+    width: 100%;
+}
+.in_craft {
+    border: 1px solid var(--fg);
+    border-radius: 5px;
+    height: 18px;
+    width: 40px;
+}
+.row_craft:after {
+	clear: both;
+	content: "";
+    display: block;
+}
+.row_craft * {
+    float: left;
+}
+.row_craft p:first-child {
+    width: 250px;
+}
+.row_craft p:last-child {
+    margin-left: 60px;
+}
+.btn_options {
     border: 1px solid var(--fg);
     border-radius: 5px;
 	height: 32px;
     padding: 5px;
 	width: 90px;
 }
-#left #content {
+.content {
 	background: var(--bg2);
-    height: 360px;
+    height: 400px;
 	margin-top: 10px;
     overflow: auto;
 	padding: 10px;
 }
-#left #left_bottom {
+.left_bottom {
     margin-top: 10px;
 }
-#left #left_bottom:after {
+.left_bottom:after {
 	clear: both;
 	content: "";
     display: block;
 }
-#left #tasks, #left #phase {
+.tasks, .phase {
 	background: var(--bg2);
     float: left;
     height: 60px;
 	padding: 10px;
     width: 300px;
 }
-#left #phase {
+.phase {
     margin-left: 10px;
 }
-#phase p {
+.phase p {
     border: 1px solid var(--fg);
     float: left;
     width: 40px;
 }
-#left table {
+.left table {
 	width: 100%;
 }
 /* Right */
-#right {
+.right {
 	float: left;
 	margin-left: 10px;
 	width: 240px;
 }
-#right #resources, #right #villagers, #right #jobs {
+.right #resources, .right #villagers, .right #jobs {
 	background: var(--bg2);
 	margin-top: 10px;
 	padding: 10px;
 }
-#right #row, #right p {
+.right #row, .right p {
     height: 20px;
 }
-#right #row:after {
+.right #row:after {
 	clear: both;
 	content: "";
     display: block;
 }
-#right #row p:first-child {
+.right #row p:first-child {
 	float: left;
 }
-#right #row p:nth-child(even) {
+.right #row p:nth-child(even) {
 	float: right;
 }
-#right #jobs #row div:after {
+.right #jobs #row div:after {
 	clear: both;
 	content: "";
     display: block;
 }
-#right #jobs #row div:first-child {
+.right #jobs #row div:first-child {
     float: left;
     width: 170px;
 }
-#right #jobs #row div:last-child {
+.right #jobs #row div:last-child {
 	float: right;
 }
-#right #jobs button {
-    border: 1px solid var(--fg);
-    border-radius: 5px;
-    height: 20px;
-    width: 20px;
-}
-#right #th {
+.right .th {
     font-weight: bold;
 }
 /* bottom */
@@ -226,7 +258,7 @@ body {
     display:none;
 }
 #slider {
-    background-color: var(--bg);
+    border: 1px solid var(--fg);
     border-radius: 34px;
     bottom: 0;
     cursor: pointer;
@@ -237,15 +269,15 @@ body {
     transition: .2s;
 }
 #slider:before {
-    background-color: var(--bg2);
+    border: 1px solid var(--fg);
     border-radius: 50%;
-    bottom: 4px;
+    bottom: 3px;
     content: "";
-    height: 26px;
-    left: 4px;
+    height: 24px;
+    left: 3px;
     position: absolute;
     transition: .2s;
-    width: 26px;
+    width: 24px;
 }
 input:checked + #slider:before {
     background-color: var(--bg2);
@@ -259,43 +291,43 @@ input:checked + #slider:before {
 	body {
 		width: 375px;
 	}
-	#header {
+	.header {
 		border-bottom: 1px solid var(--fg);
 		height: 20px;
 		width: 355px;
 	}
-	#header h1 {
+	.header h1 {
 		font-size: 20px;
 	}
-	#left {
+	.left {
 		width: 375px;
 	}
-	#left #nav {
+	.left .nav {
 		border-bottom: 1px solid var(--fg);
 		margin: 0;
 	}
-	#left #nav button {
+	.left .nav button {
 		padding: 0;
 		width: 80px;
 	}
-	#left #content {
+	.left .content {
 		border-bottom: 1px solid var(--fg);
 		height: 200px;
 		margin: 0;
 	}
-	#left #left_bottom {
+	.left .left_bottom {
 		margin: 0;
 	}
-	#left #tasks, #left #phase {
+	.left .tasks, .left .phase {
 		border-bottom: 1px solid var(--fg);
 		float: none;
 		width: 355px;
 	}
-	#left #phase {
+	.left .phase {
 		height: 15px;
 		margin: 0;
 	}
-	#right {
+	.right {
 		display: none;
 	}
 	#bottom {

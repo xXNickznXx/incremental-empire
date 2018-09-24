@@ -271,6 +271,8 @@ $(document).ready(function () {
         return result;
     }
 
+    /******************** LEFT ********************/
+    //region
     /* Gebäude bauen */
     function build_hut() {
         $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
@@ -855,6 +857,23 @@ $(document).ready(function () {
         timer = curr_time_upgrade_barracks;
         upgrade = setInterval(upgrade_barracks, speed / 10);
     });
+    
+    /* Crafting */
+    $("#btn_armor").click(function () {
+        $("#coll_armor").slideToggle();
+    });
+    $("#btn_weapons").click(function () {
+        $("#coll_weapons").slideToggle();
+    });
+    $("#btn_melee").click(function () {
+        $("#coll_melee").slideToggle();
+    });
+    $("#btn_ranged").click(function () {
+        $("#coll_ranged").slideToggle();
+    });
+    $("#btn_gifts").click(function () {
+        $("#coll_gifts").slideToggle();
+    });
 
     /* Slider */
     $("#slider").click(function () {
@@ -881,6 +900,7 @@ $(document).ready(function () {
         document.documentElement.style.setProperty("--fg", "#222222");
         $("#switch input").prop("checked", false);
     }
+    //endregion
 
     /* Check Message count */
     function check_msg() {

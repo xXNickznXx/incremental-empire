@@ -6,12 +6,16 @@ Link zum [Spiel](https://nickweyermann.github.io).
 ### Features:
 - Bewohnerverwaltung
 - Gebäude bauen
-- Einige Optionen
+- Optionen
+  - Geschwindigkeit
+  - Light/Dark-Theme
 - Möglichkeit zu Speichern und zu Laden
 - Tooltips für Gebäude und Upgrades
 
 ### Kommende Features:
 - Weitere Optionen
+  - Schwierigkeit
+  - Automatisches Speichern
 - Crafting
   - Rüstungen
     - Eisenrüstung

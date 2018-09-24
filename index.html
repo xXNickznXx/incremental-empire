@@ -28,9 +28,9 @@
             <button id="btn_start">Start</button>
         </div>
         <div id="main" hidden>
-            <div id="header"><h1>Idle</h1></div>
-            <div id="left">
-                <div id="nav">
+            <div class="header"><h1>Idle</h1></div>
+            <div class="left">
+                <div class="nav">
                     <button id="btn_build">Bauen</button>
                     <button id="btn_upgrade">Ausbauen</button>
                     <button id="btn_craft" hidden>Herstellen</button>
@@ -38,7 +38,7 @@
                     <button id="btn_travel" hidden>Reise</button>
                     <button id="btn_options">Optionen</button>
                 </div>
-                <div id="content">
+                <div class="content">
                     <div id="build" hidden>
                         <table>
                             <thead>
@@ -50,8 +50,8 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button id="btn_hut">Hütte
-                                            <span id="tooltip">
+                                        <button id="btn_hut" class="btn_build">Hütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>50 Holz</li>
                                                     <li>10 Stein</li>
@@ -64,8 +64,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_huntinghut">Jagdhütte
-                                            <span id="tooltip">
+                                        <button id="btn_huntinghut" class="btn_build">Jagdhütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>150 Holz</li>
                                                     <li>30 Stein</li>
@@ -78,8 +78,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_storage">Lager
-                                            <span id="tooltip">
+                                        <button id="btn_storage" class="btn_build">Lager
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>100 Holz</li>
                                                     <li>100 Stein</li>
@@ -92,8 +92,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_lumberjackhut">Holzfällerhütte
-                                            <span id="tooltip">
+                                        <button id="btn_lumberjackhut" class="btn_build">Holzfällerhütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>200 Holz</li>
                                                     <li>50 Stein</li>
@@ -106,8 +106,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_sheepstall">Schafstall
-                                            <span id="tooltip">
+                                        <button id="btn_sheepstall" class="btn_build">Schafstall
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>250 Holz</li>
                                                     <li>75 Stein</li>
@@ -120,8 +120,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_quarry">Steinbruch
-                                            <span id="tooltip">
+                                        <button id="btn_quarry" class="btn_build">Steinbruch
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>300 Holz</li>
                                                     <li>100 Stein</li>
@@ -134,8 +134,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_coalmine">Kohlemine
-                                            <span id="tooltip">
+                                        <button id="btn_coalmine" class="btn_build">Kohlemine
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>300 Holz</li>
                                                     <li>150 Stein</li>
@@ -148,8 +148,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_ironmine">Eisenmine
-                                            <span id="tooltip">
+                                        <button id="btn_ironmine" class="btn_build">Eisenmine
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>400 Holz</li>
                                                     <li>200 Stein</li>
@@ -163,8 +163,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_tailorhouse">Schneiderhaus
-                                            <span id="tooltip">
+                                        <button id="btn_tailorhouse" class="btn_build">Schneiderhaus
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>500 Holz</li>
                                                     <li>400 Stein</li>
@@ -178,8 +178,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_forge">Schmiede
-                                            <span id="tooltip">
+                                        <button id="btn_forge" class="btn_build">Schmiede
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>600 Holz</li>
                                                     <li>450 Stein</li>
@@ -194,8 +194,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_market">Markt
-                                            <span id="tooltip">
+                                        <button id="btn_market" class="btn_build">Markt
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>750 Holz</li>
                                                     <li>500 Stein</li>
@@ -210,8 +210,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_scoutpost">Erkundungsposten
-                                            <span id="tooltip">
+                                        <button id="btn_scoutpost" class="btn_build">Erkundungsposten
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>1000 Holz</li>
                                                     <li>750 Stein</li>
@@ -226,8 +226,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_barracks">Kaserne
-                                            <span id="tooltip">
+                                        <button id="btn_barracks" class="btn_build">Kaserne
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>1500 Holz</li>
                                                     <li>1200 Stein</li>
@@ -256,8 +256,8 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_hut">Hütte
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_hut" class="btn_upgrade">Hütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>100 Holz</li>
                                                     <li>20 Stein</li>
@@ -270,8 +270,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_huntinghut">Jagdhütte
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_huntinghut" class="btn_upgrade">Jagdhütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>300 Holz</li>
                                                     <li>60 Stein</li>
@@ -284,8 +284,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_storage">Lager
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_storage" class="btn_upgrade">Lager
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>300 Holz</li>
                                                     <li>300 Stein</li>
@@ -298,8 +298,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_lumberjackhut">Holzfällerhütte
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_lumberjackhut" class="btn_upgrade">Holzfällerhütte
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>400 Holz</li>
                                                     <li>100 Stein</li>
@@ -312,8 +312,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_sheepstall">Schafstall
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_sheepstall" class="btn_upgrade">Schafstall
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>500 Holz</li>
                                                     <li>150 Stein</li>
@@ -326,8 +326,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_quarry">Steinbruch
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_quarry" class="btn_upgrade">Steinbruch
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>600 Holz</li>
                                                     <li>200 Stein</li>
@@ -340,8 +340,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_coalmine">Kohlemine
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_coalmine" class="btn_upgrade">Kohlemine
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>600 Holz</li>
                                                     <li>300 Stein</li>
@@ -354,8 +354,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_ironmine">Eisenmine
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_ironmine" class="btn_upgrade">Eisenmine
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>800 Holz</li>
                                                     <li>400 Stein</li>
@@ -369,8 +369,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_tailorhouse">Schneiderhaus
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_tailorhouse" class="btn_upgrade">Schneiderhaus
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>1000 Holz</li>
                                                     <li>800 Stein</li>
@@ -384,8 +384,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_forge">Schmiede
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_forge" class="btn_upgrade">Schmiede
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>1200 Holz</li>
                                                     <li>900 Stein</li>
@@ -400,8 +400,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_market">Markt
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_market" class="btn_upgrade">Markt
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>1500 Holz</li>
                                                     <li>1000 Stein</li>
@@ -416,8 +416,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_scoutpost">Erkundungsposten
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_scoutpost" class="btn_upgrade">Erkundungsposten
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>2000 Holz</li>
                                                     <li>1500 Stein</li>
@@ -432,8 +432,8 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <button id="btn_upgrade_barracks">Kaserne
-                                            <span id="tooltip">
+                                        <button id="btn_upgrade_barracks" class="btn_upgrade">Kaserne
+                                            <span class="tooltip">
                                                 <ul>
                                                     <li>3000 Holz</li>
                                                     <li>2400 Stein</li>
@@ -458,24 +458,99 @@
                                     <th>Herstellzeit</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Lederrüstung</td>
-                                    <td>1</td>
-                                    <td>1min</td>
-                                </tr>
-                                <tr>
-                                    <td>Eisenrüstung</td>
-                                    <td>1</td>
-                                    <td>2min</td>
-                                </tr>
-                                <tr>
-                                    <td>Gegenstand</td>
-                                    <td>1</td>
-                                    <td>1min</td>
-                                </tr>
-                            </tbody>
                         </table>
+                        <button id="btn_armor" class="btn_craft">Rüstungen</button>
+                        <div id="coll_armor" hidden>
+                            <div id="row_leatherarmor" class="row_craft">
+                                <p>Lederrüstung</p>
+                                <button id="dwn_leatherarmor" class="btn_dwn_up">-</button>
+                                <input id="num_leatherarmor" class="in_craft" type="number">
+                                <button id="up_leatherarmor" class="btn_dwn_up">+</button>
+                                <p id="time_leatherarmor">1min</p>
+                            </div>
+                            <div id="row_ironarmor" class="row_craft">
+                                <p>Eisenrüstung</p>
+                                <button id="dwn_ironarmor" class="btn_dwn_up">-</button>
+                                <input id="num_ironarmor" class="in_craft" type="number">
+                                <button id="up_ironarmor" class="btn_dwn_up">+</button>
+                                <p id="time_ironarmor">1min</p>
+                            </div>
+                        </div>
+                        <button id="btn_weapons" class="btn_craft">Waffen</button>
+                        <div id="coll_weapons" hidden>
+                            <button id="btn_melee" class="btn_craft">Nahkampf</button>
+                            <div id="coll_melee" hidden>
+                                <div id="row_sword" class="row_craft">
+                                    <p>Schwert</p>
+                                    <button id="dwn_sword" class="btn_dwn_up">-</button>
+                                    <input id="num_sword" class="in_craft" type="number">
+                                    <button id="up_sword" class="btn_dwn_up">+</button>
+                                    <p id="time_sword">1min</p>
+                                </div>
+                                <div id="row_axe" class="row_craft">
+                                    <p>Axt</p>
+                                    <button id="dwn_axe" class="btn_dwn_up">-</button>
+                                    <input id="num_axe" class="in_craft" type="number">
+                                    <button id="up_axe" class="btn_dwn_up">+</button>
+                                    <p id="time_axe">1min</p>
+                                </div>
+                                <div id="row_morningstar" class="row_craft">
+                                    <p>Morgenstern</p>
+                                    <button id="dwn_morningstar" class="btn_dwn_up">-</button>
+                                    <input id="num_morningstar" class="in_craft" type="number">
+                                    <button id="up_morningstar" class="btn_dwn_up">+</button>
+                                    <p id="time_morningstar">1min</p>
+                                </div>
+                            </div>
+                                <button id="btn_ranged" class="btn_craft">Fernkampf</button>
+                            <div id="coll_ranged" hidden>
+                                <div id="row_shortbow" class="row_craft">
+                                    <p>Kurzbogen</p>
+                                    <button id="dwn_shortbow" class="btn_dwn_up">-</button>
+                                    <input id="num_shortbow" class="in_craft" type="number">
+                                    <button id="up_shortbow" class="btn_dwn_up">+</button>
+                                    <p id="time_shortbow">1min</p>
+                                </div>
+                                <div id="row_longbow" class="row_craft">
+                                    <p>Langbogen</p>
+                                    <button id="dwn_longbow" class="btn_dwn_up">-</button>
+                                    <input id="num_longbow" class="in_craft" type="number">
+                                    <button id="up_longbow" class="btn_dwn_up">+</button>
+                                    <p id="time_longbow">1min</p>
+                                </div>
+                                <div id="row_crossbow" class="row_craft">
+                                    <p>Armbrust</p>
+                                    <button id="dwn_crossbow" class="btn_dwn_up">-</button>
+                                    <input id="num_crossbow" class="in_craft" type="number">
+                                    <button id="up_crossbow" class="btn_dwn_up">+</button>
+                                    <p id="time_crossbow">1min</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="btn_gifts" class="btn_craft">Geschenke</button>
+                        <div id="coll_gifts" hidden>
+                            <div id="row_tradegift" class="row_craft">
+                                <p>Handelsgeschenk</p>
+                                <button id="dwn_tradegift" class="btn_dwn_up">-</button>
+                                <input id="num_tradegift" class="in_craft" type="number">
+                                <button id="up_tradegift" class="btn_dwn_up">+</button>
+                                <p id="time_tradegift">1min</p>
+                            </div>
+                            <div id="row_peacegift" class="row_craft">
+                                <p>Friedensgeschenk</p>
+                                <button id="dwn_peacegift" class="btn_dwn_up">-</button>
+                                <input id="num_peacegift" class="in_craft" type="number">
+                                <button id="up_peacegift" class="btn_dwn_up">+</button>
+                                <p id="time_peacegift">1min</p>
+                            </div>
+                            <div id="row_poisongift" class="row_craft">
+                                <p>Vergiftetes Geschenk</p>
+                                <button id="dwn_poisongift" class="btn_dwn_up">-</button>
+                                <input id="num_poisongift" class="in_craft" type="number">
+                                <button id="up_poisongift" class="btn_dwn_up">+</button>
+                                <p id="time_poisongift">1min</p>
+                            </div>
+                        </div>
                     </div>
                     <div id="trade" hidden>
                         <table>
@@ -534,11 +609,11 @@
                             <input type="checkbox">
                             <span id="slider"></span>
                         </label>
-                        <button id="btn_save">Speichern</button>
+                        <button id="btn_save" class="btn_options">Speichern</button>
                     </div>
                 </div>
-                <div id="left_bottom">
-                    <div id="tasks">
+                <div class="left_bottom">
+                    <div class="tasks">
                         <table>
                             <thead>
                                 <tr>
@@ -552,13 +627,13 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="phase">
+                    <div id="phase" class="phase">
                     </div>
                 </div>
             </div>
-            <div id="right">
+            <div class="right">
                 <div id="resources">
-                    <p id="th">Ressourcen</p>
+                    <p class="th">Ressourcen</p>
                     <div id="row">
                         <p>Nahrung</p>
                         <p id="food"></p>
@@ -601,7 +676,7 @@
                     </div>
                 </div>
                 <div id="villagers">
-                    <p id="th">Bewohner</p>
+                    <p class="th">Bewohner</p>
                     <div id="row">
                         <p>Gesamt</p>
                         <p id="villager"></p>
@@ -612,14 +687,14 @@
                     </div>
                 </div>
                 <div id="jobs">
-                    <p id="th">Jobs</p>
+                    <p class="th">Jobs</p>
                     <div id="row">
                         <div>
                             <p>Sammler</p>
                             <p id="gatherer"></p>
                         </div>
                         <div>
-                            <button id="dwn_gatherer">-</button><button id="up_gatherer">+</button>
+                            <button id="dwn_gatherer" class="btn_dwn_up">-</button><button id="up_gatherer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row">
@@ -628,7 +703,7 @@
                             <p id="lumberjack"></p>
                         </div>
                         <div>
-                            <button id="dwn_lumberjack">-</button><button id="up_lumberjack">+</button>
+                            <button id="dwn_lumberjack" class="btn_dwn_up">-</button><button id="up_lumberjack" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row">
@@ -637,7 +712,7 @@
                             <p id="quarryman"></p>
                         </div>
                         <div>
-                            <button id="dwn_quarryman">-</button><button id="up_quarryman">+</button>
+                            <button id="dwn_quarryman" class="btn_dwn_up">-</button><button id="up_quarryman" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row">
@@ -646,7 +721,7 @@
                             <p id="worker"></p>
                         </div>
                         <div>
-                            <button id="dwn_worker">-</button><button id="up_worker">+</button>
+                            <button id="dwn_worker" class="btn_dwn_up">-</button><button id="up_worker" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -655,7 +730,7 @@
                             <p id="hunter"></p>
                         </div>
                         <div>
-                            <button id="dwn_hunter">-</button><button id="up_hunter">+</button>
+                            <button id="dwn_hunter" class="btn_dwn_up">-</button><button id="up_hunter" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -664,7 +739,7 @@
                             <p id="shepherd"></p>
                         </div>
                         <div>
-                            <button id="dwn_shepherd">-</button><button id="up_shepherd">+</button>
+                            <button id="dwn_shepherd" class="btn_dwn_up">-</button><button id="up_shepherd" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -673,7 +748,7 @@
                             <p id="coalminer"></p>
                         </div>
                         <div>
-                            <button id="dwn_coalminer">-</button><button id="up_coalminer">+</button>
+                            <button id="dwn_coalminer" class="btn_dwn_up">-</button><button id="up_coalminer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -682,7 +757,7 @@
                             <p id="ironminer"></p>
                         </div>
                         <div>
-                            <button id="dwn_ironminer">-</button><button id="up_ironminer">+</button>
+                            <button id="dwn_ironminer" class="btn_dwn_up">-</button><button id="up_ironminer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -691,7 +766,7 @@
                             <p id="tailor"></p>
                         </div>
                         <div>
-                            <button id="dwn_tailor">-</button><button id="up_tailor">+</button>
+                            <button id="dwn_tailor" class="btn_dwn_up">-</button><button id="up_tailor" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -700,7 +775,7 @@
                             <p id="smith"></p>
                         </div>
                         <div>
-                            <button id="dwn_smith">-</button><button id="up_smith">+</button>
+                            <button id="dwn_smith" class="btn_dwn_up">-</button><button id="up_smith" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -709,7 +784,7 @@
                             <p id="scout"></p>
                         </div>
                         <div>
-                            <button id="dwn_scout">-</button><button id="up_scout">+</button>
+                            <button id="dwn_scout" class="btn_dwn_up">-</button><button id="up_scout" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" hidden>
@@ -718,7 +793,7 @@
                             <p id="knight"></p>
                         </div>
                         <div>
-                            <button id="dwn_knight">-</button><button id="up_knight">+</button>
+                            <button id="dwn_knight" class="btn_dwn_up">-</button><button id="up_knight" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                 </div>
