@@ -169,7 +169,7 @@ h1 {
 .tasks, .phase {
 	background: var(--bg2);
     float: left;
-    height: 60px;
+    height: 40px;
 	padding: 10px;
     width: 300px;
 }
@@ -307,7 +307,7 @@ input:checked + .slider:before {
 	}
 	.content {
 		border-bottom: 1px solid var(--fg);
-		height: 160px;
+		height: 180px;
 		margin: 0;
 	}
 	.left_bottom {
@@ -328,7 +328,7 @@ input:checked + .slider:before {
     }
 	.right {
         display: none;
-        height: 180px;
+        height: 200px;
 		margin: -298px 0 0 0;
         overflow: auto;
         width: 100%;
