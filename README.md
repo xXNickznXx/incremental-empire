@@ -11,6 +11,7 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - Light/Dark-Theme
 - Möglichkeit zu Speichern und zu Laden
 - Tooltips für Gebäude und Upgrades
+- Mobileansicht
 
 ## Kommende Features:
 ### Weitere Optionen
