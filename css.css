@@ -307,7 +307,7 @@ input:checked + .slider:before {
 	}
 	.content {
 		border-bottom: 1px solid var(--fg);
-		height: 200px;
+		height: 160px;
 		margin: 0;
 	}
 	.left_bottom {
@@ -328,7 +328,7 @@ input:checked + .slider:before {
     }
 	.right {
         display: none;
-        height: 220px;
+        height: 180px;
 		margin: -338px 0 0 0;
         overflow: auto;
         width: 100%;
