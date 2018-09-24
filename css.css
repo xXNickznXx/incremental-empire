@@ -329,7 +329,7 @@ input:checked + .slider:before {
 	.right {
         display: none;
         height: 180px;
-		margin: -338px 0 0 0;
+		margin: -298px 0 0 0;
         overflow: auto;
         width: 100%;
 	}
