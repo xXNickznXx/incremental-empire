@@ -184,6 +184,15 @@ h1 {
 .left table {
 	width: 100%;
 }
+.coll_craft {
+    border: 1px solid var(--fg);
+    border-top: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.coll_craft.nested {
+    padding: 5px;
+}
 /* Right */
 .right {
 	float: left;
