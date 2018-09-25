@@ -985,18 +985,18 @@ $("#btn_start").click(function () {
             trade_bonus = contents.$trade_bonus;
 
             hut = contents.$hut;
-            huntinghut = contents.$huntinghut;
+            huntinghut = contents.$huntinghut;        up_huntinghut = contents.$up_huntinghut;
             storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
-            lumberjackhut = contents.$lumberjackhut;
-            sheepstall = contents.$sheepstall;
-            quarry = contents.$quarry;
-            coalmine = contents.$coalmine;
-            ironmine = contents.$ironmine;
-            tailorhouse = contents.$tailorhouse;
-            forge = contents.$forge;
-            market = contents.$market;
-            scoutpost = contents.$scoutpost;
-            barracks = contents.$barracks;
+            lumberjackhut = contents.$lumberjackhut;  up_lumberjackhut = contents.$up_lumberjackhut;
+            sheepstall = contents.$sheepstall;        up_sheepstall = contents.$up_sheepstall;
+            quarry = contents.$quarry;                up_quarry = contents.$up_quarry;
+            coalmine = contents.$coalmine;            up_coalmine = contents.$up_coalmine;
+            ironmine = contents.$ironmine;            up_ironmine = contents.$up_ironmine;
+            tailorhouse = contents.$tailorhouse;      up_tailorhouse = contents.$up_tailorhouse;
+            forge = contents.$forge;                  up_forge = contents.$up_forge;
+            market = contents.$market;                up_market = contents.$up_market;
+            scoutpost = contents.$scoutpost;          up_scoutpost = contents.$up_scoutpost;
+            barracks = contents.$barracks;            up_barracks = contents.$up_barracks;
         };
         reader.readAsText(file);
     }
