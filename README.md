@@ -17,6 +17,7 @@ Link zum [Spiel](https://nickweyermann.github.io).
 ### Weitere Optionen
 - Schwierigkeit
 - Automatisches Speichern
+- Abbruchmöglichkeit für Aufträge
 ### Crafting
 - Rüstungen
   - Eisenrüstung

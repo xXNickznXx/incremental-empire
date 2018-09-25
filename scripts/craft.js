@@ -287,6 +287,93 @@ $("#dwn_crossbow").mousedown(function () {
 });
 
 
+var tradegift_num = 0,
+    tradegift_p,
+    tradegift_m,
+    tradegift_t;
+$("#up_tradegift").click(function () {
+    tradegift_num += 1;
+    $("#num_tradegift").text(tradegift_num);
+});
+function tradegift_plus() {
+    tradegift_num += 1;
+    $("#num_tradegift").text(tradegift_num);
+}
+$("#up_tradegift").mousedown(function () {
+    tradegift_t = setTimeout(function () {tradegift_p = setInterval(tradegift_plus, 50);}, 500);
+});
+
+$("#dwn_tradegift").click(function () {
+    tradegift_num -= 1;
+    $("#num_tradegift").text(tradegift_num);
+});
+function tradegift_minus() {
+    tradegift_num -= 1;
+    $("#num_tradegift").text(tradegift_num);
+}
+$("#dwn_tradegift").mousedown(function () {
+    tradegift_t = setTimeout(function () {tradegift_m = setInterval(tradegift_minus, 50);}, 500);
+});
+
+
+var peacegift_num = 0,
+    peacegift_p,
+    peacegift_m,
+    peacegift_t;
+$("#up_peacegift").click(function () {
+    peacegift_num += 1;
+    $("#num_peacegift").text(peacegift_num);
+});
+function peacegift_plus() {
+    peacegift_num += 1;
+    $("#num_peacegift").text(peacegift_num);
+}
+$("#up_peacegift").mousedown(function () {
+    peacegift_t = setTimeout(function () {peacegift_p = setInterval(peacegift_plus, 50);}, 500);
+});
+
+$("#dwn_peacegift").click(function () {
+    peacegift_num -= 1;
+    $("#num_peacegift").text(peacegift_num);
+});
+function peacegift_minus() {
+    peacegift_num -= 1;
+    $("#num_peacegift").text(peacegift_num);
+}
+$("#dwn_peacegift").mousedown(function () {
+    peacegift_t = setTimeout(function () {peacegift_m = setInterval(peacegift_minus, 50);}, 500);
+});
+
+
+var poisongift_num = 0,
+    poisongift_p,
+    poisongift_m,
+    poisongift_t;
+$("#up_poisongift").click(function () {
+    poisongift_num += 1;
+    $("#num_poisongift").text(poisongift_num);
+});
+function poisongift_plus() {
+    poisongift_num += 1;
+    $("#num_poisongift").text(poisongift_num);
+}
+$("#up_poisongift").mousedown(function () {
+    poisongift_t = setTimeout(function () {poisongift_p = setInterval(poisongift_plus, 50);}, 500);
+});
+
+$("#dwn_poisongift").click(function () {
+    poisongift_num -= 1;
+    $("#num_poisongift").text(poisongift_num);
+});
+function poisongift_minus() {
+    poisongift_num -= 1;
+    $("#num_poisongift").text(poisongift_num);
+}
+$("#dwn_poisongift").mousedown(function () {
+    poisongift_t = setTimeout(function () {poisongift_m = setInterval(poisongift_minus, 50);}, 500);
+});
+
+
 $("html").mouseup(function () {
     clearInterval(leatherarmor_p);
     clearInterval(leatherarmor_m);
@@ -312,4 +399,13 @@ $("html").mouseup(function () {
     clearInterval(crossbow_p);
     clearInterval(crossbow_m);
     clearInterval(crossbow_t);
+    clearInterval(tradegift_p);
+    clearInterval(tradegift_m);
+    clearInterval(tradegift_t);
+    clearInterval(peacegift_p);
+    clearInterval(peacegift_m);
+    clearInterval(peacegift_t);
+    clearInterval(poisongift_p);
+    clearInterval(poisongift_m);
+    clearInterval(poisongift_t);
 });

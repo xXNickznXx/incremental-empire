@@ -22,7 +22,8 @@ button:disabled {
 }
 .num {
     height: 26px;
-    width: 40px;
+    text-align: right;
+    width: 30px;
 }
 .in {
     border: 1px solid var(--fg);
@@ -128,11 +129,16 @@ h1 {
 	width: 130px;
 }
 .btn_craft {
-    border: 1px solid var(--fg);
-    border-radius: 5px;
+    background: var(--bg);
     height: 32px;
     padding: 5px;
     width: 100%;
+}
+.btn_craft.m {
+    margin-top: 5px;
+}
+.btn_craft.nested {
+    background: var(--bg2);
 }
 .row_craft:after {
 	clear: both;
@@ -189,13 +195,12 @@ h1 {
 	width: 100%;
 }
 .coll_craft {
-    border: 1px solid var(--fg);
-    border-top: 0px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background: var(--bg);
+    padding: 5px;
 }
 .coll_craft.nested {
-    padding: 5px;
+    background: var(--bg2);
+    padding: 0;
 }
 /* Right */
 .right {
