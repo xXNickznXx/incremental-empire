@@ -1,10 +1,6 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
 
-var num = 0;
-var sword_p;
-var sword_m;
-var sword_t;
 
 
 
@@ -59,36 +55,261 @@ $("#btn_gifts").click(function () {
     $("#coll_gifts").slideToggle();
 });
 
-$("#up_sword").click(function () {
-    num += 1;
-    $("#num_sword").val(num);
+var leatherarmor_num = 0,
+    leatherarmor_p,
+    leatherarmor_m,
+    leatherarmor_t;
+$("#up_leatherarmor").click(function () {
+    leatherarmor_num += 1;
+    $("#num_leatherarmor").text(leatherarmor_num);
+});
+function leatherarmor_plus() {
+    leatherarmor_num += 1;
+    $("#num_leatherarmor").text(leatherarmor_num);
+}
+$("#up_leatherarmor").mousedown(function () {
+    leatherarmor_t = setTimeout(function () {leatherarmor_p = setInterval(leatherarmor_plus, 50);}, 500);
 });
 
-$("#up_sword").mousedown(function () {
-    sword_t = setTimeout(function () {sword_p = setInterval(sword_plus, 50)}, 500);
+$("#dwn_leatherarmor").click(function () {
+    leatherarmor_num -= 1;
+    $("#num_leatherarmor").text(leatherarmor_num);
 });
-$("#up_sword").mouseup(function () {
-    clearInterval(sword_p);
-    clearInterval(sword_t);
+function leatherarmor_minus() {
+    leatherarmor_num -= 1;
+    $("#num_leatherarmor").text(leatherarmor_num);
+}
+$("#dwn_leatherarmor").mousedown(function () {
+    leatherarmor_t = setTimeout(function () {leatherarmor_m = setInterval(leatherarmor_minus, 50);}, 500);
+});
+
+
+var ironarmor_num = 0,
+    ironarmor_p,
+    ironarmor_m,
+    ironarmor_t;
+$("#up_ironarmor").click(function () {
+    ironarmor_num += 1;
+    $("#num_ironarmor").text(ironarmor_num);
+});
+function ironarmor_plus() {
+    ironarmor_num += 1;
+    $("#num_ironarmor").text(ironarmor_num);
+}
+$("#up_ironarmor").mousedown(function () {
+    ironarmor_t = setTimeout(function () {ironarmor_p = setInterval(ironarmor_plus, 50);}, 500);
+});
+
+$("#dwn_ironarmor").click(function () {
+    ironarmor_num -= 1;
+    $("#num_ironarmor").text(ironarmor_num);
+});
+function ironarmor_minus() {
+    ironarmor_num -= 1;
+    $("#num_ironarmor").text(ironarmor_num);
+}
+$("#dwn_ironarmor").mousedown(function () {
+    ironarmor_t = setTimeout(function () {ironarmor_m = setInterval(ironarmor_minus, 50);}, 500);
+});
+
+
+var sword_num = 0,
+    sword_p,
+    sword_m,
+    sword_t;
+$("#up_sword").click(function () {
+    sword_num += 1;
+    $("#num_sword").text(sword_num);
 });
 function sword_plus() {
-    num += 1;
-    $("#num_sword").val(num);
+    sword_num += 1;
+    $("#num_sword").text(sword_num);
 }
+$("#up_sword").mousedown(function () {
+    sword_t = setTimeout(function () {sword_p = setInterval(sword_plus, 50);}, 500);
+});
 
 $("#dwn_sword").click(function () {
-    num -= 1;
-    $("#num_sword").val(num);
-});
-
-$("#dwn_sword").mousedown(function () {
-    sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50)}, 500);
-});
-$("#dwn_sword").mouseup(function () {
-    clearInterval(sword_m);
-    clearInterval(sword_t);
+    sword_num -= 1;
+    $("#num_sword").text(sword_num);
 });
 function sword_minus() {
-    num -= 1;
-    $("#num_sword").val(num);
+    sword_num -= 1;
+    $("#num_sword").text(sword_num);
 }
+$("#dwn_sword").mousedown(function () {
+    sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50);}, 500);
+});
+
+
+var axe_num = 0,
+    axe_p,
+    axe_m,
+    axe_t;
+$("#up_axe").click(function () {
+    axe_num += 1;
+    $("#num_axe").text(axe_num);
+});
+function axe_plus() {
+    axe_num += 1;
+    $("#num_axe").text(axe_num);
+}
+$("#up_axe").mousedown(function () {
+    axe_t = setTimeout(function () {axe_p = setInterval(axe_plus, 50);}, 500);
+});
+
+$("#dwn_axe").click(function () {
+    axe_num -= 1;
+    $("#num_axe").text(axe_num);
+});
+function axe_minus() {
+    axe_num -= 1;
+    $("#num_axe").text(axe_num);
+}
+$("#dwn_axe").mousedown(function () {
+    axe_t = setTimeout(function () {axe_m = setInterval(axe_minus, 50);}, 500);
+});
+
+
+var morningstar_num = 0,
+    morningstar_p,
+    morningstar_m,
+    morningstar_t;
+$("#up_morningstar").click(function () {
+    morningstar_num += 1;
+    $("#num_morningstar").text(morningstar_num);
+});
+function morningstar_plus() {
+    morningstar_num += 1;
+    $("#num_morningstar").text(morningstar_num);
+}
+$("#up_morningstar").mousedown(function () {
+    morningstar_t = setTimeout(function () {morningstar_p = setInterval(morningstar_plus, 50);}, 500);
+});
+
+$("#dwn_morningstar").click(function () {
+    morningstar_num -= 1;
+    $("#num_morningstar").text(morningstar_num);
+});
+function morningstar_minus() {
+    morningstar_num -= 1;
+    $("#num_morningstar").text(morningstar_num);
+}
+$("#dwn_morningstar").mousedown(function () {
+    morningstar_t = setTimeout(function () {morningstar_m = setInterval(morningstar_minus, 50);}, 500);
+});
+
+
+var shortbow_num = 0,
+    shortbow_p,
+    shortbow_m,
+    shortbow_t;
+$("#up_shortbow").click(function () {
+    shortbow_num += 1;
+    $("#num_shortbow").text(shortbow_num);
+});
+function shortbow_plus() {
+    shortbow_num += 1;
+    $("#num_shortbow").text(shortbow_num);
+}
+$("#up_shortbow").mousedown(function () {
+    shortbow_t = setTimeout(function () {shortbow_p = setInterval(shortbow_plus, 50);}, 500);
+});
+
+$("#dwn_shortbow").click(function () {
+    shortbow_num -= 1;
+    $("#num_shortbow").text(shortbow_num);
+});
+function shortbow_minus() {
+    shortbow_num -= 1;
+    $("#num_shortbow").text(shortbow_num);
+}
+$("#dwn_shortbow").mousedown(function () {
+    shortbow_t = setTimeout(function () {shortbow_m = setInterval(shortbow_minus, 50);}, 500);
+});
+
+
+var longbow_num = 0,
+    longbow_p,
+    longbow_m,
+    longbow_t;
+$("#up_longbow").click(function () {
+    longbow_num += 1;
+    $("#num_longbow").text(longbow_num);
+});
+function longbow_plus() {
+    longbow_num += 1;
+    $("#num_longbow").text(longbow_num);
+}
+$("#up_longbow").mousedown(function () {
+    longbow_t = setTimeout(function () {longbow_p = setInterval(longbow_plus, 50);}, 500);
+});
+
+$("#dwn_longbow").click(function () {
+    longbow_num -= 1;
+    $("#num_longbow").text(longbow_num);
+});
+function longbow_minus() {
+    longbow_num -= 1;
+    $("#num_longbow").text(longbow_num);
+}
+$("#dwn_longbow").mousedown(function () {
+    longbow_t = setTimeout(function () {longbow_m = setInterval(longbow_minus, 50);}, 500);
+});
+
+
+var crossbow_num = 0,
+    crossbow_p,
+    crossbow_m,
+    crossbow_t;
+$("#up_crossbow").click(function () {
+    crossbow_num += 1;
+    $("#num_crossbow").text(crossbow_num);
+});
+function crossbow_plus() {
+    crossbow_num += 1;
+    $("#num_crossbow").text(crossbow_num);
+}
+$("#up_crossbow").mousedown(function () {
+    crossbow_t = setTimeout(function () {crossbow_p = setInterval(crossbow_plus, 50);}, 500);
+});
+
+$("#dwn_crossbow").click(function () {
+    crossbow_num -= 1;
+    $("#num_crossbow").text(crossbow_num);
+});
+function crossbow_minus() {
+    crossbow_num -= 1;
+    $("#num_crossbow").text(crossbow_num);
+}
+$("#dwn_crossbow").mousedown(function () {
+    crossbow_t = setTimeout(function () {crossbow_m = setInterval(crossbow_minus, 50);}, 500);
+});
+
+
+$("html").mouseup(function () {
+    clearInterval(leatherarmor_p);
+    clearInterval(leatherarmor_m);
+    clearInterval(leatherarmor_t);
+    clearInterval(ironarmor_p);
+    clearInterval(ironarmor_m);
+    clearInterval(ironarmor_t);
+    clearInterval(sword_p);
+    clearInterval(sword_m);
+    clearInterval(sword_t);
+    clearInterval(axe_p);
+    clearInterval(axe_m);
+    clearInterval(axe_t);
+    clearInterval(morningstar_p);
+    clearInterval(morningstar_m);
+    clearInterval(morningstar_t);
+    clearInterval(shortbow_p);
+    clearInterval(shortbow_m);
+    clearInterval(shortbow_t);
+    clearInterval(longbow_p);
+    clearInterval(longbow_m);
+    clearInterval(longbow_t);
+    clearInterval(crossbow_p);
+    clearInterval(crossbow_m);
+    clearInterval(crossbow_t);
+});

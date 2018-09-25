@@ -9,7 +9,7 @@
    "$clothes": 500,
    "$armor": 0,
    "$sword": 0,
-   "$resources_max": 500,
+   "$supplies_max": 500,
    "$villager": 100,
    "$villager_unused": 0,
    "$villager_max": 100,

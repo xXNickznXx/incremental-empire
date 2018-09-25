@@ -27,7 +27,7 @@
             <div class="header"><h1>Idle</h1></div>
             <div class="left">
                 <div class="nav">
-                    <button id="btn_mobile" class="btn_mobile">Ressourcen &amp; Bewohner</button>
+                    <button id="btn_mobile" class="btn_mobile">Vorräte &amp; Bewohner</button>
                     <button id="btn_build">Bauen</button>
                     <button id="btn_upgrade">Ausbauen</button>
                     <button id="btn_craft" hidden>Herstellen</button>
@@ -81,7 +81,7 @@
                                                     <li>100 Holz</li>
                                                     <li>100 Stein</li>
                                                 </ul>
-                                                <p>Max aller Ressourcen: + 400</p>
+                                                <p>Max aller Vorräte: + 400</p>
                                             </span>
                                         </button>
                                     </td>
@@ -287,7 +287,7 @@
                                                     <li>300 Holz</li>
                                                     <li>300 Stein</li>
                                                 </ul>
-                                                <p>Max aller Ressourcen: + 500</p>
+                                                <p>Max aller Vorräte: + 500</p>
                                             </span>
                                         </button>
                                     </td>
@@ -461,14 +461,14 @@
                             <div id="row_leatherarmor" class="row_craft">
                                 <p>Lederrüstung</p>
                                 <button id="dwn_leatherarmor" class="btn_dwn_up">-</button>
-                                <input id="num_leatherarmor" class="in" type="number" readonly>
+                                <p id="num_leatherarmor" class="num"></p>
                                 <button id="up_leatherarmor" class="btn_dwn_up">+</button>
                                 <p id="time_leatherarmor">1min</p>
                             </div>
                             <div id="row_ironarmor" class="row_craft">
                                 <p>Eisenrüstung</p>
                                 <button id="dwn_ironarmor" class="btn_dwn_up">-</button>
-                                <input id="num_ironarmor" class="in" type="number" readonly>
+                                <p id="num_ironarmor" class="num"></p>
                                 <button id="up_ironarmor" class="btn_dwn_up">+</button>
                                 <p id="time_ironarmor">1min</p>
                             </div>
@@ -480,21 +480,21 @@
                                 <div id="row_sword" class="row_craft">
                                     <p>Schwert</p>
                                     <button id="dwn_sword" class="btn_dwn_up">-</button>
-                                    <input id="num_sword" class="in" type="number" readonly>
+                                    <p id="num_sword" class="num"></p>
                                     <button id="up_sword" class="btn_dwn_up">+</button>
                                     <p id="time_sword">1min</p>
                                 </div>
                                 <div id="row_axe" class="row_craft">
                                     <p>Axt</p>
                                     <button id="dwn_axe" class="btn_dwn_up">-</button>
-                                    <input id="num_axe" class="in" type="number" readonly>
+                                    <p id="num_axe" class="num"></p>
                                     <button id="up_axe" class="btn_dwn_up">+</button>
                                     <p id="time_axe">1min</p>
                                 </div>
                                 <div id="row_morningstar" class="row_craft">
                                     <p>Morgenstern</p>
                                     <button id="dwn_morningstar" class="btn_dwn_up">-</button>
-                                    <input id="num_morningstar" class="in" type="number" readonly>
+                                    <p id="num_morningstar" class="num"></p>
                                     <button id="up_morningstar" class="btn_dwn_up">+</button>
                                     <p id="time_morningstar">1min</p>
                                 </div>
@@ -504,21 +504,21 @@
                                 <div id="row_shortbow" class="row_craft">
                                     <p>Kurzbogen</p>
                                     <button id="dwn_shortbow" class="btn_dwn_up">-</button>
-                                    <input id="num_shortbow" class="in" type="number" readonly>
+                                    <p id="num_shortbow" class="num"></p>
                                     <button id="up_shortbow" class="btn_dwn_up">+</button>
                                     <p id="time_shortbow">1min</p>
                                 </div>
                                 <div id="row_longbow" class="row_craft">
                                     <p>Langbogen</p>
                                     <button id="dwn_longbow" class="btn_dwn_up">-</button>
-                                    <input id="num_longbow" class="in" type="number" readonly>
+                                    <p id="num_longbow" class="num"></p>
                                     <button id="up_longbow" class="btn_dwn_up">+</button>
                                     <p id="time_longbow">1min</p>
                                 </div>
                                 <div id="row_crossbow" class="row_craft">
                                     <p>Armbrust</p>
                                     <button id="dwn_crossbow" class="btn_dwn_up">-</button>
-                                    <input id="num_crossbow" class="in" type="number" readonly>
+                                    <p id="num_crossbow" class="num"></p>
                                     <button id="up_crossbow" class="btn_dwn_up">+</button>
                                     <p id="time_crossbow">1min</p>
                                 </div>
@@ -529,21 +529,21 @@
                             <div id="row_tradegift" class="row_craft">
                                 <p>Handelsgeschenk</p>
                                 <button id="dwn_tradegift" class="btn_dwn_up">-</button>
-                                <input id="num_tradegift" class="in" type="number" readonly>
+                                <p id="num_tradegift" class="num"></p>
                                 <button id="up_tradegift" class="btn_dwn_up">+</button>
                                 <p id="time_tradegift">1min</p>
                             </div>
                             <div id="row_peacegift" class="row_craft">
                                 <p>Friedensgeschenk</p>
                                 <button id="dwn_peacegift" class="btn_dwn_up">-</button>
-                                <input id="num_peacegift" class="in" type="number" readonly>
+                                <p id="num_peacegift" class="num"></p>
                                 <button id="up_peacegift" class="btn_dwn_up">+</button>
                                 <p id="time_peacegift">1min</p>
                             </div>
                             <div id="row_poisongift" class="row_craft">
                                 <p>Vergiftetes Geschenk</p>
                                 <button id="dwn_poisongift" class="btn_dwn_up">-</button>
-                                <input id="num_poisongift" class="in" type="number" readonly>
+                                <p id="num_poisongift" class="num"></p>
                                 <button id="up_poisongift" class="btn_dwn_up">+</button>
                                 <p id="time_poisongift">1min</p>
                             </div>
@@ -572,7 +572,7 @@
                                 <tr>
                                     <td>Gegenstand</td>
                                     <td>1/3</td>
-                                    <td>Ressourcen</td>
+                                    <td>Vorräte</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -627,10 +627,13 @@
                     <div id="phase" class="phase">
                     </div>
                 </div>
+                <div id="bottom" class="bottom" hidden>
+                    <div id="msg" class="msg"></div>
+                </div>
             </div>
             <div id="right" class="right">
-                <div id="resources" class="resources">
-                    <p class="th">Ressourcen</p>
+                <div id="supplies" class="supplies">
+                    <p class="th">Vorräte</p>
                     <div id="row" class="row">
                         <p>Nahrung</p>
                         <p id="food"></p>
@@ -691,7 +694,8 @@
                             <p id="gatherer"></p>
                         </div>
                         <div>
-                            <button id="dwn_gatherer" class="btn_dwn_up">-</button><button id="up_gatherer" class="btn_dwn_up">+</button>
+                            <button id="dwn_gatherer" class="btn_dwn_up">-</button>
+                            <button id="up_gatherer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row">
@@ -700,7 +704,8 @@
                             <p id="lumberjack"></p>
                         </div>
                         <div>
-                            <button id="dwn_lumberjack" class="btn_dwn_up">-</button><button id="up_lumberjack" class="btn_dwn_up">+</button>
+                            <button id="dwn_lumberjack" class="btn_dwn_up">-</button>
+                            <button id="up_lumberjack" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row">
@@ -709,7 +714,8 @@
                             <p id="quarryman"></p>
                         </div>
                         <div>
-                            <button id="dwn_quarryman" class="btn_dwn_up">-</button><button id="up_quarryman" class="btn_dwn_up">+</button>
+                            <button id="dwn_quarryman" class="btn_dwn_up">-</button>
+                            <button id="up_quarryman" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row">
@@ -718,7 +724,8 @@
                             <p id="worker"></p>
                         </div>
                         <div>
-                            <button id="dwn_worker" class="btn_dwn_up">-</button><button id="up_worker" class="btn_dwn_up">+</button>
+                            <button id="dwn_worker" class="btn_dwn_up">-</button>
+                            <button id="up_worker" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -727,7 +734,8 @@
                             <p id="hunter"></p>
                         </div>
                         <div>
-                            <button id="dwn_hunter" class="btn_dwn_up">-</button><button id="up_hunter" class="btn_dwn_up">+</button>
+                            <button id="dwn_hunter" class="btn_dwn_up">-</button>
+                            <button id="up_hunter" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -736,7 +744,8 @@
                             <p id="shepherd"></p>
                         </div>
                         <div>
-                            <button id="dwn_shepherd" class="btn_dwn_up">-</button><button id="up_shepherd" class="btn_dwn_up">+</button>
+                            <button id="dwn_shepherd" class="btn_dwn_up">-</button>
+                            <button id="up_shepherd" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -745,7 +754,8 @@
                             <p id="coalminer"></p>
                         </div>
                         <div>
-                            <button id="dwn_coalminer" class="btn_dwn_up">-</button><button id="up_coalminer" class="btn_dwn_up">+</button>
+                            <button id="dwn_coalminer" class="btn_dwn_up">-</button>
+                            <button id="up_coalminer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -754,7 +764,8 @@
                             <p id="ironminer"></p>
                         </div>
                         <div>
-                            <button id="dwn_ironminer" class="btn_dwn_up">-</button><button id="up_ironminer" class="btn_dwn_up">+</button>
+                            <button id="dwn_ironminer" class="btn_dwn_up">-</button>
+                            <button id="up_ironminer" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -763,7 +774,8 @@
                             <p id="tailor"></p>
                         </div>
                         <div>
-                            <button id="dwn_tailor" class="btn_dwn_up">-</button><button id="up_tailor" class="btn_dwn_up">+</button>
+                            <button id="dwn_tailor" class="btn_dwn_up">-</button>
+                            <button id="up_tailor" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -772,7 +784,8 @@
                             <p id="smith"></p>
                         </div>
                         <div>
-                            <button id="dwn_smith" class="btn_dwn_up">-</button><button id="up_smith" class="btn_dwn_up">+</button>
+                            <button id="dwn_smith" class="btn_dwn_up">-</button>
+                            <button id="up_smith" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -781,7 +794,8 @@
                             <p id="scout"></p>
                         </div>
                         <div>
-                            <button id="dwn_scout" class="btn_dwn_up">-</button><button id="up_scout" class="btn_dwn_up">+</button>
+                            <button id="dwn_scout" class="btn_dwn_up">-</button>
+                            <button id="up_scout" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                     <div id="row" class="row" hidden>
@@ -790,23 +804,21 @@
                             <p id="knight"></p>
                         </div>
                         <div>
-                            <button id="dwn_knight" class="btn_dwn_up">-</button><button id="up_knight" class="btn_dwn_up">+</button>
+                            <button id="dwn_knight" class="btn_dwn_up">-</button>
+                            <button id="up_knight" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="bottom" class="bottom" hidden>
-            <div id="msg" class="msg"></div>
-        </div>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script type="text/javascript" src="scripts/js.cookie.min.js"></script>
-        <script type="text/javascript" src="scripts/js.js"></script>
-        <script type="text/javascript" src="scripts/nav.js"></script>
-        <script type="text/javascript" src="scripts/build.js"></script>
-        <script type="text/javascript" src="scripts/upgrade.js"></script>
-        <script type="text/javascript" src="scripts/craft.js"></script>
-        <script type="text/javascript" src="scripts/options.js"></script>
-        <script type="text/javascript" src="scripts/jobs.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="scripts/js.cookie.min.js"></script>
+        <script src="scripts/js.js"></script>
+        <script src="scripts/nav.js"></script>
+        <script src="scripts/build.js"></script>
+        <script src="scripts/upgrade.js"></script>
+        <script src="scripts/craft.js"></script>
+        <script src="scripts/options.js"></script>
+        <script src="scripts/jobs.js"></script>
     </body>
 </html>

@@ -38,7 +38,7 @@ $("#btn_save").click(function () {
         $clothes: clothes,
         $armor: armor,
         $sword: sword,
-        $resources_max: resources_max,
+        $supplies_max: supplies_max,
 
         $villager: villager,
         $villager_unused: villager_unused,

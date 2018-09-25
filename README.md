@@ -57,8 +57,13 @@ Link zum [Spiel](https://nickweyermann.github.io).
       - Tod
     - Armee entdeckt
 - Deine Krieger sind zurück
+  - Bericht
+    - Gewonnen/Verloren
+    - Verletzte/Tote
 - Du wurdest angegriffen
 - Krankheit
   - ausgebrochen
-  - geheilt
+  - Bewohner sterben
+  - eingedämmt
 ### Verbesserte Mobileansicht
+- Grössere Buttons

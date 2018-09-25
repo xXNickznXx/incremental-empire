@@ -48,7 +48,7 @@ function build_storage() {
     timer -= 0.1;
     if (timer < 0) {
         storage = true;
-        resources_max += 400;
+        supplies_max += 400;
         clearInterval(build);
         slot_building = false;
         msg.prepend("<p>Lager wurde fertiggestellt.</p>");

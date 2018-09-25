@@ -10,7 +10,7 @@ var food = 0,
     clothes = 0,
     armor = 0,
     sword = 0,
-    resources_max = 100,
+    supplies_max = 100,
 
     villager = 5,
     villager_unused = 5,
@@ -666,7 +666,7 @@ function game_over() {
     clearInterval(refr);
     clearInterval(starve);
     clearInterval(freeze);
-    clearInterval(res_prod);
+    clearInterval(supp_prod);
     clearInterval(new_vil);
     clearInterval(temperat);
 }
@@ -779,12 +779,12 @@ function die(type) {
     }
 }
 
-/* Resource production */
-function resource_prod() {
-    if (food < resources_max) {
+/* supplie production */
+function supplie_prod() {
+    if (food < supplies_max) {
         food += (gatherer * 2) + hunter;
-        if (food > resources_max) {
-            food = resources_max;
+        if (food > supplies_max) {
+            food = supplies_max;
         }
     }
     if (food >= villager) {
@@ -799,57 +799,57 @@ function resource_prod() {
             starve = setInterval(function () {die("starve"); }, speed * 15);
         }
     }
-    if (wood < resources_max) {
+    if (wood < supplies_max) {
         wood += lumberjack * wood_bonus;
-        if (wood > resources_max) {
-            wood = resources_max;
+        if (wood > supplies_max) {
+            wood = supplies_max;
         }
     }
     var rnd_stone, rnd_coal, rnd_iron;
-    if (stone < resources_max) {
+    if (stone < supplies_max) {
         rnd_stone = Math.floor((Math.random() * 2) + 1);
         if (rnd_stone === 1) {
             stone += quarryman * stone_bonus;
-            if (stone > resources_max) {
-                stone = resources_max;
+            if (stone > supplies_max) {
+                stone = supplies_max;
             }
         }
     }
-    if (leather < resources_max) {
+    if (leather < supplies_max) {
         leather += hunter * leather_bonus;
-        if (leather > resources_max) {
-            leather = resources_max;
+        if (leather > supplies_max) {
+            leather = supplies_max;
         }
     }
-    if (cloth < resources_max) {
+    if (cloth < supplies_max) {
         cloth += shepherd * cloth_bonus;
-        if (cloth > resources_max) {
-            cloth = resources_max;
+        if (cloth > supplies_max) {
+            cloth = supplies_max;
         }
     }
-    if (coal < resources_max) {
+    if (coal < supplies_max) {
         rnd_coal = Math.floor((Math.random() * 4) + 1);
         if (rnd_coal === 1) {
             coal += coalminer * coal_bonus;
-            if (coal > resources_max) {
-                coal = resources_max;
+            if (coal > supplies_max) {
+                coal = supplies_max;
             }
         }
     }
-    if (iron < resources_max) {
+    if (iron < supplies_max) {
         rnd_iron = Math.floor((Math.random() * 6) + 1);
         if (rnd_iron === 1) {
             iron += ironminer * iron_bonus;
-            if (iron > resources_max) {
-                iron = resources_max;
+            if (iron > supplies_max) {
+                iron = supplies_max;
             }
         }
     }
-    if (clothes < resources_max) {
+    if (clothes < supplies_max) {
         clothes += tailor * clothes_bonus;
         cloth -= tailor;
-        if (clothes > resources_max) {
-            clothes = resources_max;
+        if (clothes > supplies_max) {
+            clothes = supplies_max;
         }
     }
 }
@@ -963,7 +963,7 @@ $("#btn_start").click(function () {
             clothes = contents.$clothes;
             armor = contents.$armor;
             sword = contents.$sword;
-            resources_max = contents.$resources_max;
+            supplies_max = contents.$supplies_max;
 
             villager = contents.$villager;
             villager_unused = contents.$villager_unused;
@@ -1006,7 +1006,7 @@ $("#btn_start").click(function () {
     $("#start").hide();
 
     refr = setInterval(refresh, 100);
-    res_prod = setInterval(resource_prod, speed * 5);
+    supp_prod = setInterval(supplie_prod, speed * 5);
     new_vil = setInterval(new_villagers, speed * 30);
     temperature();
     temperat = setInterval(temperature, speed * 30);

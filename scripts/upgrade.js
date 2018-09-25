@@ -48,7 +48,7 @@ function upgrade_storage() {
     $("#task .storage.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
     if (timer < 0) {
-        resources_max += 500;
+        supplies_max += 500;
         lvl_storage += 1;
         clearInterval(upgrade);
         slot_building = false;
