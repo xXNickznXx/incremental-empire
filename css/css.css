@@ -65,7 +65,8 @@ button:hover .tooltip {
 body {
     background: var(--bg);
     margin: auto;
-    width: 900px;
+    max-width: 900px;
+    min-width: 800px;
 }
 /* Start */
 .start {
@@ -74,7 +75,7 @@ body {
     height: 300px;
     left: 0;
     margin: auto;
-    padding: 10px;
+    padding: 5px;
     position: absolute;
     right: 0;
     top: 0;
@@ -98,7 +99,7 @@ body {
 .header {
 	background: var(--bg2);
 	height: 40px;
-	padding: 10px;
+	padding: 5px;
 	text-align: center;
 }
 h1 {
@@ -107,12 +108,12 @@ h1 {
 /* Left */
 .left {
 	float: left;
-	width: 650px;
+	width: 70%;
 }
 .nav {
 	background: var(--bg2);
-	margin-top: 10px;
-	padding: 10px;
+	margin-top: 5px;
+	padding: 5px;
 	text-align: center;
 }
 .nav button {
@@ -158,12 +159,12 @@ h1 {
 .content {
 	background: var(--bg2);
     height: 500px;
-	margin-top: 10px;
+	margin-top: 5px;
     overflow: auto;
-	padding: 10px;
+	padding: 5px;
 }
 .left_bottom {
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .left_bottom:after {
 	clear: both;
@@ -174,11 +175,11 @@ h1 {
 	background: var(--bg2);
     float: left;
     height: 40px;
-	padding: 10px;
-    width: 300px;
+	padding: 5px;
+    width: calc((100% - 25px) / 2);
 }
 .phase {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 .phase p {
     border: 1px solid var(--fg);
@@ -194,18 +195,17 @@ h1 {
 }
 .coll_craft.nested {
     background: var(--bg2);
-    padding: 0;
 }
 /* Right */
 .right {
 	float: left;
-	margin-left: 10px;
-	width: 240px;
+	margin-left: 5px;
+	width: calc(30% - 5px);
 }
 .supplies, .villagers, .jobs {
 	background: var(--bg2);
-	margin-top: 10px;
-	padding: 10px;
+	margin-top: 5px;
+	padding: 5px;
 }
 .right .row, .right p {
     height: 24px;
@@ -228,7 +228,7 @@ h1 {
 }
 .jobs .row div:first-child {
     float: left;
-    width: 165px;
+    width: calc(100% - 55px);
 }
 .jobs .row div:last-child {
 	float: right;
@@ -238,7 +238,7 @@ h1 {
 }
 /* bottom */
 .bottom {
-	margin-top: 10px;
+	margin-top: 5px;
 }
 .bottom:after {
 	clear: both;
@@ -249,7 +249,7 @@ h1 {
 	background: var(--bg2);
 	height: 280px;
 	overflow: hidden;
-	padding: 10px;
+	padding: 5px;
 }
 .msg p {
     height: 24px;
