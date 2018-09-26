@@ -10,8 +10,7 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Geschwindigkeit
 - Light/Dark-Theme
 ### Möglichkeit zu Speichern und zu Laden
-### Tooltips für Gebäude/Upgrades/Crafting
-### Mobileansicht
+### Mobileansicht(Rudimentär)
 
 ## Features in Arbeit:
 ### Crafting
@@ -38,8 +37,8 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Automatisches Speichern
 - Abbruchmöglichkeit für Aufträge
 ### Handeln
-- Mit lokalem Händler
-- Mit Dörfern
+- mit lokalem Händler
+- mit Dörfern
 ### Neue Berufe
 - Stallbetreuer
   -Pferde(Schnellere Fortbewegung)
@@ -48,11 +47,11 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - Gifte
 ### Events
 - Kundschafter
-  - nichts
-  - Schätze (Rohstoffe)
-  - Tod
-    - Getötet
-    - Verdurstet/Verhungert
+  - nichts enteckt
+  - Schatz entdeckt (Vorräte/Gegenstände)
+  - gestorben
+    - wurde getötet
+    - ist verdurstet/verhungert
   - Dörfer
     - Handelsantrag
       - Annahme
@@ -61,12 +60,16 @@ Link zum [Spiel](https://nickweyermann.github.io).
     - Armee entdeckt
 - Deine Krieger sind zurück
   - Bericht
-    - Gewonnen/Verloren
+    - gewonnen/verloren
     - Verletzte/Tote
 - Du wurdest angegriffen
+  - Bericht
+    - gewonnen/verloren
+    - Verletzte/Tote
 - Krankheit
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
 ### Verbesserte Mobileansicht
 - Grössere Buttons
+- Verbesserte Slideeffekte
