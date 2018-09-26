@@ -4,14 +4,17 @@ Link zum [Spiel](https://nickweyermann.github.io).
 `Ein Spiel bei dem man Bewohner verwalten, Gebäude bauen, auf Erkundungsreisen gehen, andere Dörfer treffen und mit diesen interagieren kann.`
 
 ## Features:
-- Bewohnerverwaltung
-- Gebäude bauen
-- Optionen
-  - Geschwindigkeit
-  - Light/Dark-Theme
-- Möglichkeit zu Speichern und zu Laden
-- Tooltips für Gebäude und Upgrades
-- Mobileansicht
+### Bewohnerverwaltung
+### Gebäude bauen/upgraden
+### Optionen
+- Geschwindigkeit
+- Light/Dark-Theme
+### Möglichkeit zu Speichern und zu Laden
+### Tooltips für Gebäude/Upgrades/Crafting
+### Mobileansicht
+
+## Features in Arbeit:
+### Crafting
 
 ## Kommende Features:
 ### Weitere Optionen

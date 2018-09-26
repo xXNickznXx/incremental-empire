@@ -16,6 +16,26 @@ $("#btn_gifts").click(function () {
     $("#content_gifts").slideToggle();
 });
 
+function craft_leatherarmor() {
+    $("#task .leatherarmor.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        leatherarmor += leatherarmor_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Lederrüstung wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .leatherarmor").remove();
+    }
+}
+$("#btn_leatherarmor").click(function () {
+    task.append("<td class='leatherarmor'>Herstellung von Lederrüstung</td>");
+    task.append("<td class='leatherarmor time'></td>");
+    leather -= 50 * leatherarmor_num;
+    slot_craft = true;
+    crafter = curr_time_leatherarmor;
+    craft = setInterval(craft_leatherarmor, speed / 10);
+});
 var leatherarmor_p,
     leatherarmor_m,
     leatherarmor_t;

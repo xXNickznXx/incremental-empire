@@ -108,6 +108,7 @@ var food = 0,
     time_tradegift = 60,
     time_peacegift = 120,
     time_poisongift = 180,
+    crafter,
     
     curr_time_leatherarmor,
     curr_time_ironarmor,
@@ -127,6 +128,7 @@ var food = 0,
 
     build,
     upgrade,
+    craft,
     refr,
     starve,
     freeze,
@@ -261,7 +263,7 @@ function refresh() {
     } else {
         $("#dwn_tailor").prop("disabled", false);
     }
-    if (smith === 0) {
+    if (smith === 0 || slot_craft === true) {
         $("#dwn_smith").prop("disabled", true);
     } else {
         $("#dwn_smith").prop("disabled", false);
@@ -289,8 +291,7 @@ function refresh() {
         $("#up_smith").prop("disabled", true);
         $("#up_scout").prop("disabled", true);
         $("#up_knight").prop("disabled", true);
-    }
-    if (slot_build === false || slot_craft === false) {
+    }else if (slot_build === false || slot_craft === false) {
         $("#up_gatherer").prop("disabled", false);
         $("#up_lumberjack").prop("disabled", false);
         $("#up_quarryman").prop("disabled", false);
@@ -728,57 +729,57 @@ function refresh() {
 
     // Craft Buttons Dis-/Enabled
     //region
-    if (leather >= 50 && smith > 0 && slot_craft === false) {
+    if (leather >= 50 * leatherarmor_num && smith > 0 && slot_craft === false) {
         $("#btn_leatherarmor").prop("disabled", false);
     } else {
         $("#btn_leatherarmor").prop("disabled", true);
     }
-    if (iron >= 50 && smith > 0 && slot_craft === false) {
+    if (iron >= 50 * ironarmor_num && smith > 0 && slot_craft === false) {
         $("#btn_ironarmor").prop("disabled", false);
     } else {
         $("#btn_ironarmor").prop("disabled", true);
     }
-    if (wood >= 5 && iron >= 25 && smith > 0 && slot_craft === false) {
+    if (wood >= 5 * sword_num && iron >= 25 * sword_num && smith > 0 && slot_craft === false) {
         $("#btn_sword").prop("disabled", false);
     } else {
         $("#btn_sword").prop("disabled", true);
     }
-    if (wood >= 5 && iron >= 20 && smith > 0 && slot_craft === false) {
+    if (wood >= 5 * axe_num && iron >= 20 * axe_num && smith > 0 && slot_craft === false) {
         $("#btn_axe").prop("disabled", false);
     } else {
         $("#btn_axe").prop("disabled", true);
     }
-    if (wood >= 5 && iron >= 30 && smith > 0 && slot_craft === false) {
+    if (wood >= 5 * morningstar_num && iron >= 30 * morningstar_num && smith > 0 && slot_craft === false) {
         $("#btn_morningstar").prop("disabled", false);
     } else {
         $("#btn_morningstar").prop("disabled", true);
     }
-    if (wood >= 20 && iron >= 5 && smith > 0 && slot_craft === false) {
+    if (wood >= 20 * shortbow_num && iron >= 5 * shortbow_num && smith > 0 && slot_craft === false) {
         $("#btn_shortbow").prop("disabled", false);
     } else {
         $("#btn_shortbow").prop("disabled", true);
     }
-    if (wood >= 25 && iron >= 5 && smith > 0 && slot_craft === false) {
+    if (wood >= 25 * longbow_num && iron >= 5 * longbow_num && smith > 0 && slot_craft === false) {
         $("#btn_longbow").prop("disabled", false);
     } else {
         $("#btn_longbow").prop("disabled", true);
     }
-    if (wood >= 30 && iron >= 5 && smith > 0 && slot_craft === false) {
+    if (wood >= 30 * crossbow_num && iron >= 5 * crossbow_num && smith > 0 && slot_craft === false) {
         $("#btn_crossbow").prop("disabled", false);
     } else {
         $("#btn_crossbow").prop("disabled", true);
     }
-    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25 && smith > 0 && slot_craft === false) {
+    if (food >= 25 * tradegift_num && wood >= 25  * tradegift_num&& leather >= 25 * tradegift_num && cloth >= 25 * tradegift_num && iron >= 25  * tradegift_num&& clothes >= 25 * tradegift_num && smith > 0 && slot_craft === false) {
         $("#btn_tradegift").prop("disabled", false);
     } else {
         $("#btn_tradegift").prop("disabled", true);
     }
-    if (food >= 50 && wood >= 50 && leather >= 50 && cloth >= 50 && iron >= 50 && clothes >= 50 && smith > 0 && slot_craft === false) {
+    if (food >= 50 * peacegift_num && wood >= 50 * peacegift_num && leather >= 50 * peacegift_num && cloth >= 50 * peacegift_num && iron >= 50 * peacegift_num && clothes >= 50 * peacegift_num && smith > 0 && slot_craft === false) {
         $("#btn_peacegift").prop("disabled", false);
     } else {
         $("#btn_peacegift").prop("disabled", true);
     }
-    if (food >= 50 && wood >= 50 && leather >= 50 && cloth >= 50 && iron >= 50 && clothes >= 50 && poison >= 5 && smith > 0 && slot_craft === false) {
+    if (food >= 50 * poisongift_num && wood >= 50 * poisongift_num && leather >= 50 * poisongift_num && cloth >= 50 * poisongift_num && iron >= 50 * poisongift_num && clothes >= 50 * poisongift_num && poison >= 5 * poisongift_num && smith > 0 && slot_craft === false) {
         $("#btn_poisongift").prop("disabled", false);
     } else {
         $("#btn_poisongift").prop("disabled", true);
