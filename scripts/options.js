@@ -25,7 +25,6 @@ if (getCookie("dark") === "true") {
     $("#switch input").prop("checked", false);
 }
 
-/* Save */
 $("#btn_save").click(function () {
     var saveFile = {
         $food: food,

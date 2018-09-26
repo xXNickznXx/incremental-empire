@@ -1,9 +1,5 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
-
-
-
-
 $("#btn_armor").click(function () {
     $("#content_armor").slideToggle();
 });
@@ -47,7 +43,6 @@ $("#dwn_leatherarmor").mousedown(function () {
     leatherarmor_t = setTimeout(function () {leatherarmor_m = setInterval(leatherarmor_minus, 50);}, 500);
 });
 
-
 var ironarmor_p,
     ironarmor_m,
     ironarmor_t;
@@ -74,7 +69,6 @@ function ironarmor_minus() {
 $("#dwn_ironarmor").mousedown(function () {
     ironarmor_t = setTimeout(function () {ironarmor_m = setInterval(ironarmor_minus, 50);}, 500);
 });
-
 
 var sword_p,
     sword_m,
@@ -103,7 +97,6 @@ $("#dwn_sword").mousedown(function () {
     sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50);}, 500);
 });
 
-
 var axe_p,
     axe_m,
     axe_t;
@@ -130,7 +123,6 @@ function axe_minus() {
 $("#dwn_axe").mousedown(function () {
     axe_t = setTimeout(function () {axe_m = setInterval(axe_minus, 50);}, 500);
 });
-
 
 var morningstar_p,
     morningstar_m,
@@ -159,7 +151,6 @@ $("#dwn_morningstar").mousedown(function () {
     morningstar_t = setTimeout(function () {morningstar_m = setInterval(morningstar_minus, 50);}, 500);
 });
 
-
 var shortbow_p,
     shortbow_m,
     shortbow_t;
@@ -186,7 +177,6 @@ function shortbow_minus() {
 $("#dwn_shortbow").mousedown(function () {
     shortbow_t = setTimeout(function () {shortbow_m = setInterval(shortbow_minus, 50);}, 500);
 });
-
 
 var longbow_p,
     longbow_m,
@@ -215,7 +205,6 @@ $("#dwn_longbow").mousedown(function () {
     longbow_t = setTimeout(function () {longbow_m = setInterval(longbow_minus, 50);}, 500);
 });
 
-
 var crossbow_p,
     crossbow_m,
     crossbow_t;
@@ -242,7 +231,6 @@ function crossbow_minus() {
 $("#dwn_crossbow").mousedown(function () {
     crossbow_t = setTimeout(function () {crossbow_m = setInterval(crossbow_minus, 50);}, 500);
 });
-
 
 var tradegift_p,
     tradegift_m,
@@ -271,7 +259,6 @@ $("#dwn_tradegift").mousedown(function () {
     tradegift_t = setTimeout(function () {tradegift_m = setInterval(tradegift_minus, 50);}, 500);
 });
 
-
 var peacegift_p,
     peacegift_m,
     peacegift_t;
@@ -299,7 +286,6 @@ $("#dwn_peacegift").mousedown(function () {
     peacegift_t = setTimeout(function () {peacegift_m = setInterval(peacegift_minus, 50);}, 500);
 });
 
-
 var poisongift_p,
     poisongift_m,
     poisongift_t;
@@ -326,7 +312,6 @@ function poisongift_minus() {
 $("#dwn_poisongift").mousedown(function () {
     poisongift_t = setTimeout(function () {poisongift_m = setInterval(poisongift_minus, 50);}, 500);
 });
-
 
 $("html").mouseup(function () {
     clearInterval(leatherarmor_p);

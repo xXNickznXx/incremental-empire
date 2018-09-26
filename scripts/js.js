@@ -141,7 +141,7 @@ var food = 0,
     task = $("#task"),
     msg = $("#msg"),
 
-    win = window.matchMedia("(max-width: 376px)");
+    win = window.matchMedia("(max-width: 400px)");
 
 /* Convert int to time */
 function secondsTommss(total) {
@@ -169,9 +169,8 @@ function check_msg() {
 
 /* Refresher */
 function refresh() {
+    //Supplies
     //region
-    check_msg();
-
     $("#food").text(food);
     $("#wood").text(wood);
     $("#stone").text(stone);
@@ -180,9 +179,25 @@ function refresh() {
     $("#coal").text(coal);
     $("#iron").text(iron);
     $("#clothes").text(clothes);
-    $("#armor").text(armor);
-    $("#sword").text(sword);
+    //endregion
 
+    //Items
+    //region
+    $("#leatherarmor").text(leatherarmor);
+    $("#ironarmor").text(ironarmor);
+    $("#sword").text(sword);
+    $("#axe").text(axe);
+    $("#morningstar").text(morningstar);
+    $("#shortbow").text(shortbow);
+    $("#longbow").text(longbow);
+    $("#crossbow").text(crossbow);
+    $("#tradegift").text(tradegift);
+    $("#peacegift").text(peacegift);
+    $("#poisongift").text(poisongift);
+    //endregion
+
+    //Villagers/Jobs
+    //region
     $("#villager").text(villager + "/" + villager_max);
     $("#villager_unused").text(villager_unused + "/" + villager);
     $("#gatherer").text(gatherer);
@@ -197,7 +212,10 @@ function refresh() {
     $("#smith").text(smith);
     $("#scout").text(scout);
     $("#knight").text(knight);
+    //endregion
 
+    //Down/Up Buttons Dis-/Enabled
+    //region
     if (gatherer === 0) {
         $("#dwn_gatherer").prop("disabled", true);
     } else {
@@ -271,20 +289,8 @@ function refresh() {
         $("#up_smith").prop("disabled", true);
         $("#up_scout").prop("disabled", true);
         $("#up_knight").prop("disabled", true);
-    } else if (slot_build === true) {
-        $("#up_gatherer").prop("disabled", false);
-        $("#up_lumberjack").prop("disabled", false);
-        $("#up_quarryman").prop("disabled", false);
-        $("#up_worker").prop("disabled", true);
-        $("#up_hunter").prop("disabled", false);
-        $("#up_shepherd").prop("disabled", false);
-        $("#up_coalminer").prop("disabled", false);
-        $("#up_ironminer").prop("disabled", false);
-        $("#up_tailor").prop("disabled", false);
-        $("#up_smith").prop("disabled", false);
-        $("#up_scout").prop("disabled", false);
-        $("#up_knight").prop("disabled", false);
-    } else {
+    }
+    if (slot_build === false || slot_craft === false) {
         $("#up_gatherer").prop("disabled", false);
         $("#up_lumberjack").prop("disabled", false);
         $("#up_quarryman").prop("disabled", false);
@@ -297,6 +303,14 @@ function refresh() {
         $("#up_smith").prop("disabled", false);
         $("#up_scout").prop("disabled", false);
         $("#up_knight").prop("disabled", false);
+    }
+    if (slot_build === true || slot_craft === true) {
+        if (slot_build === true) {
+            $("#up_worker").prop("disabled", true);
+        }
+        if (slot_craft === true) {
+            $("#up_smith").prop("disabled", true);
+        }
     }
     //endregion
 
@@ -472,10 +486,6 @@ function refresh() {
         $("#btn_huntinghut").closest("tr").show();
     } else {
         $("#btn_huntinghut").closest("tr").hide();
-        if (huntinghut === true) {
-            $("#leather").closest("#row").show();
-            $("#hunter").closest("#row").show();
-        }
     }
     if (wood >= 50 && stone >= 50 && storage === false) {
         $("#btn_storage").closest("tr").show();
@@ -491,10 +501,6 @@ function refresh() {
         $("#btn_sheepstall").closest("tr").show();
     } else {
         $("#btn_sheepstall").closest("tr").hide();
-        if (sheepstall === true) {
-            $("#cloth").closest("#row").show();
-            $("#shepherd").closest("#row").show();
-        }
     }
     if (wood >= 150 && stone >= 50 && quarry === false) {
         $("#btn_quarry").closest("tr").show();
@@ -505,64 +511,36 @@ function refresh() {
         $("#btn_coalmine").closest("tr").show();
     } else {
         $("#btn_coalmine").closest("tr").hide();
-        if (coalmine === true) {
-            $("#coal").closest("#row").show();
-            $("#coalminer").closest("#row").show();
-        }
     }
     if (wood >= 200 && stone >= 100 && coal >= 25 && ironmine === false) {
         $("#btn_ironmine").closest("tr").show();
     } else {
         $("#btn_ironmine").closest("tr").hide();
-        if (ironmine === true) {
-            $("#iron").closest("#row").show();
-            $("#ironminer").closest("#row").show();
-        }
     }
     if (wood >= 250 && stone >= 200 && coal >= 100 && tailorhouse === false) {
         $("#btn_tailorhouse").closest("tr").show();
     } else {
         $("#btn_tailorhouse").closest("tr").hide();
-        if (tailorhouse === true) {
-            $("#clothes").closest("#row").show();
-            $("#tailor").closest("#row").show();
-        }
     }
     if (wood >= 300 && stone >= 225 && coal >= 125 && iron >= 25 && forge === false) {
         $("#btn_forge").closest("tr").show();
     } else {
         $("#btn_forge").closest("tr").hide();
-        if (forge === true) {
-            $("#btn_craft").show();
-            $("#armor").closest("#row").show();
-            $("#sword").closest("#row").show();
-            $("#smith").closest("#row").show();
-        }
     }
     if (wood >= 375 && stone >= 250 && coal >= 150 && iron >= 50 && market === false) {
         $("#btn_market").closest("tr").show();
     } else {
         $("#btn_market").closest("tr").hide();
-        if (market === true) {
-            $("#btn_trade").show();
-        }
     }
     if (wood >= 500 && stone >= 375 && coal >= 200 && iron >= 125 && scoutpost === false) {
         $("#btn_scoutpost").closest("tr").show();
     } else {
         $("#btn_scoutpost").closest("tr").hide();
-        if (scoutpost === true) {
-            $("#btn_travel").show();
-            $("#scout").closest("#row").show();
-        }
     }
     if (wood >= 750 && stone >= 600 && coal >= 500 && iron >= 400 && barracks === false) {
         $("#btn_barracks").closest("tr").show();
     } else {
         $("#btn_barracks").closest("tr").hide();
-        if (barracks === true) {
-            $("#knight").closest("#row").show();
-        }
     }
     //endregion
 
@@ -807,7 +785,7 @@ function refresh() {
     }
     //endregion
 
-    // Build Buttons Show/Hide
+    // Craft Buttons Show/Hide
     //region
     if (leather >= 25) {
         $("#btn_leatherarmor").closest("div").show();
@@ -870,6 +848,7 @@ function refresh() {
 /* Game Over */
 function game_over() {
     msg.prepend("<p>Dein Dorf ist gestorben.</p>");
+    check_msg();
     refresh();
     clearInterval(build);
     clearInterval(upgrade);
@@ -891,6 +870,7 @@ function die(type) {
                 if (villager_unused > 0) {
                     villager_unused -= 1;
                     msg.prepend("<p>Bewohner ist verhungert.</p>");
+                    check_msg();
                 } else {
                     if (gatherer > 0) {
                         gatherer -= 1;
@@ -929,6 +909,7 @@ function die(type) {
                         knight -= 1;
                         msg.prepend("<p>Krieger ist verhungert.</p>");
                     }
+                    check_msg();
                 }
                 if (villager === 0) {
                     game_over();
@@ -942,6 +923,7 @@ function die(type) {
                 if (villager_unused > 0) {
                     villager_unused -= 1;
                     msg.prepend("<p>Bewohner ist erfroren.</p>");
+                    check_msg();
                 } else {
                     if (gatherer > 0) {
                         gatherer -= 1;
@@ -980,6 +962,7 @@ function die(type) {
                         knight -= 1;
                         msg.prepend("<p>Krieger ist erfroren.</p>");
                     }
+                    check_msg();
                 }
                 if (villager === 0) {
                     game_over();
@@ -1073,12 +1056,14 @@ function new_villagers() {
             villager += amount;
             villager_unused += amount;
             msg.prepend("<p>" + amount + " Fremde sind aufgetaucht.</p>");
+            check_msg();
         }
     } else if (rnd === 2 || rnd === 3) {
         if (villager < villager_max) {
             villager += 1;
             villager_unused += 1;
             msg.prepend("<p>Ein Fremder ist aufgetaucht.</p>");
+            check_msg();
         }
     }
 }
@@ -1155,70 +1140,108 @@ $("#btn_start").click(function () {
         $("#start p").remove();
         $("#start").append("<p>Geschwindigkeit zwischen 200 und 5000.</p>");
     } else {
-    speed = $("#speed").val();
+        speed = $("#speed").val();
 
-    if ($("#load")[0].files.length !== 0) {
-        var file = $("#load")[0].files[0],
-            reader = new FileReader();
+        if ($("#load")[0].files.length !== 0) {
+            var file = $("#load")[0].files[0],
+                reader = new FileReader();
 
-        reader.onload = function (e) {
-            var contents = JSON.parse(e.target.result);
-            food = contents.$food;
-            wood = contents.$wood;
-            stone = contents.$stone;
-            leather = contents.$leather;
-            cloth = contents.$cloth;
-            coal = contents.$coal;
-            iron = contents.$iron;
-            clothes = contents.$clothes;
-            armor = contents.$armor;
-            sword = contents.$sword;
-            supplies_max = contents.$supplies_max;
+            reader.onload = function (e) {
+                var contents = JSON.parse(e.target.result);
+                food = contents.$food;
+                wood = contents.$wood;
+                stone = contents.$stone;
+                leather = contents.$leather;
+                cloth = contents.$cloth;
+                coal = contents.$coal;
+                iron = contents.$iron;
+                clothes = contents.$clothes;
+                armor = contents.$armor;
+                sword = contents.$sword;
+                supplies_max = contents.$supplies_max;
 
-            villager = contents.$villager;
-            villager_unused = contents.$villager_unused;
-            villager_max = contents.$villager_max;
+                villager = contents.$villager;
+                villager_unused = contents.$villager_unused;
+                villager_max = contents.$villager_max;
 
-            gatherer = contents.$gatherer;
-            lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
-            quarryman = contents.$quarryman;      stone_bonus = contents.$stone_bonus;
-            worker = contents.$worker;
-            hunter = contents.$hunter;            leather_bonus = contents.$leather_bonus;
-            shepherd = contents.$shepherd;        cloth_bonus = contents.$cloth_bonus;
-            coalminer = contents.$coalminer;      coal_bonus = contents.$coal_bonus;
-            ironminer = contents.$ironminer;      iron_bonus = contents.$iron_bonus;
-            tailor = contents.$tailor;            clothes_bonus = contents.$clothes_bonus;
-            smith = contents.$smith;              craft_time = contents.$craft_time;
-            scout = contents.$scout;              travel_time = contents.$travel_time;
-            knight = contents.$knight;            damage_bonus = contents.$damage_bonus;
+                gatherer = contents.$gatherer;
+                lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
+                quarryman = contents.$quarryman;      stone_bonus = contents.$stone_bonus;
+                worker = contents.$worker;
+                hunter = contents.$hunter;            leather_bonus = contents.$leather_bonus;
+                shepherd = contents.$shepherd;        cloth_bonus = contents.$cloth_bonus;
+                coalminer = contents.$coalminer;      coal_bonus = contents.$coal_bonus;
+                ironminer = contents.$ironminer;      iron_bonus = contents.$iron_bonus;
+                tailor = contents.$tailor;            clothes_bonus = contents.$clothes_bonus;
+                smith = contents.$smith;              craft_time = contents.$craft_time;
+                scout = contents.$scout;              travel_time = contents.$travel_time;
+                knight = contents.$knight;            damage_bonus = contents.$damage_bonus;
 
-            trade_bonus = contents.$trade_bonus;
+                trade_bonus = contents.$trade_bonus;
 
-            hut = contents.$hut;
-            huntinghut = contents.$huntinghut;        up_huntinghut = contents.$up_huntinghut;
-            storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
-            lumberjackhut = contents.$lumberjackhut;  up_lumberjackhut = contents.$up_lumberjackhut;
-            sheepstall = contents.$sheepstall;        up_sheepstall = contents.$up_sheepstall;
-            quarry = contents.$quarry;                up_quarry = contents.$up_quarry;
-            coalmine = contents.$coalmine;            up_coalmine = contents.$up_coalmine;
-            ironmine = contents.$ironmine;            up_ironmine = contents.$up_ironmine;
-            tailorhouse = contents.$tailorhouse;      up_tailorhouse = contents.$up_tailorhouse;
-            forge = contents.$forge;                  up_forge = contents.$up_forge;
-            market = contents.$market;                up_market = contents.$up_market;
-            scoutpost = contents.$scoutpost;          up_scoutpost = contents.$up_scoutpost;
-            barracks = contents.$barracks;            up_barracks = contents.$up_barracks;
-        };
-        reader.readAsText(file);
-    }
+                hut = contents.$hut;
+                huntinghut = contents.$huntinghut;        up_huntinghut = contents.$up_huntinghut;
+                storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
+                lumberjackhut = contents.$lumberjackhut;  up_lumberjackhut = contents.$up_lumberjackhut;
+                sheepstall = contents.$sheepstall;        up_sheepstall = contents.$up_sheepstall;
+                quarry = contents.$quarry;                up_quarry = contents.$up_quarry;
+                coalmine = contents.$coalmine;            up_coalmine = contents.$up_coalmine;
+                ironmine = contents.$ironmine;            up_ironmine = contents.$up_ironmine;
+                tailorhouse = contents.$tailorhouse;      up_tailorhouse = contents.$up_tailorhouse;
+                forge = contents.$forge;                  up_forge = contents.$up_forge;
+                market = contents.$market;                up_market = contents.$up_market;
+                scoutpost = contents.$scoutpost;          up_scoutpost = contents.$up_scoutpost;
+                barracks = contents.$barracks;            up_barracks = contents.$up_barracks;
+            };
+            reader.readAsText(file);
+        }
 
-    $("#main").show();
-    $("#bottom").show();
-    $("#start").hide();
+        $("#main").show();
+        $("#bottom").show();
+        $("#start").hide();
 
-    refr = setInterval(refresh, 100);
-    supp_prod = setInterval(supplie_prod, speed * 5);
-    new_vil = setInterval(new_villagers, speed * 30);
-    temperature();
-    temperat = setInterval(temperature, speed * 30);
+        setTimeout(function () {
+            if (huntinghut === true) {
+                $("#leather").closest("#row").show();
+                $("#hunter").closest("#row").show();
+            }
+            if (sheepstall === true) {
+                $("#cloth").closest("#row").show();
+                $("#shepherd").closest("#row").show();
+            }
+            if (coalmine === true) {
+                $("#coal").closest("#row").show();
+                $("#coalminer").closest("#row").show();
+            }
+            if (ironmine === true) {
+                $("#iron").closest("#row").show();
+                $("#ironminer").closest("#row").show();
+            }
+            if (tailorhouse === true) {
+                $("#clothes").closest("#row").show();
+                $("#tailor").closest("#row").show();
+            }
+            if (forge === true) {
+                $("#btn_craft").show();
+                $("#items").show();
+                $("#smith").closest("#row").show();
+            }
+            if (market === true) {
+                $("#btn_trade").show();
+            }
+            if (scoutpost === true) {
+                $("#btn_travel").show();
+                $("#scout").closest("#row").show();
+            }
+            if (barracks === true) {
+                $("#knight").closest("#row").show();
+            }
+        }, 10);
+
+        refr = setInterval(refresh, 100);
+        supp_prod = setInterval(supplie_prod, speed * 5);
+        new_vil = setInterval(new_villagers, speed * 30);
+        temperature();
+        temperat = setInterval(temperature, speed * 30);
     }
 });

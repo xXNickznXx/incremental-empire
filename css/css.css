@@ -189,7 +189,7 @@ h1 {
 	margin-left: 5px;
 	width: calc(30% - 5px);
 }
-.supplies, .villagers, .jobs {
+.supplies, .items, .villagers, .jobs {
 	background: var(--bg2);
 	margin-top: 5px;
 	padding: 5px;

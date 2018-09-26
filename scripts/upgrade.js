@@ -7,8 +7,9 @@ function upgrade_hut() {
         hut -= 1;
         villager_max += 3;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Hütte wurde ausgebaut.</p>");
+        check_msg();
         $("#task .hut").remove();
     }
 }
@@ -17,7 +18,7 @@ $("#btn_upgrade_hut").click(function () {
     task.append("<td class='hut time'></td>");
     wood -= 100;
     stone -= 20;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_hut;
     upgrade = setInterval(upgrade_hut, speed / 10);
 });
@@ -29,8 +30,9 @@ function upgrade_huntinghut() {
         up_huntinghut = true;
         leather_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Jagdhütte wurde ausgebaut.</p>");
+        check_msg();
         $("#task .huntinghut").remove();
     }
 }
@@ -39,7 +41,7 @@ $("#btn_upgrade_huntinghut").click(function () {
     task.append("<td class='huntinghut time'></td>");
     wood -= 300;
     stone -= 60;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_huntinghut;
     upgrade = setInterval(upgrade_huntinghut, speed / 10);
 });
@@ -51,8 +53,9 @@ function upgrade_storage() {
         supplies_max += 500;
         lvl_storage += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Lager wurde ausgebaut.</p>");
+        check_msg();
         $("#task .storage").remove();
     }
 }
@@ -61,7 +64,7 @@ $("#btn_upgrade_storage").click(function () {
     task.append("<td class='storage time'></td>");
     wood -= 300;
     stone -= 300;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_storage;
     upgrade = setInterval(upgrade_storage, speed / 10);
 });
@@ -73,8 +76,9 @@ function upgrade_lumberjackhut() {
         up_lumberjackhut = true;
         wood_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Holzfällerhütte wurde ausgebaut.</p>");
+        check_msg();
         $("#task .lumberjackhut").remove();
     }
 }
@@ -83,7 +87,7 @@ $("#btn_upgrade_lumberjackhut").click(function () {
     task.append("<td class='lumberjackhut time'></td>");
     wood -= 400;
     stone -= 100;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_lumberjackhut;
     upgrade = setInterval(upgrade_lumberjackhut, speed / 10);
 });
@@ -95,8 +99,9 @@ function upgrade_sheepstall() {
         up_sheepstall = true;
         cloth_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Schafstall wurde ausgebaut.</p>");
+        check_msg();
         $("#task .sheepstall").remove();
     }
 }
@@ -105,7 +110,7 @@ $("#btn_upgrade_sheepstall").click(function () {
     task.append("<td class='sheepstall time'></td>");
     wood -= 500;
     stone -= 150;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_sheepstall;
     upgrade = setInterval(upgrade_sheepstall, speed / 10);
 });
@@ -117,8 +122,9 @@ function upgrade_quarry() {
         up_quarry = true;
         stone_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Steinbruch wurde ausgebaut.</p>");
+        check_msg();
         $("#task .quarry").remove();
     }
 }
@@ -127,7 +133,7 @@ $("#btn_upgrade_quarry").click(function () {
     task.append("<td class='quarry time'></td>");
     wood -= 600;
     stone -= 200;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_quarry;
     upgrade = setInterval(upgrade_quarry, speed / 10);
 });
@@ -139,8 +145,9 @@ function upgrade_coalmine() {
         up_coalmine = true;
         coal_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Kohlemine wurde ausgebaut.</p>");
+        check_msg();
         $("#task .coalmine").remove();
     }
 }
@@ -149,7 +156,7 @@ $("#btn_upgrade_coalmine").click(function () {
     task.append("<td class='coalmine time'></td>");
     wood -= 600;
     stone -= 300;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_coalmine;
     upgrade = setInterval(upgrade_coalmine, speed / 10);
 });
@@ -161,8 +168,9 @@ function upgrade_ironmine() {
         up_ironmine = true;
         iron_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Eisenmine wurde ausgebaut.</p>");
+        check_msg();
         $("#task .ironmine").remove();
     }
 }
@@ -172,7 +180,7 @@ $("#btn_upgrade_ironmine").click(function () {
     wood -= 800;
     stone -= 400;
     coal -= 100;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_ironmine;
     upgrade = setInterval(upgrade_ironmine, speed / 10);
 });
@@ -184,8 +192,9 @@ function upgrade_tailorhouse() {
         up_tailorhouse = true;
         clothes_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Schneiderhaus wurde ausgebaut.</p>");
+        check_msg();
         $("#task .tailorhouse").remove();
     }
 }
@@ -195,7 +204,7 @@ $("#btn_upgrade_tailorhouse").click(function () {
     wood -= 1000;
     stone -= 800;
     coal -= 400;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_tailorhouse;
     upgrade = setInterval(upgrade_tailorhouse, speed / 10);
 });
@@ -207,8 +216,9 @@ function upgrade_forge() {
         up_forge = true;
         craft_time += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Schmiede wurde ausgebaut.</p>");
+        check_msg();
         $("#task .forge").remove();
     }
 }
@@ -219,7 +229,7 @@ $("#btn_upgrade_forge").click(function () {
     stone -= 900;
     coal -= 500;
     iron -= 100;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_forge;
     upgrade = setInterval(upgrade_forge, speed / 10);
 });
@@ -231,8 +241,9 @@ function upgrade_market() {
         up_market = true;
         trade_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Markt wurde ausgebaut.</p>");
+        check_msg();
         $("#task .market").remove();
     }
 }
@@ -243,7 +254,7 @@ $("#btn_upgrade_market").click(function () {
     stone -= 1000;
     coal -= 600;
     iron -= 200;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_market;
     upgrade = setInterval(upgrade_market, speed / 10);
 });
@@ -255,8 +266,9 @@ function upgrade_scoutpost() {
         up_scoutpost = true;
         travel_time += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Erkundungsposten wurde ausgebaut.</p>");
+        check_msg();
         $("#task .scoutpost").remove();
     }
 }
@@ -267,7 +279,7 @@ $("#btn_upgrade_scoutpost").click(function () {
     stone -= 1500;
     coal -= 800;
     iron -= 500;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_scoutpost;
     upgrade = setInterval(upgrade_scoutpost, speed / 10);
 });
@@ -279,8 +291,9 @@ function upgrade_barracks() {
         up_barracks = true;
         damage_bonus += 1;
         clearInterval(upgrade);
-        slot_building = false;
+        slot_build = false;
         msg.prepend("<p>Kaserne wurde ausgebaut.</p>");
+        check_msg();
         $("#task .barracks").remove();
     }
 }
@@ -291,7 +304,7 @@ $("#btn_upgrade_barracks").click(function () {
     stone -= 2400;
     coal -= 2000;
     iron -= 1600;
-    slot_building = true;
+    slot_build = true;
     timer = curr_time_upgrade_barracks;
     upgrade = setInterval(upgrade_barracks, speed / 10);
 });
