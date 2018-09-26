@@ -302,6 +302,7 @@ input:checked + .slider:before {
 		font-size: 20px;
 	}
 	.left {
+        float: unset;
 		width: 100%;
 	}
 	.nav {
@@ -311,9 +312,6 @@ input:checked + .slider:before {
 	.content {
 		border-bottom: 1px solid var(--fg);
 		height: 230px;
-		margin: 0;
-	}
-	.left_bottom {
 		margin: 0;
 	}
 	.tasks, .phase {
@@ -327,7 +325,7 @@ input:checked + .slider:before {
 	}
     .btn_mobile {
         display: inline-block;
-        width: 330px !important;
+        width: 90% !important;
     }
 	.right {
         display: none;
@@ -336,12 +334,9 @@ input:checked + .slider:before {
         overflow: auto;
         width: 100%;
 	}
-    .supplies, .villagers, .jobs {
+    .supplies, .villagers, .jobs, .left_bottom, .bottom {
         margin-top: 0;
     }
-	.bottom {
-		margin: 0;
-	}
 	.msg {
 		height: 100px;
 	}
