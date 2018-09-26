@@ -15,13 +15,6 @@ Link zum [Spiel](https://nickweyermann.github.io).
 
 ## Features in Arbeit:
 ### Crafting
-
-## Kommende Features:
-### Weitere Optionen
-- Schwierigkeit
-- Automatisches Speichern
-- Abbruchmöglichkeit für Aufträge
-### Crafting
 - Rüstungen
   - Eisenrüstung
   - Lederrüstung
@@ -38,6 +31,12 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - Handelsgeschenk
   - Friedensgeschenk
   - Vergiftetes Geschenk
+
+## Kommende Features:
+### Weitere Optionen
+- Schwierigkeit
+- Automatisches Speichern
+- Abbruchmöglichkeit für Aufträge
 ### Handeln
 - Mit lokalem Händler
 - Mit Dörfern
