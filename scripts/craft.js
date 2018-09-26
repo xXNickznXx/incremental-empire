@@ -5,23 +5,22 @@
 
 
 $("#btn_armor").click(function () {
-    $("#coll_armor").slideToggle();
+    $("#content_armor").slideToggle();
 });
 $("#btn_weapons").click(function () {
-    $("#coll_weapons").slideToggle();
+    $("#content_weapons").slideToggle();
 });
 $("#btn_melee").click(function () {
-    $("#coll_melee").slideToggle();
+    $("#content_melee").slideToggle();
 });
 $("#btn_ranged").click(function () {
-    $("#coll_ranged").slideToggle();
+    $("#content_ranged").slideToggle();
 });
 $("#btn_gifts").click(function () {
-    $("#coll_gifts").slideToggle();
+    $("#content_gifts").slideToggle();
 });
 
-var leatherarmor_num = 0,
-    leatherarmor_p,
+var leatherarmor_p,
     leatherarmor_m,
     leatherarmor_t;
 $("#up_leatherarmor").click(function () {
@@ -49,8 +48,7 @@ $("#dwn_leatherarmor").mousedown(function () {
 });
 
 
-var ironarmor_num = 0,
-    ironarmor_p,
+var ironarmor_p,
     ironarmor_m,
     ironarmor_t;
 $("#up_ironarmor").click(function () {
@@ -78,8 +76,7 @@ $("#dwn_ironarmor").mousedown(function () {
 });
 
 
-var sword_num = 0,
-    sword_p,
+var sword_p,
     sword_m,
     sword_t;
 $("#up_sword").click(function () {
@@ -107,8 +104,7 @@ $("#dwn_sword").mousedown(function () {
 });
 
 
-var axe_num = 0,
-    axe_p,
+var axe_p,
     axe_m,
     axe_t;
 $("#up_axe").click(function () {
@@ -136,8 +132,7 @@ $("#dwn_axe").mousedown(function () {
 });
 
 
-var morningstar_num = 0,
-    morningstar_p,
+var morningstar_p,
     morningstar_m,
     morningstar_t;
 $("#up_morningstar").click(function () {
@@ -165,8 +160,7 @@ $("#dwn_morningstar").mousedown(function () {
 });
 
 
-var shortbow_num = 0,
-    shortbow_p,
+var shortbow_p,
     shortbow_m,
     shortbow_t;
 $("#up_shortbow").click(function () {
@@ -194,8 +188,7 @@ $("#dwn_shortbow").mousedown(function () {
 });
 
 
-var longbow_num = 0,
-    longbow_p,
+var longbow_p,
     longbow_m,
     longbow_t;
 $("#up_longbow").click(function () {
@@ -223,8 +216,7 @@ $("#dwn_longbow").mousedown(function () {
 });
 
 
-var crossbow_num = 0,
-    crossbow_p,
+var crossbow_p,
     crossbow_m,
     crossbow_t;
 $("#up_crossbow").click(function () {
@@ -252,8 +244,7 @@ $("#dwn_crossbow").mousedown(function () {
 });
 
 
-var tradegift_num = 0,
-    tradegift_p,
+var tradegift_p,
     tradegift_m,
     tradegift_t;
 $("#up_tradegift").click(function () {
@@ -281,8 +272,7 @@ $("#dwn_tradegift").mousedown(function () {
 });
 
 
-var peacegift_num = 0,
-    peacegift_p,
+var peacegift_p,
     peacegift_m,
     peacegift_t;
 $("#up_peacegift").click(function () {
@@ -310,8 +300,7 @@ $("#dwn_peacegift").mousedown(function () {
 });
 
 
-var poisongift_num = 0,
-    poisongift_p,
+var poisongift_p,
     poisongift_m,
     poisongift_t;
 $("#up_poisongift").click(function () {

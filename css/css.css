@@ -121,16 +121,15 @@ h1 {
 	width: 130px;
 }
 .btn_craft {
-    background: var(--bg);
     height: 32px;
     padding: 5px;
     width: 100%;
 }
-.btn_craft.m {
+.coll_craft.m {
     margin-top: 5px;
 }
-.btn_craft.nested {
-    background: var(--bg2);
+.content_craft {
+    padding: 5px;
 }
 .row_craft:after {
 	clear: both;
@@ -181,11 +180,8 @@ h1 {
 	width: 100%;
 }
 .coll_craft {
-    background: var(--bg);
-    padding: 5px;
-}
-.coll_craft.nested {
-    background: var(--bg2);
+    border: 1px solid var(--fg);
+    border-radius: 5px;
 }
 /* Right */
 .right {

@@ -8,8 +8,19 @@ var food = 0,
     coal = 0,
     iron = 0,
     clothes = 0,
-    armor = 0,
+    medicine = 0,
+    poison = 0,
+    leatherarmor = 0,
+    ironarmor = 0,
     sword = 0,
+    axe = 0,
+    morningstar = 0,
+    shortbow = 0,
+    longbow = 0,
+    crossbow = 0,
+    tradegift = 0,
+    peacegift = 0,
+    poisongift = 0,
     supplies_max = 100,
 
     villager = 5,
@@ -73,8 +84,45 @@ var food = 0,
     curr_time_market,           curr_time_upgrade_market,
     curr_time_scoutpost,        curr_time_upgrade_scoutpost,
     curr_time_barracks,         curr_time_upgrade_barracks,
+    
+    leatherarmor_num = 0,
+    ironarmor_num = 0,
+    sword_num = 0,
+    axe_num = 0,
+    morningstar_num = 0,
+    shortbow_num = 0,
+    longbow_num = 0,
+    crossbow_num = 0,
+    tradegift_num = 0,
+    peacegift_num = 0,
+    poisongift_num = 0,
+    
+    time_leatherarmor = 60,
+    time_ironarmor = 120,
+    time_sword = 120,
+    time_axe = 60,
+    time_morningstar = 180,
+    time_shortbow = 60,
+    time_longbow = 120,
+    time_crossbow = 180,
+    time_tradegift = 60,
+    time_peacegift = 120,
+    time_poisongift = 180,
+    
+    curr_time_leatherarmor,
+    curr_time_ironarmor,
+    curr_time_sword,
+    curr_time_axe,
+    curr_time_morningstar,
+    curr_time_shortbow,
+    curr_time_longbow,
+    curr_time_crossbow,
+    curr_time_tradegift,
+    curr_time_peacegift,
+    curr_time_poisongift,
 
-    slot_building = false,
+    slot_build = false,
+    slot_craft = false,
     //slot_scout = false,
 
     build,
@@ -165,7 +213,7 @@ function refresh() {
     } else {
         $("#dwn_quarryman").prop("disabled", false);
     }
-    if (worker === 0 || slot_building === true) {
+    if (worker === 0 || slot_build === true) {
         $("#dwn_worker").prop("disabled", true);
     } else {
         $("#dwn_worker").prop("disabled", false);
@@ -223,7 +271,7 @@ function refresh() {
         $("#up_smith").prop("disabled", true);
         $("#up_scout").prop("disabled", true);
         $("#up_knight").prop("disabled", true);
-    } else if (slot_building === true) {
+    } else if (slot_build === true) {
         $("#up_gatherer").prop("disabled", false);
         $("#up_lumberjack").prop("disabled", false);
         $("#up_quarryman").prop("disabled", false);
@@ -252,7 +300,7 @@ function refresh() {
     }
     //endregion
 
-    // Current Time to build
+    // Current Time to build/upgrade
     //region
     if (worker > 1) {
         curr_time_hut = time_hut / worker;
@@ -313,7 +361,7 @@ function refresh() {
     }
     //endregion
 
-    // Display Build Time
+    // Display Build/Upgrade Time
     //region
     $("#time_hut").text(secondsTommss(curr_time_hut));
     $("#time_huntinghut").text(secondsTommss(curr_time_huntinghut));
@@ -346,67 +394,67 @@ function refresh() {
 
     // Build Buttons Dis-/Enabled
     //region
-    if (wood >= 50 && stone >= 10 && worker > 0 && slot_building === false) {
+    if (wood >= 50 && stone >= 10 && worker > 0 && slot_build === false) {
         $("#btn_hut").prop("disabled", false);
     } else {
         $("#btn_hut").prop("disabled", true);
     }
-    if (wood >= 150 && stone >= 30 && worker > 0 && slot_building === false) {
+    if (wood >= 150 && stone >= 30 && worker > 0 && slot_build === false) {
         $("#btn_huntinghut").prop("disabled", false);
     } else {
         $("#btn_huntinghut").prop("disabled", true);
     }
-    if (wood >= 100 && stone >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 100 && stone >= 100 && worker > 0 && slot_build === false) {
         $("#btn_storage").prop("disabled", false);
     } else {
         $("#btn_storage").prop("disabled", true);
     }
-    if (wood >= 200 && stone >= 50 && worker > 0 && slot_building === false) {
+    if (wood >= 200 && stone >= 50 && worker > 0 && slot_build === false) {
         $("#btn_lumberjackhut").prop("disabled", false);
     } else {
         $("#btn_lumberjackhut").prop("disabled", true);
     }
-    if (wood >= 250 && stone >= 75 && worker > 0 && slot_building === false) {
+    if (wood >= 250 && stone >= 75 && worker > 0 && slot_build === false) {
         $("#btn_sheepstall").prop("disabled", false);
     } else {
         $("#btn_sheepstall").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 300 && stone >= 100 && worker > 0 && slot_build === false) {
         $("#btn_quarry").prop("disabled", false);
     } else {
         $("#btn_quarry").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 150 && worker > 0 && slot_building === false) {
+    if (wood >= 300 && stone >= 150 && worker > 0 && slot_build === false) {
         $("#btn_coalmine").prop("disabled", false);
     } else {
         $("#btn_coalmine").prop("disabled", true);
     }
-    if (wood >= 400 && stone >= 200 && coal >= 50 && worker > 0 && slot_building === false) {
+    if (wood >= 400 && stone >= 200 && coal >= 50 && worker > 0 && slot_build === false) {
         $("#btn_ironmine").prop("disabled", false);
     } else {
         $("#btn_ironmine").prop("disabled", true);
     }
-    if (wood >= 500 && stone >= 400 && coal >= 200 && worker > 0 && slot_building === false) {
+    if (wood >= 500 && stone >= 400 && coal >= 200 && worker > 0 && slot_build === false) {
         $("#btn_tailorhouse").prop("disabled", false);
     } else {
         $("#btn_tailorhouse").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && worker > 0 && slot_building === false) {
+    if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && worker > 0 && slot_build === false) {
         $("#btn_forge").prop("disabled", false);
     } else {
         $("#btn_forge").prop("disabled", true);
     }
-    if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && worker > 0 && slot_build === false) {
         $("#btn_market").prop("disabled", false);
     } else {
         $("#btn_market").prop("disabled", true);
     }
-    if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && worker > 0 && slot_building === false) {
+    if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && worker > 0 && slot_build === false) {
         $("#btn_scoutpost").prop("disabled", false);
     } else {
         $("#btn_scoutpost").prop("disabled", true);
     }
-    if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && worker > 0 && slot_building === false) {
+    if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && worker > 0 && slot_build === false) {
         $("#btn_barracks").prop("disabled", false);
     } else {
         $("#btn_barracks").prop("disabled", true);
@@ -520,67 +568,67 @@ function refresh() {
 
     // Upgrade Buttons Dis-/Enabled
     //region
-    if (wood >= 100 && stone >= 20 && worker > 0 && slot_building === false) {
+    if (wood >= 100 && stone >= 20 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_hut").prop("disabled", false);
     } else {
         $("#btn_upgrade_hut").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 60 && worker > 0 && slot_building === false) {
+    if (wood >= 300 && stone >= 60 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_huntinghut").prop("disabled", false);
     } else {
         $("#btn_upgrade_huntinghut").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 300 && worker > 0 && slot_building === false) {
+    if (wood >= 300 && stone >= 300 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_storage").prop("disabled", false);
     } else {
         $("#btn_upgrade_storage").prop("disabled", true);
     }
-    if (wood >= 400 && stone >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 400 && stone >= 100 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_lumberjackhut").prop("disabled", false);
     } else {
         $("#btn_upgrade_lumberjackhut").prop("disabled", true);
     }
-    if (wood >= 500 && stone >= 150 && worker > 0 && slot_building === false) {
+    if (wood >= 500 && stone >= 150 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_sheepstall").prop("disabled", false);
     } else {
         $("#btn_upgrade_sheepstall").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 200 && worker > 0 && slot_building === false) {
+    if (wood >= 600 && stone >= 200 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_quarry").prop("disabled", false);
     } else {
         $("#btn_upgrade_quarry").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 300 && worker > 0 && slot_building === false) {
+    if (wood >= 600 && stone >= 300 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_coalmine").prop("disabled", false);
     } else {
         $("#btn_upgrade_coalmine").prop("disabled", true);
     }
-    if (wood >= 800 && stone >= 400 && coal >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 800 && stone >= 400 && coal >= 100 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_ironmine").prop("disabled", false);
     } else {
         $("#btn_upgrade_ironmine").prop("disabled", true);
     }
-    if (wood >= 1000 && stone >= 800 && coal >= 400 && worker > 0 && slot_building === false) {
+    if (wood >= 1000 && stone >= 800 && coal >= 400 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_tailorhouse").prop("disabled", false);
     } else {
         $("#btn_upgrade_tailorhouse").prop("disabled", true);
     }
-    if (wood >= 1200 && stone >= 900 && coal >= 500 && iron >= 100 && worker > 0 && slot_building === false) {
+    if (wood >= 1200 && stone >= 900 && coal >= 500 && iron >= 100 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_forge").prop("disabled", false);
     } else {
         $("#btn_upgrade_forge").prop("disabled", true);
     }
-    if (wood >= 1500 && stone >= 1000 && coal >= 600 && iron >= 200 && worker > 0 && slot_building === false) {
+    if (wood >= 1500 && stone >= 1000 && coal >= 600 && iron >= 200 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_market").prop("disabled", false);
     } else {
         $("#btn_upgrade_market").prop("disabled", true);
     }
-    if (wood >= 2000 && stone >= 1500 && coal >= 800 && iron >= 500 && worker > 0 && slot_building === false) {
+    if (wood >= 2000 && stone >= 1500 && coal >= 800 && iron >= 500 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_scoutpost").prop("disabled", false);
     } else {
         $("#btn_upgrade_scoutpost").prop("disabled", true);
     }
-    if (wood >= 3000 && stone >= 2400 && coal >= 2000 && iron >= 1600 && worker > 0 && slot_building === false) {
+    if (wood >= 3000 && stone >= 2400 && coal >= 2000 && iron >= 1600 && worker > 0 && slot_build === false) {
         $("#btn_upgrade_barracks").prop("disabled", false);
     } else {
         $("#btn_upgrade_barracks").prop("disabled", true);
@@ -653,6 +701,168 @@ function refresh() {
         $("#btn_upgrade_barracks").closest("tr").show();
     } else {
         $("#btn_upgrade_barracks").closest("tr").hide();
+    }
+    //endregion
+    
+    //Current Time to craft
+    //region
+    if (smith > 1) {
+        curr_time_leatherarmor = time_leatherarmor / smith * leatherarmor_num;
+        curr_time_ironarmor = time_ironarmor / smith * ironarmor_num;
+        curr_time_sword = time_sword / smith * sword_num;
+        curr_time_axe = time_axe / smith * axe_num;
+        curr_time_morningstar = time_morningstar / smith * morningstar_num;
+        curr_time_shortbow = time_shortbow / smith * shortbow_num;
+        curr_time_longbow = time_longbow / smith * longbow_num;
+        curr_time_crossbow = time_crossbow / smith * crossbow_num;
+        curr_time_tradegift = time_tradegift / smith * tradegift_num;
+        curr_time_peacegift = time_peacegift / smith * peacegift_num;
+        curr_time_poisongift = time_poisongift / smith * poisongift_num;
+    } else {
+        curr_time_leatherarmor = time_leatherarmor * leatherarmor_num;
+        curr_time_ironarmor = time_ironarmor * ironarmor_num;
+        curr_time_sword = time_sword * sword_num;
+        curr_time_axe = time_axe * axe_num;
+        curr_time_morningstar = time_morningstar * morningstar_num;
+        curr_time_shortbow = time_shortbow * shortbow_num;
+        curr_time_longbow = time_longbow * longbow_num;
+        curr_time_crossbow = time_crossbow * crossbow_num;
+        curr_time_tradegift = time_tradegift * tradegift_num;
+        curr_time_peacegift = time_peacegift * peacegift_num;
+        curr_time_poisongift = time_poisongift * poisongift_num;
+    }
+    //endregion
+    
+    //Display Craft Time
+    //region
+    $("#time_leatherarmor").text(secondsTommss(curr_time_leatherarmor));
+    $("#time_ironarmor").text(secondsTommss(curr_time_ironarmor));
+    $("#time_sword").text(secondsTommss(curr_time_sword));
+    $("#time_axe").text(secondsTommss(curr_time_axe));
+    $("#time_morningstar").text(secondsTommss(curr_time_morningstar));
+    $("#time_shortbow").text(secondsTommss(curr_time_shortbow));
+    $("#time_longbow").text(secondsTommss(curr_time_longbow));
+    $("#time_crossbow").text(secondsTommss(curr_time_crossbow));
+    $("#time_tradegift").text(secondsTommss(curr_time_tradegift));
+    $("#time_peacegift").text(secondsTommss(curr_time_peacegift));
+    $("#time_poisongift").text(secondsTommss(curr_time_poisongift));
+    //endregion
+
+    // Craft Buttons Dis-/Enabled
+    //region
+    if (leather >= 50 && smith > 0 && slot_craft === false) {
+        $("#btn_leatherarmor").prop("disabled", false);
+    } else {
+        $("#btn_leatherarmor").prop("disabled", true);
+    }
+    if (iron >= 50 && smith > 0 && slot_craft === false) {
+        $("#btn_ironarmor").prop("disabled", false);
+    } else {
+        $("#btn_ironarmor").prop("disabled", true);
+    }
+    if (wood >= 5 && iron >= 25 && smith > 0 && slot_craft === false) {
+        $("#btn_sword").prop("disabled", false);
+    } else {
+        $("#btn_sword").prop("disabled", true);
+    }
+    if (wood >= 5 && iron >= 20 && smith > 0 && slot_craft === false) {
+        $("#btn_axe").prop("disabled", false);
+    } else {
+        $("#btn_axe").prop("disabled", true);
+    }
+    if (wood >= 5 && iron >= 30 && smith > 0 && slot_craft === false) {
+        $("#btn_morningstar").prop("disabled", false);
+    } else {
+        $("#btn_morningstar").prop("disabled", true);
+    }
+    if (wood >= 20 && iron >= 5 && smith > 0 && slot_craft === false) {
+        $("#btn_shortbow").prop("disabled", false);
+    } else {
+        $("#btn_shortbow").prop("disabled", true);
+    }
+    if (wood >= 25 && iron >= 5 && smith > 0 && slot_craft === false) {
+        $("#btn_longbow").prop("disabled", false);
+    } else {
+        $("#btn_longbow").prop("disabled", true);
+    }
+    if (wood >= 30 && iron >= 5 && smith > 0 && slot_craft === false) {
+        $("#btn_crossbow").prop("disabled", false);
+    } else {
+        $("#btn_crossbow").prop("disabled", true);
+    }
+    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25 && smith > 0 && slot_craft === false) {
+        $("#btn_tradegift").prop("disabled", false);
+    } else {
+        $("#btn_tradegift").prop("disabled", true);
+    }
+    if (food >= 50 && wood >= 50 && leather >= 50 && cloth >= 50 && iron >= 50 && clothes >= 50 && smith > 0 && slot_craft === false) {
+        $("#btn_peacegift").prop("disabled", false);
+    } else {
+        $("#btn_peacegift").prop("disabled", true);
+    }
+    if (food >= 50 && wood >= 50 && leather >= 50 && cloth >= 50 && iron >= 50 && clothes >= 50 && poison >= 5 && smith > 0 && slot_craft === false) {
+        $("#btn_poisongift").prop("disabled", false);
+    } else {
+        $("#btn_poisongift").prop("disabled", true);
+    }
+    //endregion
+
+    // Build Buttons Show/Hide
+    //region
+    if (leather >= 25) {
+        $("#btn_leatherarmor").closest("div").show();
+    } else {
+        $("#btn_leatherarmor").closest("div").hide();
+    }
+    if (iron >= 25) {
+        $("#btn_ironarmor").closest("div").show();
+    } else {
+        $("#btn_ironarmor").closest("div").hide();
+    }
+    if (wood >= 3 && iron >= 13) {
+        $("#btn_sword").closest("div").show();
+    } else {
+        $("#btn_sword").closest("div").hide();
+    }
+    if (wood >= 3 && iron >= 10) {
+        $("#btn_axe").closest("div").show();
+    } else {
+        $("#btn_axe").closest("div").hide();
+    }
+    if (wood >= 3 && iron >= 15) {
+        $("#btn_morningstar").closest("div").show();
+    } else {
+        $("#btn_morningstar").closest("div").hide();
+    }
+    if (wood >= 10 && iron >= 3) {
+        $("#btn_shortbow").closest("div").show();
+    } else {
+        $("#btn_shortbow").closest("div").hide();
+    }
+    if (wood >= 13 && iron >= 3) {
+        $("#btn_longbow").closest("div").show();
+    } else {
+        $("#btn_longbow").closest("div").hide();
+    }
+    if (wood >= 15 && iron >= 3) {
+        $("#btn_crossbow").closest("div").show();
+    } else {
+        $("#btn_crossbow").closest("div").hide();
+    }
+    if (food >= 13 && wood >= 13 && leather >= 13 && cloth >= 13 && iron >= 13 && clothes >= 13) {
+        $("#btn_tradegift").closest("div").show();
+    } else {
+        $("#btn_tradegift").closest("div").hide();
+    }
+    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25) {
+        $("#btn_peacegift").closest("div").show();
+    } else {
+        $("#btn_peacegift").closest("div").hide();
+    }
+    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25 && poison >= 3) {
+        $("#btn_poisongift").closest("div").show();
+    } else {
+        $("#btn_poisongift").closest("div").hide();
     }
     //endregion
 }

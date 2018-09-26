@@ -445,114 +445,215 @@
                         </table>
                     </div>
                     <div id="craft" hidden>
-                        <button id="btn_armor" class="btn_craft">Rüstungen</button>
-                        <div id="coll_armor" class="coll_craft" hidden>
-                            <div id="row_leatherarmor" class="row_craft">
-                                <button id="btn_leatherarmor" class="btn_content">Lederrüstung
-                                    <span class="tooltip">
-                                        <ul>
-                                            <li>50 Leder</li>
-                                        </ul>
-                                        <p>Leichte Rüstung</p>
-                                        <p>Leicht erhöhte Überlebenschance</p>
-                                        <p>Schnelle Fortbewegung</p>
-                                    </span>
-                                </button>
-                                <button id="dwn_leatherarmor" class="btn_dwn_up">-</button>
-                                <p id="num_leatherarmor" class="num"></p>
-                                <button id="up_leatherarmor" class="btn_dwn_up">+</button>
-                                <p id="time_leatherarmor">1min</p>
-                            </div>
-                            <div id="row_ironarmor" class="row_craft">
-                                <button id="btn_ironarmor" class="btn_content">Eisenrüstung
-                                    <span class="tooltip">
-                                        <ul>
-                                            <li>50 Eisen</li>
-                                        </ul>
-                                        <p>Schwere Rüstung</p>
-                                        <p>Stark erhöhte Überlebenschance</p>
-                                        <p>Langsame Fortbewegung</p>
-                                    </span>
-                                </button>
-                                <button id="dwn_ironarmor" class="btn_dwn_up">-</button>
-                                <p id="num_ironarmor" class="num"></p>
-                                <button id="up_ironarmor" class="btn_dwn_up">+</button>
-                                <p id="time_ironarmor">1min</p>
-                            </div>
-                        </div>
-                        <button id="btn_weapons" class="btn_craft m">Waffen</button>
-                        <div id="coll_weapons" class="coll_craft" hidden>
-                            <button id="btn_melee" class="btn_craft nested">Nahkampf</button>
-                            <div id="coll_melee" class="coll_craft nested" hidden>
-                                <div id="row_sword" class="row_craft">
-                                    <p>Schwert</p>
-                                    <button id="dwn_sword" class="btn_dwn_up">-</button>
-                                    <p id="num_sword" class="num"></p>
-                                    <button id="up_sword" class="btn_dwn_up">+</button>
-                                    <p id="time_sword">1min</p>
+                        <div id="coll_armor" class="coll_craft">
+                            <button id="btn_armor" class="btn_craft">Rüstungen</button>
+                            <div id="content_armor" class="content_craft" hidden>
+                                <div id="row_leatherarmor" class="row_craft">
+                                    <button id="btn_leatherarmor" class="btn_content">Lederrüstung
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>50 Leder</li>
+                                            </ul>
+                                            <p>Leichte Rüstung</p>
+                                            <p>Leicht erhöhte Überlebenschance</p>
+                                            <p>Schnelle Fortbewegung</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_leatherarmor" class="btn_dwn_up">-</button>
+                                    <p id="num_leatherarmor" class="num"></p>
+                                    <button id="up_leatherarmor" class="btn_dwn_up">+</button>
+                                    <p id="time_leatherarmor"></p>
                                 </div>
-                                <div id="row_axe" class="row_craft">
-                                    <p>Axt</p>
-                                    <button id="dwn_axe" class="btn_dwn_up">-</button>
-                                    <p id="num_axe" class="num"></p>
-                                    <button id="up_axe" class="btn_dwn_up">+</button>
-                                    <p id="time_axe">1min</p>
-                                </div>
-                                <div id="row_morningstar" class="row_craft">
-                                    <p>Morgenstern</p>
-                                    <button id="dwn_morningstar" class="btn_dwn_up">-</button>
-                                    <p id="num_morningstar" class="num"></p>
-                                    <button id="up_morningstar" class="btn_dwn_up">+</button>
-                                    <p id="time_morningstar">1min</p>
-                                </div>
-                            </div>
-                            <button id="btn_ranged" class="btn_craft m nested">Fernkampf</button>
-                            <div id="coll_ranged" class="coll_craft nested" hidden>
-                                <div id="row_shortbow" class="row_craft">
-                                    <p>Kurzbogen</p>
-                                    <button id="dwn_shortbow" class="btn_dwn_up">-</button>
-                                    <p id="num_shortbow" class="num"></p>
-                                    <button id="up_shortbow" class="btn_dwn_up">+</button>
-                                    <p id="time_shortbow">1min</p>
-                                </div>
-                                <div id="row_longbow" class="row_craft">
-                                    <p>Langbogen</p>
-                                    <button id="dwn_longbow" class="btn_dwn_up">-</button>
-                                    <p id="num_longbow" class="num"></p>
-                                    <button id="up_longbow" class="btn_dwn_up">+</button>
-                                    <p id="time_longbow">1min</p>
-                                </div>
-                                <div id="row_crossbow" class="row_craft">
-                                    <p>Armbrust</p>
-                                    <button id="dwn_crossbow" class="btn_dwn_up">-</button>
-                                    <p id="num_crossbow" class="num"></p>
-                                    <button id="up_crossbow" class="btn_dwn_up">+</button>
-                                    <p id="time_crossbow">1min</p>
+                                <div id="row_ironarmor" class="row_craft">
+                                    <button id="btn_ironarmor" class="btn_content">Eisenrüstung
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>50 Eisen</li>
+                                            </ul>
+                                            <p>Schwere Rüstung</p>
+                                            <p>Stark erhöhte Überlebenschance</p>
+                                            <p>Langsame Fortbewegung</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_ironarmor" class="btn_dwn_up">-</button>
+                                    <p id="num_ironarmor" class="num"></p>
+                                    <button id="up_ironarmor" class="btn_dwn_up">+</button>
+                                    <p id="time_ironarmor"></p>
                                 </div>
                             </div>
                         </div>
-                        <button id="btn_gifts" class="btn_craft m">Geschenke</button>
-                        <div id="coll_gifts" class="coll_craft" hidden>
-                            <div id="row_tradegift" class="row_craft">
-                                <p>Handelsgeschenk</p>
-                                <button id="dwn_tradegift" class="btn_dwn_up">-</button>
-                                <p id="num_tradegift" class="num"></p>
-                                <button id="up_tradegift" class="btn_dwn_up">+</button>
-                                <p id="time_tradegift">1min</p>
+                        <div id="coll_weapons" class="coll_craft m">
+                            <button id="btn_weapons" class="btn_craft">Waffen</button>
+                            <div id="content_weapons" class="content_craft" hidden>
+                                <div id="coll_melee" class="coll_craft">
+                                    <button id="btn_melee" class="btn_craft">Nahkampf</button>
+                                    <div id="content_melee" class="content_craft" hidden>
+                                        <div id="row_sword" class="row_craft">
+                                            <button id="btn_sword" class="btn_content">Schwert
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>5 Holz</li>
+                                                        <li>25 Eisen</li>
+                                                    </ul>
+                                                    <p>Normaler Waffe</p>
+                                                    <p>Normaler Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_sword" class="btn_dwn_up">-</button>
+                                            <p id="num_sword" class="num"></p>
+                                            <button id="up_sword" class="btn_dwn_up">+</button>
+                                            <p id="time_sword"></p>
+                                        </div>
+                                        <div id="row_axe" class="row_craft">
+                                            <button id="btn_axe" class="btn_content">Axt
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>5 Holz</li>
+                                                        <li>20 Eisen</li>
+                                                    </ul>
+                                                    <p>Leichte Waffe</p>
+                                                    <p>Leichter Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_axe" class="btn_dwn_up">-</button>
+                                            <p id="num_axe" class="num"></p>
+                                            <button id="up_axe" class="btn_dwn_up">+</button>
+                                            <p id="time_axe"></p>
+                                        </div>
+                                        <div id="row_morningstar" class="row_craft">
+                                            <button id="btn_morningstar" class="btn_content">Morgenstern
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>5 Holz</li>
+                                                        <li>30 Eisen</li>
+                                                    </ul>
+                                                    <p>Schwere Waffe</p>
+                                                    <p>Schwerer Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_morningstar" class="btn_dwn_up">-</button>
+                                            <p id="num_morningstar" class="num"></p>
+                                            <button id="up_morningstar" class="btn_dwn_up">+</button>
+                                            <p id="time_morningstar"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="coll_ranged" class="coll_craft">
+                                    <button id="btn_ranged" class="btn_craft m">Fernkampf</button>
+                                    <div id="content_ranged" class="content_craft" hidden>
+                                        <div id="row_shortbow" class="row_craft">
+                                            <button id="btn_shortbow" class="btn_content">Kurzbogen
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>20 Holz</li>
+                                                        <li>5 Eisen</li>
+                                                    </ul>
+                                                    <p>Leichte Waffe</p>
+                                                    <p>Leichter Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_shortbow" class="btn_dwn_up">-</button>
+                                            <p id="num_shortbow" class="num"></p>
+                                            <button id="up_shortbow" class="btn_dwn_up">+</button>
+                                            <p id="time_shortbow"></p>
+                                        </div>
+                                        <div id="row_longbow" class="row_craft">
+                                            <button id="btn_longbow" class="btn_content">Langbogen
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>25 Holz</li>
+                                                        <li>5 Eisen</li>
+                                                    </ul>
+                                                    <p>Normaler Waffe</p>
+                                                    <p>Normaler Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_longbow" class="btn_dwn_up">-</button>
+                                            <p id="num_longbow" class="num"></p>
+                                            <button id="up_longbow" class="btn_dwn_up">+</button>
+                                            <p id="time_longbow"></p>
+                                        </div>
+                                        <div id="row_crossbow" class="row_craft">
+                                            <button id="btn_crossbow" class="btn_content">Armbrust
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>30 Holz</li>
+                                                        <li>5 Eisen</li>
+                                                    </ul>
+                                                    <p>Schwere Waffe</p>
+                                                    <p>Schwerer Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_crossbow" class="btn_dwn_up">-</button>
+                                            <p id="num_crossbow" class="num"></p>
+                                            <button id="up_crossbow" class="btn_dwn_up">+</button>
+                                            <p id="time_crossbow"></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div id="row_peacegift" class="row_craft">
-                                <p>Friedensgeschenk</p>
-                                <button id="dwn_peacegift" class="btn_dwn_up">-</button>
-                                <p id="num_peacegift" class="num"></p>
-                                <button id="up_peacegift" class="btn_dwn_up">+</button>
-                                <p id="time_peacegift">1min</p>
-                            </div>
-                            <div id="row_poisongift" class="row_craft">
-                                <p>Vergiftetes Geschenk</p>
-                                <button id="dwn_poisongift" class="btn_dwn_up">-</button>
-                                <p id="num_poisongift" class="num"></p>
-                                <button id="up_poisongift" class="btn_dwn_up">+</button>
-                                <p id="time_poisongift">1min</p>
+                        </div>
+                        <div id="coll_gifts" class="coll_craft m">
+                            <button id="btn_gifts" class="btn_craft">Geschenke</button>
+                            <div id="content_gifts" class="content_craft" hidden>
+                                <div id="row_tradegift" class="row_craft">
+                                    <button id="btn_tradegift" class="btn_content">Handelsgeschenk
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>25 Nahrung</li>
+                                                <li>25 Holz</li>
+                                                <li>25 Leder</li>
+                                                <li>25 Wolle</li>
+                                                <li>25 Eisen</li>
+                                                <li>25 Kleider</li>
+                                            </ul>
+                                            <p>Erhöhte Chance: Handelsabkommen</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_tradegift" class="btn_dwn_up">-</button>
+                                    <p id="num_tradegift" class="num"></p>
+                                    <button id="up_tradegift" class="btn_dwn_up">+</button>
+                                    <p id="time_tradegift"></p>
+                                </div>
+                                <div id="row_peacegift" class="row_craft">
+                                    <button id="btn_peacegift" class="btn_content">Friedensgeschenk
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>50 Nahrung</li>
+                                                <li>50 Holz</li>
+                                                <li>50 Leder</li>
+                                                <li>50 Wolle</li>
+                                                <li>50 Eisen</li>
+                                                <li>50 Kleider</li>
+                                            </ul>
+                                            <p>Erhöhte Chance: Friedensabkommen</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_peacegift" class="btn_dwn_up">-</button>
+                                    <p id="num_peacegift" class="num"></p>
+                                    <button id="up_peacegift" class="btn_dwn_up">+</button>
+                                    <p id="time_peacegift"></p>
+                                </div>
+                                <div id="row_poisongift" class="row_craft">
+                                    <button id="btn_poisongift" class="btn_content">Giftgeschenk
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>50 Nahrung</li>
+                                                <li>50 Holz</li>
+                                                <li>50 Leder</li>
+                                                <li>50 Wolle</li>
+                                                <li>50 Eisen</li>
+                                                <li>50 Kleider</li>
+                                                <li>5 Gift</li>
+                                            </ul>
+                                            <p>Erhöhte Chance: Toter Anführer</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_poisongift" class="btn_dwn_up">-</button>
+                                    <p id="num_poisongift" class="num"></p>
+                                    <button id="up_poisongift" class="btn_dwn_up">+</button>
+                                    <p id="time_poisongift"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -673,13 +774,52 @@
                         <p>Kleider</p>
                         <p id="clothes"></p>
                     </div>
-                    <div id="row" class="row" hidden>
-                        <p>Rüstung</p>
-                        <p id="armor"></p>
+                </div>
+                <div id="items" class="items" hidden>
+                    <p class="th">Gegenstände</p>
+                    <div id="row" class="row">
+                        <p>Lederrüstung</p>
+                        <p id="leatherarmor"></p>
                     </div>
-                    <div id="row" class="row" hidden>
+                    <div id="row" class="row">
+                        <p>Eisenrüstung</p>
+                        <p id="ironarmor"></p>
+                    </div>
+                    <div id="row" class="row">
                         <p>Schwert</p>
                         <p id="sword"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Axt</p>
+                        <p id="axe"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Morgenstern</p>
+                        <p id="morningstar"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Kurzbogen</p>
+                        <p id="shortbow"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Langbogen</p>
+                        <p id="longbow"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Armbrust</p>
+                        <p id="crossbow"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Handelsgeschenk</p>
+                        <p id="tradegift"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Friedensgeschenk</p>
+                        <p id="peacegift"></p>
+                    </div>
+                    <div id="row" class="row">
+                        <p>Giftgeschenk</p>
+                        <p id="poisongift"></p>
                     </div>
                 </div>
                 <div id="villagers" class="villagers">
