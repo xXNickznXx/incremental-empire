@@ -11,8 +11,6 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Light/Dark-Theme
 ### Möglichkeit zu Speichern und zu Laden
 ### Mobileansicht(Rudimentär)
-
-## Features in Arbeit:
 ### Crafting
 - Rüstungen
   - Eisenrüstung
@@ -31,6 +29,14 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - Friedensgeschenk
   - Vergiftetes Geschenk
 
+## Features in Arbeit:
+### Neue Berufe
+- Stallbetreuer
+  -Pferde(Schnellere Fortbewegung)
+- Alchemist
+  - Heilmittel
+  - Gifte
+
 ## Kommende Features:
 ### Weitere Optionen
 - Schwierigkeit
@@ -39,12 +45,6 @@ Link zum [Spiel](https://nickweyermann.github.io).
 ### Handeln
 - mit lokalem Händler
 - mit Dörfern
-### Neue Berufe
-- Stallbetreuer
-  -Pferde(Schnellere Fortbewegung)
-- Alchemist
-  - Heilmittel
-  - Gifte
 ### Events
 - Kundschafter
   - nichts enteckt

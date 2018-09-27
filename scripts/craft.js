@@ -63,6 +63,26 @@ $("#dwn_leatherarmor").mousedown(function () {
     leatherarmor_t = setTimeout(function () {leatherarmor_m = setInterval(leatherarmor_minus, 50);}, 500);
 });
 
+function craft_ironarmor() {
+    $("#task .ironarmor.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        ironarmor += ironarmor_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Eisenrüstung wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .ironarmor").remove();
+    }
+}
+$("#btn_ironarmor").click(function () {
+    task.append("<td class='ironarmor'>Herstellung von Eisenrüstung</td>");
+    task.append("<td class='ironarmor time'></td>");
+    iron -= 50 * ironarmor_num;
+    slot_craft = true;
+    crafter = curr_time_ironarmor;
+    craft = setInterval(craft_ironarmor, speed / 10);
+});
 var ironarmor_p,
     ironarmor_m,
     ironarmor_t;
@@ -90,6 +110,27 @@ $("#dwn_ironarmor").mousedown(function () {
     ironarmor_t = setTimeout(function () {ironarmor_m = setInterval(ironarmor_minus, 50);}, 500);
 });
 
+function craft_sword() {
+    $("#task .sword.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        sword += sword_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Schwert wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .sword").remove();
+    }
+}
+$("#btn_sword").click(function () {
+    task.append("<td class='sword'>Herstellung von Schwert</td>");
+    task.append("<td class='sword time'></td>");
+    wood -= 5 * sword_num;
+    iron -= 25 * sword_num;
+    slot_craft = true;
+    crafter = curr_time_sword;
+    craft = setInterval(craft_sword, speed / 10);
+});
 var sword_p,
     sword_m,
     sword_t;
@@ -117,6 +158,27 @@ $("#dwn_sword").mousedown(function () {
     sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50);}, 500);
 });
 
+function craft_axe() {
+    $("#task .axe.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        axe += axe_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Axt wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .axe").remove();
+    }
+}
+$("#btn_axe").click(function () {
+    task.append("<td class='axe'>Herstellung von Axt</td>");
+    task.append("<td class='axe time'></td>");
+    wood -= 5 * axe_num;
+    iron -= 20 * axe_num;
+    slot_craft = true;
+    crafter = curr_time_axe;
+    craft = setInterval(craft_axe, speed / 10);
+});
 var axe_p,
     axe_m,
     axe_t;
@@ -144,6 +206,27 @@ $("#dwn_axe").mousedown(function () {
     axe_t = setTimeout(function () {axe_m = setInterval(axe_minus, 50);}, 500);
 });
 
+function craft_morningstar() {
+    $("#task .morningstar.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        morningstar += morningstar_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Morgenstern wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .morningstar").remove();
+    }
+}
+$("#btn_morningstar").click(function () {
+    task.append("<td class='morningstar'>Herstellung von Morgenstern</td>");
+    task.append("<td class='morningstar time'></td>");
+    wood -= 5 * morningstar_num;
+    iron -= 30 * morningstar_num;
+    slot_craft = true;
+    crafter = curr_time_morningstar;
+    craft = setInterval(craft_morningstar, speed / 10);
+});
 var morningstar_p,
     morningstar_m,
     morningstar_t;
@@ -171,6 +254,27 @@ $("#dwn_morningstar").mousedown(function () {
     morningstar_t = setTimeout(function () {morningstar_m = setInterval(morningstar_minus, 50);}, 500);
 });
 
+function craft_shortbow() {
+    $("#task .shortbow.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        shortbow += shortbow_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Kurzbogen wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .shortbow").remove();
+    }
+}
+$("#btn_shortbow").click(function () {
+    task.append("<td class='shortbow'>Herstellung von Kurzbogen</td>");
+    task.append("<td class='shortbow time'></td>");
+    wood -= 20 * shortbow_num;
+    iron -= 5 * shortbow_num;
+    slot_craft = true;
+    crafter = curr_time_shortbow;
+    craft = setInterval(craft_shortbow, speed / 10);
+});
 var shortbow_p,
     shortbow_m,
     shortbow_t;
@@ -198,6 +302,27 @@ $("#dwn_shortbow").mousedown(function () {
     shortbow_t = setTimeout(function () {shortbow_m = setInterval(shortbow_minus, 50);}, 500);
 });
 
+function craft_longbow() {
+    $("#task .longbow.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        longbow += longbow_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Langbogen wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .longbow").remove();
+    }
+}
+$("#btn_longbow").click(function () {
+    task.append("<td class='longbow'>Herstellung von Langbogen</td>");
+    task.append("<td class='longbow time'></td>");
+    wood -= 25 * longbow_num;
+    iron -= 5 * longbow_num;
+    slot_craft = true;
+    crafter = curr_time_longbow;
+    craft = setInterval(craft_longbow, speed / 10);
+});
 var longbow_p,
     longbow_m,
     longbow_t;
@@ -225,6 +350,27 @@ $("#dwn_longbow").mousedown(function () {
     longbow_t = setTimeout(function () {longbow_m = setInterval(longbow_minus, 50);}, 500);
 });
 
+function craft_crossbow() {
+    $("#task .crossbow.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        crossbow += crossbow_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Armbrust wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .crossbow").remove();
+    }
+}
+$("#btn_crossbow").click(function () {
+    task.append("<td class='crossbow'>Herstellung von Armbrust</td>");
+    task.append("<td class='crossbow time'></td>");
+    wood -= 30 * crossbow_num;
+    iron -= 5 * crossbow_num;
+    slot_craft = true;
+    crafter = curr_time_crossbow;
+    craft = setInterval(craft_crossbow, speed / 10);
+});
 var crossbow_p,
     crossbow_m,
     crossbow_t;
@@ -252,6 +398,31 @@ $("#dwn_crossbow").mousedown(function () {
     crossbow_t = setTimeout(function () {crossbow_m = setInterval(crossbow_minus, 50);}, 500);
 });
 
+function craft_tradegift() {
+    $("#task .tradegift.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        tradegift += tradegift_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Handelsgeschenk wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .tradegift").remove();
+    }
+}
+$("#btn_tradegift").click(function () {
+    task.append("<td class='tradegift'>Herstellung von Handelsgeschenk</td>");
+    task.append("<td class='tradegift time'></td>");
+    food -= 25 * tradegift_num;
+    wood -= 25 * tradegift_num;
+    leather -= 25 * tradegift_num;
+    cloth -= 25 * tradegift_num;
+    iron -= 25 * tradegift_num;
+    clothes -= 25 * tradegift_num;
+    slot_craft = true;
+    crafter = curr_time_tradegift;
+    craft = setInterval(craft_tradegift, speed / 10);
+});
 var tradegift_p,
     tradegift_m,
     tradegift_t;
@@ -279,6 +450,31 @@ $("#dwn_tradegift").mousedown(function () {
     tradegift_t = setTimeout(function () {tradegift_m = setInterval(tradegift_minus, 50);}, 500);
 });
 
+function craft_peacegift() {
+    $("#task .peacegift.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        peacegift += peacegift_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Friedensgeschenk wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .peacegift").remove();
+    }
+}
+$("#btn_peacegift").click(function () {
+    task.append("<td class='peacegift'>Herstellung von Friedensgeschenk</td>");
+    task.append("<td class='peacegift time'></td>");
+    food -= 50 * peacegift_num;
+    wood -= 50 * peacegift_num;
+    leather -= 50 * peacegift_num;
+    cloth -= 50 * peacegift_num;
+    iron -= 50 * peacegift_num;
+    clothes -= 50 * peacegift_num;
+    slot_craft = true;
+    crafter = curr_time_peacegift;
+    craft = setInterval(craft_peacegift, speed / 10);
+});
 var peacegift_p,
     peacegift_m,
     peacegift_t;
@@ -306,6 +502,32 @@ $("#dwn_peacegift").mousedown(function () {
     peacegift_t = setTimeout(function () {peacegift_m = setInterval(peacegift_minus, 50);}, 500);
 });
 
+function craft_poisongift() {
+    $("#task .poisongift.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        poisongift += poisongift_num;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Giftgeschenk wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .poisongift").remove();
+    }
+}
+$("#btn_poisongift").click(function () {
+    task.append("<td class='poisongift'>Herstellung von Giftgeschenk</td>");
+    task.append("<td class='poisongift time'></td>");
+    food -= 50 * poisongift_num;
+    wood -= 50 * poisongift_num;
+    leather -= 50 * poisongift_num;
+    cloth -= 50 * poisongift_num;
+    iron -= 50 * poisongift_num;
+    clothes -= 50 * poisongift_num;
+    poison -= 5 * poisongift_num;
+    slot_craft = true;
+    crafter = curr_time_poisongift;
+    craft = setInterval(craft_poisongift, speed / 10);
+});
 var poisongift_p,
     poisongift_m,
     poisongift_t;
