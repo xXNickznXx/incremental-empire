@@ -50,7 +50,7 @@
    "$knight": 0,
    "$damage_bonus": 1,
    "$stableman": 0,
-   "$breed_bonus": 2,
+   "$breed_bonus": 1,
    "$trade_bonus": 1,
    "$hut": 0,
    "$huntinghut": false,
