@@ -30,21 +30,15 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - Vergiftetes Geschenk
 
 ## Features in Arbeit:
-### Neue Berufe
-- Stallbetreuer
-  -Pferde(Schnellere Fortbewegung)
-- Alchemist
-  - Heilmittel
-  - Gifte
+### Handeln
+- mit lokalem Händler
+- mit Dörfern
 
 ## Kommende Features:
 ### Weitere Optionen
 - Schwierigkeit
 - Automatisches Speichern
 - Abbruchmöglichkeit für Aufträge
-### Handeln
-- mit lokalem Händler
-- mit Dörfern
 ### Events
 - Kundschafter
   - nichts enteckt

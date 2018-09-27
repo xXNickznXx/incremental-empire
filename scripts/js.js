@@ -150,9 +150,11 @@ var food = 0,
     refr,
     starve,
     freeze,
-    res_prod,
+    supp_prod,
     new_vil,
     temperat,
+    
+    new_hor,
 
     tempr = ["Warm", "Warm", "Warm", "Mild", "Kalt"],
 
@@ -714,7 +716,7 @@ function refresh() {
     } else {
         $("#btn_upgrade_huntinghut").closest("tr").hide();
     }
-    if (wood >= 150 && stone >= 150 && storage === true && lvl_storage < 5) {
+    if (wood >= 150 && stone >= 150 && storage === true && lvl_storage < 9) {
         $("#btn_upgrade_storage").closest("tr").show();
     } else {
         $("#btn_upgrade_storage").closest("tr").hide();
@@ -984,6 +986,8 @@ function game_over() {
     refresh();
     clearInterval(build);
     clearInterval(upgrade);
+    clearInterval(brew);
+    clearInterval(craft);
     clearInterval(refr);
     clearInterval(starve);
     clearInterval(freeze);
@@ -1262,6 +1266,25 @@ function temperature() {
         if (typeof freeze !== 'undefined') {
             clearInterval(freeze);
             freeze = undefined;
+        }
+    }
+}
+
+/* Horse add */ 
+function new_horses() {
+    var rnd = Math.floor((Math.random() * (8 / breed_bonus)) + 1), amount;
+    if (rnd === 1) {
+        amount = Math.floor((Math.random() * stableman) + 2);
+        if (horse + amount <= villager_max) {
+            horse += amount;
+            msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
+            check_msg();
+        }
+    } else if (rnd === 2 || rnd === 3) {
+        if (horse < villager_max) {
+            horse += 1;
+            msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
+            check_msg();
         }
     }
 }

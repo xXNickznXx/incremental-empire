@@ -152,5 +152,6 @@ $("#btn_start").click(function () {
         new_vil = setInterval(new_villagers, speed * 30);
         temperature();
         temperat = setInterval(temperature, speed * 30);
+        new_hor = setInterval(new_horses, speed * 25);
     }
 });
