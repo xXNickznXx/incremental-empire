@@ -1,5 +1,8 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
+$("#btn_brew").click(function () {
+    $("#content_brew").slideToggle();
+});
 $("#btn_armor").click(function () {
     $("#content_armor").slideToggle();
 });
@@ -29,8 +32,10 @@ function brew_medicine() {
     }
 }
 $("#btn_medicine").click(function () {
-    task.append("<td class='medicine'>Herstellung von Medizin</td>");
-    task.append("<td class='medicine time'></td>");
+    task.append(`<tr>
+                <td class='medicine'>Herstellung von Medizin</td>
+                <td class='medicine time'></td>
+                </tr>`);
     food -= 20 * medicine_num;
     stone -= 5 * medicine_num;
     cloth -= 5 * medicine_num;
@@ -78,8 +83,10 @@ function brew_poison() {
     }
 }
 $("#btn_poison").click(function () {
-    task.append("<td class='poison'>Herstellung von Gift</td>");
-    task.append("<td class='poison time'></td>");
+    task.append(`<tr>
+                <td class='poison'>Herstellung von Gift</td>
+                <td class='poison time'></td>
+                </tr>`);
     food -= 10 * poison_num;
     stone -= 5 * poison_num;
     cloth -= 5 * poison_num;
@@ -129,8 +136,10 @@ function craft_leatherarmor() {
     }
 }
 $("#btn_leatherarmor").click(function () {
-    task.append("<td class='leatherarmor'>Herstellung von Lederrüstung</td>");
-    task.append("<td class='leatherarmor time'></td>");
+    task.append(`<tr>
+                <td class='leatherarmor'>Herstellung von Lederrüstung</td>
+                <td class='leatherarmor time'></td>
+                </tr>`);
     leather -= 50 * leatherarmor_num;
     slot_craft = true;
     crafter = curr_time_leatherarmor;
@@ -176,8 +185,10 @@ function craft_ironarmor() {
     }
 }
 $("#btn_ironarmor").click(function () {
-    task.append("<td class='ironarmor'>Herstellung von Eisenrüstung</td>");
-    task.append("<td class='ironarmor time'></td>");
+    task.append(`<tr>
+                <td class='ironarmor'>Herstellung von Eisenrüstung</td>
+                <td class='ironarmor time'></td>
+                </tr>`);
     iron -= 50 * ironarmor_num;
     slot_craft = true;
     crafter = curr_time_ironarmor;
@@ -223,8 +234,10 @@ function craft_sword() {
     }
 }
 $("#btn_sword").click(function () {
-    task.append("<td class='sword'>Herstellung von Schwert</td>");
-    task.append("<td class='sword time'></td>");
+    task.append(`<tr>
+                <td class='sword'>Herstellung von Schwert</td>
+                <td class='sword time'></td>
+                </tr>`);
     wood -= 5 * sword_num;
     iron -= 25 * sword_num;
     slot_craft = true;
@@ -271,8 +284,10 @@ function craft_axe() {
     }
 }
 $("#btn_axe").click(function () {
-    task.append("<td class='axe'>Herstellung von Axt</td>");
-    task.append("<td class='axe time'></td>");
+    task.append(`<tr>
+                <td class='axe'>Herstellung von Axt</td>
+                <td class='axe time'></td>
+                </tr>`);
     wood -= 5 * axe_num;
     iron -= 20 * axe_num;
     slot_craft = true;
@@ -319,8 +334,10 @@ function craft_morningstar() {
     }
 }
 $("#btn_morningstar").click(function () {
-    task.append("<td class='morningstar'>Herstellung von Morgenstern</td>");
-    task.append("<td class='morningstar time'></td>");
+    task.append(`<tr>
+                <td class='morningstar'>Herstellung von Morgenstern</td>
+                <td class='morningstar time'></td>
+                </tr>`);
     wood -= 5 * morningstar_num;
     iron -= 30 * morningstar_num;
     slot_craft = true;
@@ -367,8 +384,10 @@ function craft_shortbow() {
     }
 }
 $("#btn_shortbow").click(function () {
-    task.append("<td class='shortbow'>Herstellung von Kurzbogen</td>");
-    task.append("<td class='shortbow time'></td>");
+    task.append(`<tr>
+                <td class='shortbow'>Herstellung von Kurzbogen</td>
+                <td class='shortbow time'></td>
+                </tr>`);
     wood -= 20 * shortbow_num;
     iron -= 5 * shortbow_num;
     slot_craft = true;
@@ -415,8 +434,10 @@ function craft_longbow() {
     }
 }
 $("#btn_longbow").click(function () {
-    task.append("<td class='longbow'>Herstellung von Langbogen</td>");
-    task.append("<td class='longbow time'></td>");
+    task.append(`<tr>
+                <td class='longbow'>Herstellung von Langbogen</td>
+                <td class='longbow time'></td>
+                </tr>`);
     wood -= 25 * longbow_num;
     iron -= 5 * longbow_num;
     slot_craft = true;
@@ -463,8 +484,10 @@ function craft_crossbow() {
     }
 }
 $("#btn_crossbow").click(function () {
-    task.append("<td class='crossbow'>Herstellung von Armbrust</td>");
-    task.append("<td class='crossbow time'></td>");
+    task.append(`<tr>
+                <td class='crossbow'>Herstellung von Armbrust</td>
+                <td class='crossbow time'></td>
+                </tr>`);
     wood -= 30 * crossbow_num;
     iron -= 5 * crossbow_num;
     slot_craft = true;
@@ -511,8 +534,10 @@ function craft_tradegift() {
     }
 }
 $("#btn_tradegift").click(function () {
-    task.append("<td class='tradegift'>Herstellung von Handelsgeschenk</td>");
-    task.append("<td class='tradegift time'></td>");
+    task.append(`<tr>
+                <td class='tradegift'>Herstellung von Handelsgeschenk</td>
+                <td class='tradegift time'></td>
+                </tr>`);
     food -= 25 * tradegift_num;
     wood -= 25 * tradegift_num;
     leather -= 25 * tradegift_num;
@@ -563,8 +588,10 @@ function craft_peacegift() {
     }
 }
 $("#btn_peacegift").click(function () {
-    task.append("<td class='peacegift'>Herstellung von Friedensgeschenk</td>");
-    task.append("<td class='peacegift time'></td>");
+    task.append(`<tr>
+                <td class='peacegift'>Herstellung von Friedensgeschenk</td>
+                <td class='peacegift time'></td>
+                </tr>`);
     food -= 50 * peacegift_num;
     wood -= 50 * peacegift_num;
     leather -= 50 * peacegift_num;
@@ -615,8 +642,10 @@ function craft_poisongift() {
     }
 }
 $("#btn_poisongift").click(function () {
-    task.append("<td class='poisongift'>Herstellung von Giftgeschenk</td>");
-    task.append("<td class='poisongift time'></td>");
+    task.append(`<tr>
+                <td class='poisongift'>Herstellung von Giftgeschenk</td>
+                <td class='poisongift time'></td>
+                </tr>`);
     food -= 50 * poisongift_num;
     wood -= 50 * poisongift_num;
     leather -= 50 * poisongift_num;
@@ -656,6 +685,12 @@ $("#dwn_poisongift").mousedown(function () {
 });
 
 $("html").mouseup(function () {
+    clearInterval(medicine_p);
+    clearInterval(medicine_m);
+    clearInterval(medicine_t);
+    clearInterval(poison_p);
+    clearInterval(poison_m);
+    clearInterval(poison_t);
     clearInterval(leatherarmor_p);
     clearInterval(leatherarmor_m);
     clearInterval(leatherarmor_t);

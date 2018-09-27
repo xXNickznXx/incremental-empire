@@ -37,7 +37,7 @@ var food = 0,
     coalminer = 0,  coal_bonus = 1,
     ironminer = 0,  iron_bonus = 1,
     tailor = 0,     clothes_bonus = 1,
-    alchemist = 0,  brew_bonus = 1,
+    alchemist = 0,  brew_time = 1,
     smith = 0,      craft_time = 1,
     scout = 0,      travel_time = 1,
     knight = 0,     damage_bonus = 1,
@@ -784,40 +784,40 @@ function refresh() {
     //Current Time to brew
     //region
     if (alchemist > 1) {
-        curr_time_medicine = time_medicine / alchemist * medicine_num;
-        curr_time_poison = time_poison / alchemist * poison_num;
+        curr_time_medicine = time_medicine / alchemist * medicine_num / brew_time;
+        curr_time_poison = time_poison / alchemist * poison_num / brew_time;
     } else {
-        curr_time_medicine = time_medicine * medicine_num;
-        curr_time_poison = time_poison * poison_num;
+        curr_time_medicine = time_medicine * medicine_num / brew_time;
+        curr_time_poison = time_poison * poison_num / brew_time;
     }
     //endregion
 
     //Current Time to craft
     //region
     if (smith > 1) {
-        curr_time_leatherarmor = time_leatherarmor / smith * leatherarmor_num;
-        curr_time_ironarmor = time_ironarmor / smith * ironarmor_num;
-        curr_time_sword = time_sword / smith * sword_num;
-        curr_time_axe = time_axe / smith * axe_num;
-        curr_time_morningstar = time_morningstar / smith * morningstar_num;
-        curr_time_shortbow = time_shortbow / smith * shortbow_num;
-        curr_time_longbow = time_longbow / smith * longbow_num;
-        curr_time_crossbow = time_crossbow / smith * crossbow_num;
-        curr_time_tradegift = time_tradegift / smith * tradegift_num;
-        curr_time_peacegift = time_peacegift / smith * peacegift_num;
-        curr_time_poisongift = time_poisongift / smith * poisongift_num;
+        curr_time_leatherarmor = time_leatherarmor / smith * leatherarmor_num / craft_time;
+        curr_time_ironarmor = time_ironarmor / smith * ironarmor_num / craft_time;
+        curr_time_sword = time_sword / smith * sword_num / craft_time;
+        curr_time_axe = time_axe / smith * axe_num / craft_time;
+        curr_time_morningstar = time_morningstar / smith * morningstar_num / craft_time;
+        curr_time_shortbow = time_shortbow / smith * shortbow_num / craft_time;
+        curr_time_longbow = time_longbow / smith * longbow_num / craft_time;
+        curr_time_crossbow = time_crossbow / smith * crossbow_num / craft_time;
+        curr_time_tradegift = time_tradegift / smith * tradegift_num / craft_time;
+        curr_time_peacegift = time_peacegift / smith * peacegift_num / craft_time;
+        curr_time_poisongift = time_poisongift / smith * poisongift_num / craft_time;
     } else {
-        curr_time_leatherarmor = time_leatherarmor * leatherarmor_num;
-        curr_time_ironarmor = time_ironarmor * ironarmor_num;
-        curr_time_sword = time_sword * sword_num;
-        curr_time_axe = time_axe * axe_num;
-        curr_time_morningstar = time_morningstar * morningstar_num;
-        curr_time_shortbow = time_shortbow * shortbow_num;
-        curr_time_longbow = time_longbow * longbow_num;
-        curr_time_crossbow = time_crossbow * crossbow_num;
-        curr_time_tradegift = time_tradegift * tradegift_num;
-        curr_time_peacegift = time_peacegift * peacegift_num;
-        curr_time_poisongift = time_poisongift * poisongift_num;
+        curr_time_leatherarmor = time_leatherarmor * leatherarmor_num / craft_time;
+        curr_time_ironarmor = time_ironarmor * ironarmor_num / craft_time;
+        curr_time_sword = time_sword * sword_num / craft_time;
+        curr_time_axe = time_axe * axe_num / craft_time;
+        curr_time_morningstar = time_morningstar * morningstar_num / craft_time;
+        curr_time_shortbow = time_shortbow * shortbow_num / craft_time;
+        curr_time_longbow = time_longbow * longbow_num / craft_time;
+        curr_time_crossbow = time_crossbow * crossbow_num / craft_time;
+        curr_time_tradegift = time_tradegift * tradegift_num / craft_time;
+        curr_time_peacegift = time_peacegift * peacegift_num / craft_time;
+        curr_time_poisongift = time_poisongift * poisongift_num / craft_time;
     }
     //endregion
 
@@ -1265,155 +1265,3 @@ function temperature() {
         }
     }
 }
-
-/* Start */
-$("#btn_start").click(function () {
-    if ($("#speed").val() < 200 || $("#speed").val() > 5000) {
-        $("#start p").remove();
-        $("#start").append("<p>Geschwindigkeit zwischen 200 und 5000.</p>");
-    } else {
-        speed = $("#speed").val();
-
-        if ($("#load")[0].files.length !== 0) {
-            var file = $("#load")[0].files[0],
-                reader = new FileReader();
-
-            reader.onload = function (e) {
-                var contents = JSON.parse(e.target.result);
-                food = contents.$food;
-                wood = contents.$wood;
-                stone = contents.$stone;
-                leather = contents.$leather;
-                cloth = contents.$cloth;
-                coal = contents.$coal;
-                iron = contents.$iron;
-                clothes = contents.$clothes;
-                medicine = contents.$medicine;
-                poison = contents.$poison;
-                leatherarmor = contents.$leatherarmor;
-                ironarmor = contents.$ironarmor;
-                sword = contents.$sword;
-                axe = contents.$axe;
-                morningstar = contents.$morningstar;
-                shortbow = contents.$shortbow;
-                longbow = contents.$longbow;
-                crossbow = contents.$crossbow;
-                tradegift = contents.$tradegift;
-                peacegift = contents.$peacegift;
-                poisongift = contents.$poisongift;
-                horse = contents.$horse;
-                supplies_max = contents.$supplies_max;
-
-                villager = contents.$villager;
-                villager_unused = contents.$villager_unused;
-                villager_max = contents.$villager_max;
-
-                gatherer = contents.$gatherer;
-                lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
-                quarryman = contents.$quarryman;      stone_bonus = contents.$stone_bonus;
-                worker = contents.$worker;
-                hunter = contents.$hunter;            leather_bonus = contents.$leather_bonus;
-                shepherd = contents.$shepherd;        cloth_bonus = contents.$cloth_bonus;
-                coalminer = contents.$coalminer;      coal_bonus = contents.$coal_bonus;
-                ironminer = contents.$ironminer;      iron_bonus = contents.$iron_bonus;
-                tailor = contents.$tailor;            clothes_bonus = contents.$clothes_bonus;
-                alchemist = contents.$alchemist;      brew_bonus = contents.$brew_bonus;
-                smith = contents.$smith;              craft_time = contents.$craft_time;
-                scout = contents.$scout;              travel_time = contents.$travel_time;
-                knight = contents.$knight;            damage_bonus = contents.$damage_bonus;
-                stableman = contents.$stableman;      breed_bonus = contents.$breed_bonus;
-
-                trade_bonus = contents.$trade_bonus;
-
-                hut = contents.$hut;
-                huntinghut = contents.$huntinghut;        up_huntinghut = contents.$up_huntinghut;
-                storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
-                lumberjackhut = contents.$lumberjackhut;  up_lumberjackhut = contents.$up_lumberjackhut;
-                sheepstall = contents.$sheepstall;        up_sheepstall = contents.$up_sheepstall;
-                quarry = contents.$quarry;                up_quarry = contents.$up_quarry;
-                coalmine = contents.$coalmine;            up_coalmine = contents.$up_coalmine;
-                ironmine = contents.$ironmine;            up_ironmine = contents.$up_ironmine;
-                tailorhouse = contents.$tailorhouse;      up_tailorhouse = contents.$up_tailorhouse;
-                alchemisthut = contents.$alchemisthut;    up_alchemisthut = contents.$up_alchemisthut;
-                forge = contents.$forge;                  up_forge = contents.$up_forge;
-                market = contents.$market;                up_market = contents.$up_market;
-                scoutpost = contents.$scoutpost;          up_scoutpost = contents.$up_scoutpost;
-                barracks = contents.$barracks;            up_barracks = contents.$up_barracks;
-                stable = contents.$stable;                up_stable = contents.$up_stable;
-            };
-            reader.readAsText(file);
-        }
-
-        $("#main").show();
-        $("#bottom").show();
-        $("#start").hide();
-
-        setTimeout(function () {
-            if (huntinghut === true) {
-                $("#leather").closest("#row").show();
-                $("#hunter").closest("#row").show();
-            }
-            if (sheepstall === true) {
-                $("#cloth").closest("#row").show();
-                $("#shepherd").closest("#row").show();
-            }
-            if (coalmine === true) {
-                $("#coal").closest("#row").show();
-                $("#coalminer").closest("#row").show();
-            }
-            if (ironmine === true) {
-                $("#iron").closest("#row").show();
-                $("#ironminer").closest("#row").show();
-            }
-            if (tailorhouse === true) {
-                $("#clothes").closest("#row").show();
-                $("#tailor").closest("#row").show();
-            }
-            if (alchemisthut === true) {
-                $("#btn_craft").show();
-                $("#items").show();
-                $("#medicine").closest("#row").show();
-                $("#poison").closest("#row").show();
-                $("#alchemist").closest("#row").show();
-            }
-            if (forge === true) {
-                $("#btn_craft").show();
-                $("#items").show();
-                $("#leatherarmor").closest("#row").show();
-                $("#ironarmor").closest("#row").show();
-                $("#sword").closest("#row").show();
-                $("#axe").closest("#row").show();
-                $("#morningstar").closest("#row").show();
-                $("#shortbow").closest("#row").show();
-                $("#longbow").closest("#row").show();
-                $("#crossbow").closest("#row").show();
-                $("#tradegift").closest("#row").show();
-                $("#peacegift").closest("#row").show();
-                $("#poisongift").closest("#row").show();
-                $("#smith").closest("#row").show();
-            }
-            if (market === true) {
-                $("#btn_trade").show();
-            }
-            if (scoutpost === true) {
-                $("#btn_travel").show();
-                $("#scout").closest("#row").show();
-            }
-            if (barracks === true) {
-                $("#knight").closest("#row").show();
-            }
-            if (stable === true) {
-                $("#btn_craft").show();
-                $("#items").show();
-                $("#horse").closest("#row").show();
-                $("#stableman").closest("#row").show();
-            }
-        }, 10);
-
-        refr = setInterval(refresh, 100);
-        supp_prod = setInterval(supplie_prod, speed * 5);
-        new_vil = setInterval(new_villagers, speed * 30);
-        temperature();
-        temperat = setInterval(temperature, speed * 30);
-    }
-});

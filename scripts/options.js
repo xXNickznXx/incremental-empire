@@ -64,7 +64,7 @@ $("#btn_save").click(function () {
         $coalminer: coalminer,      $coal_bonus: coal_bonus,
         $ironminer: ironminer,      $iron_bonus: iron_bonus,
         $tailor: tailor,            $clothes_bonus: clothes_bonus,
-        $alchemist: alchemist,      $brew_bonus: brew_bonus,
+        $alchemist: alchemist,      $brew_time: brew_time,
         $smith: smith,              $craft_time: craft_time,
         $scout: scout,              $travel_time: travel_time,
         $knight: knight,            $damage_bonus: damage_bonus,

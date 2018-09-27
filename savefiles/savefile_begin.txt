@@ -42,7 +42,7 @@
    "$tailor": 10,
    "$clothes_bonus": 1,
    "$alchemist": 0,
-   "$brew_bonus": 1,
+   "$brew_time": 1,
    "$smith": 0,
    "$craft_time": 1,
    "$scout": 0,

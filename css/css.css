@@ -164,7 +164,7 @@ h1 {
 .tasks, .phase {
     background: var(--bg2);
     float: left;
-    height: 40px;
+    height: 65px;
     padding: 5px;
     width: calc((100% - 25px) / 2);
 }
@@ -309,7 +309,7 @@ input:checked + .slider:before {
     }
     .content {
         border-bottom: 1px solid var(--fg);
-        height: 230px;
+        height: 210px;
         margin: 0;
     }
     .tasks, .phase {
@@ -342,6 +342,6 @@ input:checked + .slider:before {
         margin-top: 0;
     }
     .msg {
-        height: 100px;
+        height: 90px;
     }
 }

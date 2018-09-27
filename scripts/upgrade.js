@@ -14,8 +14,10 @@ function upgrade_hut() {
     }
 }
 $("#btn_upgrade_hut").click(function () {
-    task.append("<td class='hut'>Ausbau einer Hütte</td>");
-    task.append("<td class='hut time'></td>");
+    task.append(`<tr>
+                <td class='hut'>Ausbau einer Hütte</td>
+                <td class='hut time'></td>
+                </tr>`);
     wood -= 100;
     stone -= 20;
     slot_build = true;
@@ -37,8 +39,10 @@ function upgrade_huntinghut() {
     }
 }
 $("#btn_upgrade_huntinghut").click(function () {
-    task.append("<td class='huntinghut'>Ausbau einer Jagdhütte</td>");
-    task.append("<td class='huntinghut time'></td>");
+    task.append(`<tr>
+                <td class='huntinghut'>Ausbau einer Jagdhütte</td>
+                <td class='huntinghut time'></td>
+                </tr>`);
     wood -= 300;
     stone -= 60;
     slot_build = true;
@@ -60,8 +64,10 @@ function upgrade_storage() {
     }
 }
 $("#btn_upgrade_storage").click(function () {
-    task.append("<td class='storage'>Ausbau eines Lager</td>");
-    task.append("<td class='storage time'></td>");
+    task.append(`<tr>
+                <td class='storage'>Ausbau eines Lager</td>
+                <td class='storage time'></td>
+                </tr>`);
     wood -= 300;
     stone -= 300;
     slot_build = true;
@@ -83,8 +89,10 @@ function upgrade_lumberjackhut() {
     }
 }
 $("#btn_upgrade_lumberjackhut").click(function () {
-    task.append("<td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>");
-    task.append("<td class='lumberjackhut time'></td>");
+    task.append(`<tr>
+                <td class='lumberjackhut'>Ausbau einer Holzfällerhütte</td>
+                <td class='lumberjackhut time'></td>
+                </tr>`);
     wood -= 400;
     stone -= 100;
     slot_build = true;
@@ -106,8 +114,10 @@ function upgrade_sheepstall() {
     }
 }
 $("#btn_upgrade_sheepstall").click(function () {
-    task.append("<td class='sheepstall'>Ausbau eines Schafstall</td>");
-    task.append("<td class='sheepstall time'></td>");
+    task.append(`<tr>
+                <td class='sheepstall'>Ausbau eines Schafstall</td>
+                <td class='sheepstall time'></td>
+                </tr>`);
     wood -= 500;
     stone -= 150;
     slot_build = true;
@@ -129,8 +139,10 @@ function upgrade_quarry() {
     }
 }
 $("#btn_upgrade_quarry").click(function () {
-    task.append("<td class='quarry'>Ausbau eines Steinbruch</td>");
-    task.append("<td class='quarry time'></td>");
+    task.append(`<tr>
+                <td class='quarry'>Ausbau eines Steinbruch</td>
+                <td class='quarry time'></td>
+                </tr>`);
     wood -= 600;
     stone -= 200;
     slot_build = true;
@@ -152,8 +164,10 @@ function upgrade_coalmine() {
     }
 }
 $("#btn_upgrade_coalmine").click(function () {
-    task.append("<td class='coalmine'>Ausbau einer Kohlemine</td>");
-    task.append("<td class='coalmine time'></td>");
+    task.append(`<tr>
+                <td class='coalmine'>Ausbau einer Kohlemine</td>
+                <td class='coalmine time'></td>
+                </tr>`);
     wood -= 600;
     stone -= 300;
     slot_build = true;
@@ -175,8 +189,10 @@ function upgrade_ironmine() {
     }
 }
 $("#btn_upgrade_ironmine").click(function () {
-    task.append("<td class='ironmine'>Ausbau einer Eisenmine</td>");
-    task.append("<td class='ironmine time'></td>");
+    task.append(`<tr>
+                <td class='ironmine'>Ausbau einer Eisenmine</td>
+                <td class='ironmine time'></td>
+                </tr>`);
     wood -= 800;
     stone -= 400;
     coal -= 100;
@@ -199,8 +215,10 @@ function upgrade_tailorhouse() {
     }
 }
 $("#btn_upgrade_tailorhouse").click(function () {
-    task.append("<td class='tailorhouse'>Ausbau eines Schneiderhaus</td>");
-    task.append("<td class='tailorhouse time'></td>");
+    task.append(`<tr>
+                <td class='tailorhouse'>Ausbau eines Schneiderhaus</td>
+                <td class='tailorhouse time'></td>
+                </tr>`);
     wood -= 1000;
     stone -= 800;
     coal -= 400;
@@ -214,7 +232,7 @@ function upgrade_alchemisthut() {
     timer -= 0.1;
     if (timer < 0) {
         up_alchemisthut = true;
-        brew_bonus += 1;
+        brew_time += 1;
         clearInterval(upgrade);
         slot_build = false;
         msg.prepend("<p>Alchemistenhütte wurde ausgebaut.</p>");
@@ -223,8 +241,10 @@ function upgrade_alchemisthut() {
     }
 }
 $("#btn_upgrade_alchemisthut").click(function () {
-    task.append("<td class='alchemisthut'>Ausbau einer Alchemistenhütte</td>");
-    task.append("<td class='alchemisthut time'></td>");
+    task.append(`<tr>
+                <td class='alchemisthut'>Ausbau einer Alchemistenhütte</td>
+                <td class='alchemisthut time'></td>
+                </tr>`);
     wood -= 1100;
     stone -= 900;
     coal -= 500;
@@ -248,8 +268,10 @@ function upgrade_forge() {
     }
 }
 $("#btn_upgrade_forge").click(function () {
-    task.append("<td class='forge'>Ausbau einer Schmiede</td>");
-    task.append("<td class='forge time'></td>");
+    task.append(`<tr>
+                <td class='forge'>Ausbau einer Schmiede</td>
+                <td class='forge time'></td>
+                </tr>`);
     wood -= 1200;
     stone -= 900;
     coal -= 500;
@@ -273,8 +295,10 @@ function upgrade_market() {
     }
 }
 $("#btn_upgrade_market").click(function () {
-    task.append("<td class='market'>Ausbau eines Markt</td>");
-    task.append("<td class='market time'></td>");
+    task.append(`<tr>
+                <td class='market'>Ausbau eines Markt</td>
+                <td class='market time'></td>
+                </tr>`);
     wood -= 1500;
     stone -= 1000;
     coal -= 600;
@@ -298,8 +322,10 @@ function upgrade_scoutpost() {
     }
 }
 $("#btn_upgrade_scoutpost").click(function () {
-    task.append("<td class='scoutpost'>Ausbau eines Erkundungsposten</td>");
-    task.append("<td class='scoutpost time'></td>");
+    task.append(`<tr>
+                <td class='scoutpost'>Ausbau eines Erkundungsposten</td>
+                <td class='scoutpost time'></td>
+                </tr>`);
     wood -= 2000;
     stone -= 1500;
     coal -= 800;
@@ -323,8 +349,10 @@ function upgrade_barracks() {
     }
 }
 $("#btn_upgrade_barracks").click(function () {
-    task.append("<td class='barracks'>Ausbau einer Kaserne</td>");
-    task.append("<td class='barracks time'></td>");
+    task.append(`<tr>
+                <td class='barracks'>Ausbau einer Kaserne</td>
+                <td class='barracks time'></td>
+                </tr>`);
     wood -= 3000;
     stone -= 2400;
     coal -= 2000;
@@ -348,8 +376,10 @@ function upgrade_stable() {
     }
 }
 $("#btn_upgrade_stable").click(function () {
-    task.append("<td class='stable'>Ausbau eines Pferdestall</td>");
-    task.append("<td class='stable time'></td>");
+    task.append(`<tr>
+                <td class='stable'>Ausbau eines Pferdestall</td>
+                <td class='stable time'></td>
+                </tr>`);
     wood -= 5000;
     stone -= 4000;
     coal -= 3000;
