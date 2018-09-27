@@ -70,7 +70,7 @@ body {
 }
 /* Start */
 .start {
-	background: var(--bg2);
+    background: var(--bg2);
     bottom: 0;
     height: 300px;
     left: 0;
@@ -88,37 +88,37 @@ body {
 }
 /* Header */
 .header {
-	background: var(--bg2);
-	height: 40px;
-	padding: 5px;
-	text-align: center;
+    background: var(--bg2);
+    height: 40px;
+    padding: 5px;
+    text-align: center;
 }
 h1 {
-	font-size: 30px;
+    font-size: 30px;
 }
 /* Left */
 .left {
-	float: left;
-	width: 70%;
+    float: left;
+    width: 70%;
 }
 .nav {
-	background: var(--bg2);
-	margin-top: 5px;
-	padding: 5px;
-	text-align: center;
+    background: var(--bg2);
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
 }
 .nav button {
     border-bottom: 1px solid var(--fg);
-	height: 32px;
+    height: 32px;
     padding: 5px;
-	width: 90px;
+    width: 90px;
 }
 .btn_content {
     border: 1px solid var(--fg);
     border-radius: 5px;
-	height: 32px;
+    height: 32px;
     padding: 5px;
-	width: 130px;
+    width: 130px;
 }
 .btn_craft {
     height: 32px;
@@ -132,8 +132,8 @@ h1 {
     padding: 5px;
 }
 .row_craft:after {
-	clear: both;
-	content: "";
+    clear: both;
+    content: "";
     display: block;
 }
 .row_craft > * {
@@ -142,30 +142,30 @@ h1 {
 .btn_options {
     border: 1px solid var(--fg);
     border-radius: 5px;
-	height: 32px;
+    height: 32px;
     padding: 5px;
-	width: 90px;
+    width: 90px;
 }
 .content {
-	background: var(--bg2);
+    background: var(--bg2);
     height: 500px;
-	margin-top: 5px;
+    margin-top: 5px;
     overflow: auto;
-	padding: 5px;
+    padding: 5px;
 }
 .left_bottom {
     margin-top: 5px;
 }
 .left_bottom:after {
-	clear: both;
-	content: "";
+    clear: both;
+    content: "";
     display: block;
 }
 .tasks, .phase {
-	background: var(--bg2);
+    background: var(--bg2);
     float: left;
     height: 40px;
-	padding: 5px;
+    padding: 5px;
     width: calc((100% - 25px) / 2);
 }
 .phase {
@@ -177,7 +177,7 @@ h1 {
     width: 40px;
 }
 .left table {
-	width: 100%;
+    width: 100%;
 }
 .coll_craft {
     border: 1px solid var(--fg);
@@ -185,32 +185,34 @@ h1 {
 }
 /* Right */
 .right {
-	float: left;
-	margin-left: 5px;
-	width: calc(30% - 5px);
+    float: left;
+    height: 995px;
+    margin-left: 5px;
+    overflow: auto;
+    width: calc(30% - 5px);
 }
 .supplies, .items, .villagers, .jobs {
-	background: var(--bg2);
-	margin-top: 5px;
-	padding: 5px;
+    background: var(--bg2);
+    margin-top: 5px;
+    padding: 5px;
 }
 .right .row, .right p {
     height: 24px;
 }
 .right .row:after {
-	clear: both;
-	content: "";
+    clear: both;
+    content: "";
     display: block;
 }
 .row p:first-child {
-	float: left;
+    float: left;
 }
 .row p:nth-child(even) {
-	float: right;
+    float: right;
 }
 .jobs .row div:after {
-	clear: both;
-	content: "";
+    clear: both;
+    content: "";
     display: block;
 }
 .jobs .row div:first-child {
@@ -218,25 +220,25 @@ h1 {
     width: calc(100% - 55px);
 }
 .jobs .row div:last-child {
-	float: right;
+    float: right;
 }
 .th {
     font-weight: bold;
 }
 /* bottom */
 .bottom {
-	margin-top: 5px;
+    margin-top: 5px;
 }
 .bottom:after {
-	clear: both;
-	content: "";
-	display: block;
+    clear: both;
+    content: "";
+    display: block;
 }
 .msg {
-	background: var(--bg2);
-	height: 280px;
-	overflow: hidden;
-	padding: 5px;
+    background: var(--bg2);
+    height: 280px;
+    overflow: hidden;
+    padding: 5px;
 }
 .msg p {
     height: 24px;
@@ -283,57 +285,63 @@ input:checked + .slider:before {
 }
 
 @media only screen and (max-width: 400px) {
-	* {
-		font-size: 12px;
-	}
-	body {
+    * {
+        font-size: 12px;
+    }
+    body {
         min-width: unset;
         max-width: unset;
-	}
-	.header {
-		border-bottom: 1px solid var(--fg);
-		height: 20px;
-	}
-	h1 {
-		font-size: 20px;
-	}
-	.left {
+    }
+    .header {
+        border-bottom: 1px solid var(--fg);
+        height: 20px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .left {
         float: unset;
-		width: 100%;
-	}
-	.nav {
-		border-bottom: 1px solid var(--fg);
-		margin: 0;
-	}
-	.content {
-		border-bottom: 1px solid var(--fg);
-		height: 230px;
-		margin: 0;
-	}
-	.tasks, .phase {
-		border-bottom: 1px solid var(--fg);
-		float: none;
-		width: calc(100% - 10px);
-	}
-	.phase {
-		height: 15px;
-		margin: 0;
-	}
+        width: 100%;
+    }
+    .nav {
+        border-bottom: 1px solid var(--fg);
+        margin: 0;
+    }
+    .content {
+        border-bottom: 1px solid var(--fg);
+        height: 230px;
+        margin: 0;
+    }
+    .tasks, .phase {
+        border-bottom: 1px solid var(--fg);
+        float: none;
+        width: calc(100% - 10px);
+    }
+    .phase {
+        height: 15px;
+        margin: 0;
+    }
     .btn_mobile {
         display: inline-block;
         width: 90% !important;
     }
-	.right {
+    .right {
         display: none;
-        height: 240px;
-		margin: -428px 0 0 0;
-        overflow: auto;
+        float: unset;
+        height: unset;
+        margin-left: 0;
         width: 100%;
-	}
+    }
+    .jobs .row div:first-child {
+        width: calc(100% - 85px);
+    }
+    .btn_dwn_up {
+        width: 40px;
+    }
     .supplies, .villagers, .jobs, .left_bottom, .bottom {
         margin-top: 0;
     }
-	.msg {
-		height: 100px;
-	}
+    .msg {
+        height: 100px;
+    }
 }

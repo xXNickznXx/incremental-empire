@@ -10,7 +10,7 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Geschwindigkeit
 - Light/Dark-Theme
 ### Möglichkeit zu Speichern und zu Laden
-### Mobileansicht(Rudimentär)
+### Mobileansicht
 ### Crafting
 - Rüstungen
   - Eisenrüstung
@@ -70,6 +70,3 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
-### Verbesserte Mobileansicht
-- Grössere Buttons
-- Verbesserte Slideeffekte

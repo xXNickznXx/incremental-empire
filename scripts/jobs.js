@@ -81,6 +81,15 @@ $("#dwn_tailor").click(function () {
     villager_unused += 1;
 });
 
+$("#up_alchemist").click(function () {
+    villager_unused -= 1;
+    alchemist += 1;
+});
+$("#dwn_alchemist").click(function () {
+    alchemist -= 1;
+    villager_unused += 1;
+});
+
 $("#up_smith").click(function () {
     villager_unused -= 1;
     smith += 1;
@@ -105,5 +114,14 @@ $("#up_knight").click(function () {
 });
 $("#dwn_knight").click(function () {
     knight -= 1;
+    villager_unused += 1;
+});
+
+$("#up_stableman").click(function () {
+    villager_unused -= 1;
+    stableman += 1;
+});
+$("#dwn_stableman").click(function () {
+    stableman -= 1;
     villager_unused += 1;
 });

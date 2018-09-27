@@ -35,7 +35,7 @@
                     <button id="btn_travel" hidden>Reise</button>
                     <button id="btn_options">Optionen</button>
                 </div>
-                <div class="content">
+                <div id="content" class="content">
                     <div id="build" hidden>
                         <table>
                             <thead>
@@ -175,6 +175,22 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <button id="btn_alchemisthut" class="btn_content">Alchemistenhütte
+                                            <span class="tooltip">
+                                                <ul>
+                                                    <li>550 Holz</li>
+                                                    <li>450 Stein</li>
+                                                    <li>250 Kohle</li>
+                                                    <li>50 Eisen</li>
+                                                </ul>
+                                                <p>Ausbildung: Alchemist</p>
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td id="time_alchemisthut"></td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <button id="btn_forge" class="btn_content">Schmiede
                                             <span class="tooltip">
                                                 <ul>
@@ -236,6 +252,22 @@
                                         </button>
                                     </td>
                                     <td id="time_barracks"></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button id="btn_stable" class="btn_content">Pferdestall
+                                            <span class="tooltip">
+                                                <ul>
+                                                    <li>2500 Holz</li>
+                                                    <li>2000 Stein</li>
+                                                    <li>1500 Kohle</li>
+                                                    <li>1200 Eisen</li>
+                                                </ul>
+                                                <p>Haltung: Pferde</p>
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td id="time_stable"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -379,6 +411,22 @@
                                 </tr>
                                 <tr>
                                     <td>
+                                        <button id="btn_upgrade_alchemisthut" class="btn_content">Alchemistenhütte
+                                            <span class="tooltip">
+                                                <ul>
+                                                    <li>1100 Holz</li>
+                                                    <li>900 Stein</li>
+                                                    <li>500 Kohle</li>
+                                                    <li>100 Eisen</li>
+                                                </ul>
+                                                <p>Herstellzeit / 2</p>
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td id="time_upgrade_alchemisthut"></td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <button id="btn_upgrade_forge" class="btn_content">Schmiede
                                             <span class="tooltip">
                                                 <ul>
@@ -441,10 +489,65 @@
                                     </td>
                                     <td id="time_upgrade_barracks"></td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <button id="btn_upgrade_stable" class="btn_content">Pferdestall
+                                            <span class="tooltip">
+                                                <ul>
+                                                    <li>5000 Holz</li>
+                                                    <li>4000 Stein</li>
+                                                    <li>3000 Kohle</li>
+                                                    <li>2400 Eisen</li>
+                                                </ul>
+                                                <p>Zuchtzeit / 2</p>
+                                            </span>
+                                        </button>
+                                    </td>
+                                    <td id="time_upgrade_stable"></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                     <div id="craft" hidden>
+                        <div id="coll_brew" class="coll_craft">
+                            <button id="btn_brew" class="btn_craft">Brauen</button>
+                            <div id="content_brew" class="content_craft" hidden>
+                                <div id="row_medicine" class="row_craft">
+                                    <button id="btn_medicine" class="btn_content">Medizin
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>20 Nahrung</li>
+                                                <li>5 Stein</li>
+                                                <li>5 Wolle</li>
+                                            </ul>
+                                            <p>Heilt Krankheit</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_medicine" class="btn_dwn_up">-</button>
+                                    <p id="num_medicine" class="num"></p>
+                                    <button id="up_medicine" class="btn_dwn_up">+</button>
+                                    <p id="time_medicine"></p>
+                                </div>
+                                <div id="row_poison" class="row_craft">
+                                    <button id="btn_poison" class="btn_content">Gift
+                                        <span class="tooltip">
+                                            <ul>
+                                                <li>10 Nahrung</li>
+                                                <li>5 Stein</li>
+                                                <li>5 Wolle</li>
+                                                <li>5 Kohle</li>
+                                                <li>5 Eisen</li>
+                                            </ul>
+                                            <p>Vergiftet Ziel</p>
+                                        </span>
+                                    </button>
+                                    <button id="dwn_poison" class="btn_dwn_up">-</button>
+                                    <p id="num_poison" class="num"></p>
+                                    <button id="up_poison" class="btn_dwn_up">+</button>
+                                    <p id="time_poison"></p>
+                                </div>
+                            </div>
+                        </div>
                         <div id="coll_armor" class="coll_craft">
                             <button id="btn_armor" class="btn_craft">Rüstungen</button>
                             <div id="content_armor" class="content_craft" hidden>
@@ -777,57 +880,61 @@
                 </div>
                 <div id="items" class="items" hidden>
                     <p class="th">&#9207;Gegenstände</p>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Medizin</p>
                         <p id="medicine"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Gift</p>
                         <p id="poison"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Lederrüstung</p>
                         <p id="leatherarmor"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Eisenrüstung</p>
                         <p id="ironarmor"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Schwert</p>
                         <p id="sword"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Axt</p>
                         <p id="axe"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Morgenstern</p>
                         <p id="morningstar"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Kurzbogen</p>
                         <p id="shortbow"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Langbogen</p>
                         <p id="longbow"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Armbrust</p>
                         <p id="crossbow"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Handelsgeschenk</p>
                         <p id="tradegift"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Friedensgeschenk</p>
                         <p id="peacegift"></p>
                     </div>
-                    <div id="row" class="row">
+                    <div id="row" class="row" hidden>
                         <p>Giftgeschenk</p>
                         <p id="poisongift"></p>
+                    </div>
+                    <div id="row" class="row" hidden>
+                        <p>Pferd</p>
+                        <p id="horse"></p>
                     </div>
                 </div>
                 <div id="villagers" class="villagers">
@@ -935,6 +1042,16 @@
                     </div>
                     <div id="row" class="row" hidden>
                         <div>
+                            <p>Alchemist</p>
+                            <p id="alchemist"></p>
+                        </div>
+                        <div>
+                            <button id="dwn_alchemist" class="btn_dwn_up">-</button>
+                            <button id="up_alchemist" class="btn_dwn_up">+</button>
+                        </div>
+                    </div>
+                    <div id="row" class="row" hidden>
+                        <div>
                             <p>Schmied</p>
                             <p id="smith"></p>
                         </div>
@@ -961,6 +1078,16 @@
                         <div>
                             <button id="dwn_knight" class="btn_dwn_up">-</button>
                             <button id="up_knight" class="btn_dwn_up">+</button>
+                        </div>
+                    </div>
+                    <div id="row" class="row" hidden>
+                        <div>
+                            <p>Stallbetreuer</p>
+                            <p id="stableman"></p>
+                        </div>
+                        <div>
+                            <button id="dwn_stableman" class="btn_dwn_up">-</button>
+                            <button id="up_stableman" class="btn_dwn_up">+</button>
                         </div>
                     </div>
                 </div>

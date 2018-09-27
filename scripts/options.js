@@ -48,6 +48,7 @@ $("#btn_save").click(function () {
         $tradegift: tradegift,
         $peacegift: peacegift,
         $poisongift: poisongift,
+        $horse: horse,
         $supplies_max: supplies_max,
 
         $villager: villager,
@@ -63,9 +64,11 @@ $("#btn_save").click(function () {
         $coalminer: coalminer,      $coal_bonus: coal_bonus,
         $ironminer: ironminer,      $iron_bonus: iron_bonus,
         $tailor: tailor,            $clothes_bonus: clothes_bonus,
+        $alchemist: alchemist,      $brew_bonus: brew_bonus,
         $smith: smith,              $craft_time: craft_time,
         $scout: scout,              $travel_time: travel_time,
         $knight: knight,            $damage_bonus: damage_bonus,
+        $stableman: stableman,      $breed_bonus: breed_bonus,
 
         $trade_bonus: trade_bonus,
 
@@ -78,10 +81,12 @@ $("#btn_save").click(function () {
         $coalmine: coalmine,            $up_coalmine: up_coalmine,
         $ironmine: ironmine,            $up_ironmine: up_ironmine,
         $tailorhouse: tailorhouse,      $up_tailorhouse: up_tailorhouse,
+        $alchemisthut: alchemisthut,    $up_alchemisthut: up_alchemisthut,
         $forge: forge,                  $up_forge: up_forge,
         $market: market,                $up_market: up_market,
         $scoutpost: scoutpost,          $up_scoutpost: up_scoutpost,
-        $barracks: barracks,            $up_barracks: up_barracks
+        $barracks: barracks,            $up_barracks: up_barracks,
+        $stable: stable,                $up_stable: up_stable
     },
         saveJson = JSON.stringify(saveFile, undefined, 3),
         link = $("<a></a>"),

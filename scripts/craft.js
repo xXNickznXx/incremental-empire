@@ -16,6 +16,106 @@ $("#btn_gifts").click(function () {
     $("#content_gifts").slideToggle();
 });
 
+function brew_medicine() {
+    $("#task .medicine.time").text(secondsTommss(brewer.toFixed(1)));
+    brewer -= 0.1;
+    if (brewer < 0) {
+        medicine += medicine_num;
+        clearInterval(brew);
+        slot_brew = false;
+        msg.prepend("<p>Medizin wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .medicine").remove();
+    }
+}
+$("#btn_medicine").click(function () {
+    task.append("<td class='medicine'>Herstellung von Medizin</td>");
+    task.append("<td class='medicine time'></td>");
+    food -= 20 * medicine_num;
+    stone -= 5 * medicine_num;
+    cloth -= 5 * medicine_num;
+    slot_brew = true;
+    brewer = curr_time_medicine;
+    brew = setInterval(brew_medicine, speed / 10);
+});
+var medicine_p,
+    medicine_m,
+    medicine_t;
+$("#up_medicine").click(function () {
+    medicine_num += 1;
+    $("#num_medicine").text(medicine_num);
+});
+function medicine_plus() {
+    medicine_num += 1;
+    $("#num_medicine").text(medicine_num);
+}
+$("#up_medicine").mousedown(function () {
+    medicine_t = setTimeout(function () {medicine_p = setInterval(medicine_plus, 50);}, 500);
+});
+
+$("#dwn_medicine").click(function () {
+    medicine_num -= 1;
+    $("#num_medicine").text(medicine_num);
+});
+function medicine_minus() {
+    medicine_num -= 1;
+    $("#num_medicine").text(medicine_num);
+}
+$("#dwn_medicine").mousedown(function () {
+    medicine_t = setTimeout(function () {medicine_m = setInterval(medicine_minus, 50);}, 500);
+});
+
+function brew_poison() {
+    $("#task .poison.time").text(secondsTommss(brewer.toFixed(1)));
+    brewer -= 0.1;
+    if (brewer < 0) {
+        poison += poison_num;
+        clearInterval(brew);
+        slot_brew = false;
+        msg.prepend("<p>Gift wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .poison").remove();
+    }
+}
+$("#btn_poison").click(function () {
+    task.append("<td class='poison'>Herstellung von Gift</td>");
+    task.append("<td class='poison time'></td>");
+    food -= 10 * poison_num;
+    stone -= 5 * poison_num;
+    cloth -= 5 * poison_num;
+    coal -= 5 * poison_num;
+    iron -= 5 * poison_num;
+    slot_brew = true;
+    brewer = curr_time_poison;
+    brew = setInterval(brew_poison, speed / 10);
+});
+var poison_p,
+    poison_m,
+    poison_t;
+$("#up_poison").click(function () {
+    poison_num += 1;
+    $("#num_poison").text(poison_num);
+});
+function poison_plus() {
+    poison_num += 1;
+    $("#num_poison").text(poison_num);
+}
+$("#up_poison").mousedown(function () {
+    poison_t = setTimeout(function () {poison_p = setInterval(poison_plus, 50);}, 500);
+});
+
+$("#dwn_poison").click(function () {
+    poison_num -= 1;
+    $("#num_poison").text(poison_num);
+});
+function poison_minus() {
+    poison_num -= 1;
+    $("#num_poison").text(poison_num);
+}
+$("#dwn_poison").mousedown(function () {
+    poison_t = setTimeout(function () {poison_m = setInterval(poison_minus, 50);}, 500);
+});
+
 function craft_leatherarmor() {
     $("#task .leatherarmor.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;

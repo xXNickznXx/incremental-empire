@@ -204,6 +204,30 @@ $("#btn_tailorhouse").click(function () {
     build = setInterval(build_tailorhouse, speed / 10);
 });
 
+function build_alchemisthut() {
+    $("#task .alchemisthut.time").text(secondsTommss(timer.toFixed(1)));
+    timer -= 0.1;
+    if (timer < 0) {
+        alchemisthut = true;
+        clearInterval(build);
+        slot_build = false;
+        msg.prepend("<p>Alchemistenhütte wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .alchemisthut").remove();
+    }
+}
+$("#btn_alchemisthut").click(function () {
+    task.append("<td class='alchemisthut'>Bau einer Alchemistenhütte</td>");
+    task.append("<td class='alchemisthut time'></td>");
+    wood -= 550;
+    stone -= 450;
+    coal -= 250;
+    iron -= 50;
+    slot_build = true;
+    timer = curr_time_alchemisthut;
+    build = setInterval(build_alchemisthut, speed / 10);
+});
+
 function build_forge() {
     $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
@@ -298,4 +322,28 @@ $("#btn_barracks").click(function () {
     slot_build = true;
     timer = curr_time_barracks;
     build = setInterval(build_barracks, speed / 10);
+});
+
+function build_stable() {
+    $("#task .stable.time").text(secondsTommss(timer.toFixed(1)));
+    timer -= 0.1;
+    if (timer < 0) {
+        stable = true;
+        clearInterval(build);
+        slot_build = false;
+        msg.prepend("<p>Pferdestall wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .stable").remove();
+    }
+}
+$("#btn_stable").click(function () {
+    task.append("<td class='stable'>Bau eines Pferdestall</td>");
+    task.append("<td class='stable time'></td>");
+    wood -= 2500;
+    stone -= 2000;
+    coal -= 1500;
+    iron -= 1200;
+    slot_build = true;
+    timer = curr_time_stable;
+    build = setInterval(build_stable, speed / 10);
 });

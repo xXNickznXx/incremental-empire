@@ -209,6 +209,31 @@ $("#btn_upgrade_tailorhouse").click(function () {
     upgrade = setInterval(upgrade_tailorhouse, speed / 10);
 });
 
+function upgrade_alchemisthut() {
+    $("#task .alchemisthut.time").text(secondsTommss(timer.toFixed(1)));
+    timer -= 0.1;
+    if (timer < 0) {
+        up_alchemisthut = true;
+        brew_bonus += 1;
+        clearInterval(upgrade);
+        slot_build = false;
+        msg.prepend("<p>Alchemistenhütte wurde ausgebaut.</p>");
+        check_msg();
+        $("#task .alchemisthut").remove();
+    }
+}
+$("#btn_upgrade_alchemisthut").click(function () {
+    task.append("<td class='alchemisthut'>Ausbau einer Alchemistenhütte</td>");
+    task.append("<td class='alchemisthut time'></td>");
+    wood -= 1100;
+    stone -= 900;
+    coal -= 500;
+    iron -= 100;
+    slot_build = true;
+    timer = curr_time_upgrade_alchemisthut;
+    upgrade = setInterval(upgrade_alchemisthut, speed / 10);
+});
+
 function upgrade_forge() {
     $("#task .forge.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
@@ -307,4 +332,29 @@ $("#btn_upgrade_barracks").click(function () {
     slot_build = true;
     timer = curr_time_upgrade_barracks;
     upgrade = setInterval(upgrade_barracks, speed / 10);
+});
+
+function upgrade_stable() {
+    $("#task .stable.time").text(secondsTommss(timer.toFixed(1)));
+    timer -= 0.1;
+    if (timer < 0) {
+        up_stable = true;
+        breed_bonus += 1;
+        clearInterval(upgrade);
+        slot_build = false;
+        msg.prepend("<p>Pferdestall wurde ausgebaut.</p>");
+        check_msg();
+        $("#task .stable").remove();
+    }
+}
+$("#btn_upgrade_stable").click(function () {
+    task.append("<td class='stable'>Ausbau eines Pferdestall</td>");
+    task.append("<td class='stable time'></td>");
+    wood -= 5000;
+    stone -= 4000;
+    coal -= 3000;
+    iron -= 2400;
+    slot_build = true;
+    timer = curr_time_upgrade_stable;
+    upgrade = setInterval(upgrade_stable, speed / 10);
 });
