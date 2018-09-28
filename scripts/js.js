@@ -23,6 +23,8 @@ var food = 0,
     poisongift = 0,
     horse = 0,
     supplies_max = 100,
+    
+    a_market = ["Nahrung", "Holz", "Steim", "Leder", "Wolle", "Kohle", "Eisen", "Kleider", "Medizin", "Gift", "Lederrüstung", "Eisenrüstung", "Schwert", "Axt", "Morgenstern", "Kuzbogen", "Langbogen", "Armbrust", "Handelsgeschenk", "Friedensgeschenk", "Giftgeschenk"],
 
     villager = 5,
     villager_unused = 5,
@@ -977,6 +979,72 @@ function refresh() {
         $("#btn_poisongift").closest("div").hide();
     }
     //endregion
+}
+
+/* Show Related Stuff of Buildings */
+function show_related() {
+    if (huntinghut === true) {
+        $("#leather").closest("#row").show();
+        $("#hunter").closest("#row").show();
+    }
+    if (sheepstall === true) {
+        $("#cloth").closest("#row").show();
+        $("#shepherd").closest("#row").show();
+    }
+    if (coalmine === true) {
+        $("#coal").closest("#row").show();
+        $("#coalminer").closest("#row").show();
+    }
+    if (ironmine === true) {
+        $("#iron").closest("#row").show();
+        $("#ironminer").closest("#row").show();
+    }
+    if (tailorhouse === true) {
+        $("#clothes").closest("#row").show();
+        $("#tailor").closest("#row").show();
+    }
+    if (alchemisthut === true) {
+        $("#btn_craft").show();
+        $("#coll_brew").show();
+        $("#items").show();
+        $("#medicine").closest("#row").show();
+        $("#poison").closest("#row").show();
+        $("#alchemist").closest("#row").show();
+    }
+    if (forge === true) {
+        $("#btn_craft").show();
+        $("#coll_armor").show();
+        $("#coll_weapons").show();
+        $("#coll_gifts").show();
+        $("#items").show();
+        $("#leatherarmor").closest("#row").show();
+        $("#ironarmor").closest("#row").show();
+        $("#sword").closest("#row").show();
+        $("#axe").closest("#row").show();
+        $("#morningstar").closest("#row").show();
+        $("#shortbow").closest("#row").show();
+        $("#longbow").closest("#row").show();
+        $("#crossbow").closest("#row").show();
+        $("#tradegift").closest("#row").show();
+        $("#peacegift").closest("#row").show();
+        $("#poisongift").closest("#row").show();
+        $("#smith").closest("#row").show();
+    }
+    if (market === true) {
+        $("#btn_trade").show();
+    }
+    if (scoutpost === true) {
+        $("#btn_travel").show();
+        $("#scout").closest("#row").show();
+    }
+    if (barracks === true) {
+        $("#knight").closest("#row").show();
+    }
+    if (stable === true) {
+        $("#items").show();
+        $("#horse").closest("#row").show();
+        $("#stableman").closest("#row").show();
+    }
 }
 
 /* Game Over */

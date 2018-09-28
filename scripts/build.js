@@ -30,6 +30,7 @@ function build_huntinghut() {
     timer -= 0.1;
     if (timer < 0) {
         huntinghut = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Jagdhütte wurde fertiggestellt.</p>");
@@ -104,6 +105,7 @@ function build_sheepstall() {
     timer -= 0.1;
     if (timer < 0) {
         sheepstall = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Schafstall wurde fertiggestellt.</p>");
@@ -153,6 +155,7 @@ function build_coalmine() {
     timer -= 0.1;
     if (timer < 0) {
         coalmine = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Kohlemine wurde fertiggestellt.</p>");
@@ -177,6 +180,7 @@ function build_ironmine() {
     timer -= 0.1;
     if (timer < 0) {
         ironmine = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Eisenmine wurde fertiggestellt.</p>");
@@ -202,6 +206,7 @@ function build_tailorhouse() {
     timer -= 0.1;
     if (timer < 0) {
         tailorhouse = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Schneiderhaus wurde fertiggestellt.</p>");
@@ -227,6 +232,7 @@ function build_alchemisthut() {
     timer -= 0.1;
     if (timer < 0) {
         alchemisthut = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Alchemistenhütte wurde fertiggestellt.</p>");
@@ -253,6 +259,7 @@ function build_forge() {
     timer -= 0.1;
     if (timer < 0) {
         forge = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Schmiede wurde fertiggestellt.</p>");
@@ -279,6 +286,7 @@ function build_market() {
     timer -= 0.1;
     if (timer < 0) {
         market = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Markt wurde fertiggestellt.</p>");
@@ -305,6 +313,7 @@ function build_scoutpost() {
     timer -= 0.1;
     if (timer < 0) {
         scoutpost = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Erkundungsposten wurde fertiggestellt.</p>");
@@ -331,6 +340,7 @@ function build_barracks() {
     timer -= 0.1;
     if (timer < 0) {
         barracks = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Kaserne wurde fertiggestellt.</p>");
@@ -356,7 +366,9 @@ function build_stable() {
     $("#task .stable.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
     if (timer < 0) {
+        new_hor = setInterval(new_horses, speed * 25);
         stable = true;
+        show_related();
         clearInterval(build);
         slot_build = false;
         msg.prepend("<p>Pferdestall wurde fertiggestellt.</p>");
