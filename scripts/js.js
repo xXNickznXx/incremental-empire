@@ -24,7 +24,134 @@ var food = 0,
     horse = 0,
     supplies_max = 100,
     
-    a_market = ["Nahrung", "Holz", "Steim", "Leder", "Wolle", "Kohle", "Eisen", "Kleider", "Medizin", "Gift", "Lederrüstung", "Eisenrüstung", "Schwert", "Axt", "Morgenstern", "Kuzbogen", "Langbogen", "Armbrust", "Handelsgeschenk", "Friedensgeschenk", "Giftgeschenk"],
+    a_market = {
+        food: {
+            name: "Nahrung",
+            number: 100,
+            buy_price: 20,
+            sell_price: 15
+        },
+        wood: {
+            name: "Holz",
+            number: 50,
+            buy_price: 15,
+            sell_price: 10
+        },
+        stone: {
+            name: "Stein",
+            number: 50,
+            buy_price: 20,
+            sell_price: 15
+        },
+        leather: {
+            name: "Leder",
+            number: 40,
+            buy_price: 15,
+            sell_price: 10
+        },
+        cloth: {
+            name: "Wolle",
+            number: 40,
+            buy_price: 15,
+            sell_price: 10
+        },
+        coal: {
+            name: "Kohle",
+            number: 30,
+            buy_price: 20,
+            sell_price: 15
+        },
+        iron: {
+            name: "Eisen",
+            number: 25,
+            buy_price: 20,
+            sell_price: 15
+        },
+        clothes: {
+            name: "Kleidung",
+            number: 20,
+            buy_price: 20,
+            sell_price: 15
+        },
+        medicine: {
+            name: "Medizin",
+            number: 15,
+            buy_price: 30,
+            sell_price: 25
+        },
+        poison: {
+            name: "Gift",
+            number: 15,
+            buy_price: 30,
+            sell_price: 25
+        },
+        leatherarmor: {
+            name: "Lederrüstung",
+            number: 10,
+            buy_price: 30,
+            sell_price: 25
+        },
+        ironarmor: {
+            name: "Eisenrüstung",
+            number: 5,
+            buy_price: 30,
+            sell_price: 25
+        },
+        sword: {
+            name: "Schwert",
+            number: 10,
+            buy_price: 30,
+            sell_price: 25
+        },
+        axe: {
+            name: "Axt",
+            number: 15,
+            buy_price: 30,
+            sell_price: 25
+        },
+        morningstar: {
+            name: "Morgenstern",
+            number: 5,
+            buy_price: 30,
+            sell_price: 25
+        },
+        shortbow: {
+            name: "Kurzbogen",
+            number: 15,
+            buy_price: 30,
+            sell_price: 25
+        },
+        longbow: {
+            name: "Langbogen",
+            number: 10,
+            buy_price: 30,
+            sell_price: 25
+        },
+        crossbow: {
+            name: "Armbrust",
+            number: 5,
+            buy_price: 30,
+            sell_price: 25
+        },
+        tradegift: {
+            name: "Handelsgeschenk",
+            number: 1,
+            buy_price: 50,
+            sell_price: 45
+        },
+        peacegift: {
+            name: "Friedensgeschenk",
+            number: 1,
+            buy_price: 100,
+            sell_price: 95
+        },
+        poisongift: {
+            name: "Giftgeschenk",
+            number: 1,
+            buy_price: 110,
+            sell_price: 105
+        }
+    },
 
     villager = 5,
     villager_unused = 5,
