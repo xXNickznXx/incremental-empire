@@ -366,7 +366,6 @@ function build_stable() {
     $("#task .stable.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
     if (timer < 0) {
-        new_hor = setInterval(new_horses, speed * 25);
         stable = true;
         show_related();
         clearInterval(build);

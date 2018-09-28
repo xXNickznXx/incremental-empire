@@ -1171,6 +1171,7 @@ function show_related() {
         $("#items").show();
         $("#horse").closest("#row").show();
         $("#stableman").closest("#row").show();
+        new_hor = setInterval(new_horses, speed * 25);
     }
 }
 
