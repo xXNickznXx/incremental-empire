@@ -29,127 +29,127 @@ var food = 0,
             name: "Nahrung",
             number: 100,
             buy_price: 20,
-            sell_price: 15
+            sell_price: 16
         },
         wood: {
             name: "Holz",
             number: 50,
             buy_price: 15,
-            sell_price: 10
+            sell_price: 12
         },
         stone: {
             name: "Stein",
             number: 50,
             buy_price: 20,
-            sell_price: 15
+            sell_price: 16
         },
         leather: {
             name: "Leder",
             number: 40,
             buy_price: 15,
-            sell_price: 10
+            sell_price: 12
         },
         cloth: {
             name: "Wolle",
             number: 40,
             buy_price: 15,
-            sell_price: 10
+            sell_price: 12
         },
         coal: {
             name: "Kohle",
             number: 30,
             buy_price: 20,
-            sell_price: 15
+            sell_price: 16
         },
         iron: {
             name: "Eisen",
             number: 25,
             buy_price: 20,
-            sell_price: 15
+            sell_price: 16
         },
         clothes: {
             name: "Kleidung",
             number: 20,
             buy_price: 20,
-            sell_price: 15
+            sell_price: 16
         },
         medicine: {
             name: "Medizin",
             number: 15,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         poison: {
             name: "Gift",
             number: 15,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         leatherarmor: {
             name: "Lederrüstung",
             number: 10,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         ironarmor: {
             name: "Eisenrüstung",
             number: 5,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         sword: {
             name: "Schwert",
             number: 10,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         axe: {
             name: "Axt",
             number: 15,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         morningstar: {
             name: "Morgenstern",
             number: 5,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         shortbow: {
             name: "Kurzbogen",
             number: 15,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         longbow: {
             name: "Langbogen",
             number: 10,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         crossbow: {
             name: "Armbrust",
             number: 5,
             buy_price: 30,
-            sell_price: 25
+            sell_price: 24
         },
         tradegift: {
             name: "Handelsgeschenk",
             number: 1,
             buy_price: 50,
-            sell_price: 45
+            sell_price: 40
         },
         peacegift: {
             name: "Friedensgeschenk",
             number: 1,
             buy_price: 100,
-            sell_price: 95
+            sell_price: 80
         },
         poisongift: {
             name: "Giftgeschenk",
             number: 1,
             buy_price: 110,
-            sell_price: 105
+            sell_price: 88
         }
     },
 
@@ -1468,15 +1468,15 @@ function temperature() {
 
 /* Horse add */ 
 function new_horses() {
-    var rnd = Math.floor((Math.random() * (8 / breed_bonus)) + 1), amount;
-    if (rnd === 1) {
-        amount = Math.floor((Math.random() * stableman) + 2);
+    var rnd = Math.floor((Math.random() * stableman) + 1), amount;
+    if (rnd >= 1 && rnd < Math.floor((stableman * breed_bonus) / 6)) {
+        amount = Math.floor((Math.random() * 2) + 2);
         if (horse + amount <= villager_max) {
             horse += amount;
             msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
             check_msg();
         }
-    } else if (rnd === 2 || rnd === 3) {
+    } else if (rnd >= Math.floor((stableman * breed_bonus) / 6) && rnd <= Math.floor((stableman * breed_bonus) / 3)) {
         if (horse < villager_max) {
             horse += 1;
             msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
