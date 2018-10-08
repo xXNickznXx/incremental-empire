@@ -266,6 +266,8 @@ var food = 0,
     curr_time_tradegift,
     curr_time_peacegift,
     curr_time_poisongift,
+    
+    discovered_towns = [],
 
     slot_build = false,
     slot_craft = false,

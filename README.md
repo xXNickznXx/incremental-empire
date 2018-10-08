@@ -1,33 +1,18 @@
-# Idle
+# Incremental Empire
 Link zum [Spiel](https://nickweyermann.github.io).
 
-`Ein Spiel bei dem man Bewohner verwalten, Gebäude bauen, auf Erkundungsreisen gehen, andere Dörfer treffen und mit diesen interagieren kann.`
+`Ein Testbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 
 ## Features:
 ### Bewohnerverwaltung
-### Gebäude bauen/upgraden
+### Ressourcenregulierung
+### Gebäude bauen und verbessern
 ### Optionen
 - Geschwindigkeit
 - Light/Dark-Theme
-### Möglichkeit zu Speichern und zu Laden
+### Speichern und Laden Funktion
 ### Mobileansicht
 ### Crafting
-- Rüstungen
-  - Eisenrüstung
-  - Lederrüstung
-- Waffen
-  - Nahkampf
-    - Schwert
-    - Axt
-    - Morgenstern
-  - Fernkampf
-    - Kurzbogen
-    - Langbogen
-    - Armbrust
-- Geschenk
-  - Handelsgeschenk
-  - Friedensgeschenk
-  - Vergiftetes Geschenk
 
 ## Features in Arbeit:
 ### Handeln
@@ -35,10 +20,7 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - mit Dörfern
 
 ## Kommende Features:
-### Weitere Optionen
-- Schwierigkeit
-- Automatisches Speichern
-- Abbruchmöglichkeit für Aufträge
+### Abbruchmöglichkeit für Aufträge
 ### Events
 - Kundschafter
   - nichts enteckt
@@ -64,3 +46,10 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
+## Optionale Features
+### Weitere Optionen
+- Schwierigkeit
+- Automatisches Speichern
+  - Cookie
+  - Zielordner
+### Dynamische Generierung
