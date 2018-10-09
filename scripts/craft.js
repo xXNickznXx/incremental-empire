@@ -23,7 +23,7 @@ function brew_medicine() {
     $("#task .medicine.time").text(secondsTommss(brewer.toFixed(1)));
     brewer -= 0.1;
     if (brewer < 0) {
-        medicine += medicine_num;
+        medicine += prod_medicine.count;
         clearInterval(brew);
         slot_brew = false;
         msg.prepend("<p>Medizin wurde fertiggestellt.</p>");
@@ -36,36 +36,34 @@ $("#btn_medicine").click(function () {
                 <td class='medicine'>Herstellung von Medizin</td>
                 <td class='medicine time'></td>
                 </tr>`);
-    food -= 20 * medicine_num;
-    stone -= 5 * medicine_num;
-    cloth -= 5 * medicine_num;
+    food -= prod_medicine.costs.food * prod_medicine.count;
+    stone -= prod_medicine.costs.stone * prod_medicine.count;
+    cloth -= prod_medicine.costs.cloth * prod_medicine.count;
     slot_brew = true;
-    brewer = curr_time_medicine;
+    brewer = prod_medicine.curr_time;
     brew = setInterval(brew_medicine, speed / 10);
 });
 var medicine_p,
     medicine_m,
     medicine_t;
-$("#up_medicine").click(function () {
-    medicine_num += 1;
-    $("#num_medicine").text(medicine_num);
-});
 function medicine_plus() {
-    medicine_num += 1;
-    $("#num_medicine").text(medicine_num);
+    prod_medicine.count += 1;
+    $("#num_medicine").text(prod_medicine.count);
 }
+$("#up_medicine").click(function () {
+    medicine_plus();
+});
 $("#up_medicine").mousedown(function () {
     medicine_t = setTimeout(function () {medicine_p = setInterval(medicine_plus, 50);}, 500);
 });
 
-$("#dwn_medicine").click(function () {
-    medicine_num -= 1;
-    $("#num_medicine").text(medicine_num);
-});
 function medicine_minus() {
-    medicine_num -= 1;
-    $("#num_medicine").text(medicine_num);
+    prod_medicine.count -= 1;
+    $("#num_medicine").text(prod_medicine.count);
 }
+$("#dwn_medicine").click(function () {
+    medicine_minus();
+});
 $("#dwn_medicine").mousedown(function () {
     medicine_t = setTimeout(function () {medicine_m = setInterval(medicine_minus, 50);}, 500);
 });
@@ -74,7 +72,7 @@ function brew_poison() {
     $("#task .poison.time").text(secondsTommss(brewer.toFixed(1)));
     brewer -= 0.1;
     if (brewer < 0) {
-        poison += poison_num;
+        poison += prod_poison.count;
         clearInterval(brew);
         slot_brew = false;
         msg.prepend("<p>Gift wurde fertiggestellt.</p>");
@@ -87,38 +85,36 @@ $("#btn_poison").click(function () {
                 <td class='poison'>Herstellung von Gift</td>
                 <td class='poison time'></td>
                 </tr>`);
-    food -= 10 * poison_num;
-    stone -= 5 * poison_num;
-    cloth -= 5 * poison_num;
-    coal -= 5 * poison_num;
-    iron -= 5 * poison_num;
+    food -= prod_poison.costs.food * prod_poison.count;
+    stone -= prod_poison.costs.stone * prod_poison.count;
+    cloth -= prod_poison.costs.cloth * prod_poison.count;
+    coal -= prod_poison.costs.coal * prod_poison.count;
+    iron -= prod_poison.costs.iron * prod_poison.count;
     slot_brew = true;
-    brewer = curr_time_poison;
+    brewer = prod_poison.curr_time;
     brew = setInterval(brew_poison, speed / 10);
 });
 var poison_p,
     poison_m,
     poison_t;
-$("#up_poison").click(function () {
-    poison_num += 1;
-    $("#num_poison").text(poison_num);
-});
 function poison_plus() {
-    poison_num += 1;
-    $("#num_poison").text(poison_num);
+    prod_poison.count += 1;
+    $("#num_poison").text(prod_poison.count);
 }
+$("#up_poison").click(function () {
+    poison_plus();
+});
 $("#up_poison").mousedown(function () {
     poison_t = setTimeout(function () {poison_p = setInterval(poison_plus, 50);}, 500);
 });
 
-$("#dwn_poison").click(function () {
-    poison_num -= 1;
-    $("#num_poison").text(poison_num);
-});
 function poison_minus() {
-    poison_num -= 1;
-    $("#num_poison").text(poison_num);
+    prod_poison.count -= 1;
+    $("#num_poison").text(prod_poison.count);
 }
+$("#dwn_poison").click(function () {
+    poison_minus();
+});
 $("#dwn_poison").mousedown(function () {
     poison_t = setTimeout(function () {poison_m = setInterval(poison_minus, 50);}, 500);
 });
@@ -127,7 +123,7 @@ function craft_leatherarmor() {
     $("#task .leatherarmor.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        leatherarmor += leatherarmor_num;
+        leatherarmor += prod_leatherarmor.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Lederrüstung wurde fertiggestellt.</p>");
@@ -140,34 +136,32 @@ $("#btn_leatherarmor").click(function () {
                 <td class='leatherarmor'>Herstellung von Lederrüstung</td>
                 <td class='leatherarmor time'></td>
                 </tr>`);
-    leather -= 50 * leatherarmor_num;
+    leather -= prod_leatherarmor.costs.leather * prod_leatherarmor.count;
     slot_craft = true;
-    crafter = curr_time_leatherarmor;
+    crafter = prod_leatherarmor.curr_time;
     craft = setInterval(craft_leatherarmor, speed / 10);
 });
 var leatherarmor_p,
     leatherarmor_m,
     leatherarmor_t;
-$("#up_leatherarmor").click(function () {
-    leatherarmor_num += 1;
-    $("#num_leatherarmor").text(leatherarmor_num);
-});
 function leatherarmor_plus() {
-    leatherarmor_num += 1;
-    $("#num_leatherarmor").text(leatherarmor_num);
+    prod_leatherarmor.count += 1;
+    $("#num_leatherarmor").text(prod_leatherarmor.count);
 }
+$("#up_leatherarmor").click(function () {
+    leatherarmor_plus();
+});
 $("#up_leatherarmor").mousedown(function () {
     leatherarmor_t = setTimeout(function () {leatherarmor_p = setInterval(leatherarmor_plus, 50);}, 500);
 });
 
-$("#dwn_leatherarmor").click(function () {
-    leatherarmor_num -= 1;
-    $("#num_leatherarmor").text(leatherarmor_num);
-});
 function leatherarmor_minus() {
-    leatherarmor_num -= 1;
-    $("#num_leatherarmor").text(leatherarmor_num);
+    prod_leatherarmor.count -= 1;
+    $("#num_leatherarmor").text(prod_leatherarmor.count);
 }
+$("#dwn_leatherarmor").click(function () {
+    leatherarmor_minus();
+});
 $("#dwn_leatherarmor").mousedown(function () {
     leatherarmor_t = setTimeout(function () {leatherarmor_m = setInterval(leatherarmor_minus, 50);}, 500);
 });
@@ -176,7 +170,7 @@ function craft_ironarmor() {
     $("#task .ironarmor.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        ironarmor += ironarmor_num;
+        ironarmor += prod_ironarmor.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Eisenrüstung wurde fertiggestellt.</p>");
@@ -189,93 +183,41 @@ $("#btn_ironarmor").click(function () {
                 <td class='ironarmor'>Herstellung von Eisenrüstung</td>
                 <td class='ironarmor time'></td>
                 </tr>`);
-    iron -= 50 * ironarmor_num;
+    iron -= prod_ironarmor.costs.iron * prod_ironarmor.count;
     slot_craft = true;
-    crafter = curr_time_ironarmor;
+    crafter = prod_ironarmor.curr_time;
     craft = setInterval(craft_ironarmor, speed / 10);
 });
 var ironarmor_p,
     ironarmor_m,
     ironarmor_t;
-$("#up_ironarmor").click(function () {
-    ironarmor_num += 1;
-    $("#num_ironarmor").text(ironarmor_num);
-});
 function ironarmor_plus() {
-    ironarmor_num += 1;
-    $("#num_ironarmor").text(ironarmor_num);
+    prod_ironarmor.count += 1;
+    $("#num_ironarmor").text(prod_ironarmor.count);
 }
+$("#up_ironarmor").click(function () {
+    ironarmor_plus();
+});
 $("#up_ironarmor").mousedown(function () {
     ironarmor_t = setTimeout(function () {ironarmor_p = setInterval(ironarmor_plus, 50);}, 500);
 });
 
-$("#dwn_ironarmor").click(function () {
-    ironarmor_num -= 1;
-    $("#num_ironarmor").text(ironarmor_num);
-});
 function ironarmor_minus() {
-    ironarmor_num -= 1;
-    $("#num_ironarmor").text(ironarmor_num);
+    prod_ironarmor.count -= 1;
+    $("#num_ironarmor").text(prod_ironarmor.count);
 }
+$("#dwn_ironarmor").click(function () {
+    ironarmor_minus();
+});
 $("#dwn_ironarmor").mousedown(function () {
     ironarmor_t = setTimeout(function () {ironarmor_m = setInterval(ironarmor_minus, 50);}, 500);
-});
-
-function craft_sword() {
-    $("#task .sword.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
-    if (crafter < 0) {
-        sword += sword_num;
-        clearInterval(craft);
-        slot_craft = false;
-        msg.prepend("<p>Schwert wurde fertiggestellt.</p>");
-        check_msg();
-        $("#task .sword").remove();
-    }
-}
-$("#btn_sword").click(function () {
-    task.append(`<tr>
-                <td class='sword'>Herstellung von Schwert</td>
-                <td class='sword time'></td>
-                </tr>`);
-    wood -= 5 * sword_num;
-    iron -= 25 * sword_num;
-    slot_craft = true;
-    crafter = curr_time_sword;
-    craft = setInterval(craft_sword, speed / 10);
-});
-var sword_p,
-    sword_m,
-    sword_t;
-$("#up_sword").click(function () {
-    sword_num += 1;
-    $("#num_sword").text(sword_num);
-});
-function sword_plus() {
-    sword_num += 1;
-    $("#num_sword").text(sword_num);
-}
-$("#up_sword").mousedown(function () {
-    sword_t = setTimeout(function () {sword_p = setInterval(sword_plus, 50);}, 500);
-});
-
-$("#dwn_sword").click(function () {
-    sword_num -= 1;
-    $("#num_sword").text(sword_num);
-});
-function sword_minus() {
-    sword_num -= 1;
-    $("#num_sword").text(sword_num);
-}
-$("#dwn_sword").mousedown(function () {
-    sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50);}, 500);
 });
 
 function craft_axe() {
     $("#task .axe.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        axe += axe_num;
+        axe += prod_axe.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Axt wurde fertiggestellt.</p>");
@@ -288,44 +230,90 @@ $("#btn_axe").click(function () {
                 <td class='axe'>Herstellung von Axt</td>
                 <td class='axe time'></td>
                 </tr>`);
-    wood -= 5 * axe_num;
-    iron -= 20 * axe_num;
+    wood -= prod_axe.costs.wood * prod_axe.count;
+    iron -= prod_axe.costs.iron * prod_axe.count;
     slot_craft = true;
-    crafter = curr_time_axe;
+    crafter = prod_axe.curr_time;
     craft = setInterval(craft_axe, speed / 10);
 });
 var axe_p,
     axe_m,
     axe_t;
-$("#up_axe").click(function () {
-    axe_num += 1;
-    $("#num_axe").text(axe_num);
-});
 function axe_plus() {
-    axe_num += 1;
-    $("#num_axe").text(axe_num);
+    prod_axe.count += 1;
+    $("#num_axe").text(prod_axe.count);
 }
+$("#up_axe").click(function () {
+    axe_plus();
+});
 $("#up_axe").mousedown(function () {
     axe_t = setTimeout(function () {axe_p = setInterval(axe_plus, 50);}, 500);
 });
 
-$("#dwn_axe").click(function () {
-    axe_num -= 1;
-    $("#num_axe").text(axe_num);
-});
 function axe_minus() {
-    axe_num -= 1;
-    $("#num_axe").text(axe_num);
+    prod_axe.count -= 1;
+    $("#num_axe").text(prod_axe.count);
 }
+$("#dwn_axe").click(function () {
+    axe_minus();
+});
 $("#dwn_axe").mousedown(function () {
     axe_t = setTimeout(function () {axe_m = setInterval(axe_minus, 50);}, 500);
+});
+
+function craft_sword() {
+    $("#task .sword.time").text(secondsTommss(crafter.toFixed(1)));
+    crafter -= 0.1;
+    if (crafter < 0) {
+        sword += prod_sword.count;
+        clearInterval(craft);
+        slot_craft = false;
+        msg.prepend("<p>Schwert wurde fertiggestellt.</p>");
+        check_msg();
+        $("#task .sword").remove();
+    }
+}
+$("#btn_sword").click(function () {
+    task.append(`<tr>
+                <td class='sword'>Herstellung von Schwert</td>
+                <td class='sword time'></td>
+                </tr>`);
+    wood -= prod_sword.costs.wood * prod_sword.count;
+    iron -= prod_sword.costs.iron * prod_sword.count;
+    slot_craft = true;
+    crafter = prod_sword.curr_time;
+    craft = setInterval(craft_sword, speed / 10);
+});
+var sword_p,
+    sword_m,
+    sword_t;
+function sword_plus() {
+    prod_sword.count += 1;
+    $("#num_sword").text(prod_sword.count);
+}
+$("#up_sword").click(function () {
+    sword_plus();
+});
+$("#up_sword").mousedown(function () {
+    sword_t = setTimeout(function () {sword_p = setInterval(sword_plus, 50);}, 500);
+});
+
+function sword_minus() {
+    prod_sword.count -= 1;
+    $("#num_sword").text(prod_sword.count);
+}
+$("#dwn_sword").click(function () {
+    sword_minus();
+});
+$("#dwn_sword").mousedown(function () {
+    sword_t = setTimeout(function () {sword_m = setInterval(sword_minus, 50);}, 500);
 });
 
 function craft_morningstar() {
     $("#task .morningstar.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        morningstar += morningstar_num;
+        morningstar += prod_morningstar.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Morgenstern wurde fertiggestellt.</p>");
@@ -338,35 +326,33 @@ $("#btn_morningstar").click(function () {
                 <td class='morningstar'>Herstellung von Morgenstern</td>
                 <td class='morningstar time'></td>
                 </tr>`);
-    wood -= 5 * morningstar_num;
-    iron -= 30 * morningstar_num;
+    wood -= prod_morningstar.costs.wood * prod_morningstar.count;
+    iron -= prod_morningstar.costs.iron * prod_morningstar.count;
     slot_craft = true;
-    crafter = curr_time_morningstar;
+    crafter = prod_morningstar.curr_time;
     craft = setInterval(craft_morningstar, speed / 10);
 });
 var morningstar_p,
     morningstar_m,
     morningstar_t;
-$("#up_morningstar").click(function () {
-    morningstar_num += 1;
-    $("#num_morningstar").text(morningstar_num);
-});
 function morningstar_plus() {
-    morningstar_num += 1;
-    $("#num_morningstar").text(morningstar_num);
+    prod_morningstar.count += 1;
+    $("#num_morningstar").text(prod_morningstar.count);
 }
+$("#up_morningstar").click(function () {
+    morningstar_plus();
+});
 $("#up_morningstar").mousedown(function () {
     morningstar_t = setTimeout(function () {morningstar_p = setInterval(morningstar_plus, 50);}, 500);
 });
 
-$("#dwn_morningstar").click(function () {
-    morningstar_num -= 1;
-    $("#num_morningstar").text(morningstar_num);
-});
 function morningstar_minus() {
-    morningstar_num -= 1;
-    $("#num_morningstar").text(morningstar_num);
+    prod_morningstar.count -= 1;
+    $("#num_morningstar").text(prod_morningstar.count);
 }
+$("#dwn_morningstar").click(function () {
+    morningstar_minus();
+});
 $("#dwn_morningstar").mousedown(function () {
     morningstar_t = setTimeout(function () {morningstar_m = setInterval(morningstar_minus, 50);}, 500);
 });
