@@ -1,300 +1,5 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
-var food = 0,
-    wood = 0,
-    stone = 0,
-    leather = 0,
-    cloth = 0,
-    coal = 0,
-    iron = 0,
-    clothes = 0,
-    medicine = 0,
-    poison = 0,
-    leatherarmor = 0,
-    ironarmor = 0,
-    sword = 0,
-    axe = 0,
-    morningstar = 0,
-    shortbow = 0,
-    longbow = 0,
-    crossbow = 0,
-    tradegift = 0,
-    peacegift = 0,
-    poisongift = 0,
-    horse = 0,
-    supplies_max = 100,
-    
-    a_market = {
-        food: {
-            name: "Nahrung",
-            number: 100,
-            buy_price: 20,
-            sell_price: 16
-        },
-        wood: {
-            name: "Holz",
-            number: 50,
-            buy_price: 15,
-            sell_price: 12
-        },
-        stone: {
-            name: "Stein",
-            number: 50,
-            buy_price: 20,
-            sell_price: 16
-        },
-        leather: {
-            name: "Leder",
-            number: 40,
-            buy_price: 15,
-            sell_price: 12
-        },
-        cloth: {
-            name: "Wolle",
-            number: 40,
-            buy_price: 15,
-            sell_price: 12
-        },
-        coal: {
-            name: "Kohle",
-            number: 30,
-            buy_price: 20,
-            sell_price: 16
-        },
-        iron: {
-            name: "Eisen",
-            number: 25,
-            buy_price: 20,
-            sell_price: 16
-        },
-        clothes: {
-            name: "Kleidung",
-            number: 20,
-            buy_price: 20,
-            sell_price: 16
-        },
-        medicine: {
-            name: "Medizin",
-            number: 15,
-            buy_price: 30,
-            sell_price: 24
-        },
-        poison: {
-            name: "Gift",
-            number: 15,
-            buy_price: 30,
-            sell_price: 24
-        },
-        leatherarmor: {
-            name: "Lederrüstung",
-            number: 10,
-            buy_price: 30,
-            sell_price: 24
-        },
-        ironarmor: {
-            name: "Eisenrüstung",
-            number: 5,
-            buy_price: 30,
-            sell_price: 24
-        },
-        sword: {
-            name: "Schwert",
-            number: 10,
-            buy_price: 30,
-            sell_price: 24
-        },
-        axe: {
-            name: "Axt",
-            number: 15,
-            buy_price: 30,
-            sell_price: 24
-        },
-        morningstar: {
-            name: "Morgenstern",
-            number: 5,
-            buy_price: 30,
-            sell_price: 24
-        },
-        shortbow: {
-            name: "Kurzbogen",
-            number: 15,
-            buy_price: 30,
-            sell_price: 24
-        },
-        longbow: {
-            name: "Langbogen",
-            number: 10,
-            buy_price: 30,
-            sell_price: 24
-        },
-        crossbow: {
-            name: "Armbrust",
-            number: 5,
-            buy_price: 30,
-            sell_price: 24
-        },
-        tradegift: {
-            name: "Handelsgeschenk",
-            number: 1,
-            buy_price: 50,
-            sell_price: 40
-        },
-        peacegift: {
-            name: "Friedensgeschenk",
-            number: 1,
-            buy_price: 100,
-            sell_price: 80
-        },
-        poisongift: {
-            name: "Giftgeschenk",
-            number: 1,
-            buy_price: 110,
-            sell_price: 88
-        }
-    },
-
-    villager = 5,
-    villager_unused = 5,
-    villager_max = 10,
-
-    gatherer = 0,
-    lumberjack = 0, wood_bonus = 1,
-    quarryman = 0,  stone_bonus = 1,
-    worker = 0,
-    hunter = 0,     leather_bonus = 1,
-    shepherd = 0,   cloth_bonus = 1,
-    coalminer = 0,  coal_bonus = 1,
-    ironminer = 0,  iron_bonus = 1,
-    tailor = 0,     clothes_bonus = 1,
-    alchemist = 0,  brew_time = 1,
-    smith = 0,      craft_time = 1,
-    scout = 0,      travel_time = 1,
-    knight = 0,     damage_bonus = 1,
-    stableman = 0,  breed_bonus = 1,
-
-    trade_bonus = 1,
-
-    hut = 0,
-    huntinghut = false,     up_huntinghut = false,
-    storage = false,        lvl_storage = 0,
-    lumberjackhut = false,  up_lumberjackhut = false,
-    sheepstall = false,     up_sheepstall = false,
-    quarry = false,         up_quarry = false,
-    coalmine = false,       up_coalmine = false,
-    ironmine = false,       up_ironmine = false,
-    tailorhouse = false,    up_tailorhouse = false,
-    alchemisthut = false,   up_alchemisthut = false,
-    forge = false,          up_forge = false,
-    market = false,         up_market = false,
-    scoutpost = false,      up_scoutpost = false,
-    barracks = false,       up_barracks = false,
-    stable = false,         up_stable = false,
-
-    time_hut = 20,              time_upgrade_hut = 40,
-    time_huntinghut = 30,       time_upgrade_huntinghut = 60,
-    time_storage = 60,          time_upgrade_storage = 120,
-    time_lumberjackhut = 80,    time_upgrade_lumberjackhut = 160,
-    time_sheepstall = 100,      time_upgrade_sheepstall = 200,
-    time_quarry = 120,          time_upgrade_quarry = 240,
-    time_coalmine = 140,        time_upgrade_coalmine = 280,
-    time_ironmine = 180,        time_upgrade_ironmine = 360,
-    time_tailorhouse = 240,     time_upgrade_tailorhouse = 480,
-    time_alchemisthut = 270,    time_upgrade_alchemisthut = 540,
-    time_forge = 300,           time_upgrade_forge = 600,
-    time_market = 600,          time_upgrade_market = 1200,
-    time_scoutpost = 900,       time_upgrade_scoutpost = 1800,
-    time_barracks = 1200,       time_upgrade_barracks = 2400,
-    time_stable = 1800,         time_upgrade_stable = 3600,
-    timer,
-
-    curr_time_hut,              curr_time_upgrade_hut,
-    curr_time_huntinghut,       curr_time_upgrade_huntinghut,
-    curr_time_storage,          curr_time_upgrade_storage,
-    curr_time_lumberjackhut,    curr_time_upgrade_lumberjackhut,
-    curr_time_sheepstall,       curr_time_upgrade_sheepstall,
-    curr_time_quarry,           curr_time_upgrade_quarry,
-    curr_time_coalmine,         curr_time_upgrade_coalmine,
-    curr_time_ironmine,         curr_time_upgrade_ironmine,
-    curr_time_tailorhouse,      curr_time_upgrade_tailorhouse,
-    curr_time_alchemisthut,     curr_time_upgrade_alchemisthut,
-    curr_time_forge,            curr_time_upgrade_forge,
-    curr_time_market,           curr_time_upgrade_market,
-    curr_time_scoutpost,        curr_time_upgrade_scoutpost,
-    curr_time_barracks,         curr_time_upgrade_barracks,
-    curr_time_stable,           curr_time_upgrade_stable,
-    
-    medicine_num = 0,
-    poison_num = 0,
-    leatherarmor_num = 0,
-    ironarmor_num = 0,
-    sword_num = 0,
-    axe_num = 0,
-    morningstar_num = 0,
-    shortbow_num = 0,
-    longbow_num = 0,
-    crossbow_num = 0,
-    tradegift_num = 0,
-    peacegift_num = 0,
-    poisongift_num = 0,
-    
-    time_medicine = 60,
-    time_poison = 60,
-    brewer,
-    time_leatherarmor = 60,
-    time_ironarmor = 120,
-    time_sword = 120,
-    time_axe = 60,
-    time_morningstar = 180,
-    time_shortbow = 60,
-    time_longbow = 120,
-    time_crossbow = 180,
-    time_tradegift = 60,
-    time_peacegift = 120,
-    time_poisongift = 180,
-    crafter,
-    
-    curr_time_medicine,
-    curr_time_poison,
-    curr_time_leatherarmor,
-    curr_time_ironarmor,
-    curr_time_sword,
-    curr_time_axe,
-    curr_time_morningstar,
-    curr_time_shortbow,
-    curr_time_longbow,
-    curr_time_crossbow,
-    curr_time_tradegift,
-    curr_time_peacegift,
-    curr_time_poisongift,
-    
-    discovered_towns = [],
-
-    slot_build = false,
-    slot_craft = false,
-    slot_brew = false,
-    //slot_scout = false,
-
-    build,
-    upgrade,
-    brew,
-    craft,
-    refr,
-    starve,
-    freeze,
-    supp_prod,
-    new_vil,
-    temperat,
-    
-    new_hor,
-
-    tempr = ["Warm", "Warm", "Warm", "Mild", "Kalt"],
-
-    speed,
-
-    task = $("#task"),
-    msg = $("#msg"),
-
-    win = window.matchMedia("(max-width: 400px)");
 
 /* Convert int to time */
 function secondsTommss(total) {
@@ -497,180 +202,180 @@ function refresh() {
     // Current Time to build/upgrade
     //region
     if (worker > 1) {
-        curr_time_hut = time_hut / worker;
-        curr_time_huntinghut = time_huntinghut / worker;
-        curr_time_lumberjackhut = time_lumberjackhut / worker;
-        curr_time_quarry = time_quarry / worker;
-        curr_time_storage = time_storage / worker;
-        curr_time_sheepstall = time_sheepstall / worker;
-        curr_time_coalmine = time_coalmine / worker;
-        curr_time_ironmine = time_ironmine / worker;
-        curr_time_tailorhouse = time_tailorhouse / worker;
-        curr_time_alchemisthut = time_alchemisthut / worker;
-        curr_time_forge = time_forge / worker;
-        curr_time_market = time_market / worker;
-        curr_time_scoutpost = time_scoutpost / worker;
-        curr_time_barracks = time_barracks / worker;
-        curr_time_stable = time_stable / worker;
-
-        curr_time_upgrade_hut = time_upgrade_hut / worker;
-        curr_time_upgrade_huntinghut = time_upgrade_huntinghut / worker;
-        curr_time_upgrade_lumberjackhut = time_upgrade_lumberjackhut / worker;
-        curr_time_upgrade_quarry = time_upgrade_quarry / worker;
-        curr_time_upgrade_storage = time_upgrade_storage / worker;
-        curr_time_upgrade_sheepstall = time_upgrade_sheepstall / worker;
-        curr_time_upgrade_coalmine = time_upgrade_coalmine / worker;
-        curr_time_upgrade_ironmine = time_upgrade_ironmine / worker;
-        curr_time_upgrade_tailorhouse = time_upgrade_tailorhouse / worker;
-        curr_time_upgrade_alchemisthut = time_upgrade_alchemisthut / worker;
-        curr_time_upgrade_forge = time_upgrade_forge / worker;
-        curr_time_upgrade_market = time_upgrade_market / worker;
-        curr_time_upgrade_scoutpost = time_upgrade_scoutpost / worker;
-        curr_time_upgrade_barracks = time_upgrade_barracks / worker;
-        curr_time_upgrade_stable = time_upgrade_stable / worker;
+        hut.curr_time = hut.time / worker;
+        huntinghut.curr_time = huntinghut.time / worker;
+        lumberjackhut.curr_time = lumberjackhut.time / worker;
+        quarry.curr_time = quarry.time / worker;
+        storage.curr_time = storage.time / worker;
+        sheepstall.curr_time = sheepstall.time / worker;
+        coalmine.curr_time = coalmine.time / worker;
+        ironmine.curr_time = ironmine.time / worker;
+        tailorhouse.curr_time = tailorhouse.time / worker;
+        alchemisthut.curr_time = alchemisthut.time / worker;
+        forge.curr_time = forge.time / worker;
+        market.curr_time = market.time / worker;
+        scoutpost.curr_time = scoutpost.time / worker;
+        barracks.curr_time = barracks.time / worker;
+        stable.curr_time = stable.time / worker;
+        
+        hut_up.curr_time = hut_up.time / worker;
+        huntinghut_up.curr_time = huntinghut_up.time / worker;
+        lumberjackhut_up.curr_time = lumberjackhut_up.time / worker;
+        quarry_up.curr_time = quarry_up.time / worker;
+        storage_up.curr_time = storage_up.time / worker;
+        sheepstall_up.curr_time = sheepstall_up.time / worker;
+        coalmine_up.curr_time = coalmine_up.time / worker;
+        ironmine_up.curr_time = ironmine_up.time / worker;
+        tailorhouse_up.curr_time = tailorhouse_up.time / worker;
+        alchemisthut_up.curr_time = alchemisthut_up.time / worker;
+        forge_up.curr_time = forge_up.time / worker;
+        market_up.curr_time = market_up.time / worker;
+        scoutpost_up.curr_time = scoutpost_up.time / worker;
+        barracks_up.curr_time = barracks_up.time / worker;
+        stable_up.curr_time = stable_up.time / worker;
     } else {
-        curr_time_hut = time_hut;
-        curr_time_huntinghut = time_huntinghut;
-        curr_time_lumberjackhut = time_lumberjackhut;
-        curr_time_quarry = time_quarry;
-        curr_time_storage = time_storage;
-        curr_time_sheepstall = time_sheepstall;
-        curr_time_coalmine = time_coalmine;
-        curr_time_ironmine = time_ironmine;
-        curr_time_tailorhouse = time_tailorhouse;
-        curr_time_alchemisthut = time_alchemisthut;
-        curr_time_forge = time_forge;
-        curr_time_market = time_market;
-        curr_time_scoutpost = time_scoutpost;
-        curr_time_barracks = time_barracks;
-        curr_time_stable = time_stable;
-
-        curr_time_upgrade_hut = time_upgrade_hut;
-        curr_time_upgrade_huntinghut = time_upgrade_huntinghut;
-        curr_time_upgrade_lumberjackhut = time_upgrade_lumberjackhut;
-        curr_time_upgrade_quarry = time_upgrade_quarry;
-        curr_time_upgrade_storage = time_upgrade_storage;
-        curr_time_upgrade_sheepstall = time_upgrade_sheepstall;
-        curr_time_upgrade_coalmine = time_upgrade_coalmine;
-        curr_time_upgrade_ironmine = time_upgrade_ironmine;
-        curr_time_upgrade_tailorhouse = time_upgrade_tailorhouse;
-        curr_time_upgrade_alchemisthut = time_upgrade_alchemisthut;
-        curr_time_upgrade_forge = time_upgrade_forge;
-        curr_time_upgrade_market = time_upgrade_market;
-        curr_time_upgrade_scoutpost = time_upgrade_scoutpost;
-        curr_time_upgrade_barracks = time_upgrade_barracks;
-        curr_time_upgrade_stable = time_upgrade_stable;
+        hut.curr_time = hut.time;
+        huntinghut.curr_time = huntinghut.time;
+        lumberjackhut.curr_time = lumberjackhut.time;
+        quarry.curr_time = quarry.time;
+        storage.curr_time = storage.time;
+        sheepstall.curr_time = sheepstall.time;
+        coalmine.curr_time = coalmine.time;
+        ironmine.curr_time = ironmine.time;
+        tailorhouse.curr_time = tailorhouse.time;
+        alchemisthut.curr_time = alchemisthut.time;
+        forge.curr_time = forge.time;
+        market.curr_time = market.time;
+        scoutpost.curr_time = scoutpost.time;
+        barracks.curr_time = barracks.time;
+        stable.curr_time = stable.time;
+        
+        hut_up.curr_time = hut_up.time;
+        huntinghut_up.curr_time = huntinghut_up.time;
+        lumberjackhut_up.curr_time = lumberjackhut_up.time;
+        quarry_up.curr_time = quarry_up.time;
+        storage_up.curr_time = storage_up.time;
+        sheepstall_up.curr_time = sheepstall_up.time;
+        coalmine_up.curr_time = coalmine_up.time;
+        ironmine_up.curr_time = ironmine_up.time;
+        tailorhouse_up.curr_time = tailorhouse_up.time;
+        alchemisthut_up.curr_time = alchemisthut_up.time;
+        forge_up.curr_time = forge_up.time;
+        market_up.curr_time = market_up.time;
+        scoutpost_up.curr_time = scoutpost_up.time;
+        barracks_up.curr_time = barracks_up.time;
+        stable_up.curr_time = stable_up.time;
     }
     //endregion
 
     // Display Build/Upgrade Time
     //region
-    $("#time_hut").text(secondsTommss(curr_time_hut));
-    $("#time_huntinghut").text(secondsTommss(curr_time_huntinghut));
-    $("#time_storage").text(secondsTommss(curr_time_storage));
-    $("#time_lumberjackhut").text(secondsTommss(curr_time_lumberjackhut));
-    $("#time_sheepstall").text(secondsTommss(curr_time_sheepstall));
-    $("#time_quarry").text(secondsTommss(curr_time_quarry));
-    $("#time_coalmine").text(secondsTommss(curr_time_coalmine));
-    $("#time_ironmine").text(secondsTommss(curr_time_ironmine));
-    $("#time_tailorhouse").text(secondsTommss(curr_time_tailorhouse));
-    $("#time_alchemisthut").text(secondsTommss(curr_time_alchemisthut));
-    $("#time_forge").text(secondsTommss(curr_time_forge));
-    $("#time_market").text(secondsTommss(curr_time_market));
-    $("#time_scoutpost").text(secondsTommss(curr_time_scoutpost));
-    $("#time_barracks").text(secondsTommss(curr_time_barracks));
-    $("#time_stable").text(secondsTommss(curr_time_stable));
-
-    $("#time_upgrade_hut").text(secondsTommss(curr_time_upgrade_hut));
-    $("#time_upgrade_huntinghut").text(secondsTommss(curr_time_upgrade_huntinghut));
-    $("#time_upgrade_storage").text(secondsTommss(curr_time_upgrade_storage));
-    $("#time_upgrade_lumberjackhut").text(secondsTommss(curr_time_upgrade_lumberjackhut));
-    $("#time_upgrade_sheepstall").text(secondsTommss(curr_time_upgrade_sheepstall));
-    $("#time_upgrade_quarry").text(secondsTommss(curr_time_upgrade_quarry));
-    $("#time_upgrade_coalmine").text(secondsTommss(curr_time_upgrade_coalmine));
-    $("#time_upgrade_ironmine").text(secondsTommss(curr_time_upgrade_ironmine));
-    $("#time_upgrade_tailorhouse").text(secondsTommss(curr_time_upgrade_tailorhouse));
-    $("#time_upgrade_alchemisthut").text(secondsTommss(curr_time_upgrade_alchemisthut));
-    $("#time_upgrade_forge").text(secondsTommss(curr_time_upgrade_forge));
-    $("#time_upgrade_market").text(secondsTommss(curr_time_upgrade_market));
-    $("#time_upgrade_scoutpost").text(secondsTommss(curr_time_upgrade_scoutpost));
-    $("#time_upgrade_barracks").text(secondsTommss(curr_time_upgrade_barracks));
-    $("#time_upgrade_stable").text(secondsTommss(curr_time_upgrade_stable));
+    $("#time_hut").text(secondsTommss(hut.curr_time));
+    $("#time_huntinghut").text(secondsTommss(huntinghut.curr_time));
+    $("#time_storage").text(secondsTommss(storage.curr_time));
+    $("#time_lumberjackhut").text(secondsTommss(lumberjackhut.curr_time));
+    $("#time_sheepstall").text(secondsTommss(sheepstall.curr_time));
+    $("#time_quarry").text(secondsTommss(quarry.curr_time));
+    $("#time_coalmine").text(secondsTommss(coalmine.curr_time));
+    $("#time_ironmine").text(secondsTommss(ironmine.curr_time));
+    $("#time_tailorhouse").text(secondsTommss(tailorhouse.curr_time));
+    $("#time_alchemisthut").text(secondsTommss(alchemisthut.curr_time));
+    $("#time_forge").text(secondsTommss(forge.curr_time));
+    $("#time_market").text(secondsTommss(market.curr_time));
+    $("#time_scoutpost").text(secondsTommss(scoutpost.curr_time));
+    $("#time_barracks").text(secondsTommss(barracks.curr_time));
+    $("#time_stable").text(secondsTommss(stable.curr_time));
+    
+    $("#time_upgrade_hut").text(secondsTommss(hut_up.curr_time));
+    $("#time_upgrade_huntinghut").text(secondsTommss(huntinghut_up.curr_time));
+    $("#time_upgrade_storage").text(secondsTommss(storage_up.curr_time));
+    $("#time_upgrade_lumberjackhut").text(secondsTommss(lumberjackhut_up.curr_time));
+    $("#time_upgrade_sheepstall").text(secondsTommss(sheepstall_up.curr_time));
+    $("#time_upgrade_quarry").text(secondsTommss(quarry_up.curr_time));
+    $("#time_upgrade_coalmine").text(secondsTommss(coalmine_up.curr_time));
+    $("#time_upgrade_ironmine").text(secondsTommss(ironmine_up.curr_time));
+    $("#time_upgrade_tailorhouse").text(secondsTommss(tailorhouse_up.curr_time));
+    $("#time_upgrade_alchemisthut").text(secondsTommss(alchemisthut_up.curr_time));
+    $("#time_upgrade_forge").text(secondsTommss(forge_up.curr_time));
+    $("#time_upgrade_market").text(secondsTommss(market_up.curr_time));
+    $("#time_upgrade_scoutpost").text(secondsTommss(scoutpost_up.curr_time));
+    $("#time_upgrade_barracks").text(secondsTommss(barracks_up.curr_time));
+    $("#time_upgrade_stable").text(secondsTommss(stable_up.curr_time));
     //endregion
 
     // Build Buttons Dis-/Enabled
     //region
-    if (wood >= 50 && stone >= 10 && worker > 0 && slot_build === false) {
+    if (wood >= hut.costs.wood && stone >= hut.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_hut").prop("disabled", false);
     } else {
         $("#btn_hut").prop("disabled", true);
     }
-    if (wood >= 150 && stone >= 30 && worker > 0 && slot_build === false) {
+    if (wood >= huntinghut.costs.wood && stone >= huntinghut.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_huntinghut").prop("disabled", false);
     } else {
         $("#btn_huntinghut").prop("disabled", true);
     }
-    if (wood >= 100 && stone >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= storage.costs.wood && stone >= storage.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_storage").prop("disabled", false);
     } else {
         $("#btn_storage").prop("disabled", true);
     }
-    if (wood >= 200 && stone >= 50 && worker > 0 && slot_build === false) {
+    if (wood >= lumberjackhut.costs.wood && stone >= lumberjackhut.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_lumberjackhut").prop("disabled", false);
     } else {
         $("#btn_lumberjackhut").prop("disabled", true);
     }
-    if (wood >= 250 && stone >= 75 && worker > 0 && slot_build === false) {
+    if (wood >= sheepstall.costs.wood && stone >= sheepstall.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_sheepstall").prop("disabled", false);
     } else {
         $("#btn_sheepstall").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= quarry.costs.wood && stone >= quarry.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_quarry").prop("disabled", false);
     } else {
         $("#btn_quarry").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 150 && worker > 0 && slot_build === false) {
+    if (wood >= coalmine.costs.wood && stone >= coalmine.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_coalmine").prop("disabled", false);
     } else {
         $("#btn_coalmine").prop("disabled", true);
     }
-    if (wood >= 400 && stone >= 200 && coal >= 50 && worker > 0 && slot_build === false) {
+    if (wood >= ironmine.costs.wood && stone >= ironmine.costs.stone && coal >= ironmine.costs.coal && worker > 0 && slot_build === false) {
         $("#btn_ironmine").prop("disabled", false);
     } else {
         $("#btn_ironmine").prop("disabled", true);
     }
-    if (wood >= 500 && stone >= 400 && coal >= 200 && worker > 0 && slot_build === false) {
+    if (wood >= tailorhouse.costs.wood && stone >= tailorhouse.costs.stone && coal >= tailorhouse.costs.coal && worker > 0 && slot_build === false) {
         $("#btn_tailorhouse").prop("disabled", false);
     } else {
         $("#btn_tailorhouse").prop("disabled", true);
     }
-    if (wood >= 550 && stone >= 450 && coal >= 250 && iron >= 50 && worker > 0 && slot_build === false) {
+    if (wood >= alchemisthut.costs.wood && stone >= alchemisthut.costs.stone && coal >= alchemisthut.costs.coal && iron >= alchemisthut.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_alchemisthut").prop("disabled", false);
     } else {
         $("#btn_alchemisthut").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && worker > 0 && slot_build === false) {
+    if (wood >= forge.costs.wood && stone >= forge.costs.stone && coal >= forge.costs.coal && iron >= forge.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_forge").prop("disabled", false);
     } else {
         $("#btn_forge").prop("disabled", true);
     }
-    if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= market.costs.wood && stone >= market.costs.stone && coal >= market.costs.coal && iron >= market.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_market").prop("disabled", false);
     } else {
         $("#btn_market").prop("disabled", true);
     }
-    if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && worker > 0 && slot_build === false) {
+    if (wood >= scoutpost.costs.wood && stone >= scoutpost.costs.stone && coal >= scoutpost.costs.coal && iron >= scoutpost.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_scoutpost").prop("disabled", false);
     } else {
         $("#btn_scoutpost").prop("disabled", true);
     }
-    if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && worker > 0 && slot_build === false) {
+    if (wood >= barracks.costs.wood && stone >= barracks.costs.stone && coal >= barracks.costs.coal && iron >= barracks.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_barracks").prop("disabled", false);
     } else {
         $("#btn_barracks").prop("disabled", true);
     }
-    if (wood >= 2500 && stone >= 2000 && coal >= 1500 && iron >= 1200 && worker > 0 && slot_build === false) {
+    if (wood >= stable.costs.wood && stone >= stable.costs.stone && coal >= stable.costs.coal && iron >= stable.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_stable").prop("disabled", false);
     } else {
         $("#btn_stable").prop("disabled", true);
@@ -679,77 +384,85 @@ function refresh() {
 
     // Build Buttons Show/Hide
     //region
-    if (wood >= 25 && stone >= 5) {
-        $("#btn_hut").closest("tr").show();
+    if (wood >= hut.costs.wood / 2 && stone >= hut.costs.stone / 2) {
+        if ($("#build tbody #btn_hut").length <= 0) {
+            $("#build tbody").append(el_build_hut);
+        }
     } else {
-        $("#btn_hut").closest("tr").hide();
+        if ($("#build tbody #btn_hut")) {
+            $("#build tbody #btn_hut").closest("tr").remove();
+        }
     }
-    if (wood >= 75 && stone >= 15 && huntinghut === false) {
-        $("#btn_huntinghut").closest("tr").show();
+    if (wood >= huntinghut.costs.wood / 2 && stone >= huntinghut.costs.stone / 2 && huntinghut.count === false) {
+        if ($("#build tbody #btn_huntinghut").length <= 0) {
+            $("#build tbody").append(el_build_huntinghut);
+        }
     } else {
-        $("#btn_huntinghut").closest("tr").hide();
+        if ($("#build tbody #btn_huntinghut")) {
+            $("#build tbody #btn_huntinghut").closest("tr").remove();
+        }
     }
-    if (wood >= 50 && stone >= 50 && storage === false) {
+    if (wood >= storage.costs.wood / 2 && stone >= storage.costs.stone / 2 && storage.count === false) {
         $("#btn_storage").closest("tr").show();
     } else {
         $("#btn_storage").closest("tr").hide();
     }
-    if (wood >= 100 && stone >= 25 && lumberjackhut === false) {
+    if (wood >= lumberjackhut.costs.wood / 2 && stone >= lumberjackhut.costs.stone / 2 && lumberjackhut.count === false) {
         $("#btn_lumberjackhut").closest("tr").show();
     } else {
         $("#btn_lumberjackhut").closest("tr").hide();
     }
-    if (wood >= 125 && stone >= 37 && sheepstall === false) {
+    if (wood >= sheepstall.costs.wood / 2 && stone >= sheepstall.costs.stone / 2 && sheepstall.count === false) {
         $("#btn_sheepstall").closest("tr").show();
     } else {
         $("#btn_sheepstall").closest("tr").hide();
     }
-    if (wood >= 150 && stone >= 50 && quarry === false) {
+    if (wood >= quarry.costs.wood / 2 && stone >= quarry.costs.stone / 2 && quarry.count === false) {
         $("#btn_quarry").closest("tr").show();
     } else {
         $("#btn_quarry").closest("tr").hide();
     }
-    if (wood >= 150 && stone >= 75 && coalmine === false) {
+    if (wood >= coalmine.costs.wood / 2 && stone >= coalmine.costs.stone / 2 && coalmine.count === false) {
         $("#btn_coalmine").closest("tr").show();
     } else {
         $("#btn_coalmine").closest("tr").hide();
     }
-    if (wood >= 200 && stone >= 100 && coal >= 25 && ironmine === false) {
+    if (wood >= ironmine.costs.wood / 2 && stone >= ironmine.costs.stone / 2 && coal >= ironmine.costs.coal / 2 && ironmine.count === false) {
         $("#btn_ironmine").closest("tr").show();
     } else {
         $("#btn_ironmine").closest("tr").hide();
     }
-    if (wood >= 250 && stone >= 200 && coal >= 100 && tailorhouse === false) {
+    if (wood >= tailorhouse.costs.wood / 2 && stone >= tailorhouse.costs.stone / 2 && coal >= tailorhouse.costs.coal / 2 && tailorhouse.count === false) {
         $("#btn_tailorhouse").closest("tr").show();
     } else {
         $("#btn_tailorhouse").closest("tr").hide();
     }
-    if (wood >= 275 && stone >= 225 && coal >= 125 && iron >= 25 && alchemisthut === false) {
+    if (wood >= alchemisthut.costs.wood / 2 && stone >= alchemisthut.costs.stone / 2 && coal >= alchemisthut.costs.coal / 2 && iron >= alchemisthut.costs.iron / 2 && alchemisthut.count === false) {
         $("#btn_alchemisthut").closest("tr").show();
     } else {
         $("#btn_alchemisthut").closest("tr").hide();
     }
-    if (wood >= 300 && stone >= 225 && coal >= 125 && iron >= 25 && forge === false) {
+    if (wood >= forge.costs.wood / 2 && stone >= forge.costs.stone / 2 && coal >= forge.costs.coal / 2 && iron >= forge.costs.iron / 2 && forge.count === false) {
         $("#btn_forge").closest("tr").show();
     } else {
         $("#btn_forge").closest("tr").hide();
     }
-    if (wood >= 375 && stone >= 250 && coal >= 150 && iron >= 50 && market === false) {
+    if (wood >= market.costs.wood / 2 && stone >= market.costs.stone / 2 && coal >= market.costs.coal / 2 && iron >= market.costs.iron / 2 && market.count === false) {
         $("#btn_market").closest("tr").show();
     } else {
         $("#btn_market").closest("tr").hide();
     }
-    if (wood >= 500 && stone >= 375 && coal >= 200 && iron >= 125 && scoutpost === false) {
+    if (wood >= scoutpost.costs.wood / 2 && stone >= scoutpost.costs.stone / 2 && coal >= scoutpost.costs.coal / 2 && iron >= scoutpost.costs.iron / 2 && scoutpost.count === false) {
         $("#btn_scoutpost").closest("tr").show();
     } else {
         $("#btn_scoutpost").closest("tr").hide();
     }
-    if (wood >= 750 && stone >= 600 && coal >= 500 && iron >= 400 && barracks === false) {
+    if (wood >= barracks.costs.wood / 2 && stone >= barracks.costs.stone / 2 && coal >= barracks.costs.coal / 2 && iron >= barracks.costs.iron / 2 && barracks.count === false) {
         $("#btn_barracks").closest("tr").show();
     } else {
         $("#btn_barracks").closest("tr").hide();
     }
-    if (wood >= 1250 && stone >= 1000 && coal >= 750 && iron >= 600 && stable === false) {
+    if (wood >= stable.costs.wood / 2 && stone >= stable.costs.stone / 2 && coal >= stable.costs.coal / 2 && iron >= stable.costs.iron / 2 && stable.count === false) {
         $("#btn_stable").closest("tr").show();
     } else {
         $("#btn_stable").closest("tr").hide();
@@ -758,77 +471,77 @@ function refresh() {
 
     // Upgrade Buttons Dis-/Enabled
     //region
-    if (wood >= 100 && stone >= 20 && worker > 0 && slot_build === false) {
+    if (wood >= hut_up.costs.wood && stone >= hut_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_hut").prop("disabled", false);
     } else {
         $("#btn_upgrade_hut").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 60 && worker > 0 && slot_build === false) {
+    if (wood >= huntinghut_up.costs.wood && stone >= huntinghut_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_huntinghut").prop("disabled", false);
     } else {
         $("#btn_upgrade_huntinghut").prop("disabled", true);
     }
-    if (wood >= 300 && stone >= 300 && worker > 0 && slot_build === false) {
+    if (wood >= storage_up.costs.wood && stone >= storage_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_storage").prop("disabled", false);
     } else {
         $("#btn_upgrade_storage").prop("disabled", true);
     }
-    if (wood >= 400 && stone >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= lumberjackhut_up.costs.wood && stone >= lumberjackhut_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_lumberjackhut").prop("disabled", false);
     } else {
         $("#btn_upgrade_lumberjackhut").prop("disabled", true);
     }
-    if (wood >= 500 && stone >= 150 && worker > 0 && slot_build === false) {
+    if (wood >= sheepstall_up.costs.wood && stone >= sheepstall_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_sheepstall").prop("disabled", false);
     } else {
         $("#btn_upgrade_sheepstall").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 200 && worker > 0 && slot_build === false) {
+    if (wood >= quarry_up.costs.wood && stone >= quarry_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_quarry").prop("disabled", false);
     } else {
         $("#btn_upgrade_quarry").prop("disabled", true);
     }
-    if (wood >= 600 && stone >= 300 && worker > 0 && slot_build === false) {
+    if (wood >= coalmine_up.costs.wood && stone >= coalmine_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_coalmine").prop("disabled", false);
     } else {
         $("#btn_upgrade_coalmine").prop("disabled", true);
     }
-    if (wood >= 800 && stone >= 400 && coal >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= ironmine_up.costs.wood && stone >= ironmine_up.costs.stone && coal >= ironmine_up.costs.coal && worker > 0 && slot_build === false) {
         $("#btn_upgrade_ironmine").prop("disabled", false);
     } else {
         $("#btn_upgrade_ironmine").prop("disabled", true);
     }
-    if (wood >= 1000 && stone >= 800 && coal >= 400 && worker > 0 && slot_build === false) {
+    if (wood >= tailorhouse_up.costs.wood && stone >= tailorhouse_up.costs.stone && coal >= tailorhouse_up.costs.coal && worker > 0 && slot_build === false) {
         $("#btn_upgrade_tailorhouse").prop("disabled", false);
     } else {
         $("#btn_upgrade_tailorhouse").prop("disabled", true);
     }
-    if (wood >= 1100 && stone >= 900 && coal >= 500 && iron >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= alchemisthut_up.costs.wood && stone >= alchemisthut_up.costs.stone && coal >= alchemisthut_up.costs.coal && iron >= alchemisthut_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_alchemisthut").prop("disabled", false);
     } else {
         $("#btn_upgrade_alchemisthut").prop("disabled", true);
     }
-    if (wood >= 1200 && stone >= 900 && coal >= 500 && iron >= 100 && worker > 0 && slot_build === false) {
+    if (wood >= forge_up.costs.wood && stone >= forge_up.costs.stone && coal >= forge_up.costs.coal && iron >= forge_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_forge").prop("disabled", false);
     } else {
         $("#btn_upgrade_forge").prop("disabled", true);
     }
-    if (wood >= 1500 && stone >= 1000 && coal >= 600 && iron >= 200 && worker > 0 && slot_build === false) {
+    if (wood >= market_up.costs.wood && stone >= market_up.costs.stone && coal >= market_up.costs.coal && iron >= market_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_market").prop("disabled", false);
     } else {
         $("#btn_upgrade_market").prop("disabled", true);
     }
-    if (wood >= 2000 && stone >= 1500 && coal >= 800 && iron >= 500 && worker > 0 && slot_build === false) {
+    if (wood >= scoutpost_up.costs.wood && stone >= scoutpost_up.costs.stone && coal >= scoutpost_up.costs.coal && iron >= scoutpost_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_scoutpost").prop("disabled", false);
     } else {
         $("#btn_upgrade_scoutpost").prop("disabled", true);
     }
-    if (wood >= 3000 && stone >= 2400 && coal >= 2000 && iron >= 1600 && worker > 0 && slot_build === false) {
+    if (wood >= barracks_up.costs.wood && stone >= barracks_up.costs.stone && coal >= barracks_up.costs.coal && iron >= barracks_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_barracks").prop("disabled", false);
     } else {
         $("#btn_upgrade_barracks").prop("disabled", true);
     }
-    if (wood >= 5000 && stone >= 4000 && coal >= 3000 && iron >= 2400 && worker > 0 && slot_build === false) {
+    if (wood >= stable_up.costs.wood && stone >= stable_up.costs.stone && coal >= stable_up.costs.coal && iron >= stable_up.costs.iron && worker > 0 && slot_build === false) {
         $("#btn_upgrade_stable").prop("disabled", false);
     } else {
         $("#btn_upgrade_stable").prop("disabled", true);
@@ -837,77 +550,77 @@ function refresh() {
 
     // Upgrade Buttons Show/Hide
     //region
-    if (wood >= 50 && stone >= 10 && hut > 0) {
+    if (wood >= hut_up.costs.wood / 2 && stone >= hut_up.costs.stone / 2 && hut.count > 0) {
         $("#btn_upgrade_hut").closest("tr").show();
     } else {
         $("#btn_upgrade_hut").closest("tr").hide();
     }
-    if (wood >= 150 && stone >= 30 && huntinghut === true && up_huntinghut === false) {
+    if (wood >= 150 && stone >= 30 && huntinghut.count === true && huntinghut_up.count === false) {
         $("#btn_upgrade_huntinghut").closest("tr").show();
     } else {
         $("#btn_upgrade_huntinghut").closest("tr").hide();
     }
-    if (wood >= 150 && stone >= 150 && storage === true && lvl_storage < 9) {
+    if (wood >= 150 && stone >= 150 && storage.count === true && storage_up.count < 9) {
         $("#btn_upgrade_storage").closest("tr").show();
     } else {
         $("#btn_upgrade_storage").closest("tr").hide();
     }
-    if (wood >= 200 && stone >= 50 && lumberjackhut === true && up_lumberjackhut === false) {
+    if (wood >= 200 && stone >= 50 && lumberjackhut.count === true && lumberjackhut_up.count === false) {
         $("#btn_upgrade_lumberjackhut").closest("tr").show();
     } else {
         $("#btn_upgrade_lumberjackhut").closest("tr").hide();
     }
-    if (wood >= 250 && stone >= 75 && sheepstall === true && up_sheepstall === false) {
+    if (wood >= 250 && stone >= 75 && sheepstall.count === true && sheepstall_up.count === false) {
         $("#btn_upgrade_sheepstall").closest("tr").show();
     } else {
         $("#btn_upgrade_sheepstall").closest("tr").hide();
     }
-    if (wood >= 300 && stone >= 100 && quarry === true && up_quarry === false) {
+    if (wood >= 300 && stone >= 100 && quarry.count === true && quarry_up.count === false) {
         $("#btn_upgrade_quarry").closest("tr").show();
     } else {
         $("#btn_upgrade_quarry").closest("tr").hide();
     }
-    if (wood >= 300 && stone >= 150 && coalmine === true && up_coalmine === false) {
+    if (wood >= 300 && stone >= 150 && coalmine.count === true && coalmine_up.count === false) {
         $("#btn_upgrade_coalmine").closest("tr").show();
     } else {
         $("#btn_upgrade_coalmine").closest("tr").hide();
     }
-    if (wood >= 400 && stone >= 200 && coal >= 50 && ironmine === true && up_ironmine === false) {
+    if (wood >= 400 && stone >= 200 && coal >= 50 && ironmine.count === true && ironmine_up.count === false) {
         $("#btn_upgrade_ironmine").closest("tr").show();
     } else {
         $("#btn_upgrade_ironmine").closest("tr").hide();
     }
-    if (wood >= 500 && stone >= 400 && coal >= 200 && tailorhouse === true && up_tailorhouse === false) {
+    if (wood >= 500 && stone >= 400 && coal >= 200 && tailorhouse.count === true && tailorhouse_up.count === false) {
         $("#btn_upgrade_tailorhouse").closest("tr").show();
     } else {
         $("#btn_upgrade_tailorhouse").closest("tr").hide();
     }
-    if (wood >= 550 && stone >= 450 && coal >= 250 && iron >= 50 && alchemisthut === true && up_alchemisthut === false) {
+    if (wood >= 550 && stone >= 450 && coal >= 250 && iron >= 50 && alchemisthut.count === true && alchemisthut_up.count === false) {
         $("#btn_upgrade_alchemisthut").closest("tr").show();
     } else {
         $("#btn_upgrade_alchemisthut").closest("tr").hide();
     }
-    if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && forge === true && up_forge === false) {
+    if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && forge.count === true && forge_up.count === false) {
         $("#btn_upgrade_forge").closest("tr").show();
     } else {
         $("#btn_upgrade_forge").closest("tr").hide();
     }
-    if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && market === true && up_market === false) {
+    if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && market.count === true && market_up.count === false) {
         $("#btn_upgrade_market").closest("tr").show();
     } else {
         $("#btn_upgrade_market").closest("tr").hide();
     }
-    if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && scoutpost === true && up_scoutpost === false) {
+    if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && scoutpost.count === true && scoutpost_up.count === false) {
         $("#btn_upgrade_scoutpost").closest("tr").show();
     } else {
         $("#btn_upgrade_scoutpost").closest("tr").hide();
     }
-    if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && barracks === true && up_barracks === false) {
+    if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && barracks.count === true && barracks_up.count === false) {
         $("#btn_upgrade_barracks").closest("tr").show();
     } else {
         $("#btn_upgrade_barracks").closest("tr").hide();
     }
-    if (wood >= 2500 && stone >= 2000 && coal >= 1500 && iron >= 1200 && stable === true && up_stable === false) {
+    if (wood >= 2500 && stone >= 2000 && coal >= 1500 && iron >= 1200 && stable.count === true && stable_up.count === false) {
         $("#btn_upgrade_stable").closest("tr").show();
     } else {
         $("#btn_upgrade_stable").closest("tr").hide();
@@ -917,192 +630,192 @@ function refresh() {
     //Current Time to brew
     //region
     if (alchemist > 1) {
-        curr_time_medicine = time_medicine / alchemist * medicine_num / brew_time;
-        curr_time_poison = time_poison / alchemist * poison_num / brew_time;
+        prod_medicine.curr_time = prod_medicine.time / alchemist * prod_medicine.count / brew_time;
+        prod_poison.curr_time = prod_poison.time / alchemist * prod_poison.count / brew_time;
     } else {
-        curr_time_medicine = time_medicine * medicine_num / brew_time;
-        curr_time_poison = time_poison * poison_num / brew_time;
+        prod_medicine.curr_time = prod_medicine.time * prod_medicine.count / brew_time;
+        prod_poison.curr_time = prod_poison.time * prod_poison.count / brew_time;
     }
     //endregion
 
     //Current Time to craft
     //region
     if (smith > 1) {
-        curr_time_leatherarmor = time_leatherarmor / smith * leatherarmor_num / craft_time;
-        curr_time_ironarmor = time_ironarmor / smith * ironarmor_num / craft_time;
-        curr_time_sword = time_sword / smith * sword_num / craft_time;
-        curr_time_axe = time_axe / smith * axe_num / craft_time;
-        curr_time_morningstar = time_morningstar / smith * morningstar_num / craft_time;
-        curr_time_shortbow = time_shortbow / smith * shortbow_num / craft_time;
-        curr_time_longbow = time_longbow / smith * longbow_num / craft_time;
-        curr_time_crossbow = time_crossbow / smith * crossbow_num / craft_time;
-        curr_time_tradegift = time_tradegift / smith * tradegift_num / craft_time;
-        curr_time_peacegift = time_peacegift / smith * peacegift_num / craft_time;
-        curr_time_poisongift = time_poisongift / smith * poisongift_num / craft_time;
+        prod_leatherarmor.curr_time = prod_leatherarmor.time / smith * prod_leatherarmor.count / craft_time;
+        prod_ironarmor.curr_time = prod_ironarmor.time / smith * prod_ironarmor.count / craft_time;
+        prod_axe.curr_time = prod_axe.time / smith * prod_axe.count / craft_time;
+        prod_sword.curr_time = prod_sword.time / smith * prod_sword.count / craft_time;
+        prod_morningstar.curr_time = prod_morningstar.time / smith * prod_morningstar.count / craft_time;
+        prod_shortbow.curr_time = prod_shortbow.time / smith * prod_shortbow.count / craft_time;
+        prod_longbow.curr_time = prod_longbow.time / smith * prod_longbow.count / craft_time;
+        prod_crossbow.curr_time = prod_crossbow.time / smith * prod_crossbow.count / craft_time;
+        prod_tradegift.curr_time = prod_tradegift.time / smith * prod_tradegift.count / craft_time;
+        prod_peacegift.curr_time = prod_peacegift.time / smith * prod_peacegift.count / craft_time;
+        prod_poisongift.curr_time = prod_poisongift.time / smith * prod_poisongift.count / craft_time;
     } else {
-        curr_time_leatherarmor = time_leatherarmor * leatherarmor_num / craft_time;
-        curr_time_ironarmor = time_ironarmor * ironarmor_num / craft_time;
-        curr_time_sword = time_sword * sword_num / craft_time;
-        curr_time_axe = time_axe * axe_num / craft_time;
-        curr_time_morningstar = time_morningstar * morningstar_num / craft_time;
-        curr_time_shortbow = time_shortbow * shortbow_num / craft_time;
-        curr_time_longbow = time_longbow * longbow_num / craft_time;
-        curr_time_crossbow = time_crossbow * crossbow_num / craft_time;
-        curr_time_tradegift = time_tradegift * tradegift_num / craft_time;
-        curr_time_peacegift = time_peacegift * peacegift_num / craft_time;
-        curr_time_poisongift = time_poisongift * poisongift_num / craft_time;
+        prod_leatherarmor.curr_time = prod_leatherarmor.time * prod_leatherarmor.count / craft_time;
+        prod_ironarmor.curr_time = prod_ironarmor.time * prod_ironarmor.count / craft_time;
+        prod_axe.curr_time = prod_axe.time * prod_axe.count / craft_time;
+        prod_sword.curr_time = prod_sword.time * prod_sword.count / craft_time;
+        prod_morningstar.curr_time = prod_morningstar.time * prod_morningstar.count / craft_time;
+        prod_shortbow.curr_time = prod_shortbow.time * prod_shortbow.count / craft_time;
+        prod_longbow.curr_time = prod_longbow.time * prod_longbow.count / craft_time;
+        prod_crossbow.curr_time = prod_crossbow.time * prod_crossbow.count / craft_time;
+        prod_tradegift.curr_time = prod_tradegift.time * prod_tradegift.count / craft_time;
+        prod_peacegift.curr_time = prod_peacegift.time * prod_peacegift.count / craft_time;
+        prod_poisongift.curr_time = prod_poisongift.time * prod_poisongift.count / craft_time;
     }
     //endregion
 
     //Display Brew/Craft Time
     //region
-    $("#time_medicine").text(secondsTommss(curr_time_medicine));
-    $("#time_poison").text(secondsTommss(curr_time_poison));
-    $("#time_leatherarmor").text(secondsTommss(curr_time_leatherarmor));
-    $("#time_ironarmor").text(secondsTommss(curr_time_ironarmor));
-    $("#time_sword").text(secondsTommss(curr_time_sword));
-    $("#time_axe").text(secondsTommss(curr_time_axe));
-    $("#time_morningstar").text(secondsTommss(curr_time_morningstar));
-    $("#time_shortbow").text(secondsTommss(curr_time_shortbow));
-    $("#time_longbow").text(secondsTommss(curr_time_longbow));
-    $("#time_crossbow").text(secondsTommss(curr_time_crossbow));
-    $("#time_tradegift").text(secondsTommss(curr_time_tradegift));
-    $("#time_peacegift").text(secondsTommss(curr_time_peacegift));
-    $("#time_poisongift").text(secondsTommss(curr_time_poisongift));
+    $("#time_medicine").text(secondsTommss(prod_medicine.curr_time));
+    $("#time_poison").text(secondsTommss(prod_poison.curr_time));
+    $("#time_leatherarmor").text(secondsTommss(prod_leatherarmor.curr_time));
+    $("#time_ironarmor").text(secondsTommss(prod_ironarmor.curr_time));
+    $("#time_axe").text(secondsTommss(prod_axe.curr_time));
+    $("#time_sword").text(secondsTommss(prod_sword.curr_time));
+    $("#time_morningstar").text(secondsTommss(prod_morningstar.curr_time));
+    $("#time_shortbow").text(secondsTommss(prod_shortbow.curr_time));
+    $("#time_longbow").text(secondsTommss(prod_longbow.curr_time));
+    $("#time_crossbow").text(secondsTommss(prod_crossbow.curr_time));
+    $("#time_tradegift").text(secondsTommss(prod_tradegift.curr_time));
+    $("#time_peacegift").text(secondsTommss(prod_peacegift.curr_time));
+    $("#time_poisongift").text(secondsTommss(prod_poisongift.curr_time));
     //endregion
 
     // Brew/Craft Buttons Dis-/Enabled
     //region
-    if (food >= 20 * medicine_num && stone >= 5 * medicine_num && cloth >= 5 * medicine_num && alchemist > 0 && medicine_num > 0 && slot_brew === false) {
+    if (food >= prod_medicine.costs.food * prod_medicine.count && stone >= prod_medicine.costs.stone * prod_medicine.count && cloth >= prod_medicine.costs.cloth * prod_medicine.count && alchemist > 0 && prod_medicine.count > 0 && slot_brew === false) {
         $("#btn_medicine").prop("disabled", false);
     } else {
         $("#btn_medicine").prop("disabled", true);
     }
-    if (food >= 10 * poison_num && stone >= 5 * poison_num && cloth >= 5 * poison_num && coal >= 5 * poison_num && iron >= 5 * poison_num && alchemist > 0 && poison_num > 0 && slot_brew === false) {
+    if (food >= prod_poison.costs.food * prod_poison.count && stone >= prod_poison.costs.stone * prod_poison.count && cloth >= prod_poison.costs.cloth * prod_poison.count && coal >= prod_poison.costs.coal * prod_poison.count && iron >= prod_poison.costs.iron * prod_poison.count && alchemist > 0 && prod_poison.count > 0 && slot_brew === false) {
         $("#btn_poison").prop("disabled", false);
     } else {
         $("#btn_poison").prop("disabled", true);
     }
-    if (leather >= 50 * leatherarmor_num && smith > 0 && leatherarmor_num > 0 && slot_craft === false) {
+    if (leather >= prod_leatherarmor.costs.leather * prod_leatherarmor.count && smith > 0 && prod_leatherarmor.count > 0 && slot_craft === false) {
         $("#btn_leatherarmor").prop("disabled", false);
     } else {
         $("#btn_leatherarmor").prop("disabled", true);
     }
-    if (iron >= 50 * ironarmor_num && smith > 0 && ironarmor_num > 0 && slot_craft === false) {
+    if (iron >= prod_ironarmor.costs.iron * prod_ironarmor.count && smith > 0 && prod_ironarmor.count > 0 && slot_craft === false) {
         $("#btn_ironarmor").prop("disabled", false);
     } else {
         $("#btn_ironarmor").prop("disabled", true);
     }
-    if (wood >= 5 * sword_num && iron >= 25 * sword_num && smith > 0 && sword_num > 0 && slot_craft === false) {
-        $("#btn_sword").prop("disabled", false);
-    } else {
-        $("#btn_sword").prop("disabled", true);
-    }
-    if (wood >= 5 * axe_num && iron >= 20 * axe_num && smith > 0 && axe_num > 0  && slot_craft === false) {
+    if (wood >= prod_axe.costs.wood * prod_axe.count && iron >= prod_axe.costs.iron * prod_axe.count && smith > 0 && prod_axe.count > 0 && slot_craft === false) {
         $("#btn_axe").prop("disabled", false);
     } else {
         $("#btn_axe").prop("disabled", true);
     }
-    if (wood >= 5 * morningstar_num && iron >= 30 * morningstar_num && smith > 0 && morningstar_num > 0  && slot_craft === false) {
+    if (wood >= prod_sword.costs.wood * prod_sword.count && iron >= prod_sword.costs.iron * prod_sword.count && smith > 0 && prod_sword.count > 0 && slot_craft === false) {
+        $("#btn_sword").prop("disabled", false);
+    } else {
+        $("#btn_sword").prop("disabled", true);
+    }
+    if (wood >= prod_morningstar.costs.wood * prod_morningstar.count && iron >= prod_morningstar.costs.iron * prod_morningstar.count && smith > 0 && prod_morningstar.count > 0 && slot_craft === false) {
         $("#btn_morningstar").prop("disabled", false);
     } else {
         $("#btn_morningstar").prop("disabled", true);
     }
-    if (wood >= 20 * shortbow_num && iron >= 5 * shortbow_num && smith > 0 && shortbow_num > 0 && slot_craft === false) {
+    if (wood >= prod_shortbow.costs.wood * prod_shortbow.count && iron >= prod_shortbow.costs.iron * prod_shortbow.count && smith > 0 && prod_shortbow.count > 0 && slot_craft === false) {
         $("#btn_shortbow").prop("disabled", false);
     } else {
         $("#btn_shortbow").prop("disabled", true);
     }
-    if (wood >= 25 * longbow_num && iron >= 5 * longbow_num && smith > 0 && longbow_num > 0 && slot_craft === false) {
+    if (wood >= prod_longbow.costs.wood * prod_longbow.count && iron >= prod_longbow.costs.iron * prod_longbow.count && smith > 0 && prod_longbow.count > 0 && slot_craft === false) {
         $("#btn_longbow").prop("disabled", false);
     } else {
         $("#btn_longbow").prop("disabled", true);
     }
-    if (wood >= 30 * crossbow_num && iron >= 5 * crossbow_num && smith > 0 && crossbow_num > 0 && slot_craft === false) {
+    if (wood >= prod_crossbow.costs.wood * prod_crossbow.count && iron >= prod_crossbow.costs.iron * prod_crossbow.count && smith > 0 && prod_crossbow.count > 0 && slot_craft === false) {
         $("#btn_crossbow").prop("disabled", false);
     } else {
         $("#btn_crossbow").prop("disabled", true);
     }
-    if (food >= 25 * tradegift_num && wood >= 25  * tradegift_num&& leather >= 25 * tradegift_num && cloth >= 25 * tradegift_num && iron >= 25  * tradegift_num&& clothes >= 25 * tradegift_num && smith > 0 && tradegift_num > 0 && slot_craft === false) {
+    if (food >= prod_tradegift.costs.food * prod_tradegift.count && wood >= prod_tradegift.costs.wood * prod_tradegift.count && leather >= prod_tradegift.costs.leather * prod_tradegift.count && cloth >= prod_tradegift.costs.cloth * prod_tradegift.count && iron >= prod_tradegift.costs.iron * prod_tradegift.count && clothes >= prod_tradegift.costs.clothes * prod_tradegift.count && smith > 0 && prod_tradegift.count > 0 && slot_craft === false) {
         $("#btn_tradegift").prop("disabled", false);
     } else {
         $("#btn_tradegift").prop("disabled", true);
     }
-    if (food >= 50 * peacegift_num && wood >= 50 * peacegift_num && leather >= 50 * peacegift_num && cloth >= 50 * peacegift_num && iron >= 50 * peacegift_num && clothes >= 50 * peacegift_num && smith > 0 && peacegift_num > 0 && slot_craft === false) {
+    if (food >= prod_peacegift.costs.food * prod_peacegift.count && wood >= prod_peacegift.costs.wood * prod_peacegift.count && leather >= prod_peacegift.costs.leather * prod_peacegift.count && cloth >= prod_peacegift.costs.cloth * prod_peacegift.count && iron >= prod_peacegift.costs.iron * prod_peacegift.count && clothes >= prod_peacegift.costs.clothes * prod_peacegift.count && smith > 0 && prod_peacegift.count > 0 && slot_craft === false) {
         $("#btn_peacegift").prop("disabled", false);
     } else {
         $("#btn_peacegift").prop("disabled", true);
     }
-    if (food >= 50 * poisongift_num && wood >= 50 * poisongift_num && leather >= 50 * poisongift_num && cloth >= 50 * poisongift_num && iron >= 50 * poisongift_num && clothes >= 50 * poisongift_num && poison >= 5 * poisongift_num && smith > 0 && poisongift_num > 0 && slot_craft === false) {
+    if (food >= prod_poisongift.costs.food * prod_poisongift.count && wood >= prod_poisongift.costs.wood * prod_poisongift.count && leather >= prod_poisongift.costs.leather * prod_poisongift.count && cloth >= prod_poisongift.costs.cloth * prod_poisongift.count && iron >= prod_poisongift.costs.iron * prod_poisongift.count && clothes >= prod_poisongift.costs.clothes * prod_poisongift.count && poison >= prod_poisongift.costs.poison * prod_poisongift.count && smith > 0 && prod_poisongift.count > 0 && slot_craft === false) {
         $("#btn_poisongift").prop("disabled", false);
     } else {
         $("#btn_poisongift").prop("disabled", true);
     }
     //endregion
 
-    // Craft Buttons Show/Hide
+    // Brew/Craft Buttons Show/Hide
     //region
-    if (food >= 10 && stone >= 3 && cloth >= 3) {
+    if (food >= prod_medicine.costs.food / 2 && stone >= prod_medicine.costs.stone / 2 && cloth >= prod_medicine.costs.cloth / 2) {
         $("#btn_medicine").closest("div").show();
     } else {
         $("#btn_medicine").closest("div").hide();
     }
-    if (food >= 5 && stone >= 3 && cloth >= 3 && coal >= 3 && iron >= 3) {
+    if (food >= prod_poison.costs.food / 2 && stone >= prod_poison.costs.stone / 2 && cloth >= prod_poison.costs.cloth / 2 && coal >= prod_poison.costs.coal / 2 && iron >= prod_poison.costs.iron / 2) {
         $("#btn_poison").closest("div").show();
     } else {
         $("#btn_poison").closest("div").hide();
     }
-    if (leather >= 25) {
+    if (leather >= prod_leatherarmor.costs.leather / 2) {
         $("#btn_leatherarmor").closest("div").show();
     } else {
         $("#btn_leatherarmor").closest("div").hide();
     }
-    if (iron >= 25) {
+    if (iron >= prod_ironarmor.costs.iron / 2) {
         $("#btn_ironarmor").closest("div").show();
     } else {
         $("#btn_ironarmor").closest("div").hide();
     }
-    if (wood >= 3 && iron >= 13) {
-        $("#btn_sword").closest("div").show();
-    } else {
-        $("#btn_sword").closest("div").hide();
-    }
-    if (wood >= 3 && iron >= 10) {
+    if (wood >= prod_axe.costs.wood / 2 && iron >= prod_axe.costs.iron / 2) {
         $("#btn_axe").closest("div").show();
     } else {
         $("#btn_axe").closest("div").hide();
     }
-    if (wood >= 3 && iron >= 15) {
+    if (wood >= prod_sword.costs.wood / 2 && iron >= prod_sword.costs.iron / 2) {
+        $("#btn_sword").closest("div").show();
+    } else {
+        $("#btn_sword").closest("div").hide();
+    }
+    if (wood >= prod_morningstar.costs.wood / 2 && iron >= prod_morningstar.costs.iron / 2) {
         $("#btn_morningstar").closest("div").show();
     } else {
         $("#btn_morningstar").closest("div").hide();
     }
-    if (wood >= 10 && iron >= 3) {
+    if (wood >= prod_shortbow.costs.wood / 2 && iron >= prod_shortbow.costs.iron / 2) {
         $("#btn_shortbow").closest("div").show();
     } else {
         $("#btn_shortbow").closest("div").hide();
     }
-    if (wood >= 13 && iron >= 3) {
+    if (wood >= prod_longbow.costs.wood / 2 && iron >= prod_longbow.costs.iron / 2) {
         $("#btn_longbow").closest("div").show();
     } else {
         $("#btn_longbow").closest("div").hide();
     }
-    if (wood >= 15 && iron >= 3) {
+    if (wood >= prod_crossbow.costs.wood / 2 && iron >= prod_crossbow.costs.iron / 2) {
         $("#btn_crossbow").closest("div").show();
     } else {
         $("#btn_crossbow").closest("div").hide();
     }
-    if (food >= 13 && wood >= 13 && leather >= 13 && cloth >= 13 && iron >= 13 && clothes >= 13) {
+    if (food >= prod_tradegift.costs.food / 2 && wood >= prod_tradegift.costs.wood / 2 && leather >= prod_tradegift.costs.leather / 2 && cloth >= prod_tradegift.costs.cloth / 2 && iron >= prod_tradegift.costs.iron / 2 && clothes >= prod_tradegift.costs.clothes / 2) {
         $("#btn_tradegift").closest("div").show();
     } else {
         $("#btn_tradegift").closest("div").hide();
     }
-    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25) {
+    if (food >= prod_peacegift.costs.food / 2 && wood >= prod_peacegift.costs.wood / 2 && leather >= prod_peacegift.costs.leather / 2 && cloth >= prod_peacegift.costs.cloth / 2 && iron >= prod_peacegift.costs.iron / 2 && clothes >= prod_peacegift.costs.clothes / 2) {
         $("#btn_peacegift").closest("div").show();
     } else {
         $("#btn_peacegift").closest("div").hide();
     }
-    if (food >= 25 && wood >= 25 && leather >= 25 && cloth >= 25 && iron >= 25 && clothes >= 25 && poison >= 3) {
+    if (food >= prod_peacegift.costs.food / 2 && wood >= prod_peacegift.costs.wood / 2 && leather >= prod_peacegift.costs.leather / 2 && cloth >= prod_peacegift.costs.cloth / 2 && iron >= prod_peacegift.costs.iron / 2 && clothes >= prod_peacegift.costs.clothes / 2 && poison >= prod_peacegift.costs.poison / 2) {
         $("#btn_poisongift").closest("div").show();
     } else {
         $("#btn_poisongift").closest("div").hide();
@@ -1112,27 +825,27 @@ function refresh() {
 
 /* Show Related Stuff of Buildings */
 function show_related() {
-    if (huntinghut === true) {
+    if (huntinghut.count === true) {
         $("#leather").closest("#row").show();
         $("#hunter").closest("#row").show();
     }
-    if (sheepstall === true) {
+    if (sheepstall.count === true) {
         $("#cloth").closest("#row").show();
         $("#shepherd").closest("#row").show();
     }
-    if (coalmine === true) {
+    if (coalmine.count === true) {
         $("#coal").closest("#row").show();
         $("#coalminer").closest("#row").show();
     }
-    if (ironmine === true) {
+    if (ironmine.count === true) {
         $("#iron").closest("#row").show();
         $("#ironminer").closest("#row").show();
     }
-    if (tailorhouse === true) {
+    if (tailorhouse.count === true) {
         $("#clothes").closest("#row").show();
         $("#tailor").closest("#row").show();
     }
-    if (alchemisthut === true) {
+    if (alchemisthut.count === true) {
         $("#btn_craft").show();
         $("#coll_brew").show();
         $("#items").show();
@@ -1140,7 +853,7 @@ function show_related() {
         $("#poison").closest("#row").show();
         $("#alchemist").closest("#row").show();
     }
-    if (forge === true) {
+    if (forge.count === true) {
         $("#btn_craft").show();
         $("#coll_armor").show();
         $("#coll_weapons").show();
@@ -1159,17 +872,17 @@ function show_related() {
         $("#poisongift").closest("#row").show();
         $("#smith").closest("#row").show();
     }
-    if (market === true) {
+    if (market.count === true) {
         $("#btn_trade").show();
     }
-    if (scoutpost === true) {
+    if (scoutpost.count === true) {
         $("#btn_travel").show();
         $("#scout").closest("#row").show();
     }
-    if (barracks === true) {
+    if (barracks.count === true) {
         $("#knight").closest("#row").show();
     }
-    if (stable === true) {
+    if (stable.count === true) {
         $("#items").show();
         $("#horse").closest("#row").show();
         $("#stableman").closest("#row").show();
@@ -1409,6 +1122,8 @@ function temperature() {
     for (i = 0; i < tempr.length; i += 1) {
         if (i === 0) {
             $("#phase").append("<p>" + tempr[i] + "</p> -> ");
+        } else if (i == tempr.length - 1) {
+            $("#phase").append(tempr[i]);
         } else {
             $("#phase").append(tempr[i] + " -> ");
         }

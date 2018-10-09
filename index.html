@@ -45,7 +45,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                <!--<tr>
                                     <td>
                                         <button id="btn_hut" class="btn_content">Hütte
                                             <span class="tooltip">
@@ -72,7 +72,7 @@
                                         </button>
                                     </td>
                                     <td id="time_huntinghut"></td>
-                                </tr>
+                                </tr>-->
                                 <tr>
                                     <td>
                                         <button id="btn_storage" class="btn_content">Lager
@@ -591,22 +591,6 @@
                                 <div id="coll_melee" class="coll_craft">
                                     <button id="btn_melee" class="btn_craft">Nahkampf</button>
                                     <div id="content_melee" class="content_craft" hidden>
-                                        <div id="row_sword" class="row_craft">
-                                            <button id="btn_sword" class="btn_content">Schwert
-                                                <span class="tooltip">
-                                                    <ul>
-                                                        <li>5 Holz</li>
-                                                        <li>25 Eisen</li>
-                                                    </ul>
-                                                    <p>Normaler Waffe</p>
-                                                    <p>Normaler Schaden</p>
-                                                </span>
-                                            </button>
-                                            <button id="dwn_sword" class="btn_dwn_up">-</button>
-                                            <p id="num_sword" class="num"></p>
-                                            <button id="up_sword" class="btn_dwn_up">+</button>
-                                            <p id="time_sword"></p>
-                                        </div>
                                         <div id="row_axe" class="row_craft">
                                             <button id="btn_axe" class="btn_content">Axt
                                                 <span class="tooltip">
@@ -622,6 +606,22 @@
                                             <p id="num_axe" class="num"></p>
                                             <button id="up_axe" class="btn_dwn_up">+</button>
                                             <p id="time_axe"></p>
+                                        </div>
+                                        <div id="row_sword" class="row_craft">
+                                            <button id="btn_sword" class="btn_content">Schwert
+                                                <span class="tooltip">
+                                                    <ul>
+                                                        <li>5 Holz</li>
+                                                        <li>25 Eisen</li>
+                                                    </ul>
+                                                    <p>Normaler Waffe</p>
+                                                    <p>Normaler Schaden</p>
+                                                </span>
+                                            </button>
+                                            <button id="dwn_sword" class="btn_dwn_up">-</button>
+                                            <p id="num_sword" class="num"></p>
+                                            <button id="up_sword" class="btn_dwn_up">+</button>
+                                            <p id="time_sword"></p>
                                         </div>
                                         <div id="row_morningstar" class="row_craft">
                                             <button id="btn_morningstar" class="btn_content">Morgenstern
@@ -1079,6 +1079,8 @@
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="scripts/js.cookie.min.js"></script>
+        <script src="scripts/vars.js"></script>
+        <script src="scripts/elements.js"></script>
         <script src="scripts/js.js"></script>
         <script src="scripts/townname.gen.js"></script>
         <script src="scripts/start.js"></script>

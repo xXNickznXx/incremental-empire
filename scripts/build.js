@@ -4,7 +4,7 @@ function build_hut() {
     $("#task .hut.time").text(secondsTommss(timer.toFixed(1)));
     timer -= 0.1;
     if (timer < 0) {
-        hut += 1;
+        hut.count += 1;
         villager_max += 2;
         clearInterval(build);
         slot_build = false;
@@ -18,10 +18,10 @@ $("#btn_hut").click(function () {
                 <td class='hut'>Bau einer Hütte</td>
                 <td class='hut time'></td>
                 </tr>`);
-    wood -= 50;
-    stone -= 10;
+    wood -= hut.costs.wood;
+    stone -= hut.costs.stone;
     slot_build = true;
-    timer = curr_time_hut;
+    timer = hut.curr_time;
     build = setInterval(build_hut, speed / 10);
 });
 

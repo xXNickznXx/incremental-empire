@@ -82,7 +82,7 @@ $("#btn_start").click(function () {
         $("#bottom").show();
         $("#start").hide();
         
-        setTimeout(function () {show_related();}, 20);
+        setTimeout(function () {show_related();}, 30);
         
         gen_market();
 
