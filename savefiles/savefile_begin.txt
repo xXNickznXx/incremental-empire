@@ -52,293 +52,33 @@
    "$stableman": 0,
    "$breed_bonus": 1,
    "$trade_bonus": 1,
-   "$hut": {
-      "count": 95,
-      "time": 20,
-      "curr_time": 1.3333333333333333,
-      "costs": {
-         "wood": 50,
-         "stone": 10
-      }
-   },
-   "$huntinghut": {
-      "count": true,
-      "time": 30,
-      "curr_time": 2,
-      "costs": {
-         "wood": 150,
-         "stone": 30
-      }
-   },
-   "$up_huntinghut": {
-      "count": false,
-      "time": 60,
-      "curr_time": 4,
-      "costs": {
-         "wood": 300,
-         "stone": 60
-      }
-   },
-   "$storage": {
-      "count": true,
-      "time": 60,
-      "curr_time": 4,
-      "costs": {
-         "wood": 100,
-         "stone": 100
-      }
-   },
-   "$up_storage": {
-      "count": 0,
-      "time": 120,
-      "curr_time": 8,
-      "costs": {
-         "wood": 400,
-         "stone": 400
-      }
-   },
-   "$lumberjackhut": {
-      "count": true,
-      "time": 80,
-      "curr_time": 5.333333333333333,
-      "costs": {
-         "wood": 200,
-         "stone": 50
-      }
-   },
-   "$up_lumberjackhut": {
-      "count": false,
-      "time": 160,
-      "curr_time": 10.666666666666666,
-      "costs": {
-         "wood": 400,
-         "stone": 100
-      }
-   },
-   "$sheepstall": {
-      "count": true,
-      "time": 100,
-      "curr_time": 6.666666666666667,
-      "costs": {
-         "wood": 250,
-         "stone": 75
-      }
-   },
-   "$up_sheepstall": {
-      "count": false,
-      "time": 200,
-      "curr_time": 13.333333333333334,
-      "costs": {
-         "wood": 500,
-         "stone": 150
-      }
-   },
-   "$quarry": {
-      "count": true,
-      "time": 120,
-      "curr_time": 8,
-      "costs": {
-         "wood": 300,
-         "stone": 100
-      }
-   },
-   "$up_quarry": {
-      "count": false,
-      "time": 240,
-      "curr_time": 16,
-      "costs": {
-         "wood": 600,
-         "stone": 200
-      }
-   },
-   "$coalmine": {
-      "count": true,
-      "time": 140,
-      "curr_time": 9.333333333333334,
-      "costs": {
-         "wood": 350,
-         "stone": 150
-      }
-   },
-   "$up_coalmine": {
-      "count": false,
-      "time": 280,
-      "curr_time": 18.666666666666668,
-      "costs": {
-         "wood": 700,
-         "stone": 300
-      }
-   },
-   "$ironmine": {
-      "count": true,
-      "time": 180,
-      "curr_time": 12,
-      "costs": {
-         "wood": 400,
-         "stone": 200,
-         "coal": 50
-      }
-   },
-   "$up_ironmine": {
-      "count": false,
-      "time": 360,
-      "curr_time": 24,
-      "costs": {
-         "wood": 800,
-         "stone": 400,
-         "coal": 100
-      }
-   },
-   "$tailorhouse": {
-      "count": true,
-      "time": 240,
-      "curr_time": 16,
-      "costs": {
-         "wood": 500,
-         "stone": 300,
-         "coal": 100
-      }
-   },
-   "$up_tailorhouse": {
-      "count": false,
-      "time": 480,
-      "curr_time": 32,
-      "costs": {
-         "wood": 1000,
-         "stone": 600,
-         "coal": 200
-      }
-   },
-   "$alchemisthut": {
-      "count": false,
-      "time": 270,
-      "curr_time": 18,
-      "costs": {
-         "wood": 550,
-         "stone": 400,
-         "coal": 150,
-         "iron": 50
-      }
-   },
-   "$up_alchemisthut": {
-      "count": false,
-      "time": 540,
-      "curr_time": 36,
-      "costs": {
-         "wood": 1100,
-         "stone": 800,
-         "coal": 300,
-         "iron": 100
-      }
-   },
-   "$forge": {
-      "count": false,
-      "time": 300,
-      "curr_time": 20,
-      "costs": {
-         "wood": 600,
-         "stone": 450,
-         "coal": 200,
-         "iron": 100
-      }
-   },
-   "$up_forge": {
-      "count": false,
-      "time": 600,
-      "curr_time": 40,
-      "costs": {
-         "wood": 1200,
-         "stone": 900,
-         "coal": 400,
-         "iron": 200
-      }
-   },
-   "$market": {
-      "count": false,
-      "time": 600,
-      "curr_time": 40,
-      "costs": {
-         "wood": 750,
-         "stone": 600,
-         "coal": 300,
-         "iron": 150
-      }
-   },
-   "$up_market": {
-      "count": false,
-      "time": 1200,
-      "curr_time": 80,
-      "costs": {
-         "wood": 1500,
-         "stone": 1200,
-         "coal": 600,
-         "iron": 300
-      }
-   },
-   "$scoutpost": {
-      "count": false,
-      "time": 900,
-      "curr_time": 60,
-      "costs": {
-         "wood": 1000,
-         "stone": 750,
-         "coal": 400,
-         "iron": 250
-      }
-   },
-   "$up_scoutpost": {
-      "count": false,
-      "time": 1800,
-      "curr_time": 120,
-      "costs": {
-         "wood": 2000,
-         "stone": 1500,
-         "coal": 800,
-         "iron": 500
-      }
-   },
-   "$barracks": {
-      "count": false,
-      "time": 1200,
-      "curr_time": 80,
-      "costs": {
-         "wood": 1500,
-         "stone": 1200,
-         "coal": 1000,
-         "iron": 800
-      }
-   },
-   "$up_barracks": {
-      "count": false,
-      "time": 2400,
-      "curr_time": 160,
-      "costs": {
-         "wood": 3000,
-         "stone": 2400,
-         "coal": 2000,
-         "iron": 1600
-      }
-   },
-   "$stable": {
-      "count": false,
-      "time": 1800,
-      "curr_time": 120,
-      "costs": {
-         "wood": 2500,
-         "stone": 2000,
-         "coal": 1500,
-         "iron": 1200
-      }
-   },
-   "$up_stable": {
-      "count": false,
-      "time": 3600,
-      "curr_time": 240,
-      "costs": {
-         "wood": 5000,
-         "stone": 4000,
-         "coal": 3000,
-         "iron": 2400
-      }
-   }
+   "$hut": 95,
+   "$huntinghut": true,
+   "$huntinghut_up": false,
+   "$storage": true,
+   "$storage_up": 0,
+   "$lumberjackhut": true,
+   "$lumberjackhut_up": false,
+   "$sheepstall": true,
+   "$sheepstall_up": false,
+   "$quarry": true,
+   "$quarry_up": false,
+   "$coalmine": true,
+   "$coalmine_up": false,
+   "$ironmine": true,
+   "$ironmine_up": false,
+   "$tailorhouse": true,
+   "$tailorhouse_up": false,
+   "$alchemisthut": false,
+   "$alchemisthut_up": false,
+   "$forge": false,
+   "$forge_up": false,
+   "$market": false,
+   "$market_up": false,
+   "$scoutpost": false,
+   "$scoutpost_up": false,
+   "$barracks": false,
+   "$barracks_up": false,
+   "$stable": false,
+   "$stable_up": false
 }

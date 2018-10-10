@@ -32,8 +32,6 @@ function refresh() {
     } else if (!win.matches && $("#content #right").length > 0) {
         $("#right").appendTo("#main");
     }
-    
-    ref_el();
 
     // Supplies
     //region
