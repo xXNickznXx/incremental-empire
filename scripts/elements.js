@@ -1,7 +1,7 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
 
-// upgrade Elements
+// Build Elements
 //region
 var el_build_hut = `<tr>
                         <td>
@@ -432,9 +432,6 @@ var el_upgrade_barracks = `<tr>
                                             <li>` + barracks_up.costs.stone + ` Stein</li>
                                             <li>` + barracks_up.costs.coal + ` Kohle</li>
                                             <li>` + barracks_up.costs.iron + ` Eisen</li>
-                                            <li>` + prod_medicine.costs.food * prod_medicine.count + ` Nahrung</li>
-                                            <li>` + prod_medicine.costs.stone * prod_medicine.count + ` Stein</li>
-                                            <li>` + prod_medicine.costs.cloth * prod_medicine.count + ` Wolle</li>
                                         </ul>
                                         <p>Schaden * 2</p>
                                     </span>
@@ -451,11 +448,6 @@ var el_upgrade_stable = `<tr>
                                             <li>` + stable_up.costs.stone + ` Stein</li>
                                             <li>` + stable_up.costs.coal + ` Kohle</li>
                                             <li>` + stable_up.costs.iron + ` Eisen</li>
-                                            <li>` + prod_poison.costs.food * prod_poison.count + ` Nahrung</li>
-                                            <li>` + prod_poison.costs.stone * prod_poison.count + ` Stein</li>
-                                            <li>` + prod_poison.costs.cloth * prod_poison.count + ` Wolle</li>
-                                            <li>` + prod_poison.costs.coal * prod_poison.count + ` Kohle</li>
-                                            <li>` + prod_poison.costs.iron * prod_poison.count + ` Eisen</li>
                                         </ul>
                                         <p>Zuchtchance * 2</p>
                                     </span>
@@ -469,12 +461,11 @@ var el_upgrade_stable = `<tr>
 //region
 var el_craft_medicine = `<div id="row_medicine" class="row_craft">
                             <button id="btn_medicine" class="btn_content">Medizin
-                                                <li>` + prod_leatherarmor.costs.leather * prod_leatherarmor.count + ` Leder</li>
-                                                <li>` + prod_ironarmor.costs.iron * prod_ironarmor.count + ` Eisen</li>
                                 <span class="tooltip">
                                     <ul>
-                                        <li>` + prod_axe.costs.wood * prod_axe.count + ` Holz</li>
-                                        <li>` + prod_axe.costs.iron * prod_axe.count + ` Eisen</li>
+                                        <li>` + prod_medicine.costs.food + ` Nahrung</li>
+                                        <li>` + prod_medicine.costs.stone + ` Stein</li>
+                                        <li>` + prod_medicine.costs.cloth + ` Wolle</li>
                                     </ul>
                                     <p>Heilt Krankheit</p>
                                 </span>
@@ -488,8 +479,11 @@ var el_craft_poison = `<div id="row_poison" class="row_craft">
                             <button id="btn_poison" class="btn_content">Gift
                                 <span class="tooltip">
                                     <ul>
-                                        <li>` + prod_sword.costs.wood * prod_sword.count + ` Holz</li>
-                                        <li>` + prod_sword.costs.iron * prod_sword.count + ` Eisen</li>
+                                        <li>` + prod_poison.costs.food + ` Nahrung</li>
+                                        <li>` + prod_poison.costs.stone + ` Stein</li>
+                                        <li>` + prod_poison.costs.cloth + ` Wolle</li>
+                                        <li>` + prod_poison.costs.coal + ` Kohle</li>
+                                        <li>` + prod_poison.costs.iron + ` Eisen</li>
                                     </ul>
                                     <p>Vergiftet Ziel</p>
                                 </span>
@@ -501,12 +495,9 @@ var el_craft_poison = `<div id="row_poison" class="row_craft">
                         </div>`;
 var el_craft_leatherarmor = `<div id="row_leatherarmor" class="row_craft">
                                 <button id="btn_leatherarmor" class="btn_content">Lederrüstung
-                                                <li>` + prod_morningstar.costs.wood * prod_morningstar.count + ` Holz</li>
-                                                <li>` + prod_morningstar.costs.iron * prod_morningstar.count + ` Eisen</li>
                                     <span class="tooltip">
                                         <ul>
-                                            <li>` + prod_shortbow.costs.wood * prod_shortbow.count + ` Holz</li>
-                                            <li>` + prod_shortbow.costs.iron * prod_shortbow.count + ` Eisen</li>
+                                            <li>` + prod_leatherarmor.costs.leather + ` Leder</li>
                                         </ul>
                                         <p>Leichte Rüstung</p>
                                         <p>Leicht erhöhte Überlebenschance</p>
@@ -522,8 +513,7 @@ var el_craft_ironarmor = `<div id="row_ironarmor" class="row_craft">
                                 <button id="btn_ironarmor" class="btn_content">Eisenrüstung
                                     <span class="tooltip">
                                         <ul>
-                                            <li>` + prod_longbow.costs.wood * prod_longbow.count + ` Holz</li>
-                                            <li>` + prod_longbow.costs.iron * prod_longbow.count + ` Eisen</li>
+                                            <li>` + prod_ironarmor.costs.iron + ` Eisen</li>
                                         </ul>
                                         <p>Schwere Rüstung</p>
                                         <p>Stark erhöhte Überlebenschance</p>
@@ -539,6 +529,8 @@ var el_craft_axe = `<div id="row_axe" class="row_craft">
                         <button id="btn_axe" class="btn_content">Axt
                             <span class="tooltip">
                                 <ul>
+                                    <li>` + prod_axe.costs.wood + ` Holz</li>
+                                    <li>` + prod_axe.costs.iron + ` Eisen</li>
                                 </ul>
                                 <p>Leichte Waffe</p>
                                 <p>Leichter Schaden</p>
@@ -553,6 +545,8 @@ var el_craft_sword = `<div id="row_sword" class="row_craft">
                         <button id="btn_sword" class="btn_content">Schwert
                             <span class="tooltip">
                                 <ul>
+                                    <li>` + prod_sword.costs.wood + ` Holz</li>
+                                    <li>` + prod_sword.costs.iron + ` Eisen</li>
                                 </ul>
                                 <p>Normaler Waffe</p>
                                 <p>Normaler Schaden</p>
@@ -567,8 +561,8 @@ var el_craft_morningstar = `<div id="row_morningstar" class="row_craft">
                                 <button id="btn_morningstar" class="btn_content">Morgenstern
                                     <span class="tooltip">
                                         <ul>
-                                            <li>` + prod_crossbow.costs.wood * prod_crossbow.count + ` Holz</li>
-                                            <li>` + prod_crossbow.costs.iron * prod_crossbow.count + ` Eisen</li>
+                                            <li>` + prod_morningstar.costs.wood + ` Holz</li>
+                                            <li>` + prod_morningstar.costs.iron + ` Eisen</li>
                                         </ul>
                                         <p>Schwere Waffe</p>
                                         <p>Schwerer Schaden</p>
@@ -583,6 +577,8 @@ var el_craft_shortbow = `<div id="row_shortbow" class="row_craft">
                             <button id="btn_shortbow" class="btn_content">Kurzbogen
                                 <span class="tooltip">
                                     <ul>
+                                        <li>` + prod_shortbow.costs.wood + ` Holz</li>
+                                        <li>` + prod_shortbow.costs.iron + ` Eisen</li>
                                     </ul>
                                     <p>Leichte Waffe</p>
                                     <p>Leichter Schaden</p>
@@ -597,6 +593,8 @@ var el_craft_longbow = `<div id="row_longbow" class="row_craft">
                             <button id="btn_longbow" class="btn_content">Langbogen
                                 <span class="tooltip">
                                     <ul>
+                                        <li>` + prod_longbow.costs.wood + ` Holz</li>
+                                        <li>` + prod_longbow.costs.iron + ` Eisen</li>
                                     </ul>
                                     <p>Normaler Waffe</p>
                                     <p>Normaler Schaden</p>
@@ -611,6 +609,8 @@ var el_craft_crossbow = `<div id="row_crossbow" class="row_craft">
                             <button id="btn_crossbow" class="btn_content">Armbrust
                                 <span class="tooltip">
                                     <ul>
+                                        <li>` + prod_crossbow.costs.wood + ` Holz</li>
+                                        <li>` + prod_crossbow.costs.iron + ` Eisen</li>
                                     </ul>
                                     <p>Schwere Waffe</p>
                                     <p>Schwerer Schaden</p>
@@ -625,6 +625,12 @@ var el_craft_tradegift = `<div id="row_tradegift" class="row_craft">
                             <button id="btn_tradegift" class="btn_content">Handelsgeschenk
                                 <span class="tooltip">
                                     <ul>
+                                        <li>` + prod_tradegift.costs.food + ` Nahrung</li>
+                                        <li>` + prod_tradegift.costs.wood + ` Holz</li>
+                                        <li>` + prod_tradegift.costs.leather + ` Leder</li>
+                                        <li>` + prod_tradegift.costs.cloth + ` Wolle</li>
+                                        <li>` + prod_tradegift.costs.iron + ` Eisen</li>
+                                        <li>` + prod_tradegift.costs.clothes + ` Kleidung</li>
                                     </ul>
                                     <p>Erhöhte Chance: Handelsabkommen</p>
                                 </span>
@@ -638,6 +644,12 @@ var el_craft_peacegift = `<div id="row_peacegift" class="row_craft">
                             <button id="btn_peacegift" class="btn_content">Friedensgeschenk
                                 <span class="tooltip">
                                     <ul>
+                                        <li>` + prod_peacegift.costs.food + ` Nahrung</li>
+                                        <li>` + prod_peacegift.costs.wood + ` Holz</li>
+                                        <li>` + prod_peacegift.costs.leather + ` Leder</li>
+                                        <li>` + prod_peacegift.costs.cloth + ` Wolle</li>
+                                        <li>` + prod_peacegift.costs.iron + ` Eisen</li>
+                                        <li>` + prod_peacegift.costs.clothes + ` Kleidung</li>
                                     </ul>
                                     <p>Erhöhte Chance: Friedensabkommen</p>
                                 </span>
@@ -649,20 +661,15 @@ var el_craft_peacegift = `<div id="row_peacegift" class="row_craft">
                         </div>`;
 var el_craft_poisongift = `<div id="row_poisongift" class="row_craft">
                                 <button id="btn_poisongift" class="btn_content">Giftgeschenk
-                                            <li>` + prod_tradegift.costs.food * prod_tradegift.count + ` Nahrung</li>
-                                            <li>` + prod_tradegift.costs.wood * prod_tradegift.count + ` Holz</li>
-                                            <li>` + prod_tradegift.costs.leather * prod_tradegift.count + ` Leder</li>
-                                            <li>` + prod_tradegift.costs.cloth * prod_tradegift.count + ` Wolle</li>
-                                            <li>` + prod_tradegift.costs.iron * prod_tradegift.count + ` Eisen</li>
-                                            <li>` + prod_tradegift.costs.clothes * prod_tradegift.count + ` Kleidung</li>
                                     <span class="tooltip">
                                         <ul>
-                                            <li>` + prod_peacegift.costs.food * prod_peacegift.count + ` Nahrung</li>
-                                            <li>` + prod_peacegift.costs.wood * prod_peacegift.count + ` Holz</li>
-                                            <li>` + prod_peacegift.costs.leather * prod_peacegift.count + ` Leder</li>
-                                            <li>` + prod_peacegift.costs.cloth * prod_peacegift.count + ` Wolle</li>
-                                            <li>` + prod_peacegift.costs.iron * prod_peacegift.count + ` Eisen</li>
-                                            <li>` + prod_peacegift.costs.clothes * prod_peacegift.count + ` Kleidung</li>
+                                            <li>` + prod_poisongift.costs.food + ` Nahrung</li>
+                                            <li>` + prod_poisongift.costs.wood + ` Holz</li>
+                                            <li>` + prod_poisongift.costs.leather + ` Leder</li>
+                                            <li>` + prod_poisongift.costs.cloth + ` Wolle</li>
+                                            <li>` + prod_poisongift.costs.iron + ` Eisen</li>
+                                            <li>` + prod_poisongift.costs.clothes + ` Kleidung</li>
+                                            <li>` + prod_poisongift.costs.poison + ` Gift</li>
                                         </ul>
                                         <p>Erhöhte Chance: Toter Anführer</p>
                                     </span>
@@ -672,10 +679,4 @@ var el_craft_poisongift = `<div id="row_poisongift" class="row_craft">
                                 <button id="up_poisongift" class="btn_dwn_up">+</button>
                                 <p id="time_poisongift"></p>
                             </div>`;
-//endregion                                                <li>` + prod_poisongift.costs.food * prod_poisongift.count + ` Nahrung</li>
-                                                <li>` + prod_poisongift.costs.wood * prod_poisongift.count + ` Holz</li>
-                                                <li>` + prod_poisongift.costs.leather * prod_poisongift.count + ` Leder</li>
-                                                <li>` + prod_poisongift.costs.cloth * prod_poisongift.count + ` Wolle</li>
-                                                <li>` + prod_poisongift.costs.iron * prod_poisongift.count + ` Eisen</li>
-                                                <li>` + prod_poisongift.costs.clothes * prod_poisongift.count + ` Kleidung</li>
-                                                <li>` + prod_poisongift.costs.poison * prod_poisongift.count + ` Gift</li>
+//endregion
