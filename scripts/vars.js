@@ -525,6 +525,7 @@ var food = 0,
             iron: 50
         }
     },
+    
     prod_axe = {
         count: 0,
         time: 60,
@@ -552,6 +553,7 @@ var food = 0,
             iron: 30
         }
     },
+    
     prod_shortbow = {
         count: 0,
         time: 60,
@@ -579,6 +581,7 @@ var food = 0,
             iron: 5
         }
     },
+    
     prod_tradegift = {
         count: 0,
         time: 60,

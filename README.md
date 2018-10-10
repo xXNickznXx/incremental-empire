@@ -18,6 +18,9 @@ Link zum [Spiel](https://nickweyermann.github.io).
 ### Handeln
 - mit lokalem Händler
 - mit Dörfern
+### Dynamische Generierung
+- Tooltips
+- Upgrade Zeit und Kosten
 
 ## Kommende Features:
 ### Abbruchmöglichkeit für Aufträge
@@ -46,10 +49,11 @@ Link zum [Spiel](https://nickweyermann.github.io).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
+### Buttonfunktion bei Jobs
+- Die selbe Funktion wie bei Herstellen
 ## Optionale Features
 ### Weitere Optionen
 - Schwierigkeit
 - Automatisches Speichern
   - Cookie
   - Zielordner
-### Dynamische Generierung

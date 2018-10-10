@@ -89,6 +89,12 @@ body {
     border-radius: 5px;
     padding: 5px;
 }
+/* Main */
+.main:after {
+    clear: both;
+    content: "";
+    display: block;
+}
 /* Header */
 .header {
     background: var(--bg2);
@@ -205,21 +211,11 @@ h1 {
 .right .row, .right p {
     height: 24px;
 }
-.right .row:after {
-    clear: both;
-    content: "";
-    display: block;
-}
 .row p:first-child {
     float: left;
 }
 .row p:nth-child(even) {
     float: right;
-}
-.jobs .row div:after {
-    clear: both;
-    content: "";
-    display: block;
 }
 .jobs .row div:first-child {
     float: left;
@@ -234,11 +230,6 @@ h1 {
 /* bottom */
 .bottom {
     margin-top: 5px;
-}
-.bottom:after {
-    clear: both;
-    content: "";
-    display: block;
 }
 .msg {
     background: var(--bg2);
@@ -295,8 +286,8 @@ input:checked + .slider:before {
         font-size: 12px;
     }
     body {
-        min-width: unset;
         max-width: unset;
+        min-width: unset;
     }
     .header {
         border-bottom: 1px solid var(--fg);

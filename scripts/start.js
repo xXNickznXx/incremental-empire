@@ -59,21 +59,21 @@ $("#btn_start").click(function () {
 
                 trade_bonus = contents.$trade_bonus;
 
-                hut = contents.$hut;
-                huntinghut = contents.$huntinghut;        up_huntinghut = contents.$up_huntinghut;
-                storage = contents.$storage;              lvl_storage = contents.$lvl_storage;
-                lumberjackhut = contents.$lumberjackhut;  up_lumberjackhut = contents.$up_lumberjackhut;
-                sheepstall = contents.$sheepstall;        up_sheepstall = contents.$up_sheepstall;
-                quarry = contents.$quarry;                up_quarry = contents.$up_quarry;
-                coalmine = contents.$coalmine;            up_coalmine = contents.$up_coalmine;
-                ironmine = contents.$ironmine;            up_ironmine = contents.$up_ironmine;
-                tailorhouse = contents.$tailorhouse;      up_tailorhouse = contents.$up_tailorhouse;
-                alchemisthut = contents.$alchemisthut;    up_alchemisthut = contents.$up_alchemisthut;
-                forge = contents.$forge;                  up_forge = contents.$up_forge;
-                market = contents.$market;                up_market = contents.$up_market;
-                scoutpost = contents.$scoutpost;          up_scoutpost = contents.$up_scoutpost;
-                barracks = contents.$barracks;            up_barracks = contents.$up_barracks;
-                stable = contents.$stable;                up_stable = contents.$up_stable;
+                hut.count = contents.$hut;
+                huntinghut.count = contents.$huntinghut;        huntinghut_up.count = contents.$huntinghut_up;
+                storage.count = contents.$storage;              storage_up.count = contents.$storage_up;
+                lumberjackhut.count = contents.$lumberjackhut;  lumberjackhut_up.count = contents.$lumberjackhut_up;
+                sheepstall.count = contents.$sheepstall;        sheepstall_up.count = contents.$sheepstall_up;
+                quarry.count = contents.$quarry;                quarry_up.count = contents.$quarry_up;
+                coalmine.count = contents.$coalmine;            coalmine_up.count = contents.$coalmine_up;
+                ironmine.count = contents.$ironmine;            ironmine_up.count = contents.$ironmine_up;
+                tailorhouse.count = contents.$tailorhouse;      tailorhouse_up.count = contents.$tailorhouse_up;
+                alchemisthut.count = contents.$alchemisthut;    alchemisthut_up.count = contents.$alchemisthut_up;
+                forge.count = contents.$forge;                  forge_up.count = contents.$forge_up;
+                market.count = contents.$market;                market_up.count = contents.$market_up;
+                scoutpost.count = contents.$scoutpost;          scoutpost_up.count = contents.$scoutpost_up;
+                barracks.count = contents.$barracks;            barracks_up.count = contents.$barracks_up;
+                stable.count = contents.$stable;                stable_up.count = contents.$stable_up;
             };
             reader.readAsText(file);
         }

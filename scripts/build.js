@@ -138,7 +138,7 @@ function build_quarry() {
         $("#task .quarry").remove();
     }
 }
-$("#btn_quarry").click(function () {
+$("#build").on("click", "#btn_quarry", function () {
     task.append(`<tr>
                 <td class='quarry'>Bau eines Steinbruch</td>
                 <td class='quarry time'></td>
@@ -163,7 +163,7 @@ function build_coalmine() {
         $("#task .coalmine").remove();
     }
 }
-$("#btn_coalmine").click(function () {
+$("#build").on("click", "#btn_coalmine", function () {
     task.append(`<tr>
                 <td class='coalmine'>Bau einer Kohlemine</td>
                 <td class='coalmine time'></td>
@@ -188,7 +188,7 @@ function build_ironmine() {
         $("#task .ironmine").remove();
     }
 }
-$("#btn_ironmine").click(function () {
+$("#build").on("click", "#btn_ironmine", function () {
     task.append(`<tr>
                 <td class='ironmine'>Bau einer Eisenmine</td>
                 <td class='ironmine time'></td>
@@ -214,7 +214,7 @@ function build_tailorhouse() {
         $("#task .tailorhouse").remove();
     }
 }
-$("#btn_tailorhouse").click(function () {
+$("#build").on("click", "#btn_tailorhouse", function () {
     task.append(`<tr>
                 <td class='tailorhouse'>Bau eines Schneiderhaus</td>
                 <td class='tailorhouse time'></td>
@@ -240,7 +240,7 @@ function build_alchemisthut() {
         $("#task .alchemisthut").remove();
     }
 }
-$("#btn_alchemisthut").click(function () {
+$("#build").on("click", "#btn_alchemisthut", function () {
     task.append(`<tr>
                 <td class='alchemisthut'>Bau einer Alchemistenhütte</td>
                 <td class='alchemisthut time'></td>
@@ -267,7 +267,7 @@ function build_forge() {
         $("#task .forge").remove();
     }
 }
-$("#btn_forge").click(function () {
+$("#build").on("click", "#btn_forge", function () {
     task.append(`<tr>
                 <td class='forge'>Bau einer Schmiede</td>
                 <td class='forge time'></td>
@@ -294,7 +294,7 @@ function build_market() {
         $("#task .market").remove();
     }
 }
-$("#btn_market").click(function () {
+$("#build").on("click", "#btn_market", function () {
     task.append(`<tr>
                 <td class='market'>Bau eines Markt</td>
                 <td class='market time'></td>
@@ -321,7 +321,7 @@ function build_scoutpost() {
         $("#task .scoutpost").remove();
     }
 }
-$("#btn_scoutpost").click(function () {
+$("#build").on("click", "#btn_scoutpost", function () {
     task.append(`<tr>
                 <td class='scoutpost'>Bau eines Erkundungsposten</td>
                 <td class='scoutpost time'></td>
@@ -348,7 +348,7 @@ function build_barracks() {
         $("#task .barracks").remove();
     }
 }
-$("#btn_barracks").click(function () {
+$("#build").on("click", "#btn_barracks", function () {
     task.append(`<tr>
                 <td class='barracks'>Bau einer Kaserne</td>
                 <td class='barracks time'></td>
@@ -375,7 +375,7 @@ function build_stable() {
         $("#task .stable").remove();
     }
 }
-$("#btn_stable").click(function () {
+$("#build").on("click", "#btn_stable", function () {
     task.append(`<tr>
                 <td class='stable'>Bau eines Pferdestall</td>
                 <td class='stable time'></td>

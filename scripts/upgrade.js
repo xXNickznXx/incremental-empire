@@ -55,7 +55,7 @@ function upgrade_storage() {
     timer -= 0.1;
     if (timer < 0) {
         supplies_max += 500;
-        lvl_storage += 1;
+        up_storage += 1;
         clearInterval(upgrade);
         slot_build = false;
         msg.prepend("<p>Lager wurde ausgebaut.</p>");

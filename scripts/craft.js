@@ -58,8 +58,10 @@ $("#up_medicine").mousedown(function () {
 });
 
 function medicine_minus() {
-    prod_medicine.count -= 1;
-    $("#num_medicine").text(prod_medicine.count);
+    if (prod_medicine.count > 0) {
+        prod_medicine.count -= 1;
+        $("#num_medicine").text(prod_medicine.count);
+    }
 }
 $("#dwn_medicine").click(function () {
     medicine_minus();
@@ -109,8 +111,10 @@ $("#up_poison").mousedown(function () {
 });
 
 function poison_minus() {
-    prod_poison.count -= 1;
-    $("#num_poison").text(prod_poison.count);
+    if (prod_poison.count > 0) {
+        prod_poison.count -= 1;
+        $("#num_poison").text(prod_poison.count);
+    }
 }
 $("#dwn_poison").click(function () {
     poison_minus();
@@ -156,8 +160,10 @@ $("#up_leatherarmor").mousedown(function () {
 });
 
 function leatherarmor_minus() {
-    prod_leatherarmor.count -= 1;
-    $("#num_leatherarmor").text(prod_leatherarmor.count);
+    if (prod_leatherarmor.count > 0) {
+        prod_leatherarmor.count -= 1;
+        $("#num_leatherarmor").text(prod_leatherarmor.count);
+    }
 }
 $("#dwn_leatherarmor").click(function () {
     leatherarmor_minus();
@@ -203,8 +209,10 @@ $("#up_ironarmor").mousedown(function () {
 });
 
 function ironarmor_minus() {
-    prod_ironarmor.count -= 1;
-    $("#num_ironarmor").text(prod_ironarmor.count);
+    if (prod_ironarmor.count > 0) {
+        prod_ironarmor.count -= 1;
+        $("#num_ironarmor").text(prod_ironarmor.count);
+    }
 }
 $("#dwn_ironarmor").click(function () {
     ironarmor_minus();
@@ -251,8 +259,10 @@ $("#up_axe").mousedown(function () {
 });
 
 function axe_minus() {
-    prod_axe.count -= 1;
-    $("#num_axe").text(prod_axe.count);
+    if (prod_axe.count > 0) {
+        prod_axe.count -= 1;
+        $("#num_axe").text(prod_axe.count);
+    }
 }
 $("#dwn_axe").click(function () {
     axe_minus();
@@ -299,8 +309,10 @@ $("#up_sword").mousedown(function () {
 });
 
 function sword_minus() {
-    prod_sword.count -= 1;
-    $("#num_sword").text(prod_sword.count);
+    if (prod_sword.count > 0) {
+        prod_sword.count -= 1;
+        $("#num_sword").text(prod_sword.count);
+    }
 }
 $("#dwn_sword").click(function () {
     sword_minus();
@@ -347,8 +359,10 @@ $("#up_morningstar").mousedown(function () {
 });
 
 function morningstar_minus() {
-    prod_morningstar.count -= 1;
-    $("#num_morningstar").text(prod_morningstar.count);
+    if (prod_morningstar.count > 0) {
+        prod_morningstar.count -= 1;
+        $("#num_morningstar").text(prod_morningstar.count);
+    }
 }
 $("#dwn_morningstar").click(function () {
     morningstar_minus();
@@ -361,7 +375,7 @@ function craft_shortbow() {
     $("#task .shortbow.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        shortbow += shortbow_num;
+        shortbow += prod_shortbow.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Kurzbogen wurde fertiggestellt.</p>");
@@ -374,35 +388,35 @@ $("#btn_shortbow").click(function () {
                 <td class='shortbow'>Herstellung von Kurzbogen</td>
                 <td class='shortbow time'></td>
                 </tr>`);
-    wood -= 20 * shortbow_num;
-    iron -= 5 * shortbow_num;
+    wood -= prod_shortbow.costs.wood * prod_shortbow.count;
+    iron -= prod_shortbow.costs.iron * prod_shortbow.count;
     slot_craft = true;
-    crafter = curr_time_shortbow;
+    crafter = prod_shortbow.curr_time;
     craft = setInterval(craft_shortbow, speed / 10);
 });
 var shortbow_p,
     shortbow_m,
     shortbow_t;
-$("#up_shortbow").click(function () {
-    shortbow_num += 1;
-    $("#num_shortbow").text(shortbow_num);
-});
 function shortbow_plus() {
-    shortbow_num += 1;
-    $("#num_shortbow").text(shortbow_num);
+    prod_shortbow.count += 1;
+    $("#num_shortbow").text(prod_shortbow.count);
 }
+$("#up_shortbow").click(function () {
+    shortbow_plus();
+});
 $("#up_shortbow").mousedown(function () {
     shortbow_t = setTimeout(function () {shortbow_p = setInterval(shortbow_plus, 50);}, 500);
 });
 
-$("#dwn_shortbow").click(function () {
-    shortbow_num -= 1;
-    $("#num_shortbow").text(shortbow_num);
-});
 function shortbow_minus() {
-    shortbow_num -= 1;
-    $("#num_shortbow").text(shortbow_num);
+    if (prod_shortbow.count > 0) {
+        prod_shortbow.count -= 1;
+        $("#num_shortbow").text(prod_shortbow.count);
+    }
 }
+$("#dwn_shortbow").click(function () {
+    shortbow_minus();
+});
 $("#dwn_shortbow").mousedown(function () {
     shortbow_t = setTimeout(function () {shortbow_m = setInterval(shortbow_minus, 50);}, 500);
 });
@@ -411,7 +425,7 @@ function craft_longbow() {
     $("#task .longbow.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        longbow += longbow_num;
+        longbow += prod_longbow.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Langbogen wurde fertiggestellt.</p>");
@@ -424,35 +438,35 @@ $("#btn_longbow").click(function () {
                 <td class='longbow'>Herstellung von Langbogen</td>
                 <td class='longbow time'></td>
                 </tr>`);
-    wood -= 25 * longbow_num;
-    iron -= 5 * longbow_num;
+    wood -= prod_longbow.costs.wood * prod_longbow.count;
+    iron -= prod_longbow.costs.iron * prod_longbow.count;
     slot_craft = true;
-    crafter = curr_time_longbow;
+    crafter = prod_longbow.curr_time;
     craft = setInterval(craft_longbow, speed / 10);
 });
 var longbow_p,
     longbow_m,
     longbow_t;
-$("#up_longbow").click(function () {
-    longbow_num += 1;
-    $("#num_longbow").text(longbow_num);
-});
 function longbow_plus() {
-    longbow_num += 1;
-    $("#num_longbow").text(longbow_num);
+    prod_longbow.count += 1;
+    $("#num_longbow").text(prod_longbow.count);
 }
+$("#up_longbow").click(function () {
+    longbow_plus();
+});
 $("#up_longbow").mousedown(function () {
     longbow_t = setTimeout(function () {longbow_p = setInterval(longbow_plus, 50);}, 500);
 });
 
-$("#dwn_longbow").click(function () {
-    longbow_num -= 1;
-    $("#num_longbow").text(longbow_num);
-});
 function longbow_minus() {
-    longbow_num -= 1;
-    $("#num_longbow").text(longbow_num);
+    if (prod_longbow.count > 0) {
+        prod_longbow.count -= 1;
+        $("#num_longbow").text(prod_longbow.count);
+    }
 }
+$("#dwn_longbow").click(function () {
+    longbow_minus();
+});
 $("#dwn_longbow").mousedown(function () {
     longbow_t = setTimeout(function () {longbow_m = setInterval(longbow_minus, 50);}, 500);
 });
@@ -461,7 +475,7 @@ function craft_crossbow() {
     $("#task .crossbow.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        crossbow += crossbow_num;
+        crossbow += prod_crossbow.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Armbrust wurde fertiggestellt.</p>");
@@ -474,35 +488,35 @@ $("#btn_crossbow").click(function () {
                 <td class='crossbow'>Herstellung von Armbrust</td>
                 <td class='crossbow time'></td>
                 </tr>`);
-    wood -= 30 * crossbow_num;
-    iron -= 5 * crossbow_num;
+    wood -= prod_crossbow.costs.wood * prod_crossbow.count;
+    iron -= prod_crossbow.costs.iron * prod_crossbow.count;
     slot_craft = true;
-    crafter = curr_time_crossbow;
+    crafter = prod_crossbow.curr_time;
     craft = setInterval(craft_crossbow, speed / 10);
 });
 var crossbow_p,
     crossbow_m,
     crossbow_t;
-$("#up_crossbow").click(function () {
-    crossbow_num += 1;
-    $("#num_crossbow").text(crossbow_num);
-});
 function crossbow_plus() {
-    crossbow_num += 1;
-    $("#num_crossbow").text(crossbow_num);
+    prod_crossbow.count += 1;
+    $("#num_crossbow").text(prod_crossbow.count);
 }
+$("#up_crossbow").click(function () {
+    crossbow_plus();
+});
 $("#up_crossbow").mousedown(function () {
     crossbow_t = setTimeout(function () {crossbow_p = setInterval(crossbow_plus, 50);}, 500);
 });
 
-$("#dwn_crossbow").click(function () {
-    crossbow_num -= 1;
-    $("#num_crossbow").text(crossbow_num);
-});
 function crossbow_minus() {
-    crossbow_num -= 1;
-    $("#num_crossbow").text(crossbow_num);
+    if (prod_crossbow.count > 0) {
+        prod_crossbow.count -= 1;
+        $("#num_crossbow").text(prod_crossbow.count);
+    }
 }
+$("#dwn_crossbow").click(function () {
+    crossbow_minus();
+});
 $("#dwn_crossbow").mousedown(function () {
     crossbow_t = setTimeout(function () {crossbow_m = setInterval(crossbow_minus, 50);}, 500);
 });
@@ -511,7 +525,7 @@ function craft_tradegift() {
     $("#task .tradegift.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        tradegift += tradegift_num;
+        tradegift += prod_tradegift.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Handelsgeschenk wurde fertiggestellt.</p>");
@@ -524,39 +538,39 @@ $("#btn_tradegift").click(function () {
                 <td class='tradegift'>Herstellung von Handelsgeschenk</td>
                 <td class='tradegift time'></td>
                 </tr>`);
-    food -= 25 * tradegift_num;
-    wood -= 25 * tradegift_num;
-    leather -= 25 * tradegift_num;
-    cloth -= 25 * tradegift_num;
-    iron -= 25 * tradegift_num;
-    clothes -= 25 * tradegift_num;
+    food -= prod_tradegift.costs.food * prod_tradegift.count;
+    wood -= prod_tradegift.costs.wood * prod_tradegift.count;
+    leather -= prod_tradegift.costs.leather * prod_tradegift.count;
+    cloth -= prod_tradegift.costs.cloth * prod_tradegift.count;
+    iron -= prod_tradegift.costs.iron * prod_tradegift.count;
+    clothes -= prod_tradegift.costs.clothes * prod_tradegift.count;
     slot_craft = true;
-    crafter = curr_time_tradegift;
+    crafter = prod_tradegift.curr_time;
     craft = setInterval(craft_tradegift, speed / 10);
 });
 var tradegift_p,
     tradegift_m,
     tradegift_t;
-$("#up_tradegift").click(function () {
-    tradegift_num += 1;
-    $("#num_tradegift").text(tradegift_num);
-});
 function tradegift_plus() {
-    tradegift_num += 1;
-    $("#num_tradegift").text(tradegift_num);
+    prod_tradegift.count += 1;
+    $("#num_tradegift").text(prod_tradegift.count);
 }
+$("#up_tradegift").click(function () {
+    tradegift_plus();
+});
 $("#up_tradegift").mousedown(function () {
     tradegift_t = setTimeout(function () {tradegift_p = setInterval(tradegift_plus, 50);}, 500);
 });
 
-$("#dwn_tradegift").click(function () {
-    tradegift_num -= 1;
-    $("#num_tradegift").text(tradegift_num);
-});
 function tradegift_minus() {
-    tradegift_num -= 1;
-    $("#num_tradegift").text(tradegift_num);
+    if (prod_tradegift.count > 0) {
+        prod_tradegift.count -= 1;
+        $("#num_tradegift").text(prod_tradegift.count);
+    }
 }
+$("#dwn_tradegift").click(function () {
+    tradegift_minus();
+});
 $("#dwn_tradegift").mousedown(function () {
     tradegift_t = setTimeout(function () {tradegift_m = setInterval(tradegift_minus, 50);}, 500);
 });
@@ -565,7 +579,7 @@ function craft_peacegift() {
     $("#task .peacegift.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        peacegift += peacegift_num;
+        peacegift += prod_peacegift.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Friedensgeschenk wurde fertiggestellt.</p>");
@@ -578,39 +592,40 @@ $("#btn_peacegift").click(function () {
                 <td class='peacegift'>Herstellung von Friedensgeschenk</td>
                 <td class='peacegift time'></td>
                 </tr>`);
-    food -= 50 * peacegift_num;
-    wood -= 50 * peacegift_num;
-    leather -= 50 * peacegift_num;
-    cloth -= 50 * peacegift_num;
-    iron -= 50 * peacegift_num;
-    clothes -= 50 * peacegift_num;
+    food -= prod_peacegift.costs.food * prod_peacegift.count;
+    wood -= prod_peacegift.costs.wood * prod_peacegift.count;
+    leather -= prod_peacegift.costs.leather * prod_peacegift.count;
+    cloth -= prod_peacegift.costs.cloth * prod_peacegift.count;
+    iron -= prod_peacegift.costs.iron * prod_peacegift.count;
+    clothes -= prod_peacegift.costs.clothes * prod_peacegift.count;
     slot_craft = true;
-    crafter = curr_time_peacegift;
+    crafter = prod_peacegift.curr_time;
     craft = setInterval(craft_peacegift, speed / 10);
 });
 var peacegift_p,
     peacegift_m,
     peacegift_t;
-$("#up_peacegift").click(function () {
-    peacegift_num += 1;
-    $("#num_peacegift").text(peacegift_num);
-});
 function peacegift_plus() {
-    peacegift_num += 1;
-    $("#num_peacegift").text(peacegift_num);
+    prod_peacegift.count += 1;
+    $("#num_peacegift").text(prod_peacegift.count);
 }
+$("#up_peacegift").click(function () {
+    peacegift_plus();
+});
 $("#up_peacegift").mousedown(function () {
     peacegift_t = setTimeout(function () {peacegift_p = setInterval(peacegift_plus, 50);}, 500);
 });
 
+function peacegift_minus() {
+    if (prod_peacegift.count > 0) {
+        prod_peacegift.count -= 1;
+        $("#num_peacegift").text(prod_peacegift.count);
+    }
+}
 $("#dwn_peacegift").click(function () {
     peacegift_num -= 1;
     $("#num_peacegift").text(peacegift_num);
 });
-function peacegift_minus() {
-    peacegift_num -= 1;
-    $("#num_peacegift").text(peacegift_num);
-}
 $("#dwn_peacegift").mousedown(function () {
     peacegift_t = setTimeout(function () {peacegift_m = setInterval(peacegift_minus, 50);}, 500);
 });
@@ -619,7 +634,7 @@ function craft_poisongift() {
     $("#task .poisongift.time").text(secondsTommss(crafter.toFixed(1)));
     crafter -= 0.1;
     if (crafter < 0) {
-        poisongift += poisongift_num;
+        poisongift += prod_poisongift.count;
         clearInterval(craft);
         slot_craft = false;
         msg.prepend("<p>Giftgeschenk wurde fertiggestellt.</p>");
@@ -632,40 +647,40 @@ $("#btn_poisongift").click(function () {
                 <td class='poisongift'>Herstellung von Giftgeschenk</td>
                 <td class='poisongift time'></td>
                 </tr>`);
-    food -= 50 * poisongift_num;
-    wood -= 50 * poisongift_num;
-    leather -= 50 * poisongift_num;
-    cloth -= 50 * poisongift_num;
-    iron -= 50 * poisongift_num;
-    clothes -= 50 * poisongift_num;
-    poison -= 5 * poisongift_num;
+    food -= prod_poisongift.costs.food * prod_poisongift.count;
+    wood -= prod_poisongift.costs.wood * prod_poisongift.count;
+    leather -= prod_poisongift.costs.leather * prod_poisongift.count;
+    cloth -= prod_poisongift.costs.cloth * prod_poisongift.count;
+    iron -= prod_poisongift.costs.iron * prod_poisongift.count;
+    clothes -= prod_poisongift.costs.clothes * prod_poisongift.count;
+    poison -= prod_poisongift.costs.poison * prod_poisongift.count;
     slot_craft = true;
-    crafter = curr_time_poisongift;
+    crafter = prod_poisongift.curr_time;
     craft = setInterval(craft_poisongift, speed / 10);
 });
 var poisongift_p,
     poisongift_m,
     poisongift_t;
-$("#up_poisongift").click(function () {
-    poisongift_num += 1;
-    $("#num_poisongift").text(poisongift_num);
-});
 function poisongift_plus() {
-    poisongift_num += 1;
-    $("#num_poisongift").text(poisongift_num);
+    prod_poisongift.count += 1;
+    $("#num_poisongift").text(prod_poisongift.count);
 }
+$("#up_poisongift").click(function () {
+    poisongift_plus();
+});
 $("#up_poisongift").mousedown(function () {
     poisongift_t = setTimeout(function () {poisongift_p = setInterval(poisongift_plus, 50);}, 500);
 });
 
-$("#dwn_poisongift").click(function () {
-    poisongift_num -= 1;
-    $("#num_poisongift").text(poisongift_num);
-});
 function poisongift_minus() {
-    poisongift_num -= 1;
-    $("#num_poisongift").text(poisongift_num);
+    if (prod_poisongift.count > 0) {
+        prod_poisongift.count -= 1;
+        $("#num_poisongift").text(prod_poisongift.count);
+    }
 }
+$("#dwn_poisongift").click(function () {
+    poisongift_minus();
+});
 $("#dwn_poisongift").mousedown(function () {
     poisongift_t = setTimeout(function () {poisongift_m = setInterval(poisongift_minus, 50);}, 500);
 });
