@@ -35,6 +35,7 @@ function refresh() {
 
     // Supplies
     //region
+    $("#iecoin").text(iecoin);
     $("#food").text(food);
     $("#wood").text(wood);
     $("#stone").text(stone);
@@ -983,6 +984,306 @@ function refresh() {
         if ($("#craft #row_poisongift")) {
             $("#craft #row_poisongift").remove();
         }
+    }
+    //endregion
+    
+    //Current Trade Price
+    //region
+    $("#btn_buy_food").html(a_market.food.buy_price);
+    $("#btn_sell_food").html(a_market.food.sell_price);
+    
+    $("#btn_buy_wood").html(a_market.wood.buy_price);
+    $("#btn_sell_wood").html(a_market.wood.sell_price);
+    
+    $("#btn_buy_stone").html(a_market.stone.buy_price);
+    $("#btn_sell_stone").html(a_market.stone.sell_price);
+    
+    $("#btn_buy_leather").html(a_market.leather.buy_price);
+    $("#btn_sell_leather").html(a_market.leather.sell_price);
+    
+    $("#btn_buy_cloth").html(a_market.cloth.buy_price);
+    $("#btn_sell_cloth").html(a_market.cloth.sell_price);
+    
+    $("#btn_buy_coal").html(a_market.coal.buy_price);
+    $("#btn_sell_coal").html(a_market.coal.sell_price);
+    
+    $("#btn_buy_iron").html(a_market.iron.buy_price);
+    $("#btn_sell_iron").html(a_market.iron.sell_price);
+    
+    $("#btn_buy_clothes").html(a_market.clothes.buy_price);
+    $("#btn_sell_clothes").html(a_market.clothes.sell_price);
+    
+    $("#btn_buy_medicine").html(a_market.medicine.buy_price);
+    $("#btn_sell_medicine").html(a_market.medicine.sell_price);
+    
+    $("#btn_buy_poison").html(a_market.poison.buy_price);
+    $("#btn_sell_poison").html(a_market.poison.sell_price);
+    
+    $("#btn_buy_leatherarmor").html(a_market.leatherarmor.buy_price);
+    $("#btn_sell_leatherarmor").html(a_market.leatherarmor.sell_price);
+    
+    $("#btn_buy_ironarmor").html(a_market.ironarmor.buy_price);
+    $("#btn_sell_ironarmor").html(a_market.ironarmor.sell_price);
+    
+    $("#btn_buy_axe").html(a_market.axe.buy_price);
+    $("#btn_sell_axe").html(a_market.axe.sell_price);
+    
+    $("#btn_buy_sword").html(a_market.sword.buy_price);
+    $("#btn_sell_sword").html(a_market.sword.sell_price);
+    
+    $("#btn_buy_morningstar").html(a_market.morningstar.buy_price);
+    $("#btn_sell_morningstar").html(a_market.morningstar.sell_price);
+    
+    $("#btn_buy_shortbow").html(a_market.shortbow.buy_price);
+    $("#btn_sell_shortbow").html(a_market.shortbow.sell_price);
+    
+    $("#btn_buy_longbow").html(a_market.longbow.buy_price);
+    $("#btn_sell_longbow").html(a_market.longbow.sell_price);
+    
+    $("#btn_buy_crossbow").html(a_market.crossbow.buy_price);
+    $("#btn_sell_crossbow").html(a_market.crossbow.sell_price);
+    
+    $("#btn_buy_tradegift").html(a_market.tradegift.buy_price);
+    $("#btn_sell_tradegift").html(a_market.tradegift.sell_price);
+    
+    $("#btn_buy_peacegift").html(a_market.peacegift.buy_price);
+    $("#btn_sell_peacegift").html(a_market.peacegift.sell_price);
+    
+    $("#btn_buy_poisongift").html(a_market.poisongift.buy_price);
+    $("#btn_sell_poisongift").html(a_market.poisongift.sell_price);
+    //endregion
+    
+    // Trade Button Dis-/Enabled
+    //region
+    if (food + a_market.food.number <= supplies_max && iecoin >= a_market.food.buy_price) {
+        $("#btn_buy_food").prop("disabled", false);
+    } else {
+        $("#btn_buy_food").prop("disabled", true);
+    }
+    if (food >= a_market.food.number && iecoin + a_market.food.sell_price <= supplies_max) {
+        $("#btn_sell_food").prop("disabled", false);
+    } else {
+        $("#btn_sell_food").prop("disabled", true);
+    }
+    
+    if (wood + a_market.wood.number <= supplies_max && iecoin >= a_market.wood.buy_price) {
+        $("#btn_buy_wood").prop("disabled", false);
+    } else {
+        $("#btn_buy_wood").prop("disabled", true);
+    }
+    if (wood >= a_market.wood.number && iecoin + a_market.wood.sell_price <= supplies_max) {
+        $("#btn_sell_wood").prop("disabled", false);
+    } else {
+        $("#btn_sell_wood").prop("disabled", true);
+    }
+    
+    if (stone + a_market.stone.number <= supplies_max && iecoin >= a_market.stone.buy_price) {
+        $("#btn_buy_stone").prop("disabled", false);
+    } else {
+        $("#btn_buy_stone").prop("disabled", true);
+    }
+    if (stone >= a_market.stone.number && iecoin + a_market.stone.sell_price <= supplies_max) {
+        $("#btn_sell_stone").prop("disabled", false);
+    } else {
+        $("#btn_sell_stone").prop("disabled", true);
+    }
+    
+    if (leather + a_market.leather.number <= supplies_max && iecoin >= a_market.leather.buy_price) {
+        $("#btn_buy_leather").prop("disabled", false);
+    } else {
+        $("#btn_buy_leather").prop("disabled", true);
+    }
+    if (leather >= a_market.leather.number && iecoin + a_market.leather.sell_price <= supplies_max) {
+        $("#btn_sell_leather").prop("disabled", false);
+    } else {
+        $("#btn_sell_leather").prop("disabled", true);
+    }
+    
+    if (cloth + a_market.cloth.number <= supplies_max && iecoin >= a_market.cloth.buy_price) {
+        $("#btn_buy_cloth").prop("disabled", false);
+    } else {
+        $("#btn_buy_cloth").prop("disabled", true);
+    }
+    if (cloth >= a_market.cloth.number && iecoin + a_market.cloth.sell_price <= supplies_max) {
+        $("#btn_sell_cloth").prop("disabled", false);
+    } else {
+        $("#btn_sell_cloth").prop("disabled", true);
+    }
+    
+    if (coal + a_market.coal.number <= supplies_max && iecoin >= a_market.coal.buy_price) {
+        $("#btn_buy_coal").prop("disabled", false);
+    } else {
+        $("#btn_buy_coal").prop("disabled", true);
+    }
+    if (coal >= a_market.coal.number && iecoin + a_market.coal.sell_price <= supplies_max) {
+        $("#btn_sell_coal").prop("disabled", false);
+    } else {
+        $("#btn_sell_coal").prop("disabled", true);
+    }
+    
+    if (iron + a_market.iron.number <= supplies_max && iecoin >= a_market.iron.buy_price) {
+        $("#btn_buy_iron").prop("disabled", false);
+    } else {
+        $("#btn_buy_iron").prop("disabled", true);
+    }
+    if (iron >= a_market.iron.number && iecoin + a_market.iron.sell_price <= supplies_max) {
+        $("#btn_sell_iron").prop("disabled", false);
+    } else {
+        $("#btn_sell_iron").prop("disabled", true);
+    }
+    
+    if (clothes + a_market.clothes.number <= supplies_max && iecoin >= a_market.clothes.buy_price) {
+        $("#btn_buy_clothes").prop("disabled", false);
+    } else {
+        $("#btn_buy_clothes").prop("disabled", true);
+    }
+    if (clothes >= a_market.clothes.number && iecoin + a_market.clothes.sell_price <= supplies_max) {
+        $("#btn_sell_clothes").prop("disabled", false);
+    } else {
+        $("#btn_sell_clothes").prop("disabled", true);
+    }
+    
+    if (medicine + a_market.medicine.number <= supplies_max && iecoin >= a_market.medicine.buy_price) {
+        $("#btn_buy_medicine").prop("disabled", false);
+    } else {
+        $("#btn_buy_medicine").prop("disabled", true);
+    }
+    if (medicine >= a_market.medicine.number && iecoin + a_market.medicine.sell_price <= supplies_max) {
+        $("#btn_sell_medicine").prop("disabled", false);
+    } else {
+        $("#btn_sell_medicine").prop("disabled", true);
+    }
+    
+    if (poison + a_market.poison.number <= supplies_max && iecoin >= a_market.poison.buy_price) {
+        $("#btn_buy_poison").prop("disabled", false);
+    } else {
+        $("#btn_buy_poison").prop("disabled", true);
+    }
+    if (poison >= a_market.poison.number && iecoin + a_market.poison.sell_price <= supplies_max) {
+        $("#btn_sell_poison").prop("disabled", false);
+    } else {
+        $("#btn_sell_poison").prop("disabled", true);
+    }
+    
+    if (leatherarmor + a_market.leatherarmor.number <= supplies_max && iecoin >= a_market.leatherarmor.buy_price) {
+        $("#btn_buy_leatherarmor").prop("disabled", false);
+    } else {
+        $("#btn_buy_leatherarmor").prop("disabled", true);
+    }
+    if (leatherarmor >= a_market.leatherarmor.number && iecoin + a_market.leatherarmor.sell_price <= supplies_max) {
+        $("#btn_sell_leatherarmor").prop("disabled", false);
+    } else {
+        $("#btn_sell_leatherarmor").prop("disabled", true);
+    }
+    
+    if (ironarmor + a_market.ironarmor.number <= supplies_max && iecoin >= a_market.ironarmor.buy_price) {
+        $("#btn_buy_ironarmor").prop("disabled", false);
+    } else {
+        $("#btn_buy_ironarmor").prop("disabled", true);
+    }
+    if (ironarmor >= a_market.ironarmor.number && iecoin + a_market.ironarmor.sell_price <= supplies_max) {
+        $("#btn_sell_ironarmor").prop("disabled", false);
+    } else {
+        $("#btn_sell_ironarmor").prop("disabled", true);
+    }
+    
+    if (axe + a_market.axe.number <= supplies_max && iecoin >= a_market.axe.buy_price) {
+        $("#btn_buy_axe").prop("disabled", false);
+    } else {
+        $("#btn_buy_axe").prop("disabled", true);
+    }
+    if (axe >= a_market.axe.number && iecoin + a_market.axe.sell_price <= supplies_max) {
+        $("#btn_sell_axe").prop("disabled", false);
+    } else {
+        $("#btn_sell_axe").prop("disabled", true);
+    }
+    
+    if (sword + a_market.sword.number <= supplies_max && iecoin >= a_market.sword.buy_price) {
+        $("#btn_buy_sword").prop("disabled", false);
+    } else {
+        $("#btn_buy_sword").prop("disabled", true);
+    }
+    if (sword >= a_market.sword.number && iecoin + a_market.sword.sell_price <= supplies_max) {
+        $("#btn_sell_sword").prop("disabled", false);
+    } else {
+        $("#btn_sell_sword").prop("disabled", true);
+    }
+    
+    if (morningstar + a_market.morningstar.number <= supplies_max && iecoin >= a_market.morningstar.buy_price) {
+        $("#btn_buy_morningstar").prop("disabled", false);
+    } else {
+        $("#btn_buy_morningstar").prop("disabled", true);
+    }
+    if (morningstar >= a_market.morningstar.number && iecoin + a_market.morningstar.sell_price <= supplies_max) {
+        $("#btn_sell_morningstar").prop("disabled", false);
+    } else {
+        $("#btn_sell_morningstar").prop("disabled", true);
+    }
+    
+    if (shortbow + a_market.shortbow.number <= supplies_max && iecoin >= a_market.shortbow.buy_price) {
+        $("#btn_buy_shortbow").prop("disabled", false);
+    } else {
+        $("#btn_buy_shortbow").prop("disabled", true);
+    }
+    if (shortbow >= a_market.shortbow.number && iecoin + a_market.shortbow.sell_price <= supplies_max) {
+        $("#btn_sell_shortbow").prop("disabled", false);
+    } else {
+        $("#btn_sell_shortbow").prop("disabled", true);
+    }
+    
+    if (longbow + a_market.longbow.number <= supplies_max && iecoin >= a_market.longbow.buy_price) {
+        $("#btn_buy_longbow").prop("disabled", false);
+    } else {
+        $("#btn_buy_longbow").prop("disabled", true);
+    }
+    if (longbow >= a_market.longbow.number && iecoin + a_market.longbow.sell_price <= supplies_max) {
+        $("#btn_sell_longbow").prop("disabled", false);
+    } else {
+        $("#btn_sell_longbow").prop("disabled", true);
+    }
+    
+    if (crossbow + a_market.crossbow.number <= supplies_max && iecoin >= a_market.crossbow.buy_price) {
+        $("#btn_buy_crossbow").prop("disabled", false);
+    } else {
+        $("#btn_buy_crossbow").prop("disabled", true);
+    }
+    if (crossbow >= a_market.crossbow.number && iecoin + a_market.crossbow.sell_price <= supplies_max) {
+        $("#btn_sell_crossbow").prop("disabled", false);
+    } else {
+        $("#btn_sell_crossbow").prop("disabled", true);
+    }
+    
+    if (tradegift + a_market.tradegift.number <= supplies_max && iecoin >= a_market.tradegift.buy_price) {
+        $("#btn_buy_tradegift").prop("disabled", false);
+    } else {
+        $("#btn_buy_tradegift").prop("disabled", true);
+    }
+    if (tradegift >= a_market.tradegift.number && iecoin + a_market.tradegift.sell_price <= supplies_max) {
+        $("#btn_sell_tradegift").prop("disabled", false);
+    } else {
+        $("#btn_sell_tradegift").prop("disabled", true);
+    }
+    
+    if (peacegift + a_market.peacegift.number <= supplies_max && iecoin >= a_market.peacegift.buy_price) {
+        $("#btn_buy_peacegift").prop("disabled", false);
+    } else {
+        $("#btn_buy_peacegift").prop("disabled", true);
+    }
+    if (peacegift >= a_market.peacegift.number && iecoin + a_market.peacegift.sell_price <= supplies_max) {
+        $("#btn_sell_peacegift").prop("disabled", false);
+    } else {
+        $("#btn_sell_peacegift").prop("disabled", true);
+    }
+    
+    if (poisongift + a_market.poisongift.number <= supplies_max && iecoin >= a_market.poisongift.buy_price) {
+        $("#btn_buy_poisongift").prop("disabled", false);
+    } else {
+        $("#btn_buy_poisongift").prop("disabled", true);
+    }
+    if (poisongift >= a_market.poisongift.number && iecoin + a_market.poisongift.sell_price <= supplies_max) {
+        $("#btn_sell_poisongift").prop("disabled", false);
+    } else {
+        $("#btn_sell_poisongift").prop("disabled", true);
     }
     //endregion
 }

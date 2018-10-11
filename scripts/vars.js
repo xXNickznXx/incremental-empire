@@ -1,6 +1,7 @@
 /*eslint-disable no-undef*/
 /*jslint white:true*/
-var food = 0,
+var iecoin = 0,
+    food = 0,
     wood = 0,
     stone = 0,
     leather = 0,
@@ -12,8 +13,8 @@ var food = 0,
     poison = 0,
     leatherarmor = 0,
     ironarmor = 0,
-    sword = 0,
     axe = 0,
+    sword = 0,
     morningstar = 0,
     shortbow = 0,
     longbow = 0,
@@ -97,15 +98,15 @@ var food = 0,
             buy_price: 30,
             sell_price: 24
         },
-        sword: {
-            name: "Schwert",
-            number: 10,
-            buy_price: 30,
-            sell_price: 24
-        },
         axe: {
             name: "Axt",
             number: 15,
+            buy_price: 30,
+            sell_price: 24
+        },
+        sword: {
+            name: "Schwert",
+            number: 10,
             buy_price: 30,
             sell_price: 24
         },

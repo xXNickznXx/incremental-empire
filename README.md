@@ -1,7 +1,7 @@
 # Incremental Empire
-Link zum [Spiel](https://nickweyermann.github.io).
+Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 
-`Ein Testbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
+`Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 
 ## Features:
 ### Bewohnerverwaltung
@@ -57,3 +57,6 @@ Link zum [Spiel](https://nickweyermann.github.io).
 - Automatisches Speichern
   - Cookie
   - Zielordner
+### Tier Mechaniken
+- Neue Pferde Meckanik
+- Schafe Mechanik
