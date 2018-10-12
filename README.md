@@ -13,14 +13,12 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 ### Speichern und Laden Funktion
 ### Mobileansicht
 ### Crafting
+### Handeln
+- mit lokalem Händler
 
 ## Features in Arbeit:
 ### Handeln
-- mit lokalem Händler
 - mit Dörfern
-### Dynamische Generierung
-- Tooltips
-- Upgrade Zeit und Kosten
 
 ## Kommende Features:
 ### Abbruchmöglichkeit für Aufträge
@@ -60,3 +58,4 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 ### Tier Mechaniken
 - Neue Pferde Meckanik
 - Schafe Mechanik
+### Ruf Mechanik
