@@ -623,7 +623,7 @@ function peacegift_minus() {
     }
 }
 $("#craft").on("click", "#dwn_peacegift", function () {
-    peacegift_num -= 1;
+    prod_peacegift.count -= 1;
     $("#num_peacegift").text(peacegift_num);
 });
 $("#craft").on("mousedown", "#dwn_peacegift", function () {

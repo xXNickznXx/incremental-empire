@@ -19,18 +19,28 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 ## Features in Arbeit:
 ### Handeln
 - mit Dörfern
-
-## Kommende Features:
-### Abbruchmöglichkeit für Aufträge
+### Reisen
+- Ausrüstung
+- Möglichkeiten
+  - Erkunden
+  - Dörfer
+    - Handelsabkommen
+    - Friedensabkommen
+    - Vergiftungsversuch
+    - Ausspionieren
 ### Events
 - Kundschafter
-  - nichts enteckt
+  - nichts entdeckt
   - Schatz entdeckt (Vorräte/Gegenstände)
   - gestorben
     - wurde getötet
     - ist verdurstet/verhungert
   - Dörfer
-    - Handelsantrag
+    - Handelsabkommen
+      - Annahme
+      - Ablehnung
+      - Tod
+    - Friedensabkommen
       - Annahme
       - Ablehnung
       - Tod
@@ -47,6 +57,9 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
+
+## Kommende Features:
+### Abbruchmöglichkeit für Aufträge
 ### Buttonfunktion bei Jobs
 - Die selbe Funktion wie bei Herstellen
 ## Optionale Features

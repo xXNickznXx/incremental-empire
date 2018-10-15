@@ -24,7 +24,8 @@ button:disabled {
     cursor: not-allowed;
 }
 .num {
-    height: 26px;
+    border: 1px solid var(--fg);
+    height: 22px;
     text-align: right;
     width: 30px;
 }

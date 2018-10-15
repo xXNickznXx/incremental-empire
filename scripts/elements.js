@@ -471,7 +471,7 @@ var el_craft_medicine = `<div id="row_medicine" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_medicine" class="btn_dwn_up">-</button>
-                            <p id="num_medicine" class="num"></p>
+                            <p id="num_medicine" class="num">0</p>
                             <button id="up_medicine" class="btn_dwn_up">+</button>
                             <p id="time_medicine"></p>
                         </div>`;
@@ -489,7 +489,7 @@ var el_craft_poison = `<div id="row_poison" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_poison" class="btn_dwn_up">-</button>
-                            <p id="num_poison" class="num"></p>
+                            <p id="num_poison" class="num">0</p>
                             <button id="up_poison" class="btn_dwn_up">+</button>
                             <p id="time_poison"></p>
                         </div>`;
@@ -505,7 +505,7 @@ var el_craft_leatherarmor = `<div id="row_leatherarmor" class="row_craft">
                                     </span>
                                 </button>
                                 <button id="dwn_leatherarmor" class="btn_dwn_up">-</button>
-                                <p id="num_leatherarmor" class="num"></p>
+                                <p id="num_leatherarmor" class="num">0</p>
                                 <button id="up_leatherarmor" class="btn_dwn_up">+</button>
                                 <p id="time_leatherarmor"></p>
                             </div>`;
@@ -521,7 +521,7 @@ var el_craft_ironarmor = `<div id="row_ironarmor" class="row_craft">
                                     </span>
                                 </button>
                                 <button id="dwn_ironarmor" class="btn_dwn_up">-</button>
-                                <p id="num_ironarmor" class="num"></p>
+                                <p id="num_ironarmor" class="num">0</p>
                                 <button id="up_ironarmor" class="btn_dwn_up">+</button>
                                 <p id="time_ironarmor"></p>
                             </div>`;
@@ -537,7 +537,7 @@ var el_craft_axe = `<div id="row_axe" class="row_craft">
                             </span>
                         </button>
                         <button id="dwn_axe" class="btn_dwn_up">-</button>
-                        <p id="num_axe" class="num"></p>
+                        <p id="num_axe" class="num">0</p>
                         <button id="up_axe" class="btn_dwn_up">+</button>
                         <p id="time_axe"></p>
                     </div>`;
@@ -553,7 +553,7 @@ var el_craft_sword = `<div id="row_sword" class="row_craft">
                             </span>
                         </button>
                         <button id="dwn_sword" class="btn_dwn_up">-</button>
-                        <p id="num_sword" class="num"></p>
+                        <p id="num_sword" class="num">0</p>
                         <button id="up_sword" class="btn_dwn_up">+</button>
                         <p id="time_sword"></p>
                     </div>`;
@@ -569,7 +569,7 @@ var el_craft_morningstar = `<div id="row_morningstar" class="row_craft">
                                     </span>
                                 </button>
                                 <button id="dwn_morningstar" class="btn_dwn_up">-</button>
-                                <p id="num_morningstar" class="num"></p>
+                                <p id="num_morningstar" class="num">0</p>
                                 <button id="up_morningstar" class="btn_dwn_up">+</button>
                                 <p id="time_morningstar"></p>
                             </div>`;
@@ -585,7 +585,7 @@ var el_craft_shortbow = `<div id="row_shortbow" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_shortbow" class="btn_dwn_up">-</button>
-                            <p id="num_shortbow" class="num"></p>
+                            <p id="num_shortbow" class="num">0</p>
                             <button id="up_shortbow" class="btn_dwn_up">+</button>
                             <p id="time_shortbow"></p>
                         </div>`;
@@ -601,7 +601,7 @@ var el_craft_longbow = `<div id="row_longbow" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_longbow" class="btn_dwn_up">-</button>
-                            <p id="num_longbow" class="num"></p>
+                            <p id="num_longbow" class="num">0</p>
                             <button id="up_longbow" class="btn_dwn_up">+</button>
                             <p id="time_longbow"></p>
                         </div>`;
@@ -617,7 +617,7 @@ var el_craft_crossbow = `<div id="row_crossbow" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_crossbow" class="btn_dwn_up">-</button>
-                            <p id="num_crossbow" class="num"></p>
+                            <p id="num_crossbow" class="num">0</p>
                             <button id="up_crossbow" class="btn_dwn_up">+</button>
                             <p id="time_crossbow"></p>
                         </div>`;
@@ -636,7 +636,7 @@ var el_craft_tradegift = `<div id="row_tradegift" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_tradegift" class="btn_dwn_up">-</button>
-                            <p id="num_tradegift" class="num"></p>
+                            <p id="num_tradegift" class="num">0</p>
                             <button id="up_tradegift" class="btn_dwn_up">+</button>
                             <p id="time_tradegift"></p>
                         </div>`;
@@ -655,7 +655,7 @@ var el_craft_peacegift = `<div id="row_peacegift" class="row_craft">
                                 </span>
                             </button>
                             <button id="dwn_peacegift" class="btn_dwn_up">-</button>
-                            <p id="num_peacegift" class="num"></p>
+                            <p id="num_peacegift" class="num">0</p>
                             <button id="up_peacegift" class="btn_dwn_up">+</button>
                             <p id="time_peacegift"></p>
                         </div>`;
@@ -675,7 +675,7 @@ var el_craft_poisongift = `<div id="row_poisongift" class="row_craft">
                                     </span>
                                 </button>
                                 <button id="dwn_poisongift" class="btn_dwn_up">-</button>
-                                <p id="num_poisongift" class="num"></p>
+                                <p id="num_poisongift" class="num">0</p>
                                 <button id="up_poisongift" class="btn_dwn_up">+</button>
                                 <p id="time_poisongift"></p>
                             </div>`;
