@@ -24,13 +24,21 @@ function check_msg() {
         $("#msg p").last().remove();
     }
 }
+/* Check Weather count */
+function check_weather() {
+    while ($("#phase div").length > 1) {
+        $("#phase div").first().remove();
+    }
+}
 
 /* Refresher */
 function refresh() {
     if (win.matches && $("#content #right").length <= 0) {
         $("#right").prependTo("#content");
+        $("#right").hide();
     } else if (!win.matches && $("#content #right").length > 0) {
         $("#right").appendTo("#main");
+        $("#right").show();
     }
 
     // Supplies
@@ -66,8 +74,8 @@ function refresh() {
 
     // Villagers/Jobs
     //region
-    $("#villager").text(villager + "/" + villager_max);
-    $("#villager_unused").text(villager_unused + "/" + villager);
+    $("#villager").text(villager.count + "/" + villager.max);
+    $("#villager_unused").text(villager.unused + "/" + villager.count);
     $("#gatherer").text(gatherer);
     $("#lumberjack").text(lumberjack);
     $("#quarryman").text(quarryman);
@@ -156,7 +164,7 @@ function refresh() {
     } else {
         $("#dwn_stableman").prop("disabled", false);
     }
-    if (villager_unused === 0) {
+    if (villager.unused === 0) {
         $("#up_gatherer").prop("disabled", true);
         $("#up_lumberjack").prop("disabled", true);
         $("#up_quarryman").prop("disabled", true);
@@ -203,69 +211,69 @@ function refresh() {
     // Current Time to build/upgrade
     //region
     if (worker > 1) {
-        hut.curr_time = hut.time / worker;
-        huntinghut.curr_time = huntinghut.time / worker;
-        lumberjackhut.curr_time = lumberjackhut.time / worker;
-        quarry.curr_time = quarry.time / worker;
-        storage.curr_time = storage.time / worker;
-        sheepstall.curr_time = sheepstall.time / worker;
-        coalmine.curr_time = coalmine.time / worker;
-        ironmine.curr_time = ironmine.time / worker;
-        tailorhouse.curr_time = tailorhouse.time / worker;
-        alchemisthut.curr_time = alchemisthut.time / worker;
-        forge.curr_time = forge.time / worker;
-        market.curr_time = market.time / worker;
-        scoutpost.curr_time = scoutpost.time / worker;
-        barracks.curr_time = barracks.time / worker;
-        stable.curr_time = stable.time / worker;
+        hut.curr_time = hut.time / worker * (speed / 1000);
+        huntinghut.curr_time = huntinghut.time / worker * (speed / 1000);
+        lumberjackhut.curr_time = lumberjackhut.time / worker * (speed / 1000);
+        quarry.curr_time = quarry.time / worker * (speed / 1000);
+        storage.curr_time = storage.time / worker * (speed / 1000);
+        sheepstall.curr_time = sheepstall.time / worker * (speed / 1000);
+        coalmine.curr_time = coalmine.time / worker * (speed / 1000);
+        ironmine.curr_time = ironmine.time / worker * (speed / 1000);
+        tailorhouse.curr_time = tailorhouse.time / worker * (speed / 1000);
+        alchemisthut.curr_time = alchemisthut.time / worker * (speed / 1000);
+        forge.curr_time = forge.time / worker * (speed / 1000);
+        market.curr_time = market.time / worker * (speed / 1000);
+        scoutpost.curr_time = scoutpost.time / worker * (speed / 1000);
+        barracks.curr_time = barracks.time / worker * (speed / 1000);
+        stable.curr_time = stable.time / worker * (speed / 1000);
         
-        hut_up.curr_time = hut_up.time / worker;
-        huntinghut_up.curr_time = huntinghut_up.time / worker;
-        lumberjackhut_up.curr_time = lumberjackhut_up.time / worker;
-        quarry_up.curr_time = quarry_up.time / worker;
-        storage_up.curr_time = storage_up.time / worker;
-        sheepstall_up.curr_time = sheepstall_up.time / worker;
-        coalmine_up.curr_time = coalmine_up.time / worker;
-        ironmine_up.curr_time = ironmine_up.time / worker;
-        tailorhouse_up.curr_time = tailorhouse_up.time / worker;
-        alchemisthut_up.curr_time = alchemisthut_up.time / worker;
-        forge_up.curr_time = forge_up.time / worker;
-        market_up.curr_time = market_up.time / worker;
-        scoutpost_up.curr_time = scoutpost_up.time / worker;
-        barracks_up.curr_time = barracks_up.time / worker;
-        stable_up.curr_time = stable_up.time / worker;
+        hut_up.curr_time = hut_up.time / worker * (speed / 1000);
+        huntinghut_up.curr_time = huntinghut_up.time / worker * (speed / 1000);
+        lumberjackhut_up.curr_time = lumberjackhut_up.time / worker * (speed / 1000);
+        quarry_up.curr_time = quarry_up.time / worker * (speed / 1000);
+        storage_up.curr_time = storage_up.time / worker * (speed / 1000);
+        sheepstall_up.curr_time = sheepstall_up.time / worker * (speed / 1000);
+        coalmine_up.curr_time = coalmine_up.time / worker * (speed / 1000);
+        ironmine_up.curr_time = ironmine_up.time / worker * (speed / 1000);
+        tailorhouse_up.curr_time = tailorhouse_up.time / worker * (speed / 1000);
+        alchemisthut_up.curr_time = alchemisthut_up.time / worker * (speed / 1000);
+        forge_up.curr_time = forge_up.time / worker * (speed / 1000);
+        market_up.curr_time = market_up.time / worker * (speed / 1000);
+        scoutpost_up.curr_time = scoutpost_up.time / worker * (speed / 1000);
+        barracks_up.curr_time = barracks_up.time / worker * (speed / 1000);
+        stable_up.curr_time = stable_up.time / worker * (speed / 1000);
     } else {
-        hut.curr_time = hut.time;
-        huntinghut.curr_time = huntinghut.time;
-        lumberjackhut.curr_time = lumberjackhut.time;
-        quarry.curr_time = quarry.time;
-        storage.curr_time = storage.time;
-        sheepstall.curr_time = sheepstall.time;
-        coalmine.curr_time = coalmine.time;
-        ironmine.curr_time = ironmine.time;
-        tailorhouse.curr_time = tailorhouse.time;
-        alchemisthut.curr_time = alchemisthut.time;
-        forge.curr_time = forge.time;
-        market.curr_time = market.time;
-        scoutpost.curr_time = scoutpost.time;
-        barracks.curr_time = barracks.time;
-        stable.curr_time = stable.time;
+        hut.curr_time = hut.time * (speed / 1000);
+        huntinghut.curr_time = huntinghut.time * (speed / 1000);
+        lumberjackhut.curr_time = lumberjackhut.time * (speed / 1000);
+        quarry.curr_time = quarry.time * (speed / 1000);
+        storage.curr_time = storage.time * (speed / 1000);
+        sheepstall.curr_time = sheepstall.time * (speed / 1000);
+        coalmine.curr_time = coalmine.time * (speed / 1000);
+        ironmine.curr_time = ironmine.time * (speed / 1000);
+        tailorhouse.curr_time = tailorhouse.time * (speed / 1000);
+        alchemisthut.curr_time = alchemisthut.time * (speed / 1000);
+        forge.curr_time = forge.time * (speed / 1000);
+        market.curr_time = market.time * (speed / 1000);
+        scoutpost.curr_time = scoutpost.time * (speed / 1000);
+        barracks.curr_time = barracks.time * (speed / 1000);
+        stable.curr_time = stable.time * (speed / 1000);
         
-        hut_up.curr_time = hut_up.time;
-        huntinghut_up.curr_time = huntinghut_up.time;
-        lumberjackhut_up.curr_time = lumberjackhut_up.time;
-        quarry_up.curr_time = quarry_up.time;
-        storage_up.curr_time = storage_up.time;
-        sheepstall_up.curr_time = sheepstall_up.time;
-        coalmine_up.curr_time = coalmine_up.time;
-        ironmine_up.curr_time = ironmine_up.time;
-        tailorhouse_up.curr_time = tailorhouse_up.time;
-        alchemisthut_up.curr_time = alchemisthut_up.time;
-        forge_up.curr_time = forge_up.time;
-        market_up.curr_time = market_up.time;
-        scoutpost_up.curr_time = scoutpost_up.time;
-        barracks_up.curr_time = barracks_up.time;
-        stable_up.curr_time = stable_up.time;
+        hut_up.curr_time = hut_up.time * (speed / 1000);
+        huntinghut_up.curr_time = huntinghut_up.time * (speed / 1000);
+        lumberjackhut_up.curr_time = lumberjackhut_up.time * (speed / 1000);
+        quarry_up.curr_time = quarry_up.time * (speed / 1000);
+        storage_up.curr_time = storage_up.time * (speed / 1000);
+        sheepstall_up.curr_time = sheepstall_up.time * (speed / 1000);
+        coalmine_up.curr_time = coalmine_up.time * (speed / 1000);
+        ironmine_up.curr_time = ironmine_up.time * (speed / 1000);
+        tailorhouse_up.curr_time = tailorhouse_up.time * (speed / 1000);
+        alchemisthut_up.curr_time = alchemisthut_up.time * (speed / 1000);
+        forge_up.curr_time = forge_up.time * (speed / 1000);
+        market_up.curr_time = market_up.time * (speed / 1000);
+        scoutpost_up.curr_time = scoutpost_up.time * (speed / 1000);
+        barracks_up.curr_time = barracks_up.time * (speed / 1000);
+        stable_up.curr_time = stable_up.time * (speed / 1000);
     }
     //endregion
 
@@ -1351,7 +1359,7 @@ function show_related() {
         $("#items").show();
         $("#horse").closest("#row").show();
         $("#stableman").closest("#row").show();
-        new_hor = setInterval(new_horses, speed * 25);
+        interval_new_hor = setInterval(new_horses, speed * 60);
     }
 }
 
@@ -1360,16 +1368,17 @@ function game_over() {
     msg.prepend("<p>Dein Dorf ist gestorben.</p>");
     check_msg();
     refresh();
-    clearInterval(build);
-    clearInterval(upgrade);
-    clearInterval(brew);
-    clearInterval(craft);
-    clearInterval(refr);
-    clearInterval(starve);
-    clearInterval(freeze);
-    clearInterval(supp_prod);
-    clearInterval(new_vil);
-    clearInterval(temperat);
+    clearInterval(interval_build);
+    clearInterval(interval_upgrade);
+    clearInterval(interval_brew);
+    clearInterval(interval_craft);
+    clearInterval(interval_refr);
+    clearInterval(interval_starve);
+    clearInterval(interval_freeze);
+    clearInterval(interval_supp_prod);
+    clearInterval(interval_new_vil);
+    clearInterval(interval_new_hor);
+    clearInterval(interval_weath);
 }
 
 /* Die possibilities */
@@ -1377,10 +1386,10 @@ function die(type) {
     var rnd = Math.floor((Math.random() * 3) + 1);
     if (type === "starve") {
         if (rnd === 1 || rnd === 2) {
-            if (villager > 0) {
-                villager -= 1;
-                if (villager_unused > 0) {
-                    villager_unused -= 1;
+            if (villager.count > 0) {
+                villager.count -= 1;
+                if (villager.unused > 0) {
+                    villager.unused -= 1;
                     msg.prepend("<p>Bewohner ist verhungert.</p>");
                     check_msg();
                 } else {
@@ -1423,17 +1432,17 @@ function die(type) {
                     }
                     check_msg();
                 }
-                if (villager === 0) {
+                if (villager.count === 0) {
                     game_over();
                 }
             }
         }
     } else if (type === "freeze") {
         if (rnd === 1 || rnd === 2) {
-            if (villager > 0) {
-                villager -= 1;
-                if (villager_unused > 0) {
-                    villager_unused -= 1;
+            if (villager.count > 0) {
+                villager.count -= 1;
+                if (villager.unused > 0) {
+                    villager.unused -= 1;
                     msg.prepend("<p>Bewohner ist erfroren.</p>");
                     check_msg();
                 } else {
@@ -1476,7 +1485,7 @@ function die(type) {
                     }
                     check_msg();
                 }
-                if (villager === 0) {
+                if (villager.count === 0) {
                     game_over();
                 }
             }
@@ -1492,16 +1501,16 @@ function supplie_prod() {
             food = supplies_max;
         }
     }
-    if (food >= villager) {
-        food -= villager;
-        if (typeof starve !== 'undefined') {
-            clearInterval(starve);
-            starve = undefined;
+    if (food >= villager.count) {
+        food -= villager.count;
+        if (typeof interval_starve !== 'undefined') {
+            clearInterval(interval_starve);
+            interval_starve = undefined;
         }
     } else {
         food = 0;
-        if (typeof starve === 'undefined') {
-            starve = setInterval(function () {die("starve"); }, speed * 15);
+        if (typeof interval_starve === 'undefined') {
+            interval_starve = setInterval(function () {die("starve"); }, speed * 15);
         }
     }
     if (wood < supplies_max) {
@@ -1564,86 +1573,18 @@ function new_villagers() {
     var rnd = Math.floor((Math.random() * 6) + 1), amount;
     if (rnd === 1) {
         amount = Math.floor((Math.random() * 2) + 2);
-        if (villager + amount <= villager_max) {
-            villager += amount;
-            villager_unused += amount;
+        if (villager.count + amount <= villager.max) {
+            villager.count += amount;
+            villager.unused += amount;
             msg.prepend("<p>" + amount + " Fremde sind aufgetaucht.</p>");
             check_msg();
         }
     } else if (rnd === 2 || rnd === 3) {
-        if (villager < villager_max) {
-            villager += 1;
-            villager_unused += 1;
+        if (villager.count < villager.max) {
+            villager.count += 1;
+            villager.unused += 1;
             msg.prepend("<p>Ein Fremder ist aufgetaucht.</p>");
             check_msg();
-        }
-    }
-}
-
-/* Temperature */
-function temperature() {
-    $("#phase").empty();
-    var i, rnd, last, first;
-    for (i = 0; i < tempr.length; i += 1) {
-        if (i === 0) {
-            $("#phase").append("<p>" + tempr[i] + "</p> -> ");
-        } else if (i == tempr.length - 1) {
-            $("#phase").append(tempr[i]);
-        } else {
-            $("#phase").append(tempr[i] + " -> ");
-        }
-    }
-    rnd = Math.floor((Math.random() * 3) + 1);
-    last = tempr[tempr.length - 1];
-    if (last === "Warm") {
-        if (rnd === 1 || rnd === 2) {
-            tempr[tempr.length] = "Warm";
-        } else {
-            tempr[tempr.length] = "Mild";
-        }
-    } else if (last === "Mild") {
-        if (rnd === 1) {
-            tempr[tempr.length] = "Warm";
-        } else if (rnd === 2) {
-            tempr[tempr.length] = "Kalt";
-        } else {
-            tempr[tempr.length] = "Mild";
-        }
-    } else if (last === "Kalt") {
-        if (rnd === 1 || rnd === 2) {
-            tempr[tempr.length] = "Mild";
-        } else {
-            tempr[tempr.length] = "Kalt";
-        }
-    }
-    first = tempr.shift();
-    if (first === "Kalt") {
-        if (clothes >= villager) {
-            clothes -= villager;
-            if (typeof freeze !== 'undefined') {
-                clearInterval(freeze);
-                freeze = undefined;
-            }
-        } else {
-            var rest = villager - clothes;
-            clothes = 0;
-            if (wood >= rest) {
-                wood -= rest;
-                if (typeof freeze !== 'undefined') {
-                    clearInterval(freeze);
-                    freeze = undefined;
-                }
-            } else {
-                wood = 0;
-                if (typeof freeze === 'undefined') {
-                    freeze = setInterval(function () {die("freeze"); }, speed * 15);
-                }
-            }
-        }
-    } else {
-        if (typeof freeze !== 'undefined') {
-            clearInterval(freeze);
-            freeze = undefined;
         }
     }
 }
@@ -1653,13 +1594,13 @@ function new_horses() {
     var rnd = Math.floor((Math.random() * stableman) + 1), amount;
     if (rnd >= 1 && rnd < Math.floor((stableman * breed_bonus) / 6)) {
         amount = Math.floor((Math.random() * 2) + 2);
-        if (horse + amount <= villager_max) {
+        if (horse + amount <= villager.max) {
             horse += amount;
             msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
             check_msg();
         }
     } else if (rnd >= Math.floor((stableman * breed_bonus) / 6) && rnd <= Math.floor((stableman * breed_bonus) / 3)) {
-        if (horse < villager_max) {
+        if (horse < villager.max) {
             horse += 1;
             msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
             check_msg();

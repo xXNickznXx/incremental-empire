@@ -24,7 +24,7 @@ var iecoin = 0,
     poisongift = 0,
     horse = 0,
     supplies_max = 100,
-    
+
     a_market = {
         food: {
             name: "Nahrung",
@@ -154,9 +154,11 @@ var iecoin = 0,
         }
     },
 
-    villager = 5,
-    villager_unused = 5,
-    villager_max = 10,
+    villager = {
+        count: 5,
+        unused: 5,
+        max: 10
+    },
 
     gatherer = 0,
     lumberjack = 0, wood_bonus = 1,
@@ -174,7 +176,7 @@ var iecoin = 0,
     stableman = 0,  breed_bonus = 1,
 
     trade_bonus = 1,
-    
+
     hut = {
         count: 0,
         time: 20,
@@ -192,7 +194,7 @@ var iecoin = 0,
             stone: hut.costs.stone * 2
         }
     },
-    
+
     huntinghut = {
         count: false,
         time: 30,
@@ -211,7 +213,7 @@ var iecoin = 0,
             stone: huntinghut.costs.stone * 2
         }
     },
-    
+
     storage = {
         count: false,
         time: 60,
@@ -230,7 +232,7 @@ var iecoin = 0,
             stone: storage.costs.stone * 4
         }
     },
-    
+
     lumberjackhut = {
         count: false,
         time: 80,
@@ -249,14 +251,14 @@ var iecoin = 0,
             stone: lumberjackhut.costs.stone * 2
         }
     },
-    
+
     sheepstall = {
         count: false,
         time: 100,
         curr_time: null,
         costs: {
             wood: 250,
-            stone: 75
+            stone: 80
         }
     },
     sheepstall_up = {
@@ -268,7 +270,7 @@ var iecoin = 0,
             stone: sheepstall.costs.stone * 2
         }
     },
-    
+
     quarry = {
         count: false,
         time: 120,
@@ -287,7 +289,7 @@ var iecoin = 0,
             stone: quarry.costs.stone * 2
         }
     },
-    
+
     coalmine = {
         count: false,
         time: 140,
@@ -306,7 +308,7 @@ var iecoin = 0,
             stone: coalmine.costs.stone * 2
         }
     },
-    
+
     ironmine = {
         count: false,
         time: 180,
@@ -327,7 +329,7 @@ var iecoin = 0,
             coal: ironmine.costs.coal * 2
         }
     },
-    
+
     tailorhouse = {
         count: false,
         time: 240,
@@ -348,7 +350,7 @@ var iecoin = 0,
             coal: tailorhouse.costs.coal * 2
         }
     },
-    
+
     alchemisthut = {
         count: false,
         time: 270,
@@ -371,7 +373,7 @@ var iecoin = 0,
             iron: alchemisthut.costs.iron * 2
         }
     },
-    
+
     forge = {
         count: false,
         time: 300,
@@ -394,7 +396,7 @@ var iecoin = 0,
             iron: forge.costs.iron * 2
         }
     },
-    
+
     market = {
         count: false,
         time: 600,
@@ -417,7 +419,7 @@ var iecoin = 0,
             iron: market.costs.iron * 2
         }
     },
-    
+
     scoutpost = {
         count: false,
         time: 900,
@@ -440,7 +442,7 @@ var iecoin = 0,
             iron: scoutpost.costs.iron * 2
         }
     },
-    
+
     barracks = {
         count: false,
         time: 1200,
@@ -463,7 +465,7 @@ var iecoin = 0,
             iron: barracks.costs.iron * 2
         }
     },
-    
+
     stable = {
         count: false,
         time: 1800,
@@ -486,15 +488,15 @@ var iecoin = 0,
             iron: stable.costs.iron * 2
         }
     },
-    
+
     prod_medicine = {
         count: 0,
         time: 60,
         curr_time: null,
         costs: {
             food: 20,
-            stone: 5,
-            cloth: 5
+            stone: 6,
+            cloth: 6
         }
     },
     prod_poison = {
@@ -503,13 +505,13 @@ var iecoin = 0,
         curr_time: null,
         costs: {
             food: 10,
-            stone: 5,
-            cloth: 5,
-            coal: 5,
-            iron: 5
+            stone: 6,
+            cloth: 6,
+            coal: 6,
+            iron: 6
         }
     },
-    
+
     prod_leatherarmor = {
         count: 0,
         time: 60,
@@ -526,13 +528,13 @@ var iecoin = 0,
             iron: 50
         }
     },
-    
+
     prod_axe = {
         count: 0,
         time: 60,
         curr_time: null,
         costs: {
-            wood: 5,
+            wood: 6,
             iron: 20
         }
     },
@@ -541,7 +543,7 @@ var iecoin = 0,
         time: 120,
         curr_time: null,
         costs: {
-            wood: 5,
+            wood: 6,
             iron: 25
         }
     },
@@ -550,18 +552,18 @@ var iecoin = 0,
         time: 180,
         curr_time: null,
         costs: {
-            wood: 5,
+            wood: 6,
             iron: 30
         }
     },
-    
+
     prod_shortbow = {
         count: 0,
         time: 60,
         curr_time: null,
         costs: {
             wood: 20,
-            iron: 5
+            iron: 6
         }
     },
     prod_longbow = {
@@ -570,7 +572,7 @@ var iecoin = 0,
         curr_time: null,
         costs: {
             wood: 25,
-            iron: 5
+            iron: 6
         }
     },
     prod_crossbow = {
@@ -579,21 +581,21 @@ var iecoin = 0,
         curr_time: null,
         costs: {
             wood: 30,
-            iron: 5
+            iron: 6
         }
     },
-    
+
     prod_tradegift = {
         count: 0,
         time: 60,
         curr_time: null,
         costs: {
-            food: 25,
-            wood: 25,
-            leather: 25,
-            cloth: 25,
-            iron: 25,
-            clothes: 25
+            food: 30,
+            wood: 30,
+            leather: 30,
+            cloth: 30,
+            iron: 30,
+            clothes: 30
         }
     },
     prod_peacegift = {
@@ -601,12 +603,12 @@ var iecoin = 0,
         time: 120,
         curr_time: null,
         costs: {
-            food: 50,
-            wood: 50,
-            leather: 50,
-            cloth: 50,
-            iron: 50,
-            clothes: 50
+            food: 60,
+            wood: 60,
+            leather: 60,
+            cloth: 60,
+            iron: 60,
+            clothes: 60
         }
     },
     prod_poisongift = {
@@ -614,16 +616,16 @@ var iecoin = 0,
         time: 180,
         curr_time: null,
         costs: {
-            food: 50,
-            wood: 50,
-            leather: 50,
-            cloth: 50,
-            iron: 50,
-            clothes: 50,
-            poison: 5
+            food: 60,
+            wood: 60,
+            leather: 60,
+            cloth: 60,
+            iron: 60,
+            clothes: 60,
+            poison: 6
         }
     },
-    
+
     discovered_towns = [],
 
     slot_build = false,
@@ -631,20 +633,42 @@ var iecoin = 0,
     slot_brew = false,
     //slot_scout = false,
 
-    build,
-    upgrade,
-    brew,
-    craft,
-    refr,
-    starve,
-    freeze,
-    supp_prod,
-    new_vil,
-    temperat,
-    
-    new_hor,
+    interval_build,
+    interval_upgrade,
+    interval_brew,
+    interval_craft,
+    interval_refr,
+    interval_starve,
+    interval_freeze,
+    interval_supp_prod,
+    interval_new_vil,
+    interval_new_hor,
+    interval_weath,
 
-    tempr = ["Warm", "Warm", "Warm", "Mild", "Kalt"],
+    weather = {
+        season: {
+            current: 0,
+            names: ['Winter', 'Frühling', 'Sommer', 'Herbst']
+        },
+        tempr: {
+            current: 0,
+            min: -10,
+            max: 5
+        },
+        type: {
+            current: 0,
+            names: ['Sonnig', 'Wolkig', 'Regen', 'Starker Regen', 'Hagel', 'Sturm']
+        }
+    },
+    date = {
+        day: 1,
+        month: {
+            current: 0,
+            count: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+            names: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+        },
+        year: 1950
+    },
 
     speed,
 

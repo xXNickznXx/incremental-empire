@@ -51,9 +51,9 @@ $("#btn_save").click(function () {
         $horse: horse,
         $supplies_max: supplies_max,
 
-        $villager: villager,
-        $villager_unused: villager_unused,
-        $villager_max: villager_max,
+        $villager: villager.count,
+        $villager_unused: villager.unused,
+        $villager_max: villager.max,
 
         $gatherer: gatherer,
         $lumberjack: lumberjack,    $wood_bonus: wood_bonus,

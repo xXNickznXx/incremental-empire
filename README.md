@@ -3,6 +3,20 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 
 `Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 
+
+| ToDo | Progress | Done | Optional |
+| --- | --- | --- | --- |
+|Handeln|Abbruchmöglichkeit für Aufträge| ```Bewohnerverwaltung``` |Wetter (Ausblick)|
+|Reisen||Ressourcenregulierung|Weitere Optionen|
+|Events||Gebäude bauen und verbessern|Tier Mechaniken|
+|||Optionen|Ruf Me|
+|||Manuelles Speichern und Laden||
+|||Mobileansicht||
+|||Crafting||
+|||Handeln||
+|||Wetter||
+
+
 ## Features:
 ### Bewohnerverwaltung
 ### Ressourcenregulierung
@@ -10,13 +24,20 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 ### Optionen
 - Geschwindigkeit
 - Light/Dark-Theme
-### Speichern und Laden Funktion
+### Manuelles Speichern und Laden
 ### Mobileansicht
 ### Crafting
 ### Handeln
 - mit lokalem Händler
+### Wetter
+- Tag 1
 
 ## Features in Arbeit:
+### Abbruchmöglichkeit für Aufträge
+- In der ersten Hälfte volle Rückgabe
+- Danach halbe Rückgabe
+
+## Kommende Features:
 ### Handeln
 - mit Dörfern
 ### Reisen
@@ -58,17 +79,17 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
   - Bewohner sterben
   - eingedämmt
 
-## Kommende Features:
-### Abbruchmöglichkeit für Aufträge
-### Buttonfunktion bei Jobs
-- Die selbe Funktion wie bei Herstellen
 ## Optionale Features
+### Wetter (Ausblick)
+- Tag 2,3,4
 ### Weitere Optionen
 - Schwierigkeit
 - Automatisches Speichern
   - Cookie
   - Zielordner
 ### Tier Mechaniken
-- Neue Pferde Meckanik
+- Verbesserte Pferde Mechanik
 - Schafe Mechanik
 ### Ruf Mechanik
+- Besserer Ruf = Vorteile
+- Schlechterer Ruf = Nachteile

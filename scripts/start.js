@@ -39,9 +39,9 @@ $("#btn_start").click(function () {
                 horse = contents.$horse;
                 supplies_max = contents.$supplies_max;
 
-                villager = contents.$villager;
-                villager_unused = contents.$villager_unused;
-                villager_max = contents.$villager_max;
+                villager.count = contents.$villager;
+                villager.unused = contents.$villager_unused;
+                villager.max = contents.$villager_max;
 
                 gatherer = contents.$gatherer;
                 lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
@@ -83,14 +83,14 @@ $("#btn_start").click(function () {
         $("#bottom").show();
         $("#start").hide();
         
-        setTimeout(function () {show_related();}, 30);
+        setTimeout(function () {show_related();}, 50);
         
         gen_market();
 
-        refr = setInterval(refresh, 100);
-        supp_prod = setInterval(supplie_prod, speed * 5);
-        new_vil = setInterval(new_villagers, speed * 30);
-        temperature();
-        temperat = setInterval(temperature, speed * 30);
+        interval_refr = setInterval(refresh, 100);
+        interval_supp_prod = setInterval(supplie_prod, speed * 5);
+        interval_new_vil = setInterval(new_villagers, speed * 30);
+        setTimeout(function () {weath();}, 50);
+        interval_weath = setInterval(weath, speed * 180);
     }
 });

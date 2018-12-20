@@ -12,6 +12,10 @@
     padding: 0;
 }
 /* Allgemein */
+p {
+    box-sizing: border-box;
+    line-height: 24px;
+}
 button {
     border: 1px solid var(--fg);
 }
@@ -24,8 +28,8 @@ button:disabled {
     cursor: not-allowed;
 }
 .num {
-    border: 1px solid var(--fg);
-    height: 22px;
+    //border: 1px solid var(--fg);
+    height: 24px;
     text-align: right;
     width: 30px;
 }
@@ -68,8 +72,8 @@ button .tooltip:hover {
 body {
     background: var(--bg);
     margin: auto;
-    max-width: 900px;
-    min-width: 800px;
+    max-width: 1000px;
+    min-width: 600px;
 }
 /* Start */
 .start {
@@ -106,7 +110,7 @@ h1 {
 /* Left */
 .left {
     float: left;
-    width: 70%;
+    width: calc(100% - 255px);
 }
 .nav {
     background: var(--bg2);
@@ -123,7 +127,6 @@ h1 {
 }
 .btn_content {
     height: 32px;
-    padding: 5px;
     width: 130px;
 }
 .btn_craft {
@@ -172,17 +175,22 @@ h1 {
 .tasks, .phase {
     background: var(--bg2);
     float: left;
-    height: 65px;
+    height: 70px;
     padding: 5px;
     width: calc((100% - 25px) / 2);
+}
+.tasks td:first-child {
+	cursor: pointer;
 }
 .phase {
     margin-left: 5px;
 }
-.phase p {
-    border: 1px solid var(--fg);
-    float: left;
-    width: 40px;
+.phase div {
+    margin-left: 5px;
+}
+.phase div:first-child {
+    border: solid var(--bg);
+    border-width: 0 5px;
 }
 .left table {
     width: 100%;
@@ -196,14 +204,14 @@ h1 {
     height: 995px;
     margin-left: 5px;
     overflow: auto;
-    width: calc(30% - 5px);
+    width: 250px;
 }
 .supplies, .items, .villagers, .jobs {
     background: var(--bg2);
     margin-top: 5px;
     padding: 5px;
 }
-.right .row, .right p {
+.row, .right p {
     height: 24px;
 }
 .row p:first-child {
@@ -212,9 +220,14 @@ h1 {
 .row p:nth-child(even) {
     float: right;
 }
-.jobs .row div:first-child {
+.jobs .row div > * {
     float: left;
-    width: calc(100% - 55px);
+}
+.jobs .row p:nth-child(even) {
+    float: left;
+}
+.jobs .row div:first-child {
+    width: calc(100% - 78px);
 }
 .jobs .row div:last-child {
     float: right;
@@ -231,6 +244,15 @@ h1 {
     height: 280px;
     overflow: hidden;
     padding: 5px;
+    position: relative;
+}
+.msg .overlay {
+    background: linear-gradient(transparent, var(--bg2));
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
 }
 .msg p {
     height: 24px;

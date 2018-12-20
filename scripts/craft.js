@@ -18,30 +18,45 @@ $("#btn_ranged").click(function () {
 $("#btn_gifts").click(function () {
     $("#content_gifts").slideToggle();
 });
+var brewer_half,
+	crafter_half;
 
 function brew_medicine() {
-    $("#task .medicine.time").text(secondsTommss(brewer.toFixed(1)));
-    brewer -= 0.1;
+    $("#task .medicine .time").text(secondsTommss(brewer));
+	brewer = Number((brewer - 0.1).toFixed(1));
     if (brewer < 0) {
+		food -= (prod_medicine.costs.food * prod_medicine.count) / 2;
+		stone -= (prod_medicine.costs.stone * prod_medicine.count) / 2;
+		cloth -= (prod_medicine.costs.cloth * prod_medicine.count) / 2;
         medicine += prod_medicine.count;
-        clearInterval(brew);
+        clearInterval(interval_brew);
         slot_brew = false;
         msg.prepend("<p>Medizin wurde fertiggestellt.</p>");
         check_msg();
         $("#task .medicine").remove();
-    }
+    } else if (brewer === brewer_half) {
+		food -= (prod_medicine.costs.food * prod_medicine.count) / 2;
+		stone -= (prod_medicine.costs.stone * prod_medicine.count) / 2;
+		cloth -= (prod_medicine.costs.cloth * prod_medicine.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_medicine", function () {
-    task.append(`<tr>
-                <td class='medicine'>Herstellung von Medizin</td>
-                <td class='medicine time'></td>
+    task.append(`<tr class='medicine'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Medizin</td>
+                <td class='time'></td>
                 </tr>`);
-    food -= prod_medicine.costs.food * prod_medicine.count;
-    stone -= prod_medicine.costs.stone * prod_medicine.count;
-    cloth -= prod_medicine.costs.cloth * prod_medicine.count;
     slot_brew = true;
-    brewer = prod_medicine.curr_time;
-    brew = setInterval(brew_medicine, speed / 10);
+    brewer = prod_medicine.curr_time * (speed / 1000);
+	brewer_half = brewer / 2;
+    interval_brew = setInterval(brew_medicine, 100);
+});
+$("#task").on("click", ".medicine td:first-child", function () {
+	clearInterval(interval_brew);
+	slot_brew = false;
+	msg.prepend("<p>Medizin wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .medicine").remove();
 });
 var medicine_p,
     medicine_m,
@@ -71,30 +86,45 @@ $("#craft").on("mousedown", "#dwn_medicine", function () {
 });
 
 function brew_poison() {
-    $("#task .poison.time").text(secondsTommss(brewer.toFixed(1)));
-    brewer -= 0.1;
+    $("#task .poison .time").text(secondsTommss(brewer));
+    brewer = Number((brewer - 0.1).toFixed(1));
     if (brewer < 0) {
+		food -= (prod_poison.costs.food * prod_poison.count) / 2;
+		stone -= (prod_poison.costs.stone * prod_poison.count) / 2;
+		cloth -= (prod_poison.costs.cloth * prod_poison.count) / 2;
+		coal -= (prod_poison.costs.coal * prod_poison.count) / 2;
+		iron -= (prod_poison.costs.iron * prod_poison.count) / 2;
         poison += prod_poison.count;
-        clearInterval(brew);
+        clearInterval(interval_brew);
         slot_brew = false;
         msg.prepend("<p>Gift wurde fertiggestellt.</p>");
         check_msg();
         $("#task .poison").remove();
-    }
+    } else if (brewer === brewer_half) {
+		food -= (prod_poison.costs.food * prod_poison.count) / 2;
+		stone -= (prod_poison.costs.stone * prod_poison.count) / 2;
+		cloth -= (prod_poison.costs.cloth * prod_poison.count) / 2;
+		coal -= (prod_poison.costs.coal * prod_poison.count) / 2;
+		iron -= (prod_poison.costs.iron * prod_poison.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_poison", function () {
-    task.append(`<tr>
-                <td class='poison'>Herstellung von Gift</td>
-                <td class='poison time'></td>
+    task.append(`<tr class='poison'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Gift</td>
+                <td class='time'></td>
                 </tr>`);
-    food -= prod_poison.costs.food * prod_poison.count;
-    stone -= prod_poison.costs.stone * prod_poison.count;
-    cloth -= prod_poison.costs.cloth * prod_poison.count;
-    coal -= prod_poison.costs.coal * prod_poison.count;
-    iron -= prod_poison.costs.iron * prod_poison.count;
     slot_brew = true;
-    brewer = prod_poison.curr_time;
-    brew = setInterval(brew_poison, speed / 10);
+    brewer = prod_poison.curr_time * (speed / 1000);
+	brewer_half = brewer / 2;
+    interval_brew = setInterval(brew_poison, 100);
+});
+$("#task").on("click", ".poison td:first-child", function () {
+	clearInterval(interval_brew);
+	slot_brew = false;
+	msg.prepend("<p>Gift wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .poison").remove();
 });
 var poison_p,
     poison_m,
@@ -124,26 +154,37 @@ $("#craft").on("mousedown", "#dwn_poison", function () {
 });
 
 function craft_leatherarmor() {
-    $("#task .leatherarmor.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .leatherarmor .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		leather -= (prod_leatherarmor.costs.leather * prod_leatherarmor.count) / 2;
         leatherarmor += prod_leatherarmor.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Lederrüstung wurde fertiggestellt.</p>");
         check_msg();
         $("#task .leatherarmor").remove();
-    }
+    } else if (crafter === crafter_half) {
+		leather -= (prod_leatherarmor.costs.leather * prod_leatherarmor.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_leatherarmor", function () {
-    task.append(`<tr>
-                <td class='leatherarmor'>Herstellung von Lederrüstung</td>
-                <td class='leatherarmor time'></td>
+    task.append(`<tr class='leatherarmor'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Lederrüstung</td>
+                <td class='time'></td>
                 </tr>`);
-    leather -= prod_leatherarmor.costs.leather * prod_leatherarmor.count;
     slot_craft = true;
-    crafter = prod_leatherarmor.curr_time;
-    craft = setInterval(craft_leatherarmor, speed / 10);
+    crafter = prod_leatherarmor.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_leatherarmor, 100);
+});
+$("#task").on("click", ".leatherarmor td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Lederrüstung wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .leatherarmor").remove();
 });
 var leatherarmor_p,
     leatherarmor_m,
@@ -173,26 +214,37 @@ $("#craft").on("mousedown", "#dwn_leatherarmor", function () {
 });
 
 function craft_ironarmor() {
-    $("#task .ironarmor.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .ironarmor .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		iron -= (prod_ironarmor.costs.iron * prod_ironarmor.count) / 2;
         ironarmor += prod_ironarmor.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Eisenrüstung wurde fertiggestellt.</p>");
         check_msg();
         $("#task .ironarmor").remove();
-    }
+    } else if (crafter === crafter_half) {
+		iron -= (prod_ironarmor.costs.iron * prod_ironarmor.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_ironarmor", function () {
-    task.append(`<tr>
-                <td class='ironarmor'>Herstellung von Eisenrüstung</td>
-                <td class='ironarmor time'></td>
+    task.append(`<tr class='ironarmor'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Eisenrüstung</td>
+                <td class='time'></td>
                 </tr>`);
-    iron -= prod_ironarmor.costs.iron * prod_ironarmor.count;
     slot_craft = true;
-    crafter = prod_ironarmor.curr_time;
-    craft = setInterval(craft_ironarmor, speed / 10);
+    crafter = prod_ironarmor.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_ironarmor, 100);
+});
+$("#task").on("click", ".ironarmor td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Eisenrüstung wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .ironarmor").remove();
 });
 var ironarmor_p,
     ironarmor_m,
@@ -222,27 +274,39 @@ $("#craft").on("mousedown", "#dwn_ironarmor", function () {
 });
 
 function craft_axe() {
-    $("#task .axe.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .axe .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (rod_axe.costs.wood * prod_axe.count) / 2;
+		iron -= (prod_axe.costs.iron * prod_axe.count) / 2;
         axe += prod_axe.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Axt wurde fertiggestellt.</p>");
         check_msg();
         $("#task .axe").remove();
-    }
+    } else if (crafter === crafter_half) {
+		wood -= (rod_axe.costs.wood * prod_axe.count) / 2;
+		iron -= (prod_axe.costs.iron * prod_axe.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_axe", function () {
-    task.append(`<tr>
-                <td class='axe'>Herstellung von Axt</td>
-                <td class='axe time'></td>
+    task.append(`<tr class='axe'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Axt</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_axe.costs.wood * prod_axe.count;
-    iron -= prod_axe.costs.iron * prod_axe.count;
     slot_craft = true;
-    crafter = prod_axe.curr_time;
-    craft = setInterval(craft_axe, speed / 10);
+    crafter = prod_axe.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_axe, 100);
+});
+$("#task").on("click", ".axe td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Axt wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .axe").remove();
 });
 var axe_p,
     axe_m,
@@ -272,27 +336,39 @@ $("#craft").on("mousedown", "#dwn_axe", function () {
 });
 
 function craft_sword() {
-    $("#task .sword.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .sword .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (prod_sword.costs.wood * prod_sword.count) / 2;
+		iron -= (prod_sword.costs.iron * prod_sword.count) / 2;
         sword += prod_sword.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Schwert wurde fertiggestellt.</p>");
         check_msg();
         $("#task .sword").remove();
-    }
+    } else if (crafter === crafter_half) {
+		wood -= (prod_sword.costs.wood * prod_sword.count) / 2;
+		iron -= (prod_sword.costs.iron * prod_sword.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_sword", function () {
-    task.append(`<tr>
-                <td class='sword'>Herstellung von Schwert</td>
-                <td class='sword time'></td>
+    task.append(`<tr class='sword'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Schwert</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_sword.costs.wood * prod_sword.count;
-    iron -= prod_sword.costs.iron * prod_sword.count;
     slot_craft = true;
-    crafter = prod_sword.curr_time;
-    craft = setInterval(craft_sword, speed / 10);
+    crafter = prod_sword.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_sword, 100);
+});
+$("#task").on("click", ".sword td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Schwert wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .sword").remove();
 });
 var sword_p,
     sword_m,
@@ -322,11 +398,13 @@ $("#craft").on("mousedown", "#dwn_sword", function () {
 });
 
 function craft_morningstar() {
-    $("#task .morningstar.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .morningstar .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (prod_morningstar.costs.wood * prod_morningstar.count) / 2;
+		iron -= (prod_morningstar.costs.iron * prod_morningstar.count) / 2;
         morningstar += prod_morningstar.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Morgenstern wurde fertiggestellt.</p>");
         check_msg();
@@ -334,15 +412,22 @@ function craft_morningstar() {
     }
 }
 $("#craft").on("click", "#btn_morningstar", function () {
-    task.append(`<tr>
-                <td class='morningstar'>Herstellung von Morgenstern</td>
-                <td class='morningstar time'></td>
+    task.append(`<tr class='morningstar'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Morgenstern</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_morningstar.costs.wood * prod_morningstar.count;
-    iron -= prod_morningstar.costs.iron * prod_morningstar.count;
     slot_craft = true;
-    crafter = prod_morningstar.curr_time;
-    craft = setInterval(craft_morningstar, speed / 10);
+    crafter = prod_morningstar.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_morningstar, 100);
+});
+$("#task").on("click", ".morningstar td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Morgenstern wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .morningstar").remove();
 });
 var morningstar_p,
     morningstar_m,
@@ -372,27 +457,39 @@ $("#craft").on("mousedown", "#dwn_morningstar", function () {
 });
 
 function craft_shortbow() {
-    $("#task .shortbow.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .shortbow .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (prod_shortbow.costs.wood * prod_shortbow.count) / 2;
+		iron -= (prod_shortbow.costs.iron * prod_shortbow.count) / 2;
         shortbow += prod_shortbow.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Kurzbogen wurde fertiggestellt.</p>");
         check_msg();
         $("#task .shortbow").remove();
-    }
+    } else if (crafter === crafter_half) {
+		wood -= (prod_shortbow.costs.wood * prod_shortbow.count) / 2;
+		iron -= (prod_shortbow.costs.iron * prod_shortbow.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_shortbow", function () {
-    task.append(`<tr>
-                <td class='shortbow'>Herstellung von Kurzbogen</td>
-                <td class='shortbow time'></td>
+    task.append(`<tr class='shortbow'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Kurzbogen</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_shortbow.costs.wood * prod_shortbow.count;
-    iron -= prod_shortbow.costs.iron * prod_shortbow.count;
     slot_craft = true;
-    crafter = prod_shortbow.curr_time;
-    craft = setInterval(craft_shortbow, speed / 10);
+    crafter = prod_shortbow.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_shortbow, 100);
+});
+$("#task").on("click", ".shortbow td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Kurzbogen wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .shortbow").remove();
 });
 var shortbow_p,
     shortbow_m,
@@ -422,27 +519,39 @@ $("#craft").on("setTimeout", "#dwn_shortbow", function () {
 });
 
 function craft_longbow() {
-    $("#task .longbow.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .longbow .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (prod_longbow.costs.wood * prod_longbow.count) / 2;
+		iron -= (prod_longbow.costs.iron * prod_longbow.count) / 2;
         longbow += prod_longbow.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Langbogen wurde fertiggestellt.</p>");
         check_msg();
         $("#task .longbow").remove();
-    }
+    } else if (crafter === crafter_half) {
+		wood -= (prod_longbow.costs.wood * prod_longbow.count) / 2;
+		iron -= (prod_longbow.costs.iron * prod_longbow.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_longbow", function () {
-    task.append(`<tr>
-                <td class='longbow'>Herstellung von Langbogen</td>
-                <td class='longbow time'></td>
+    task.append(`<tr class='longbow'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Langbogen</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_longbow.costs.wood * prod_longbow.count;
-    iron -= prod_longbow.costs.iron * prod_longbow.count;
     slot_craft = true;
-    crafter = prod_longbow.curr_time;
-    craft = setInterval(craft_longbow, speed / 10);
+    crafter = prod_longbow.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_longbow, 100);
+});
+$("#task").on("click", ".longbow td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Langbogen wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .longbow").remove();
 });
 var longbow_p,
     longbow_m,
@@ -472,27 +581,39 @@ $("#craft").on("mousedown", "#dwn_longbow", function () {
 });
 
 function craft_crossbow() {
-    $("#task .crossbow.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .crossbow .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		wood -= (prod_crossbow.costs.wood * prod_crossbow.count) / 2;
+		iron -= (prod_crossbow.costs.iron * prod_crossbow.count) / 2;
         crossbow += prod_crossbow.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Armbrust wurde fertiggestellt.</p>");
         check_msg();
         $("#task .crossbow").remove();
-    }
+    } else if (crafter === crafter_half) {
+		wood -= (prod_crossbow.costs.wood * prod_crossbow.count) / 2;
+		iron -= (prod_crossbow.costs.iron * prod_crossbow.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_crossbow", function () {
-    task.append(`<tr>
-                <td class='crossbow'>Herstellung von Armbrust</td>
-                <td class='crossbow time'></td>
+    task.append(`<tr class='crossbow'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Armbrust</td>
+                <td class='time'></td>
                 </tr>`);
-    wood -= prod_crossbow.costs.wood * prod_crossbow.count;
-    iron -= prod_crossbow.costs.iron * prod_crossbow.count;
     slot_craft = true;
-    crafter = prod_crossbow.curr_time;
-    craft = setInterval(craft_crossbow, speed / 10);
+    crafter = prod_crossbow.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_crossbow, 100);
+});
+$("#task").on("click", ".crossbow td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Armbrust wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .crossbow").remove();
 });
 var crossbow_p,
     crossbow_m,
@@ -522,31 +643,47 @@ $("#craft").on("mousedown", "#dwn_crossbow", function () {
 });
 
 function craft_tradegift() {
-    $("#task .tradegift.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .tradegift .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		food -= (prod_tradegift.costs.food * prod_tradegift.count) / 2;
+		wood -= (prod_tradegift.costs.wood * prod_tradegift.count) / 2;
+		leather -= (prod_tradegift.costs.leather * prod_tradegift.count) / 2;
+		cloth -= (prod_tradegift.costs.cloth * prod_tradegift.count) / 2;
+		iron -= (prod_tradegift.costs.iron * prod_tradegift.count) / 2;
+		clothes -= (prod_tradegift.costs.clothes * prod_tradegift.count) / 2;
         tradegift += prod_tradegift.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Handelsgeschenk wurde fertiggestellt.</p>");
         check_msg();
         $("#task .tradegift").remove();
-    }
+    } else if (crafter === crafter_half) {
+		food -= (prod_tradegift.costs.food * prod_tradegift.count) / 2;
+		wood -= (prod_tradegift.costs.wood * prod_tradegift.count) / 2;
+		leather -= (prod_tradegift.costs.leather * prod_tradegift.count) / 2;
+		cloth -= (prod_tradegift.costs.cloth * prod_tradegift.count) / 2;
+		iron -= (prod_tradegift.costs.iron * prod_tradegift.count) / 2;
+		clothes -= (prod_tradegift.costs.clothes * prod_tradegift.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_tradegift", function () {
-    task.append(`<tr>
-                <td class='tradegift'>Herstellung von Handelsgeschenk</td>
-                <td class='tradegift time'></td>
+    task.append(`<tr class='tradegift'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Handelsgeschenk</td>
+                <td class='time'></td>
                 </tr>`);
-    food -= prod_tradegift.costs.food * prod_tradegift.count;
-    wood -= prod_tradegift.costs.wood * prod_tradegift.count;
-    leather -= prod_tradegift.costs.leather * prod_tradegift.count;
-    cloth -= prod_tradegift.costs.cloth * prod_tradegift.count;
-    iron -= prod_tradegift.costs.iron * prod_tradegift.count;
-    clothes -= prod_tradegift.costs.clothes * prod_tradegift.count;
     slot_craft = true;
-    crafter = prod_tradegift.curr_time;
-    craft = setInterval(craft_tradegift, speed / 10);
+    crafter = prod_tradegift.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_tradegift, 100);
+});
+$("#task").on("click", ".tradegift td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Handelsgeschenk wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .tradegift").remove();
 });
 var tradegift_p,
     tradegift_m,
@@ -576,31 +713,47 @@ $("#craft").on("mousedown", "#dwn_tradegift", function () {
 });
 
 function craft_peacegift() {
-    $("#task .peacegift.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .peacegift .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		food -= (prod_peacegift.costs.food * prod_peacegift.count) / 2;
+		wood -= (prod_peacegift.costs.wood * prod_peacegift.count) / 2;
+		leather -= (prod_peacegift.costs.leather * prod_peacegift.count) / 2;
+		cloth -= (prod_peacegift.costs.cloth * prod_peacegift.count) / 2;
+		iron -= (prod_peacegift.costs.iron * prod_peacegift.count) / 2;
+		clothes -= (prod_peacegift.costs.clothes * prod_peacegift.count) / 2;
         peacegift += prod_peacegift.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Friedensgeschenk wurde fertiggestellt.</p>");
         check_msg();
         $("#task .peacegift").remove();
-    }
+    } else if (crafter === crafter_half) {
+		food -= (prod_peacegift.costs.food * prod_peacegift.count) / 2;
+		wood -= (prod_peacegift.costs.wood * prod_peacegift.count) / 2;
+		leather -= (prod_peacegift.costs.leather * prod_peacegift.count) / 2;
+		cloth -= (prod_peacegift.costs.cloth * prod_peacegift.count) / 2;
+		iron -= (prod_peacegift.costs.iron * prod_peacegift.count) / 2;
+		clothes -= (prod_peacegift.costs.clothes * prod_peacegift.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_peacegift", function () {
-    task.append(`<tr>
-                <td class='peacegift'>Herstellung von Friedensgeschenk</td>
-                <td class='peacegift time'></td>
+    task.append(`<tr class='peacegift'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Friedensgeschenk</td>
+                <td class='time'></td>
                 </tr>`);
-    food -= prod_peacegift.costs.food * prod_peacegift.count;
-    wood -= prod_peacegift.costs.wood * prod_peacegift.count;
-    leather -= prod_peacegift.costs.leather * prod_peacegift.count;
-    cloth -= prod_peacegift.costs.cloth * prod_peacegift.count;
-    iron -= prod_peacegift.costs.iron * prod_peacegift.count;
-    clothes -= prod_peacegift.costs.clothes * prod_peacegift.count;
     slot_craft = true;
-    crafter = prod_peacegift.curr_time;
-    craft = setInterval(craft_peacegift, speed / 10);
+    crafter = prod_peacegift.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_peacegift, 100);
+});
+$("#task").on("click", ".peacegift td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Friedensgeschenk wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .peacegift").remove();
 });
 var peacegift_p,
     peacegift_m,
@@ -631,32 +784,49 @@ $("#craft").on("mousedown", "#dwn_peacegift", function () {
 });
 
 function craft_poisongift() {
-    $("#task .poisongift.time").text(secondsTommss(crafter.toFixed(1)));
-    crafter -= 0.1;
+    $("#task .poisongift .time").text(secondsTommss(crafter));
+    crafter = Number((crafter - 0.1).toFixed(1));
     if (crafter < 0) {
+		food -= (prod_poisongift.costs.food * prod_poisongift.count) / 2;
+		wood -= (prod_poisongift.costs.wood * prod_poisongift.count) / 2;
+		leather -= (prod_poisongift.costs.leather * prod_poisongift.count) / 2;
+		cloth -= (prod_poisongift.costs.cloth * prod_poisongift.count) / 2;
+		iron -= (prod_poisongift.costs.iron * prod_poisongift.count) / 2;
+		clothes -= (prod_poisongift.costs.clothes * prod_poisongift.count) / 2;
+		poison -= (prod_poisongift.costs.poison * prod_poisongift.count) / 2;
         poisongift += prod_poisongift.count;
-        clearInterval(craft);
+        clearInterval(interval_craft);
         slot_craft = false;
         msg.prepend("<p>Giftgeschenk wurde fertiggestellt.</p>");
         check_msg();
         $("#task .poisongift").remove();
-    }
+    } else if (crafter === crafter_half) {
+		food -= (prod_poisongift.costs.food * prod_poisongift.count) / 2;
+		wood -= (prod_poisongift.costs.wood * prod_poisongift.count) / 2;
+		leather -= (prod_poisongift.costs.leather * prod_poisongift.count) / 2;
+		cloth -= (prod_poisongift.costs.cloth * prod_poisongift.count) / 2;
+		iron -= (prod_poisongift.costs.iron * prod_poisongift.count) / 2;
+		clothes -= (prod_poisongift.costs.clothes * prod_poisongift.count) / 2;
+		poison -= (prod_poisongift.costs.poison * prod_poisongift.count) / 2;
+	}
 }
 $("#craft").on("click", "#btn_poisongift", function () {
-    task.append(`<tr>
-                <td class='poisongift'>Herstellung von Giftgeschenk</td>
-                <td class='poisongift time'></td>
+    task.append(`<tr class='poisongift'>
+				<td>&#x2716;</td>
+                <td>Herstellung von Giftgeschenk</td>
+                <td class='time'></td>
                 </tr>`);
-    food -= prod_poisongift.costs.food * prod_poisongift.count;
-    wood -= prod_poisongift.costs.wood * prod_poisongift.count;
-    leather -= prod_poisongift.costs.leather * prod_poisongift.count;
-    cloth -= prod_poisongift.costs.cloth * prod_poisongift.count;
-    iron -= prod_poisongift.costs.iron * prod_poisongift.count;
-    clothes -= prod_poisongift.costs.clothes * prod_poisongift.count;
-    poison -= prod_poisongift.costs.poison * prod_poisongift.count;
     slot_craft = true;
-    crafter = prod_poisongift.curr_time;
-    craft = setInterval(craft_poisongift, speed / 10);
+    crafter = prod_poisongift.curr_time * (speed / 1000);
+	crafter_half = crafter / 2;
+    interval_craft = setInterval(craft_poisongift, 100);
+});
+$("#task").on("click", ".poisongift td:first-child", function () {
+	clearInterval(interval_craft);
+	slot_craft = false;
+	msg.prepend("<p>Giftgeschenk wurde abgebrochen.</p>");
+	check_msg();
+	$("#task .poisongift").remove();
 });
 var poisongift_p,
     poisongift_m,
