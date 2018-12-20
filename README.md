@@ -6,10 +6,10 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 
 | ToDo | Progress | Done | Optional |
 | --- | --- | --- | --- |
-|Handeln|Abbruchmöglichkeit für Aufträge| ```Bewohnerverwaltung``` |Wetter (Ausblick)|
+|Handeln|| Bewohnerverwaltung |Wetter (Ausblick)|
 |Reisen||Ressourcenregulierung|Weitere Optionen|
 |Events||Gebäude bauen und verbessern|Tier Mechaniken|
-|||Optionen|Ruf Me|
+|||Optionen|Ruf Mechanik|
 |||Manuelles Speichern und Laden||
 |||Mobileansicht||
 |||Crafting||
@@ -33,9 +33,6 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 - Tag 1
 
 ## Features in Arbeit:
-### Abbruchmöglichkeit für Aufträge
-- In der ersten Hälfte volle Rückgabe
-- Danach halbe Rückgabe
 
 ## Kommende Features:
 ### Handeln
