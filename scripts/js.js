@@ -26,8 +26,17 @@ function check_msg() {
 }
 /* Check Weather count */
 function check_weather() {
-    while ($("#phase div").length > 1) {
+    while ($("#phase div").length > 3) {
         $("#phase div").first().remove();
+		
+		weather.season.current.shift();
+		weather.tempr.current.shift();
+		weather.tempr.min.shift();
+		weather.tempr.max.shift();
+		weather.type.current.shift();
+		date.day.shift();
+		date.month.current.shift();
+		date.year.shift();
     }
 }
 

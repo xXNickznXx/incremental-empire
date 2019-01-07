@@ -187,6 +187,7 @@ h1 {
 }
 .phase div {
     margin-left: 5px;
+	padding: 0 5px;
 }
 .phase div:first-child {
     border: solid var(--bg);
@@ -304,41 +305,28 @@ input:checked + .slider:before {
         min-width: unset;
     }
     .header {
-        border-bottom: 1px solid var(--fg);
         height: 20px;
     }
     h1 {
         font-size: 20px;
     }
     .left {
-        float: unset;
         width: 100%;
     }
-    .nav {
-        border-bottom: 1px solid var(--fg);
-        margin: 0;
-    }
     .content {
-        border-bottom: 1px solid var(--fg);
         height: 210px;
-        margin: 0;
     }
     .tasks, .phase {
-        border-bottom: 1px solid var(--fg);
-        float: none;
         width: calc(100% - 10px);
     }
     .phase {
-        height: 15px;
-        margin: 0;
+        margin: 5px 0 0 0;
     }
     .btn_mobile {
         display: inline-block;
         width: 90% !important;
     }
     .right {
-        display: none;
-        float: unset;
         height: unset;
         margin-left: 0;
         width: 100%;
@@ -346,10 +334,7 @@ input:checked + .slider:before {
     .jobs .row div:first-child {
         width: calc(100% - 85px);
     }
-    .btn_dwn_up {
-        width: 40px;
-    }
-    .supplies, .villagers, .jobs, .left_bottom, .bottom {
+    .villagers, .jobs, .supplies, .items {
         margin-top: 0;
     }
     .msg {

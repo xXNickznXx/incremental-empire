@@ -647,27 +647,27 @@ var iecoin = 0,
 
     weather = {
         season: {
-            current: 0,
+            current: [0, 0, 0],
             names: ['Winter', 'Frühling', 'Sommer', 'Herbst']
         },
         tempr: {
-            current: 0,
-            min: -10,
-            max: 5
+            current: [0, 0, 0],
+            min: [-10, -10, -10],
+            max: [5, 5, 5]
         },
         type: {
-            current: 0,
-            names: ['Sonnig', 'Wolkig', 'Regen', 'Starker Regen', 'Hagel', 'Sturm']
+            current: [0, 0, 0],
+            names: ['Sonne', 'Wolken', 'Regen', 'Sturm', 'Hagel', 'Schnee']
         }
     },
     date = {
-        day: 1,
+        day: [1, 2, 3],
         month: {
-            current: 0,
+            current: [0, 0, 0],
             count: [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
             names: ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
         },
-        year: 1950
+        year: [1950, 1950, 1950]
     },
 
     speed,

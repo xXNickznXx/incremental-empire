@@ -91,6 +91,6 @@ $("#btn_start").click(function () {
         interval_supp_prod = setInterval(supplie_prod, speed * 5);
         interval_new_vil = setInterval(new_villagers, speed * 30);
         setTimeout(function () {weath();}, 50);
-        interval_weath = setInterval(weath, speed * 180);
+        interval_weath = setInterval(weath, speed * 10/*180*/);
     }
 });
