@@ -3,17 +3,17 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 
 `Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 
-| ToDo            | Progress | Done                      | Optional       |
-| --------------- | -------- | ------------------------- | -------------- |
-|Handeln          |          |Bewohnerverwaltung         |Weitere Optionen|
-|Reisen           |          |Ressourcenregulierung      |Tier Mechaniken |
-|Events           |          |Gebäude bauen & verbessern |Ruf Mechanik    |
-|Speichern & Laden|          |Optionen                   |                |
-|                 |          |Manuelles Speichern & Laden|                |
-|                 |          |Mobileansicht              |                |
-|                 |          |Crafting                   |                |
-|                 |          |Handeln                    |                |
-|                 |          |Wetter                     |                |
+| ToDo  | Progress | Done                      | Optional       |
+| ----- | -------- | ------------------------- | -------------- |
+|Handeln|          |Bewohnerverwaltung         |Weitere Optionen|
+|Reisen |          |Ressourcenregulierung      |Tier Mechaniken |
+|Events |          |Gebäude bauen & verbessern |Ruf Mechanik    |
+|       |          |Optionen                   |                |
+|       |          |Manuelles Speichern & Laden|                |
+|       |          |Mobileansicht              |                |
+|       |          |Crafting                   |                |
+|       |          |Handeln                    |                |
+|       |          |Wetter                     |                |
 
 ## Features:
 ### Bewohnerverwaltung
@@ -72,8 +72,6 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
-### Speichern & Laden
-- Vervollständigen
 
 ## Optionale Features
 ### Weitere Optionen

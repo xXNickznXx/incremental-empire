@@ -15,6 +15,7 @@ $("#btn_start").click(function () {
 
             reader.onload = function (e) {
                 var contents = JSON.parse(e.target.result);
+				iecoin = contents.$iecoin;
                 food = contents.$food;
                 wood = contents.$wood;
                 stone = contents.$stone;
@@ -38,10 +39,10 @@ $("#btn_start").click(function () {
                 poisongift = contents.$poisongift;
                 horse = contents.$horse;
                 supplies_max = contents.$supplies_max;
-
-                villager.count = contents.$villager;
-                villager.unused = contents.$villager_unused;
-                villager.max = contents.$villager_max;
+				
+				a_market = contents.$a_market;
+				
+				villager = contents.$villager;
 
                 gatherer = contents.$gatherer;
                 lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
@@ -75,6 +76,15 @@ $("#btn_start").click(function () {
                 scoutpost.count = contents.$scoutpost;          scoutpost_up.count = contents.$scoutpost_up;
                 barracks.count = contents.$barracks;            barracks_up.count = contents.$barracks_up;
                 stable.count = contents.$stable;                stable_up.count = contents.$stable_up;
+				
+				
+				weather.season.current = contents.$weather_season;
+				weather.tempr = contents.$weather_tempr;
+				weather.type.current = contents.$weather_type;
+		
+				date.day = contents.$date_day;
+				date.month.current = contents.$date_month;
+				date.year = contents.$date_year;
             };
             reader.readAsText(file);
         }
@@ -83,9 +93,9 @@ $("#btn_start").click(function () {
         $("#bottom").show();
         $("#start").hide();
         
-        show_related();
-        gen_market();
-        weath();
+        setTimeout(function() {show_related();}, 50);
+        setTimeout(function() {gen_market();}, 50);
+        setTimeout(function() {weath();}, 50);
 
         interval_refr = setInterval(refresh, 100);
         interval_supp_prod = setInterval(supplie_prod, speed * 5);

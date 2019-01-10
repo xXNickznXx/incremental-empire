@@ -27,6 +27,7 @@ if (getCookie("dark") === "true") {
 
 $("#btn_save").click(function () {
     var saveFile = {
+		$iecoin: iecoin,
         $food: food,
         $wood: wood,
         $stone: stone,
@@ -50,10 +51,10 @@ $("#btn_save").click(function () {
         $poisongift: poisongift,
         $horse: horse,
         $supplies_max: supplies_max,
-
-        $villager: villager.count,
-        $villager_unused: villager.unused,
-        $villager_max: villager.max,
+		
+		$a_market: a_market,
+		
+		$villager: villager,
 
         $gatherer: gatherer,
         $lumberjack: lumberjack,    $wood_bonus: wood_bonus,
@@ -86,7 +87,15 @@ $("#btn_save").click(function () {
         $market: market.count,                $market_up: market_up.count,
         $scoutpost: scoutpost.count,          $scoutpost_up: scoutpost_up.count,
         $barracks: barracks.count,            $barracks_up: barracks_up.count,
-        $stable: stable.count,                $stable_up: stable_up.count
+        $stable: stable.count,                $stable_up: stable_up.count,
+		
+		$weather_season: weather.season.current,
+		$weather_tempr: weather.tempr,
+		$weather_type: weather.type.current,
+		
+		$date_day: date.day,
+		$date_month: date.month.current,
+		$date_year: date.year
     },
         saveJson = JSON.stringify(saveFile, undefined, 3),
         link = $("<a></a>"),
