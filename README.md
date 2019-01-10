@@ -3,34 +3,31 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
 
 `Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 
-
-| ToDo | Progress | Done | Optional |
-| --- | --- | --- | --- |
-|Handeln|| Bewohnerverwaltung |Wetter (Ausblick)|
-|Reisen||Ressourcenregulierung|Weitere Optionen|
-|Events||Gebäude bauen und verbessern|Tier Mechaniken|
-|||Optionen|Ruf Mechanik|
-|||Manuelles Speichern und Laden||
-|||Mobileansicht||
-|||Crafting||
-|||Handeln||
-|||Wetter||
-
+| ToDo            | Progress | Done                      | Optional       |
+| --------------- | -------- | ------------------------- | -------------- |
+|Handeln          |          |Bewohnerverwaltung         |Weitere Optionen|
+|Reisen           |          |Ressourcenregulierung      |Tier Mechaniken |
+|Events           |          |Gebäude bauen & verbessern |Ruf Mechanik    |
+|Speichern & Laden|          |Optionen                   |                |
+|                 |          |Manuelles Speichern & Laden|                |
+|                 |          |Mobileansicht              |                |
+|                 |          |Crafting                   |                |
+|                 |          |Handeln                    |                |
+|                 |          |Wetter                     |                |
 
 ## Features:
 ### Bewohnerverwaltung
 ### Ressourcenregulierung
-### Gebäude bauen und verbessern
+### Gebäude bauen & verbessern
 ### Optionen
 - Geschwindigkeit
 - Light/Dark-Theme
-### Manuelles Speichern und Laden
+### Manuelles Speichern & Laden
 ### Mobileansicht
 ### Crafting
 ### Handeln
 - mit lokalem Händler
 ### Wetter
-- Tag 1
 
 ## Features in Arbeit:
 
@@ -75,10 +72,10 @@ Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
   - ausgebrochen
   - Bewohner sterben
   - eingedämmt
+### Speichern & Laden
+- Vervollständigen
 
 ## Optionale Features
-### Wetter (Ausblick)
-- Tag 2,3,4
 ### Weitere Optionen
 - Schwierigkeit
 - Automatisches Speichern

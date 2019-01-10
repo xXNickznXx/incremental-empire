@@ -651,9 +651,9 @@ var iecoin = 0,
             names: ['Winter', 'Frühling', 'Sommer', 'Herbst']
         },
         tempr: {
-            current: [0, 0, 0],
-            min: [-10, -10, -10],
-            max: [5, 5, 5]
+            current: 0,
+            min: -10,
+            max: 5
         },
         type: {
             current: [0, 0, 0],
