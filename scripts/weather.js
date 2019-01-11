@@ -1,4 +1,4 @@
-function weath() {
+function show_weather() {
 	for (var y = 0; y < 3; y++) {
 		$("#phase").append(`<div style="float: left">
 								<p>` + date.day[y] + `. ` + date.month.names[date.month.current[y]] + ` ` + date.year[y] + `</p>
@@ -7,7 +7,9 @@ function weath() {
 		`</div>`);
 		check_weather();
 	}
-	
+}
+
+function weath() {	
 	var w_min = weather.tempr.min,
 		w_max = weather.tempr.max;
 	weather.tempr.current = Math.floor(Math.random() * (w_max - w_min + 1) + w_min);
@@ -79,4 +81,5 @@ function weath() {
 		weather.season.current.shift();
 		weather.season.current[x] = weather.season.current[x-1];
 	}
+	show_weather();
 }

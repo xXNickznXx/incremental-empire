@@ -95,11 +95,11 @@ $("#btn_start").click(function () {
         
         setTimeout(function() {show_related();}, 50);
         setTimeout(function() {gen_market();}, 50);
-        setTimeout(function() {weath();}, 50);
+        setTimeout(function() {show_weather();}, 50);
 
         interval_refr = setInterval(refresh, 100);
         interval_supp_prod = setInterval(supplie_prod, speed * 5);
         interval_new_vil = setInterval(new_villagers, speed * 30);
-        interval_weath = setInterval(weath, speed * 120);
+        interval_weath = setInterval(weath, speed * 3/*120*/);
     }
 });
