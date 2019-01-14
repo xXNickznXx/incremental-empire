@@ -73,7 +73,7 @@ body {
     background: var(--bg);
     margin: auto;
     max-width: 1000px;
-    min-width: 600px;
+    min-width: 800px;
 }
 /* Start */
 .start {
@@ -156,7 +156,7 @@ h1 {
 }
 .content {
     background: var(--bg2);
-    height: 500px;
+    height: calc(100vh - 412px);
     margin-top: 5px;
     overflow: auto;
     padding: 5px;
@@ -186,12 +186,10 @@ h1 {
     margin-left: 5px;
 }
 .phase div {
-    margin-left: 5px;
 	padding: 0 5px;
 }
 .phase div:first-child {
-    border: solid var(--bg);
-    border-width: 0 5px;
+    border-right: 5px solid var(--bg);
 }
 .left table {
     width: 100%;
@@ -202,7 +200,7 @@ h1 {
 /* Right */
 .right {
     float: left;
-    height: 995px;
+    height: calc(100vh - 50px);
     margin-left: 5px;
     overflow: auto;
     width: 250px;
@@ -242,7 +240,7 @@ h1 {
 }
 .msg {
     background: var(--bg2);
-    height: 280px;
+    height: 200px;
     overflow: hidden;
     padding: 5px;
     position: relative;

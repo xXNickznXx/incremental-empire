@@ -17,7 +17,7 @@ function secondsTommss(total) {
 
 /* Check Message count */
 function check_msg() {
-    while ($("#msg p").length > 12) {
+    while ($("#msg p").length > 9) {
         $("#msg p").last().remove();
     }
 }
@@ -38,6 +38,11 @@ function window_resize() {
         $("#right").appendTo("#main");
         $("#right").show();
     }
+	if (win.matches) {
+		$("#content").css({height: ""});
+	} else {
+		$("#content").css({height: "calc(100vh - 370px - " + $(".nav").outerHeight() + "px"});
+	}
 }
 
 /* Window resize */
