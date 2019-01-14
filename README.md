@@ -1,5 +1,5 @@
 # Incremental Empire
-Link zum [Spiel](https://nickweyermann.github.io/Incremental-Empire).
+Link zum [Spiel](https://xxnicksonxx.github.io/Incremental-Empire/).
 
 `Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.`
 

@@ -344,7 +344,7 @@ function build_alchemisthut() {
 		wood -= alchemisthut.costs.wood / 2;
 		stone -= alchemisthut.costs.stone / 2;
 		coal -= alchemisthut.costs.coal / 2;
-		coal -= alchemisthut.costs.iron / 2;
+		iron -= alchemisthut.costs.iron / 2;
         alchemisthut.count = true;
         show_related();
         clearInterval(interval_build);
@@ -356,7 +356,7 @@ function build_alchemisthut() {
 		wood -= alchemisthut.costs.wood / 2;
 		stone -= alchemisthut.costs.stone / 2;
 		coal -= alchemisthut.costs.coal / 2;
-		coal -= alchemisthut.costs.iron / 2;
+		iron -= alchemisthut.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_alchemisthut", function () {
@@ -385,7 +385,7 @@ function build_forge() {
 		wood -= forge.costs.wood / 2;
 		stone -= forge.costs.stone / 2;
 		coal -= forge.costs.coal / 2;
-		coal -= forge.costs.iron / 2;
+		iron -= forge.costs.iron / 2;
         forge.count = true;
         show_related();
         clearInterval(interval_build);
@@ -397,7 +397,7 @@ function build_forge() {
 		wood -= forge.costs.wood / 2;
 		stone -= forge.costs.stone / 2;
 		coal -= forge.costs.coal / 2;
-		coal -= forge.costs.iron / 2;
+		iron -= forge.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_forge", function () {
@@ -426,7 +426,7 @@ function build_market() {
 		wood -= market.costs.wood / 2;
 		stone -= market.costs.stone / 2;
 		coal -= market.costs.coal / 2;
-		coal -= market.costs.iron / 2;
+		iron -= market.costs.iron / 2;
         market.count = true;
         show_related();
         clearInterval(interval_build);
@@ -438,7 +438,7 @@ function build_market() {
 		wood -= market.costs.wood / 2;
 		stone -= market.costs.stone / 2;
 		coal -= market.costs.coal / 2;
-		coal -= market.costs.iron / 2;
+		iron -= market.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_market", function () {
@@ -467,7 +467,7 @@ function build_scoutpost() {
 		wood -= scoutpost.costs.wood / 2;
 		stone -= scoutpost.costs.stone / 2;
 		coal -= scoutpost.costs.coal / 2;
-		coal -= scoutpost.costs.iron / 2;
+		iron -= scoutpost.costs.iron / 2;
         scoutpost.count = true;
         show_related();
         clearInterval(interval_build);
@@ -479,7 +479,7 @@ function build_scoutpost() {
 		wood -= scoutpost.costs.wood / 2;
 		stone -= scoutpost.costs.stone / 2;
 		coal -= scoutpost.costs.coal / 2;
-		coal -= scoutpost.costs.iron / 2;
+		iron -= scoutpost.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_scoutpost", function () {
@@ -508,7 +508,7 @@ function build_barracks() {
 		wood -= barracks.costs.wood / 2;
 		stone -= barracks.costs.stone / 2;
 		coal -= barracks.costs.coal / 2;
-		coal -= barracks.costs.iron / 2;
+		iron -= barracks.costs.iron / 2;
         barracks.count = true;
         show_related();
         clearInterval(interval_build);
@@ -520,7 +520,7 @@ function build_barracks() {
 		wood -= barracks.costs.wood / 2;
 		stone -= barracks.costs.stone / 2;
 		coal -= barracks.costs.coal / 2;
-		coal -= barracks.costs.iron / 2;
+		iron -= barracks.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_barracks", function () {
@@ -549,7 +549,7 @@ function build_stable() {
 		wood -= stable.costs.wood / 2;
 		stone -= stable.costs.stone / 2;
 		coal -= stable.costs.coal / 2;
-		coal -= stable.costs.iron / 2;
+		iron -= stable.costs.iron / 2;
         stable.count = true;
         show_related();
         clearInterval(interval_build);
@@ -561,7 +561,7 @@ function build_stable() {
 		wood -= stable.costs.wood / 2;
 		stone -= stable.costs.stone / 2;
 		coal -= stable.costs.coal / 2;
-		coal -= stable.costs.iron / 2;
+		iron -= stable.costs.iron / 2;
 	}
 }
 $("#build").on("click", "#btn_stable", function () {
