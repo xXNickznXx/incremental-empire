@@ -1,5 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 var iecoin = 0,
     food = 0,
     wood = 0,

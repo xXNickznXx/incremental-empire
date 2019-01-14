@@ -1,6 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
-
 /* Convert int to time */
 function secondsTommss(total) {
     var m = Math.floor(total / 60),
@@ -24,6 +21,7 @@ function check_msg() {
         $("#msg p").last().remove();
     }
 }
+
 /* Check Weather count */
 function check_weather() {
     while ($("#phase div").length > 3) {
@@ -31,16 +29,24 @@ function check_weather() {
     }
 }
 
-/* Refresher */
-function refresh() {
-    if (win.matches && $("#content #right").length <= 0) {
+/* Check Windowsize and if the right container is not already moved */
+function window_resize() {
+	if (win.matches && $("#content #right").length <= 0) {
         $("#right").prependTo("#content");
         $("#right").hide();
     } else if (!win.matches && $("#content #right").length > 0) {
         $("#right").appendTo("#main");
         $("#right").show();
     }
+}
 
+/* Window resize */
+$(window).on("resize", function () {
+    window_resize();
+});
+
+/* Refresher */
+function refresh() {
     // Supplies
     //region
     $("#iecoin").text(iecoin);
@@ -179,7 +185,7 @@ function refresh() {
         $("#up_scout").prop("disabled", true);
         $("#up_knight").prop("disabled", true);
         $("#up_stableman").prop("disabled", true);
-    }else if (slot_build === false || slot_craft === false) {
+    }else if (villager.unused > 0) {
         $("#up_gatherer").prop("disabled", false);
         $("#up_lumberjack").prop("disabled", false);
         $("#up_quarryman").prop("disabled", false);

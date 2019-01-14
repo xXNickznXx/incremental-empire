@@ -1,6 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
-
 $("#btn_start").click(function () {
     if ($("#speed").val() < 200 || $("#speed").val() > 5000) {
         if ($("#start p").length <= 0) {
@@ -93,6 +90,7 @@ $("#btn_start").click(function () {
         $("#bottom").show();
         $("#start").hide();
         
+        setTimeout(function() {window_resize();}, 50);
         setTimeout(function() {show_related();}, 50);
         setTimeout(function() {gen_market();}, 50);
         setTimeout(function() {show_weather();}, 50);
@@ -100,6 +98,6 @@ $("#btn_start").click(function () {
         interval_refr = setInterval(refresh, 100);
         interval_supp_prod = setInterval(supplie_prod, speed * 5);
         interval_new_vil = setInterval(new_villagers, speed * 30);
-        interval_weath = setInterval(weath, speed * 3/*120*/);
+        interval_weath = setInterval(weath, speed * 120);
     }
 });

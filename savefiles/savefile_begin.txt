@@ -1,4 +1,5 @@
 {
+   "$iecoin": 100,
    "$food": 300,
    "$wood": 500,
    "$stone": 500,
@@ -22,9 +23,139 @@
    "$poisongift": 0,
    "$horse": 0,
    "$supplies_max": 500,
-   "$villager": 200,
-   "$villager_unused": 0,
-   "$villager_max": 200,
+   "$a_market": {
+      "food": {
+         "name": "Nahrung",
+         "number": 100,
+         "buy_price": 20,
+         "sell_price": 16
+      },
+      "wood": {
+         "name": "Holz",
+         "number": 50,
+         "buy_price": 15,
+         "sell_price": 12
+      },
+      "stone": {
+         "name": "Stein",
+         "number": 50,
+         "buy_price": 20,
+         "sell_price": 16
+      },
+      "leather": {
+         "name": "Leder",
+         "number": 40,
+         "buy_price": 15,
+         "sell_price": 12
+      },
+      "cloth": {
+         "name": "Wolle",
+         "number": 40,
+         "buy_price": 15,
+         "sell_price": 12
+      },
+      "coal": {
+         "name": "Kohle",
+         "number": 30,
+         "buy_price": 20,
+         "sell_price": 16
+      },
+      "iron": {
+         "name": "Eisen",
+         "number": 25,
+         "buy_price": 20,
+         "sell_price": 16
+      },
+      "clothes": {
+         "name": "Kleidung",
+         "number": 20,
+         "buy_price": 20,
+         "sell_price": 16
+      },
+      "medicine": {
+         "name": "Medizin",
+         "number": 15,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "poison": {
+         "name": "Gift",
+         "number": 15,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "leatherarmor": {
+         "name": "Lederrüstung",
+         "number": 10,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "ironarmor": {
+         "name": "Eisenrüstung",
+         "number": 5,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "axe": {
+         "name": "Axt",
+         "number": 15,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "sword": {
+         "name": "Schwert",
+         "number": 10,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "morningstar": {
+         "name": "Morgenstern",
+         "number": 5,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "shortbow": {
+         "name": "Kurzbogen",
+         "number": 15,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "longbow": {
+         "name": "Langbogen",
+         "number": 10,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "crossbow": {
+         "name": "Armbrust",
+         "number": 5,
+         "buy_price": 30,
+         "sell_price": 24
+      },
+      "tradegift": {
+         "name": "Handelsgeschenk",
+         "number": 1,
+         "buy_price": 50,
+         "sell_price": 40
+      },
+      "peacegift": {
+         "name": "Friedensgeschenk",
+         "number": 1,
+         "buy_price": 100,
+         "sell_price": 80
+      },
+      "poisongift": {
+         "name": "Giftgeschenk",
+         "number": 1,
+         "buy_price": 110,
+         "sell_price": 88
+      }
+   },
+   "$villager": {
+      "count": 200,
+      "unused": 0,
+      "max": 200
+   },
    "$gatherer": 100,
    "$lumberjack": 30,
    "$wood_bonus": 2,
@@ -80,5 +211,35 @@
    "$barracks": false,
    "$barracks_up": false,
    "$stable": false,
-   "$stable_up": false
+   "$stable_up": false,
+   "$weather_season": [
+      0,
+      0,
+      0
+   ],
+   "$weather_tempr": {
+      "current": -5,
+      "min": -10,
+      "max": 5
+   },
+   "$weather_type": [
+      0,
+      0,
+      0
+   ],
+   "$date_day": [
+      1,
+      2,
+      3
+   ],
+   "$date_month": [
+      0,
+      0,
+      0
+   ],
+   "$date_year": [
+      1950,
+      1950,
+      1950
+   ]
 }

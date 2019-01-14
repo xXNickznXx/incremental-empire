@@ -1,5 +1,5 @@
 {
-   "$iecoin": 0,
+   "$iecoin": 5000,
    "$food": 4700,
    "$wood": 5000,
    "$stone": 5000,

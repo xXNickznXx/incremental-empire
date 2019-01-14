@@ -1,5 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 $("#btn_build").click(function () {
     if (win.matches) {
         $("#right").slideUp();

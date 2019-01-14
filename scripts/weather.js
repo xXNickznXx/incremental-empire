@@ -1,5 +1,7 @@
+var x = 2;
+
 function show_weather() {
-	for (var y = 0; y < 3; y++) {
+	for (var y = 0; y <= x; y++) {
 		$("#phase").append(`<div style="float: left">
 								<p>` + date.day[y] + `. ` + date.month.names[date.month.current[y]] + ` ` + date.year[y] + `</p>
 								<p>` + weather.season.names[weather.season.current[y]] + `</p>` +
@@ -42,8 +44,6 @@ function weath() {
 			interval_freeze = undefined;
 		}
 	}
-	
-	var x = 2;
 	if (date.day[x] == date.month.count[date.month.current[x]]) {
 		date.day.shift();
 		date.day[x] = 1;

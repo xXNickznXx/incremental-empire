@@ -1,6 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
-
 // Build Elements
 //region
 var el_build_hut = `<tr>

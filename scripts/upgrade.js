@@ -1,7 +1,5 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 function upgrade_hut() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .hut .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         hut.count -= 1;
@@ -27,7 +25,7 @@ $("#upgrade").on("click", "#btn_upgrade_hut", function () {
 });
 
 function upgrade_huntinghut() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .huntinghut .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         huntinghut_up.count = true;
@@ -53,7 +51,7 @@ $("#upgrade").on("click", "#btn_upgrade_huntinghut", function () {
 });
 
 function upgrade_storage() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .storage .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         supplies_max += 500;
@@ -79,7 +77,7 @@ $("#upgrade").on("click", "#btn_upgrade_storage", function () {
 });
 
 function upgrade_lumberjackhut() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .lumberjackhut .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         lumberjackhut_up.count = true;
@@ -105,7 +103,7 @@ $("#upgrade").on("click", "#btn_upgrade_lumberjackhut", function () {
 });
 
 function upgrade_sheepstall() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .sheepstall .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         sheepstall_up.count = true;
@@ -131,7 +129,7 @@ $("#upgrade").on("click", "#btn_upgrade_sheepstall", function () {
 });
 
 function upgrade_quarry() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .quarry .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         quarry_up.count = true;
@@ -157,7 +155,7 @@ $("#upgrade").on("click", "#btn_upgrade_quarry", function () {
 });
 
 function upgrade_coalmine() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .coalmine .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         coalmine_up.count = true;
@@ -183,7 +181,7 @@ $("#upgrade").on("click", "#btn_upgrade_coalmine", function () {
 });
 
 function upgrade_ironmine() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .ironmine .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         ironmine_up.count = true;
@@ -210,7 +208,7 @@ $("#upgrade").on("click", "#btn_upgrade_ironmine", function () {
 });
 
 function upgrade_tailorhouse() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .tailorhouse .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         tailorhouse_up.count = true;
@@ -237,7 +235,7 @@ $("#upgrade").on("click", "#btn_upgrade_tailorhouse", function () {
 });
 
 function upgrade_alchemisthut() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .alchemisthut .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         alchemisthut_up.count = true;
@@ -265,7 +263,7 @@ $("#upgrade").on("click", "#btn_upgrade_alchemisthut", function () {
 });
 
 function upgrade_forge() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .forge .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         forge_up.count = true;
@@ -293,7 +291,7 @@ $("#upgrade").on("click", "#btn_upgrade_forge", function () {
 });
 
 function upgrade_market() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .market .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         market_up.count = true;
@@ -321,7 +319,7 @@ $("#upgrade").on("click", "#btn_upgrade_market", function () {
 });
 
 function upgrade_scoutpost() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .scoutpost .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         scoutpost_up.count = true;
@@ -349,7 +347,7 @@ $("#upgrade").on("click", "#btn_upgrade_scoutpost", function () {
 });
 
 function upgrade_barracks() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .barracks .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         barracks_up.count = true;
@@ -377,7 +375,7 @@ $("#upgrade").on("click", "#btn_upgrade_barracks", function () {
 });
 
 function upgrade_stable() {
-    $("#task . .time").text(secondsTommss(timer));
+    $("#task .stable .time").text(secondsTommss(timer));
     timer = Number((timer - 0.1).toFixed(1));
     if (timer < 0) {
         stable_up.count = true;

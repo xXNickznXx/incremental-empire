@@ -1,6 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
-
 var gatherer_p,
     gatherer_m,
     gatherer_t;

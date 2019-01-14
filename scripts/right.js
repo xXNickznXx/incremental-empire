@@ -1,6 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
-
 function decode(str) {
     return str.replace(/&#(\d+);/g, function(match, dec) {
         return String.fromCharCode(dec);

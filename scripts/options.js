@@ -1,5 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 $("#slider").click(function () {
     if ($("#switch input").prop("checked") !== true) {
         setCookie("dark", "true", 30);

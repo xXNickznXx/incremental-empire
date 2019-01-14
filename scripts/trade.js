@@ -1,5 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 function gen_market() {
     for (var key in a_market) {
         if (a_market.hasOwnProperty(key)) {

@@ -1,5 +1,3 @@
-/*eslint-disable no-undef*/
-/*jslint white:true*/
 $("#btn_brew").click(function () {
     $("#content_brew").slideToggle();
 });
