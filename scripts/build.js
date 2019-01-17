@@ -26,7 +26,7 @@ $("#build").on("click", "#btn_hut", function () {
                 </tr>`);
     slot_build = true;
     timer = hut.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_hut, 100);
 });
 $("#task").on("click", ".hut td:first-child", function () {
@@ -63,7 +63,7 @@ $("#build").on("click", "#btn_huntinghut", function () {
                 </tr>`);
     slot_build = true;
     timer = huntinghut.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_huntinghut, 100);
 });
 $("#task").on("click", ".huntinghut td:first-child", function () {
@@ -100,7 +100,7 @@ $("#build").on("click", "#btn_storage", function () {
                 </tr>`);
     slot_build = true;
     timer = storage.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_storage, 100);
 });
 $("#task").on("click", ".storage td:first-child", function () {
@@ -137,7 +137,7 @@ $("#build").on("click", "#btn_lumberjackhut", function () {
                 </tr>`);
     slot_build = true;
     timer = lumberjackhut.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_lumberjackhut, 100);
 });
 $("#task").on("click", ".lumberjackhut td:first-child", function () {
@@ -174,7 +174,7 @@ $("#build").on("click", "#btn_sheepstall", function () {
                 </tr>`);
     slot_build = true;
     timer = sheepstall.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_sheepstall, 100);
 });
 $("#task").on("click", ".sheepstall td:first-child", function () {
@@ -211,7 +211,7 @@ $("#build").on("click", "#btn_quarry", function () {
                 </tr>`);
     slot_build = true;
     timer = quarry.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_quarry, 100);
 });
 $("#task").on("click", ".quarry td:first-child", function () {
@@ -248,7 +248,7 @@ $("#build").on("click", "#btn_coalmine", function () {
                 </tr>`);
     slot_build = true;
     timer = coalmine.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_coalmine, 100);
 });
 $("#task").on("click", ".coalmine td:first-child", function () {
@@ -287,7 +287,7 @@ $("#build").on("click", "#btn_ironmine", function () {
                 </tr>`);
     slot_build = true;
     timer = ironmine.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_ironmine, 100);
 });
 $("#task").on("click", ".ironmine td:first-child", function () {
@@ -326,7 +326,7 @@ $("#build").on("click", "#btn_tailorhouse", function () {
                 </tr>`);
     slot_build = true;
     timer = tailorhouse.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_tailorhouse, 100);
 });
 $("#task").on("click", ".tailorhouse td:first-child", function () {
@@ -367,7 +367,7 @@ $("#build").on("click", "#btn_alchemisthut", function () {
                 </tr>`);
     slot_build = true;
     timer = alchemisthut.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_alchemisthut, 100);
 });
 $("#task").on("click", ".alchemisthut td:first-child", function () {
@@ -408,7 +408,7 @@ $("#build").on("click", "#btn_forge", function () {
                 </tr>`);
     slot_build = true;
     timer = forge.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_forge, 100);
 });
 $("#task").on("click", ".forge td:first-child", function () {
@@ -449,7 +449,7 @@ $("#build").on("click", "#btn_market", function () {
                 </tr>`);
     slot_build = true;
     timer = market.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_market, 100);
 });
 $("#task").on("click", ".market td:first-child", function () {
@@ -490,7 +490,7 @@ $("#build").on("click", "#btn_scoutpost", function () {
                 </tr>`);
     slot_build = true;
     timer = scoutpost.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_scoutpost, 100);
 });
 $("#task").on("click", ".scoutpost td:first-child", function () {
@@ -531,7 +531,7 @@ $("#build").on("click", "#btn_barracks", function () {
                 </tr>`);
     slot_build = true;
     timer = barracks.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_barracks, 100);
 });
 $("#task").on("click", ".barracks td:first-child", function () {
@@ -572,7 +572,7 @@ $("#build").on("click", "#btn_stable", function () {
                 </tr>`);
     slot_build = true;
     timer = stable.curr_time * (speed / 1000);
-	timer_half = timer / 2;
+	timer_half = Number((timer / 2).toFixed(1));
     interval_build = setInterval(build_stable, 100);
 });
 $("#task").on("click", ".stable td:first-child", function () {

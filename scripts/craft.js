@@ -46,7 +46,7 @@ $("#craft").on("click", "#btn_medicine", function () {
                 </tr>`);
     slot_brew = true;
     brewer = prod_medicine.curr_time * (speed / 1000);
-	brewer_half = brewer / 2;
+	brewer_half = Number((brewer / 2).toFixed(1));
     interval_brew = setInterval(brew_medicine, 100);
 });
 $("#task").on("click", ".medicine td:first-child", function () {
@@ -114,7 +114,7 @@ $("#craft").on("click", "#btn_poison", function () {
                 </tr>`);
     slot_brew = true;
     brewer = prod_poison.curr_time * (speed / 1000);
-	brewer_half = brewer / 2;
+	brewer_half = Number((brewer / 2).toFixed(1));
     interval_brew = setInterval(brew_poison, 100);
 });
 $("#task").on("click", ".poison td:first-child", function () {
@@ -174,7 +174,7 @@ $("#craft").on("click", "#btn_leatherarmor", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_leatherarmor.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_leatherarmor, 100);
 });
 $("#task").on("click", ".leatherarmor td:first-child", function () {
@@ -234,7 +234,7 @@ $("#craft").on("click", "#btn_ironarmor", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_ironarmor.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_ironarmor, 100);
 });
 $("#task").on("click", ".ironarmor td:first-child", function () {
@@ -296,7 +296,7 @@ $("#craft").on("click", "#btn_axe", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_axe.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_axe, 100);
 });
 $("#task").on("click", ".axe td:first-child", function () {
@@ -358,7 +358,7 @@ $("#craft").on("click", "#btn_sword", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_sword.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_sword, 100);
 });
 $("#task").on("click", ".sword td:first-child", function () {
@@ -417,7 +417,7 @@ $("#craft").on("click", "#btn_morningstar", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_morningstar.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_morningstar, 100);
 });
 $("#task").on("click", ".morningstar td:first-child", function () {
@@ -479,7 +479,7 @@ $("#craft").on("click", "#btn_shortbow", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_shortbow.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_shortbow, 100);
 });
 $("#task").on("click", ".shortbow td:first-child", function () {
@@ -541,7 +541,7 @@ $("#craft").on("click", "#btn_longbow", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_longbow.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_longbow, 100);
 });
 $("#task").on("click", ".longbow td:first-child", function () {
@@ -603,7 +603,7 @@ $("#craft").on("click", "#btn_crossbow", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_crossbow.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_crossbow, 100);
 });
 $("#task").on("click", ".crossbow td:first-child", function () {
@@ -673,7 +673,7 @@ $("#craft").on("click", "#btn_tradegift", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_tradegift.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_tradegift, 100);
 });
 $("#task").on("click", ".tradegift td:first-child", function () {
@@ -743,7 +743,7 @@ $("#craft").on("click", "#btn_peacegift", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_peacegift.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_peacegift, 100);
 });
 $("#task").on("click", ".peacegift td:first-child", function () {
@@ -816,7 +816,7 @@ $("#craft").on("click", "#btn_poisongift", function () {
                 </tr>`);
     slot_craft = true;
     crafter = prod_poisongift.curr_time * (speed / 1000);
-	crafter_half = crafter / 2;
+	crafter_half = Number((crafter / 2).toFixed(1));
     interval_craft = setInterval(craft_poisongift, 100);
 });
 $("#task").on("click", ".poisongift td:first-child", function () {

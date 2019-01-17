@@ -1,7 +1,7 @@
 $("#btn_start").click(function () {
-    if ($("#speed").val() < 200 || $("#speed").val() > 5000) {
+    if ($("#speed").val() < 200 || $("#speed").val() > 2000) {
         if ($("#start p").length <= 0) {
-            $("#start").append("<p>Geschwindigkeit zwischen 200 und 5000.</p>");
+            $("#start").append("<p>Geschwindigkeit zwischen 200 und 2000.</p>");
         }
     } else {
         speed = $("#speed").val();
