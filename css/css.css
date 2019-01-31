@@ -4,19 +4,16 @@
     --fg: #222222;
 }
 * {
-    background: none;
-    border: none;
-    color: var(--fg);
     font: 14px sans-serif;
     margin: 0;
     padding: 0;
 }
 /* Allgemein */
 p {
-    box-sizing: border-box;
     line-height: 24px;
 }
 button {
+    background: none;
     border: 1px solid var(--fg);
 }
 button:hover {
@@ -28,8 +25,6 @@ button:disabled {
     cursor: not-allowed;
 }
 .num {
-    //border: 1px solid var(--fg);
-    height: 24px;
     text-align: right;
     width: 30px;
 }
@@ -51,7 +46,7 @@ table th{
 button .tooltip {
     background-color: var(--bg);
     display: none;
-    margin: -24px 0 0 124px;
+    margin: -24px 0 0 130px;
     padding: 5px;
     position: absolute;
     text-align: left;
@@ -79,14 +74,17 @@ body {
 .start {
     background: var(--bg2);
     bottom: 0;
-    height: 300px;
+    height: 100px;
     left: 0;
     margin: auto;
     padding: 5px;
     position: absolute;
     right: 0;
     top: 0;
-    width: 300px;
+    width: 410px;
+}
+.start td:nth-child(odd) {
+    width: 140px;
 }
 .start .btn_start {
     padding: 5px;
@@ -110,11 +108,14 @@ h1 {
 /* Left */
 .left {
     float: left;
+	margin-top: 5px;
     width: calc(100% - 255px);
+}
+.left table {
+    width: 100%;
 }
 .nav {
     background: var(--bg2);
-    margin-top: 5px;
     padding: 5px;
     text-align: center;
 }
@@ -122,8 +123,13 @@ h1 {
     border: none;
     border-bottom: 1px solid var(--fg);
     height: 32px;
+    width: 80px;
+}
+.content {
+    background: var(--bg2);
+    margin-top: 5px;
+    overflow: auto;
     padding: 5px;
-    width: 90px;
 }
 .btn_content {
     height: 32px;
@@ -134,6 +140,9 @@ h1 {
     height: 32px;
     padding: 5px;
     width: 100%;
+}
+.coll_craft {
+    border: 1px solid var(--fg);
 }
 .coll_craft.m {
     margin-top: 5px;
@@ -151,18 +160,7 @@ h1 {
 }
 .btn_options {
     height: 32px;
-    padding: 5px;
     width: 90px;
-}
-.content {
-    background: var(--bg2);
-    height: calc(100vh - 412px);
-    margin-top: 5px;
-    overflow: auto;
-    padding: 5px;
-}
-.content div {
-    position: relative;
 }
 .left_bottom {
     margin-top: 5px;
@@ -187,23 +185,21 @@ h1 {
 }
 .phase div {
 	padding: 0 5px;
+	float: left;
 }
 .phase div:first-child {
     border-right: 5px solid var(--bg);
 }
-.left table {
-    width: 100%;
-}
-.coll_craft {
-    border: 1px solid var(--fg);
-}
 /* Right */
 .right {
     float: left;
-    height: calc(100vh - 50px);
-    margin-left: 5px;
+    height: calc(100vh - 55px);
+    margin: 5px 0 0 5px;
     overflow: auto;
     width: 250px;
+}
+.right > :first-child {
+	margin: 0;
 }
 .supplies, .items, .villagers, .jobs {
     background: var(--bg2);
@@ -222,12 +218,6 @@ h1 {
 .jobs .row div > * {
     float: left;
 }
-.jobs .row p:nth-child(even) {
-    float: left;
-}
-.jobs .row div:first-child {
-    width: calc(100% - 78px);
-}
 .jobs .row div:last-child {
     float: right;
 }
@@ -240,7 +230,7 @@ h1 {
 }
 .msg {
     background: var(--bg2);
-    height: 200px;
+    height: 210px;
     overflow: hidden;
     padding: 5px;
     position: relative;
@@ -267,27 +257,27 @@ h1 {
     display:none;
 }
 .slider {
-    border: 1px solid var(--fg);
+	background: var(--bg);
     border-radius: 34px;
     cursor: pointer;
     height: 30px;
     position: absolute;
     transition: .2s;
-    width: 58px;
+    width: 60px;
 }
 .slider:before {
-    border: 1px solid var(--fg);
+	background: var(--bg2);
     border-radius: 50%;
     bottom: 3px;
     content: "";
-    height: 22px;
+    height: 24px;
     left: 3px;
     position: absolute;
     transition: .2s;
-    width: 22px;
+    width: 24px;
 }
 input:checked + .slider:before {
-    transform: translateX(28px);
+    transform: translateX(30px);
 }
 /* Mobile */
 .btn_mobile {
@@ -302,6 +292,9 @@ input:checked + .slider:before {
         max-width: unset;
         min-width: unset;
     }
+	.start {
+		width: 300px;
+	}
     .header {
         height: 20px;
     }
@@ -328,9 +321,6 @@ input:checked + .slider:before {
         height: unset;
         margin-left: 0;
         width: 100%;
-    }
-    .jobs .row div:first-child {
-        width: calc(100% - 85px);
     }
     .villagers, .jobs, .supplies, .items {
         margin-top: 0;

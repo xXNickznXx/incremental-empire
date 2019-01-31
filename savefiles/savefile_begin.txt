@@ -1,6 +1,6 @@
 {
    "$iecoin": 100,
-   "$food": 300,
+   "$food": 500,
    "$wood": 500,
    "$stone": 500,
    "$leather": 500,

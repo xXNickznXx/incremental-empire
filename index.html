@@ -12,16 +12,25 @@
     </head>
     <body>
         <div id="start" class="start">
-            <div>
-                <label for="speed">Geschwindigkeit: </label>
-                <input type="number" value="1000" min="200" max="2000" step="100" id="speed" class="in">
-            </div>
-            <div>
-                <label for="load">Laden:</label>
-                <input id="load" type="file" />
-                <label for="load">(Wenn vorhanden, sonst leer)</label>
-            </div>
-            <button id="btn_start" class="btn_start">Start</button>
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="speed">Geschwindigkeit: </label></td>
+						<td><input type="number" value="1000" min="200" max="2000" step="100" id="speed" class="in"></td>
+					</tr>
+					<tr>
+						<td><label for="load">Speicherstand laden:</label></td>
+						<td>
+							<input id="load" type="file" />
+							<label for="load">(Wenn vorhanden, sonst leer)</label>
+						</td>
+					</tr>
+					<tr>
+						<td><button id="btn_start" class="btn_start">Start</button></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
         </div>
         <div id="main" class="main" hidden>
             <div class="header"><h1>Incremental Empire</h1></div>

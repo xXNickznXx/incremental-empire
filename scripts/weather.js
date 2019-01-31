@@ -2,7 +2,7 @@ var x = 2;
 
 function show_weather() {
 	for (var y = 0; y <= x; y++) {
-		$("#phase").append(`<div style="float: left">
+		$("#phase").append(`<div>
 								<p>` + date.day[y] + `. ` + date.month.names[date.month.current[y]] + ` ` + date.year[y] + `</p>
 								<p>` + weather.season.names[weather.season.current[y]] + `</p>` +
 		(y == 0 ? `<p>` + weather.tempr.current + `</p>` : ``) +

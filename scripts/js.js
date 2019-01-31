@@ -41,7 +41,7 @@ function window_resize() {
 	if (win.matches) {
 		$("#content").css({height: ""});
 	} else {
-		$("#content").css({height: "calc(100vh - 370px - " + $(".nav").outerHeight() + "px"});
+		$("#content").css({height: "calc(100vh - 380px - " + $(".nav").outerHeight() + "px"});
 	}
 }
 
@@ -53,7 +53,7 @@ $(window).on("resize", function () {
 /* Refresher */
 function refresh() {
     // Supplies
-    //region
+    //{
     $("#iecoin").text(iecoin);
     $("#food").text(food);
     $("#wood").text(wood);
@@ -63,10 +63,10 @@ function refresh() {
     $("#coal").text(coal);
     $("#iron").text(iron);
     $("#clothes").text(clothes);
-    //endregion
+    //}
 
     // Items
-    //region
+    //{
     $("#medicine").text(medicine);
     $("#poison").text(poison);
     $("#leatherarmor").text(leatherarmor);
@@ -81,10 +81,10 @@ function refresh() {
     $("#peacegift").text(peacegift);
     $("#poisongift").text(poisongift);
     $("#horse").text(horse);
-    //endregion
+    //}
 
     // Villagers/Jobs
-    //region
+    //{
     $("#villager").text(villager.count + "/" + villager.max);
     $("#villager_unused").text(villager.unused + "/" + villager.count);
     $("#gatherer").text(gatherer);
@@ -101,10 +101,10 @@ function refresh() {
     $("#scout").text(scout);
     $("#knight").text(knight);
     $("#stableman").text(stableman);
-    //endregion
+    //}
 
     // Down/Up Buttons Dis-/Enabled
-    //region
+    //{
     if (gatherer === 0) {
         $("#dwn_gatherer").prop("disabled", true);
     } else {
@@ -217,10 +217,10 @@ function refresh() {
             $("#up_alchemist").prop("disabled", true);
         }
     }
-    //endregion
+    //}
 
     // Current Time to build/upgrade
-    //region
+    //{
     if (worker > 1) {
         hut.curr_time = hut.time / worker * (speed / 1000);
         huntinghut.curr_time = huntinghut.time / worker * (speed / 1000);
@@ -286,10 +286,10 @@ function refresh() {
         barracks_up.curr_time = barracks_up.time * (speed / 1000);
         stable_up.curr_time = stable_up.time * (speed / 1000);
     }
-    //endregion
+    //}
 
     // Display Build/Upgrade Time
-    //region
+    //{
     $("#time_hut").text(secondsTommss(hut.curr_time));
     $("#time_huntinghut").text(secondsTommss(huntinghut.curr_time));
     $("#time_storage").text(secondsTommss(storage.curr_time));
@@ -321,10 +321,10 @@ function refresh() {
     $("#time_upgrade_scoutpost").text(secondsTommss(scoutpost_up.curr_time));
     $("#time_upgrade_barracks").text(secondsTommss(barracks_up.curr_time));
     $("#time_upgrade_stable").text(secondsTommss(stable_up.curr_time));
-    //endregion
+    //}
 
     // Build Buttons Dis-/Enabled
-    //region
+    //{
     if (wood >= hut.costs.wood && stone >= hut.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_hut").prop("disabled", false);
     } else {
@@ -400,10 +400,10 @@ function refresh() {
     } else {
         $("#btn_stable").prop("disabled", true);
     }
-    //endregion
+    //}
 
     // Build Buttons Show/Hide
-    //region
+    //{
     if (wood >= hut.costs.wood / 2 && stone >= hut.costs.stone / 2) {
         if ($("#build tbody #btn_hut").length <= 0) {
             $("#build tbody").append(el_build_hut);
@@ -539,10 +539,10 @@ function refresh() {
             $("#build tbody #btn_stable").closest("tr").remove();
         }
     }
-    //endregion
+    //}
 
     // Upgrade Buttons Dis-/Enabled
-    //region
+    //{
     if (wood >= hut_up.costs.wood && stone >= hut_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_hut").prop("disabled", false);
     } else {
@@ -618,10 +618,10 @@ function refresh() {
     } else {
         $("#btn_upgrade_stable").prop("disabled", true);
     }
-    //endregion
+    //}
 
     // Upgrade Buttons Show/Hide
-    //region
+    //{
     if (wood >= hut_up.costs.wood / 2 && stone >= hut_up.costs.stone / 2 && hut.count > 0) {
         if ($("#upgrade tbody #btn_upgrade_hut").length <= 0) {
             $("#upgrade tbody").append(el_upgrade_hut);
@@ -757,10 +757,10 @@ function refresh() {
             $("#upgrade tbody #btn_upgrade_stable").closest("tr").remove();
         }
     }
-    //endregion
+    //}
 
     //Current Time to brew
-    //region
+    //{
     if (alchemist > 1) {
         prod_medicine.curr_time = prod_medicine.time / alchemist * prod_medicine.count / brew_time;
         prod_poison.curr_time = prod_poison.time / alchemist * prod_poison.count / brew_time;
@@ -768,10 +768,10 @@ function refresh() {
         prod_medicine.curr_time = prod_medicine.time * prod_medicine.count / brew_time;
         prod_poison.curr_time = prod_poison.time * prod_poison.count / brew_time;
     }
-    //endregion
+    //}
 
     //Current Time to craft
-    //region
+    //{
     if (smith > 1) {
         prod_leatherarmor.curr_time = prod_leatherarmor.time / smith * prod_leatherarmor.count / craft_time;
         prod_ironarmor.curr_time = prod_ironarmor.time / smith * prod_ironarmor.count / craft_time;
@@ -797,10 +797,10 @@ function refresh() {
         prod_peacegift.curr_time = prod_peacegift.time * prod_peacegift.count / craft_time;
         prod_poisongift.curr_time = prod_poisongift.time * prod_poisongift.count / craft_time;
     }
-    //endregion
+    //}
 
     //Display Brew/Craft Time
-    //region
+    //{
     $("#time_medicine").text(secondsTommss(prod_medicine.curr_time));
     $("#time_poison").text(secondsTommss(prod_poison.curr_time));
     $("#time_leatherarmor").text(secondsTommss(prod_leatherarmor.curr_time));
@@ -814,10 +814,10 @@ function refresh() {
     $("#time_tradegift").text(secondsTommss(prod_tradegift.curr_time));
     $("#time_peacegift").text(secondsTommss(prod_peacegift.curr_time));
     $("#time_poisongift").text(secondsTommss(prod_poisongift.curr_time));
-    //endregion
+    //}
 
     // Brew/Craft Buttons Dis-/Enabled
-    //region
+    //{
     if (food >= prod_medicine.costs.food * prod_medicine.count && stone >= prod_medicine.costs.stone * prod_medicine.count && cloth >= prod_medicine.costs.cloth * prod_medicine.count && alchemist > 0 && prod_medicine.count > 0 && slot_brew === false) {
         $("#btn_medicine").prop("disabled", false);
     } else {
@@ -883,10 +883,10 @@ function refresh() {
     } else {
         $("#btn_poisongift").prop("disabled", true);
     }
-    //endregion
+    //}
 
     // Brew/Craft Buttons Show/Hide
-    //region
+    //{
     if (food >= prod_medicine.costs.food / 2 && stone >= prod_medicine.costs.stone / 2 && cloth >= prod_medicine.costs.cloth / 2) {
         if ($("#craft #row_medicine").length <= 0) {
             $("#craft #content_brew").append(el_craft_medicine);
@@ -1004,10 +1004,10 @@ function refresh() {
             $("#craft #row_poisongift").remove();
         }
     }
-    //endregion
+    //}
     
     //Current Trade Price
-    //region
+    //{
     $("#btn_buy_food").html(a_market.food.buy_price);
     $("#btn_sell_food").html(a_market.food.sell_price);
     
@@ -1070,10 +1070,10 @@ function refresh() {
     
     $("#btn_buy_poisongift").html(a_market.poisongift.buy_price);
     $("#btn_sell_poisongift").html(a_market.poisongift.sell_price);
-    //endregion
+    //}
     
     // Trade Button Dis-/Enabled
-    //region
+    //{
     if (food + a_market.food.number <= supplies_max && iecoin >= a_market.food.buy_price) {
         $("#btn_buy_food").prop("disabled", false);
     } else {
@@ -1304,7 +1304,7 @@ function refresh() {
     } else {
         $("#btn_sell_poisongift").prop("disabled", true);
     }
-    //endregion
+    //}
 }
 
 /* Show Related Stuff of Buildings */
@@ -1431,6 +1431,9 @@ function die(type) {
                     } else if (tailor > 0) {
                         tailor -= 1;
                         msg.prepend("<p>Schneider ist verhungert.</p>");
+                    } else if (alchemist > 0) {
+                        alchemist -= 1;
+                        msg.prepend("<p>Alchemist ist verhungert.</p>");
                     } else if (smith > 0) {
                         smith -= 1;
                         msg.prepend("<p>Schmied ist verhungert.</p>");
@@ -1440,6 +1443,9 @@ function die(type) {
                     } else if (knight > 0) {
                         knight -= 1;
                         msg.prepend("<p>Krieger ist verhungert.</p>");
+                    } else if (stableman > 0) {
+                        stableman -= 1;
+                        msg.prepend("<p>Stallbetreuer ist verhungert.</p>");
                     }
                     check_msg();
                 }
@@ -1484,6 +1490,9 @@ function die(type) {
                     } else if (tailor > 0) {
                         tailor -= 1;
                         msg.prepend("<p>Schneider ist erfroren.</p>");
+                    } else if (alchemist > 0) {
+                        alchemist -= 1;
+                        msg.prepend("<p>Alchemist ist erfroren.</p>");
                     } else if (smith > 0) {
                         smith -= 1;
                         msg.prepend("<p>Schmied ist erfroren.</p>");
@@ -1493,6 +1502,9 @@ function die(type) {
                     } else if (knight > 0) {
                         knight -= 1;
                         msg.prepend("<p>Krieger ist erfroren.</p>");
+                    } else if (stableman > 0) {
+                        stableman -= 1;
+                        msg.prepend("<p>Stallbetreuer ist erfroren.</p>");
                     }
                     check_msg();
                 }
@@ -1506,12 +1518,6 @@ function die(type) {
 
 /* supplie production */
 function supplie_prod() {
-    if (food < supplies_max) {
-        food += (gatherer * 2) + hunter;
-        if (food > supplies_max) {
-            food = supplies_max;
-        }
-    }
     if (food >= villager.count) {
         food -= villager.count;
         if (typeof interval_starve !== 'undefined') {
@@ -1522,6 +1528,12 @@ function supplie_prod() {
         food = 0;
         if (typeof interval_starve === 'undefined') {
             interval_starve = setInterval(function () {die("starve"); }, speed * 15);
+        }
+    }
+    if (food < supplies_max) {
+        food += (gatherer * 2) + hunter;
+        if (food > supplies_max) {
+            food = supplies_max;
         }
     }
     if (wood < supplies_max) {
