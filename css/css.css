@@ -4,6 +4,7 @@
     --fg: #222222;
 }
 * {
+	color: var(--fg);
     font: 14px sans-serif;
     margin: 0;
     padding: 0;
