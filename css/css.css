@@ -4,6 +4,7 @@
     --fg: #222222;
 }
 * {
+	box-sizing: border-box;
 	color: var(--fg);
     font: 14px sans-serif;
     margin: 0;
@@ -33,7 +34,7 @@ button:disabled {
 	background: var(--bg2);
     border: 1px solid var(--fg);
     padding: 5px;
-    width: 50px;
+    width: 60px;
 }
 ul {
     list-style-position: inside;
@@ -76,14 +77,14 @@ body {
 .start {
     background: var(--bg2);
     bottom: 0;
-    height: 100px;
+    height: 110px;
     left: 0;
     margin: auto;
     padding: 5px;
     position: absolute;
     right: 0;
     top: 0;
-    width: 410px;
+    width: 420px;
 }
 .start td:nth-child(odd) {
     width: 140px;
@@ -100,7 +101,7 @@ body {
 /* Header */
 .header {
     background: var(--bg2);
-    height: 40px;
+    height: 50px;
     padding: 5px;
     text-align: center;
 }
@@ -122,10 +123,12 @@ h1 {
     text-align: center;
 }
 .nav button {
-    border: none;
-    border-bottom: 1px solid var(--fg);
+	border-color: transparent transparent black transparent;
     height: 32px;
     width: 80px;
+}
+.nav button.selected {
+	border-color: black black transparent black;
 }
 .content {
     background: var(--bg2);
@@ -175,9 +178,9 @@ h1 {
 .tasks, .phase {
     background: var(--bg2);
     float: left;
-    height: 70px;
+    height: 80px;
     padding: 5px;
-    width: calc((100% - 25px) / 2);
+    width: calc((100% - 5px) / 2);
 }
 .tasks td:first-child {
 	cursor: pointer;
@@ -232,7 +235,7 @@ h1 {
 }
 .msg {
     background: var(--bg2);
-    height: 210px;
+    height: 220px;
     overflow: hidden;
     padding: 5px;
     position: relative;
@@ -298,7 +301,7 @@ input:checked + .slider:before {
 		width: 300px;
 	}
     .header {
-        height: 20px;
+        height: 30px;
     }
     h1 {
         font-size: 20px;
@@ -310,7 +313,7 @@ input:checked + .slider:before {
         height: 210px;
     }
     .tasks, .phase {
-        width: calc(100% - 10px);
+        width: 100%;
     }
     .phase {
         margin: 5px 0 0 0;
@@ -328,6 +331,6 @@ input:checked + .slider:before {
         margin-top: 0;
     }
     .msg {
-        height: 90px;
+        height: 100px;
     }
 }

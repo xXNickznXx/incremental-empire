@@ -32,20 +32,20 @@
 				</tbody>
 			</table>
         </div>
-        <div id="main" class="main" hidden>
+        <div id="main" class="main" hidden="hidden">
             <div class="header"><h1>Incremental Empire</h1></div>
             <div class="left">
                 <div class="nav">
                     <button id="btn_mobile" class="btn_mobile">Vorräte &amp; Bewohner</button>
-                    <button id="btn_build">Bauen</button>
+                    <button id="btn_build" class="selected">Bauen</button>
                     <button id="btn_upgrade">Ausbauen</button>
-                    <button id="btn_craft" hidden>Herstellen</button>
-                    <button id="btn_trade" hidden>Handeln</button>
-                    <button id="btn_travel" hidden>Reisen</button>
+                    <button id="btn_craft" hidden="hidden">Herstellen</button>
+                    <button id="btn_trade" hidden="hidden">Handeln</button>
+                    <button id="btn_travel" hidden="hidden">Reisen</button>
                     <button id="btn_options">Optionen</button>
                 </div>
                 <div id="content" class="content">
-                    <div id="build" hidden>
+                    <div id="build">
                         <table>
                             <thead>
                                 <tr>
@@ -57,7 +57,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="upgrade" hidden>
+                    <div id="upgrade" hidden="hidden">
                         <table>
                             <thead>
                                 <tr>
@@ -69,39 +69,39 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="craft" hidden>
-                        <div id="coll_brew" class="coll_craft" hidden>
+                    <div id="craft" hidden="hidden">
+                        <div id="coll_brew" class="coll_craft" hidden="hidden">
                             <button id="btn_brew" class="btn_craft">Brauen</button>
-                            <div id="content_brew" class="content_craft" hidden>
+                            <div id="content_brew" class="content_craft" hidden="hidden">
                             </div>
                         </div>
-                        <div id="coll_armor" class="coll_craft m" hidden>
+                        <div id="coll_armor" class="coll_craft m" hidden="hidden">
                             <button id="btn_armor" class="btn_craft">Rüstungen</button>
-                            <div id="content_armor" class="content_craft" hidden>
+                            <div id="content_armor" class="content_craft" hidden="hidden">
                             </div>
                         </div>
-                        <div id="coll_weapons" class="coll_craft m" hidden>
+                        <div id="coll_weapons" class="coll_craft m" hidden="hidden">
                             <button id="btn_weapons" class="btn_craft">Waffen</button>
-                            <div id="content_weapons" class="content_craft" hidden>
+                            <div id="content_weapons" class="content_craft" hidden="hidden">
                                 <div id="coll_melee" class="coll_craft">
                                     <button id="btn_melee" class="btn_craft">Nahkampf</button>
-                                    <div id="content_melee" class="content_craft" hidden>
+                                    <div id="content_melee" class="content_craft" hidden="hidden">
                                     </div>
                                 </div>
                                 <div id="coll_ranged" class="coll_craft m">
                                     <button id="btn_ranged" class="btn_craft m">Fernkampf</button>
-                                    <div id="content_ranged" class="content_craft" hidden>
+                                    <div id="content_ranged" class="content_craft" hidden="hidden">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="coll_gifts" class="coll_craft m" hidden>
+                        <div id="coll_gifts" class="coll_craft m" hidden="hidden">
                             <button id="btn_gifts" class="btn_craft">Geschenke</button>
-                            <div id="content_gifts" class="content_craft" hidden>
+                            <div id="content_gifts" class="content_craft" hidden="hidden">
                             </div>
                         </div>
                     </div>
-                    <div id="trade" hidden>
+                    <div id="trade" hidden="hidden">
                         <table>
                             <thead>
                                 <tr>
@@ -115,7 +115,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="travel" hidden>
+                    <div id="travel" hidden="hidden">
                         <table>
                             <thead>
                                 <tr>
@@ -245,7 +245,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="options" hidden>
+                    <div id="options" hidden="hidden">
                         <table>
                             <tbody>
                                 <tr>
@@ -290,7 +290,7 @@
                     <div id="phase" class="phase">
                     </div>
                 </div>
-                <div id="bottom" class="bottom" hidden>
+                <div id="bottom" class="bottom" hidden="hidden">
                     <div id="msg" class="msg">
                         <div class="overlay"></div>
                     </div>
@@ -345,7 +345,7 @@
                                 <button id="up_worker" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Jäger</p>
                             <div>
                                 <button id="dwn_hunter" class="btn_dwn_up">-</button>
@@ -353,7 +353,7 @@
                                 <button id="up_hunter" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Schäfer</p>
                             <div>
                                 <button id="dwn_shepherd" class="btn_dwn_up">-</button>
@@ -361,7 +361,7 @@
                                 <button id="up_shepherd" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Kohleminenarbeiter</p>
                             <div>
                                 <button id="dwn_coalminer" class="btn_dwn_up">-</button>
@@ -369,7 +369,7 @@
                                 <button id="up_coalminer" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Eisenminenarbeiter</p>
                             <div>
                                 <button id="dwn_ironminer" class="btn_dwn_up">-</button>
@@ -377,7 +377,7 @@
                                 <button id="up_ironminer" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Schneider</p>
                             <div>
                                 <button id="dwn_tailor" class="btn_dwn_up">-</button>
@@ -385,7 +385,7 @@
                                 <button id="up_tailor" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Alchemist</p>
                             <div>
                                 <button id="dwn_alchemist" class="btn_dwn_up">-</button>
@@ -393,7 +393,7 @@
                                 <button id="up_alchemist" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Schmied</p>
                             <div>
                                 <button id="dwn_smith" class="btn_dwn_up">-</button>
@@ -401,7 +401,7 @@
                                 <button id="up_smith" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Kundschafter</p>
                             <div>
                                 <button id="dwn_scout" class="btn_dwn_up">-</button>
@@ -409,7 +409,7 @@
                                 <button id="up_scout" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Krieger</p>
                             <div>
                                 <button id="dwn_knight" class="btn_dwn_up">-</button>
@@ -417,7 +417,7 @@
                                 <button id="up_knight" class="btn_dwn_up">+</button>
                             </div>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                                 <p>Stallbetreuer</p>
                             <div>
                                 <button id="dwn_stableman" class="btn_dwn_up">-</button>
@@ -446,84 +446,84 @@
                             <p>Stein</p>
                             <p id="stone"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Leder</p>
                             <p id="leather"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Wolle</p>
                             <p id="cloth"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Kohle</p>
                             <p id="coal"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Eisen</p>
                             <p id="iron"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Kleidung</p>
                             <p id="clothes"></p>
                         </div>
                     </div>
                 </div>
-                <div id="items" class="items" hidden>
+                <div id="items" class="items" hidden="hidden">
                     <p class="th">&#9207;Gegenstände</p>
                     <div id="content_items">
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Medizin</p>
                             <p id="medicine"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Gift</p>
                             <p id="poison"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Lederrüstung</p>
                             <p id="leatherarmor"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Eisenrüstung</p>
                             <p id="ironarmor"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Axt</p>
                             <p id="axe"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Schwert</p>
                             <p id="sword"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Morgenstern</p>
                             <p id="morningstar"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Kurzbogen</p>
                             <p id="shortbow"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Langbogen</p>
                             <p id="longbow"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Armbrust</p>
                             <p id="crossbow"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Handelsgeschenk</p>
                             <p id="tradegift"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Friedensgeschenk</p>
                             <p id="peacegift"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Giftgeschenk</p>
                             <p id="poisongift"></p>
                         </div>
-                        <div id="row" class="row" hidden>
+                        <div id="row" class="row" hidden="hidden">
                             <p>Pferd</p>
                             <p id="horse"></p>
                         </div>
