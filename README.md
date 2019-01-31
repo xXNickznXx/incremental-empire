@@ -2,7 +2,8 @@
 Link zum [Spiel](https://xxnicksonxx.github.io/Incremental-Empire/).
 
 ```
-Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert und auf verschiedenste Herausforderungen trifft.
+Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert
+und auf verschiedenste Herausforderungen trifft.
 ```
 
 | ToDo  | Progress | Done                      | Optional       |
