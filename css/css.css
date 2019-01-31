@@ -30,6 +30,7 @@ button:disabled {
     width: 30px;
 }
 .in {
+	background: var(--bg2);
     border: 1px solid var(--fg);
     padding: 5px;
     width: 50px;
