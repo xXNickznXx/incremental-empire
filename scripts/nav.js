@@ -15,7 +15,7 @@ $("#btn_build").click(function () {
     $("#btn_trade").removeAttr("class");
     $("#btn_travel").removeAttr("class");
     $("#btn_options").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 $("#btn_upgrade").click(function () {
     if (win.matches) {
@@ -34,7 +34,7 @@ $("#btn_upgrade").click(function () {
     $("#btn_trade").removeAttr("class");
     $("#btn_travel").removeAttr("class");
     $("#btn_options").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 $("#btn_craft").click(function () {
     if (win.matches) {
@@ -53,7 +53,7 @@ $("#btn_craft").click(function () {
     $("#btn_trade").removeAttr("class");
     $("#btn_travel").removeAttr("class");
     $("#btn_options").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 $("#btn_trade").click(function () {
     if (win.matches) {
@@ -72,7 +72,7 @@ $("#btn_trade").click(function () {
     $("#btn_craft").removeAttr("class");
     $("#btn_travel").removeAttr("class");
     $("#btn_options").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 $("#btn_travel").click(function () {
     if (win.matches) {
@@ -91,7 +91,7 @@ $("#btn_travel").click(function () {
     $("#btn_craft").removeAttr("class");
     $("#btn_trade").removeAttr("class");
     $("#btn_options").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 $("#btn_options").click(function () {
     if (win.matches) {
@@ -110,7 +110,7 @@ $("#btn_options").click(function () {
     $("#btn_craft").removeAttr("class");
     $("#btn_trade").removeAttr("class");
     $("#btn_travel").removeAttr("class");
-    $("#btn_mobile").removeClass("class");
+    $("#btn_mobile").removeClass("selected");
 });
 
 $("#btn_mobile").click(function () {

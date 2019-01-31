@@ -8,6 +8,7 @@
 	color: var(--fg);
     font: 14px sans-serif;
     margin: 0;
+	outline: none;
     padding: 0;
 }
 /* Allgemein */
@@ -125,7 +126,7 @@ h1 {
 .nav button {
 	border-color: transparent transparent black transparent;
     height: 32px;
-    width: 80px;
+    width: 86px;
 }
 .nav button.selected {
 	border-color: black black transparent black;
