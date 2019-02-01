@@ -182,6 +182,9 @@ h1 {
 .row_craft > * {
     float: left;
 }
+#travel .td:last-child > * {
+	float: left;
+}
 .btn_options {
     height: 32px;
     width: 90px;
