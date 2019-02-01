@@ -1394,125 +1394,130 @@ function game_over() {
 
 /* Die possibilities */
 function die(type) {
-    var rnd = Math.floor((Math.random() * 3) + 1);
     if (type === "starve") {
-        if (rnd === 1 || rnd === 2) {
-            if (villager.count > 0) {
-                villager.count -= 1;
-                if (villager.unused > 0) {
-                    villager.unused -= 1;
-                    msg.prepend("<p>Bewohner ist verhungert.</p>");
-                    check_msg();
-                } else {
-                    if (gatherer > 0) {
-                        gatherer -= 1;
-                        msg.prepend("<p>Sammler ist verhungert.</p>");
-                    } else if (lumberjack > 0) {
-                        lumberjack -= 1;
-                        msg.prepend("<p>Holzfäller ist verhungert.</p>");
-                    } else if (quarryman > 0) {
-                        quarryman -= 1;
-                        msg.prepend("<p>Steinbrucharbeiter ist verhungert.</p>");
-                    } else if (worker > 0) {
-                        worker -= 1;
-                        msg.prepend("<p>Arbeiter ist verhungert.</p>");
-                    } else if (hunter > 0) {
-                        hunter -= 1;
-                        msg.prepend("<p>Jäger ist verhungert.</p>");
-                    } else if (shepherd > 0) {
-                        shepherd -= 1;
-                        msg.prepend("<p>Schäfer ist verhungert.</p>");
-                    } else if (coalminer > 0) {
-                        coalminer -= 1;
-                        msg.prepend("<p>Kohleminenarbeiter ist verhungert.</p>");
-                    } else if (ironminer > 0) {
-                        ironminer -= 1;
-                        msg.prepend("<p>Eisenminenarbeiter ist verhungert.</p>");
-                    } else if (tailor > 0) {
-                        tailor -= 1;
-                        msg.prepend("<p>Schneider ist verhungert.</p>");
-                    } else if (alchemist > 0) {
-                        alchemist -= 1;
-                        msg.prepend("<p>Alchemist ist verhungert.</p>");
-                    } else if (smith > 0) {
-                        smith -= 1;
-                        msg.prepend("<p>Schmied ist verhungert.</p>");
-                    } else if (scout > 0) {
-                        scout -= 1;
-                        msg.prepend("<p>Kundschafter ist verhungert.</p>");
-                    } else if (knight > 0) {
-                        knight -= 1;
-                        msg.prepend("<p>Krieger ist verhungert.</p>");
-                    } else if (stableman > 0) {
-                        stableman -= 1;
-                        msg.prepend("<p>Stallbetreuer ist verhungert.</p>");
-                    }
-                    check_msg();
-                }
-                if (villager.count === 0) {
-                    game_over();
-                }
-            }
-        }
+		for (var x = 0; x < villager.count; x += 20) {
+			var rnd = Math.floor((Math.random() * 10) + 1);
+			if (rnd >= 1 && rnd < 5) {
+				if (villager.count > 0) {
+					villager.count -= 1;
+					if (villager.unused > 0) {
+						villager.unused -= 1;
+						msg.prepend("<p>Bewohner ist verhungert.</p>");
+						check_msg();
+					} else {
+						if (gatherer > 0) {
+							gatherer -= 1;
+							msg.prepend("<p>Sammler ist verhungert.</p>");
+						} else if (lumberjack > 0) {
+							lumberjack -= 1;
+							msg.prepend("<p>Holzfäller ist verhungert.</p>");
+						} else if (quarryman > 0) {
+							quarryman -= 1;
+							msg.prepend("<p>Steinbrucharbeiter ist verhungert.</p>");
+						} else if (worker > 0) {
+							worker -= 1;
+							msg.prepend("<p>Arbeiter ist verhungert.</p>");
+						} else if (hunter > 0) {
+							hunter -= 1;
+							msg.prepend("<p>Jäger ist verhungert.</p>");
+						} else if (shepherd > 0) {
+							shepherd -= 1;
+							msg.prepend("<p>Schäfer ist verhungert.</p>");
+						} else if (coalminer > 0) {
+							coalminer -= 1;
+							msg.prepend("<p>Kohleminenarbeiter ist verhungert.</p>");
+						} else if (ironminer > 0) {
+							ironminer -= 1;
+							msg.prepend("<p>Eisenminenarbeiter ist verhungert.</p>");
+						} else if (tailor > 0) {
+							tailor -= 1;
+							msg.prepend("<p>Schneider ist verhungert.</p>");
+						} else if (alchemist > 0) {
+							alchemist -= 1;
+							msg.prepend("<p>Alchemist ist verhungert.</p>");
+						} else if (smith > 0) {
+							smith -= 1;
+							msg.prepend("<p>Schmied ist verhungert.</p>");
+						} else if (scout > 0) {
+							scout -= 1;
+							msg.prepend("<p>Kundschafter ist verhungert.</p>");
+						} else if (knight > 0) {
+							knight -= 1;
+							msg.prepend("<p>Krieger ist verhungert.</p>");
+						} else if (stableman > 0) {
+							stableman -= 1;
+							msg.prepend("<p>Stallbetreuer ist verhungert.</p>");
+						}
+						check_msg();
+					}
+					if (villager.count === 0) {
+						game_over();
+					}
+				}
+			}
+		}
     } else if (type === "freeze") {
-        if (rnd === 1 || rnd === 2) {
-            if (villager.count > 0) {
-                villager.count -= 1;
-                if (villager.unused > 0) {
-                    villager.unused -= 1;
-                    msg.prepend("<p>Bewohner ist erfroren.</p>");
-                    check_msg();
-                } else {
-                    if (gatherer > 0) {
-                        gatherer -= 1;
-                        msg.prepend("<p>Sammler ist erfroren.</p>");
-                    } else if (lumberjack > 0) {
-                        lumberjack -= 1;
-                        msg.prepend("<p>Holzfäller ist erfroren.</p>");
-                    } else if (quarryman > 0) {
-                        quarryman -= 1;
-                        msg.prepend("<p>Steinbrucharbeiter ist erfroren.</p>");
-                    } else if (worker > 0) {
-                        worker -= 1;
-                        msg.prepend("<p>Arbeiter ist erfroren.</p>");
-                    } else if (hunter > 0) {
-                        hunter -= 1;
-                        msg.prepend("<p>Jäger ist erfroren.</p>");
-                    } else if (shepherd > 0) {
-                        shepherd -= 1;
-                        msg.prepend("<p>Schäfer ist erfroren.</p>");
-                    } else if (coalminer > 0) {
-                        coalminer -= 1;
-                        msg.prepend("<p>Kohleminenarbeiter ist erfroren.</p>");
-                    } else if (ironminer > 0) {
-                        ironminer -= 1;
-                        msg.prepend("<p>Eisenminenarbeiter ist erfroren.</p>");
-                    } else if (tailor > 0) {
-                        tailor -= 1;
-                        msg.prepend("<p>Schneider ist erfroren.</p>");
-                    } else if (alchemist > 0) {
-                        alchemist -= 1;
-                        msg.prepend("<p>Alchemist ist erfroren.</p>");
-                    } else if (smith > 0) {
-                        smith -= 1;
-                        msg.prepend("<p>Schmied ist erfroren.</p>");
-                    } else if (scout > 0) {
-                        scout -= 1;
-                        msg.prepend("<p>Kundschafter ist erfroren.</p>");
-                    } else if (knight > 0) {
-                        knight -= 1;
-                        msg.prepend("<p>Krieger ist erfroren.</p>");
-                    } else if (stableman > 0) {
-                        stableman -= 1;
-                        msg.prepend("<p>Stallbetreuer ist erfroren.</p>");
-                    }
-                    check_msg();
-                }
-                if (villager.count === 0) {
-                    game_over();
-                }
-            }
-        }
+		for (var x = 0; x < villager.count; x += 30) {
+			var rnd = Math.floor((Math.random() * 10) + 1);
+			if (rnd >= 1 && rnd < 5) {
+				if (villager.count > 0) {
+					villager.count -= 1;
+					if (villager.unused > 0) {
+						villager.unused -= 1;
+						msg.prepend("<p>Bewohner ist erfroren.</p>");
+						check_msg();
+					} else {
+						if (gatherer > 0) {
+							gatherer -= 1;
+							msg.prepend("<p>Sammler ist erfroren.</p>");
+						} else if (lumberjack > 0) {
+							lumberjack -= 1;
+							msg.prepend("<p>Holzfäller ist erfroren.</p>");
+						} else if (quarryman > 0) {
+							quarryman -= 1;
+							msg.prepend("<p>Steinbrucharbeiter ist erfroren.</p>");
+						} else if (worker > 0) {
+							worker -= 1;
+							msg.prepend("<p>Arbeiter ist erfroren.</p>");
+						} else if (hunter > 0) {
+							hunter -= 1;
+							msg.prepend("<p>Jäger ist erfroren.</p>");
+						} else if (shepherd > 0) {
+							shepherd -= 1;
+							msg.prepend("<p>Schäfer ist erfroren.</p>");
+						} else if (coalminer > 0) {
+							coalminer -= 1;
+							msg.prepend("<p>Kohleminenarbeiter ist erfroren.</p>");
+						} else if (ironminer > 0) {
+							ironminer -= 1;
+							msg.prepend("<p>Eisenminenarbeiter ist erfroren.</p>");
+						} else if (tailor > 0) {
+							tailor -= 1;
+							msg.prepend("<p>Schneider ist erfroren.</p>");
+						} else if (alchemist > 0) {
+							alchemist -= 1;
+							msg.prepend("<p>Alchemist ist erfroren.</p>");
+						} else if (smith > 0) {
+							smith -= 1;
+							msg.prepend("<p>Schmied ist erfroren.</p>");
+						} else if (scout > 0) {
+							scout -= 1;
+							msg.prepend("<p>Kundschafter ist erfroren.</p>");
+						} else if (knight > 0) {
+							knight -= 1;
+							msg.prepend("<p>Krieger ist erfroren.</p>");
+						} else if (stableman > 0) {
+							stableman -= 1;
+							msg.prepend("<p>Stallbetreuer ist erfroren.</p>");
+						}
+						check_msg();
+					}
+					if (villager.count === 0) {
+						game_over();
+					}
+				}
+			}
+		}
     }
 }
 
@@ -1530,65 +1535,55 @@ function supplie_prod() {
             interval_starve = setInterval(function () {die("starve"); }, speed * 15);
         }
     }
-    if (food < supplies_max) {
+    if ((food + (gatherer * 2) + hunter) < supplies_max) {
         food += (gatherer * 2) + hunter;
-        if (food > supplies_max) {
-            food = supplies_max;
-        }
-    }
-    if (wood < supplies_max) {
+	} else {
+		food = supplies_max;
+	}
+    if ((wood + lumberjack * wood_bonus) < supplies_max) {
         wood += lumberjack * wood_bonus;
-        if (wood > supplies_max) {
-            wood = supplies_max;
-        }
+	} else {
+		wood = supplies_max;
     }
-    var rnd_stone, rnd_coal, rnd_iron;
-    if (stone < supplies_max) {
-        rnd_stone = Math.floor((Math.random() * 2) + 1);
-        if (rnd_stone === 1) {
-            stone += quarryman * stone_bonus;
-            if (stone > supplies_max) {
-                stone = supplies_max;
-            }
-        }
-    }
-    if (leather < supplies_max) {
+    var rnd_stone = Math.floor((Math.random() * 2) + 1),
+		rnd_coal = Math.floor((Math.random() * 4) + 1),
+		rnd_iron = Math.floor((Math.random() * 6) + 1);
+	if (rnd_stone === 1) {
+		if ((stone + quarryman * stone_bonus) < supplies_max) {
+			stone += quarryman * stone_bonus;
+		} else {
+			stone = supplies_max;
+		}
+	}
+    if ((leather + hunter * leather_bonus) < supplies_max) {
         leather += hunter * leather_bonus;
-        if (leather > supplies_max) {
-            leather = supplies_max;
-        }
-    }
-    if (cloth < supplies_max) {
+	} else {
+		leather = supplies_max;
+	}
+    if ((cloth + shepherd * cloth_bonus) < supplies_max) {
         cloth += shepherd * cloth_bonus;
-        if (cloth > supplies_max) {
-            cloth = supplies_max;
-        }
-    }
-    if (coal < supplies_max) {
-        rnd_coal = Math.floor((Math.random() * 4) + 1);
-        if (rnd_coal === 1) {
-            coal += coalminer * coal_bonus;
-            if (coal > supplies_max) {
-                coal = supplies_max;
-            }
-        }
-    }
-    if (iron < supplies_max) {
-        rnd_iron = Math.floor((Math.random() * 6) + 1);
-        if (rnd_iron === 1) {
+	} else {
+		cloth = supplies_max;
+	}
+	if (rnd_coal === 1) {
+		if ((coal + coalminer * coal_bonus) < supplies_max) {
+			coal += coalminer * coal_bonus;
+		} else {
+			coal = supplies_max;
+		}
+	}
+	if (rnd_iron === 1) {
+		if ((iron + ironminer * iron_bonus) < supplies_max) {
             iron += ironminer * iron_bonus;
-            if (iron > supplies_max) {
-                iron = supplies_max;
-            }
-        }
+		} else {
+			iron = supplies_max;
+		}
     }
-    if (clothes < supplies_max) {
+    if ((clothes + tailor * clothes_bonus) < supplies_max) {
         clothes += tailor * clothes_bonus;
-        cloth -= tailor;
-        if (clothes > supplies_max) {
-            clothes = supplies_max;
-        }
-    }
+	} else {
+		clothes = supplies_max;
+	}
 }
 
 /* Villager add */ 
@@ -1614,19 +1609,21 @@ function new_villagers() {
 
 /* Horse add */ 
 function new_horses() {
-    var rnd = Math.floor((Math.random() * stableman) + 1), amount;
-    if (rnd >= 1 && rnd < Math.floor((stableman * breed_bonus) / 6)) {
-        amount = Math.floor((Math.random() * 2) + 2);
-        if (horse + amount <= villager.max) {
-            horse += amount;
-            msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
-            check_msg();
-        }
-    } else if (rnd >= Math.floor((stableman * breed_bonus) / 6) && rnd <= Math.floor((stableman * breed_bonus) / 3)) {
-        if (horse < villager.max) {
-            horse += 1;
-            msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
-            check_msg();
-        }
-    }
+	for (var x = 0; x < stableman; x++) {
+		var rnd = Math.floor((Math.random() * 20) + 1), amount;
+		if (rnd === 1) {
+			amount = Math.floor((Math.random() * 2) + 2);
+			if (horse + amount <= villager.max) {
+				horse += amount;
+				msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
+				check_msg();
+			}
+		} else if (rnd >= 2 && rnd < 5) {
+			if (horse < villager.max) {
+				horse += 1;
+				msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
+				check_msg();
+			}
+		}
+	}
 }

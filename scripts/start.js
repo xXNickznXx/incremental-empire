@@ -87,7 +87,6 @@ $("#btn_start").click(function () {
         }
 
         $("#main").show();
-        $("#bottom").show();
         $("#start").hide();
         
         setTimeout(function() {window_resize();}, 50);
