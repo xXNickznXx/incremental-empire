@@ -19,11 +19,11 @@ function upgrade_hut() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_hut", function () {
-    task.append(`<tr class='hut'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Hütte</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr hut'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Hütte</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = hut_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -56,11 +56,11 @@ function upgrade_huntinghut() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_huntinghut", function () {
-    task.append(`<tr class='huntinghut'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Jagdhütte</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr huntinghut'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Jagdhütte</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = huntinghut_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -93,11 +93,11 @@ function upgrade_storage() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_storage", function () {
-    task.append(`<tr class='storage'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Lager</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr storage'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Lager</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = storage_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -130,11 +130,11 @@ function upgrade_lumberjackhut() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_lumberjackhut", function () {
-    task.append(`<tr class='lumberjackhut'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Holzfällerhütte</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr lumberjackhut'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Holzfällerhütte</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = lumberjackhut_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -167,11 +167,11 @@ function upgrade_sheepstall() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_sheepstall", function () {
-    task.append(`<tr class='sheepstall'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Schafstall</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr sheepstall'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Schafstall</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = sheepstall_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -204,11 +204,11 @@ function upgrade_quarry() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_quarry", function () {
-    task.append(`<tr class='quarry'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Steinbruch</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr quarry'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Steinbruch</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = quarry_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -241,11 +241,11 @@ function upgrade_coalmine() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_coalmine", function () {
-    task.append(`<tr class='coalmine'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Kohlemine</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr coalmine'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Kohlemine</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = coalmine_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -280,11 +280,11 @@ function upgrade_ironmine() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_ironmine", function () {
-    task.append(`<tr class='ironmine'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Eisenmine</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr ironmine'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Eisenmine</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = ironmine_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -319,11 +319,11 @@ function upgrade_tailorhouse() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_tailorhouse", function () {
-    task.append(`<tr class='tailorhouse'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Schneiderhaus</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr tailorhouse'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Schneiderhaus</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = tailorhouse_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -360,11 +360,11 @@ function upgrade_alchemisthut() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_alchemisthut", function () {
-    task.append(`<tr class='alchemisthut'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Alchemistenhütte</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr alchemisthut'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Alchemistenhütte</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = alchemisthut_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -401,11 +401,11 @@ function upgrade_forge() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_forge", function () {
-    task.append(`<tr class='forge'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Schmiede</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr forge'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Schmiede</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = forge_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -442,11 +442,11 @@ function upgrade_market() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_market", function () {
-    task.append(`<tr class='market'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Markt</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr market'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Markt</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = market_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -483,11 +483,11 @@ function upgrade_scoutpost() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_scoutpost", function () {
-    task.append(`<tr class='scoutpost'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Erkundungsposten</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr scoutpost'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Erkundungsposten</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = scoutpost_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -524,11 +524,11 @@ function upgrade_barracks() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_barracks", function () {
-    task.append(`<tr class='barracks'>
-				<td>&#x2716;</td>
-                <td>Ausbau einer Kaserne</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr barracks'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau einer Kaserne</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = barracks_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));
@@ -565,11 +565,11 @@ function upgrade_stable() {
 	}
 }
 $("#upgrade").on("click", "#btn_upgrade_stable", function () {
-    task.append(`<tr class='stable'>
-				<td>&#x2716;</td>
-                <td>Ausbau eines Pferdestall</td>
-                <td class='time'></td>
-                </tr>`);
+    task.append(`<div class='tr stable'>
+				<div class='td'>&#x2716;</div>
+                <div class='td'>Ausbau eines Pferdestall</div>
+                </div class='td time'></div>
+                </div>`);
     slot_build = true;
     timer = stable_up.curr_time * (speed / 1000);
 	timer_half = Number((timer / 2).toFixed(1));

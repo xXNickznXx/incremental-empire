@@ -405,138 +405,138 @@ function refresh() {
     // Build Buttons Show/Hide
     //{
     if (wood >= hut.costs.wood / 2 && stone >= hut.costs.stone / 2) {
-        if ($("#build tbody #btn_hut").length <= 0) {
-            $("#build tbody").append(el_build_hut);
+        if ($("#build .tbody #btn_hut").length <= 0) {
+            $("#build .tbody").append(el_build_hut);
         }
     } else {
-        if ($("#build tbody #btn_hut")) {
-            $("#build tbody #btn_hut").closest("tr").remove();
+        if ($("#build .tbody #btn_hut")) {
+            $("#build .tbody #btn_hut").closest(".tr").remove();
         }
     }
     if (wood >= huntinghut.costs.wood / 2 && stone >= huntinghut.costs.stone / 2 && huntinghut.count === false) {
-        if ($("#build tbody #btn_huntinghut").length <= 0) {
-            $("#build tbody").append(el_build_huntinghut);
+        if ($("#build .tbody #btn_huntinghut").length <= 0) {
+            $("#build .tbody").append(el_build_huntinghut);
         }
     } else {
-        if ($("#build tbody #btn_huntinghut")) {
-            $("#build tbody #btn_huntinghut").closest("tr").remove();
+        if ($("#build .tbody #btn_huntinghut")) {
+            $("#build .tbody #btn_huntinghut").closest(".tr").remove();
         }
     }
     if (wood >= storage.costs.wood / 2 && stone >= storage.costs.stone / 2 && storage.count === false) {
-        if ($("#build tbody #btn_storage").length <= 0) {
-            $("#build tbody").append(el_build_storage);
+        if ($("#build .tbody #btn_storage").length <= 0) {
+            $("#build .tbody").append(el_build_storage);
         }
     } else {
-        if ($("#build tbody #btn_storage")) {
-            $("#build tbody #btn_storage").closest("tr").remove();
+        if ($("#build .tbody #btn_storage")) {
+            $("#build .tbody #btn_storage").closest(".tr").remove();
         }
     }
     if (wood >= lumberjackhut.costs.wood / 2 && stone >= lumberjackhut.costs.stone / 2 && lumberjackhut.count === false) {
-        if ($("#build tbody #btn_lumberjackhut").length <= 0) {
-            $("#build tbody").append(el_build_lumberjackhut);
+        if ($("#build .tbody #btn_lumberjackhut").length <= 0) {
+            $("#build .tbody").append(el_build_lumberjackhut);
         }
     } else {
-        if ($("#build tbody #btn_lumberjackhut")) {
-            $("#build tbody #btn_lumberjackhut").closest("tr").remove();
+        if ($("#build .tbody #btn_lumberjackhut")) {
+            $("#build .tbody #btn_lumberjackhut").closest(".tr").remove();
         }
     }
     if (wood >= sheepstall.costs.wood / 2 && stone >= sheepstall.costs.stone / 2 && sheepstall.count === false) {
-        if ($("#build tbody #btn_sheepstall").length <= 0) {
-            $("#build tbody").append(el_build_sheepstall);
+        if ($("#build .tbody #btn_sheepstall").length <= 0) {
+            $("#build .tbody").append(el_build_sheepstall);
         }
     } else {
-        if ($("#build tbody #btn_sheepstall")) {
-            $("#build tbody #btn_sheepstall").closest("tr").remove();
+        if ($("#build .tbody #btn_sheepstall")) {
+            $("#build .tbody #btn_sheepstall").closest(".tr").remove();
         }
     }
     if (wood >= quarry.costs.wood / 2 && stone >= quarry.costs.stone / 2 && quarry.count === false) {
-        if ($("#build tbody #btn_quarry").length <= 0) {
-            $("#build tbody").append(el_build_quarry);
+        if ($("#build .tbody #btn_quarry").length <= 0) {
+            $("#build .tbody").append(el_build_quarry);
         }
     } else {
-        if ($("#build tbody #btn_quarry")) {
-            $("#build tbody #btn_quarry").closest("tr").remove();
+        if ($("#build .tbody #btn_quarry")) {
+            $("#build .tbody #btn_quarry").closest(".tr").remove();
         }
     }
     if (wood >= coalmine.costs.wood / 2 && stone >= coalmine.costs.stone / 2 && coalmine.count === false) {
-        if ($("#build tbody #btn_coalmine").length <= 0) {
-            $("#build tbody").append(el_build_coalmine);
+        if ($("#build .tbody #btn_coalmine").length <= 0) {
+            $("#build .tbody").append(el_build_coalmine);
         }
     } else {
-        if ($("#build tbody #btn_coalmine")) {
-            $("#build tbody #btn_coalmine").closest("tr").remove();
+        if ($("#build .tbody #btn_coalmine")) {
+            $("#build .tbody #btn_coalmine").closest(".tr").remove();
         }
     }
     if (wood >= ironmine.costs.wood / 2 && stone >= ironmine.costs.stone / 2 && coal >= ironmine.costs.coal / 2 && ironmine.count === false) {
-        if ($("#build tbody #btn_ironmine").length <= 0) {
-            $("#build tbody").append(el_build_ironmine);
+        if ($("#build .tbody #btn_ironmine").length <= 0) {
+            $("#build .tbody").append(el_build_ironmine);
         }
     } else {
-        if ($("#build tbody #btn_ironmine")) {
-            $("#build tbody #btn_ironmine").closest("tr").remove();
+        if ($("#build .tbody #btn_ironmine")) {
+            $("#build .tbody #btn_ironmine").closest(".tr").remove();
         }
     }
     if (wood >= tailorhouse.costs.wood / 2 && stone >= tailorhouse.costs.stone / 2 && coal >= tailorhouse.costs.coal / 2 && tailorhouse.count === false) {
-        if ($("#build tbody #btn_tailorhouse").length <= 0) {
-            $("#build tbody").append(el_build_tailorhouse);
+        if ($("#build .tbody #btn_tailorhouse").length <= 0) {
+            $("#build .tbody").append(el_build_tailorhouse);
         }
     } else {
-        if ($("#build tbody #btn_tailorhouse")) {
-            $("#build tbody #btn_tailorhouse").closest("tr").remove();
+        if ($("#build .tbody #btn_tailorhouse")) {
+            $("#build .tbody #btn_tailorhouse").closest(".tr").remove();
         }
     }
     if (wood >= alchemisthut.costs.wood / 2 && stone >= alchemisthut.costs.stone / 2 && coal >= alchemisthut.costs.coal / 2 && iron >= alchemisthut.costs.iron / 2 && alchemisthut.count === false) {
-        if ($("#build tbody #btn_alchemisthut").length <= 0) {
-            $("#build tbody").append(el_build_alchemisthut);
+        if ($("#build .tbody #btn_alchemisthut").length <= 0) {
+            $("#build .tbody").append(el_build_alchemisthut);
         }
     } else {
-        if ($("#build tbody #btn_alchemisthut")) {
-            $("#build tbody #btn_alchemisthut").closest("tr").remove();
+        if ($("#build .tbody #btn_alchemisthut")) {
+            $("#build .tbody #btn_alchemisthut").closest(".tr").remove();
         }
     }
     if (wood >= forge.costs.wood / 2 && stone >= forge.costs.stone / 2 && coal >= forge.costs.coal / 2 && iron >= forge.costs.iron / 2 && forge.count === false) {
-        if ($("#build tbody #btn_forge").length <= 0) {
-            $("#build tbody").append(el_build_forge);
+        if ($("#build .tbody #btn_forge").length <= 0) {
+            $("#build .tbody").append(el_build_forge);
         }
     } else {
-        if ($("#build tbody #btn_forge")) {
-            $("#build tbody #btn_forge").closest("tr").remove();
+        if ($("#build .tbody #btn_forge")) {
+            $("#build .tbody #btn_forge").closest(".tr").remove();
         }
     }
     if (wood >= market.costs.wood / 2 && stone >= market.costs.stone / 2 && coal >= market.costs.coal / 2 && iron >= market.costs.iron / 2 && market.count === false) {
-        if ($("#build tbody #btn_market").length <= 0) {
-            $("#build tbody").append(el_build_market);
+        if ($("#build .tbody #btn_market").length <= 0) {
+            $("#build .tbody").append(el_build_market);
         }
     } else {
-        if ($("#build tbody #btn_market")) {
-            $("#build tbody #btn_market").closest("tr").remove();
+        if ($("#build .tbody #btn_market")) {
+            $("#build .tbody #btn_market").closest(".tr").remove();
         }
     }
     if (wood >= scoutpost.costs.wood / 2 && stone >= scoutpost.costs.stone / 2 && coal >= scoutpost.costs.coal / 2 && iron >= scoutpost.costs.iron / 2 && scoutpost.count === false) {
-        if ($("#build tbody #btn_scoutpost").length <= 0) {
-            $("#build tbody").append(el_build_scoutpost);
+        if ($("#build .tbody #btn_scoutpost").length <= 0) {
+            $("#build .tbody").append(el_build_scoutpost);
         }
     } else {
-        if ($("#build tbody #btn_scoutpost")) {
-            $("#build tbody #btn_scoutpost").closest("tr").remove();
+        if ($("#build .tbody #btn_scoutpost")) {
+            $("#build .tbody #btn_scoutpost").closest(".tr").remove();
         }
     }
     if (wood >= barracks.costs.wood / 2 && stone >= barracks.costs.stone / 2 && coal >= barracks.costs.coal / 2 && iron >= barracks.costs.iron / 2 && barracks.count === false) {
-        if ($("#build tbody #btn_barracks").length <= 0) {
-            $("#build tbody").append(el_build_barracks);
+        if ($("#build .tbody #btn_barracks").length <= 0) {
+            $("#build .tbody").append(el_build_barracks);
         }
     } else {
-        if ($("#build tbody #btn_barracks")) {
-            $("#build tbody #btn_barracks").closest("tr").remove();
+        if ($("#build .tbody #btn_barracks")) {
+            $("#build .tbody #btn_barracks").closest(".tr").remove();
         }
     }
     if (wood >= stable.costs.wood / 2 && stone >= stable.costs.stone / 2 && coal >= stable.costs.coal / 2 && iron >= stable.costs.iron / 2 && stable.count === false) {
-        if ($("#build tbody #btn_stable").length <= 0) {
-            $("#build tbody").append(el_build_stable);
+        if ($("#build .tbody #btn_stable").length <= 0) {
+            $("#build .tbody").append(el_build_stable);
         }
     } else {
-        if ($("#build tbody #btn_stable")) {
-            $("#build tbody #btn_stable").closest("tr").remove();
+        if ($("#build .tbody #btn_stable")) {
+            $("#build .tbody #btn_stable").closest(".tr").remove();
         }
     }
     //}
@@ -623,138 +623,138 @@ function refresh() {
     // Upgrade Buttons Show/Hide
     //{
     if (wood >= hut_up.costs.wood / 2 && stone >= hut_up.costs.stone / 2 && hut.count > 0) {
-        if ($("#upgrade tbody #btn_upgrade_hut").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_hut);
+        if ($("#upgrade .tbody #btn_upgrade_hut").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_hut);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_hut")) {
-            $("#upgrade tbody #btn_upgrade_hut").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_hut")) {
+            $("#upgrade .tbody #btn_upgrade_hut").closest(".tr").remove();
         }
     }
     if (wood >= 150 && stone >= 30 && huntinghut.count === true && huntinghut_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_huntinghut").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_huntinghut);
+        if ($("#upgrade .tbody #btn_upgrade_huntinghut").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_huntinghut);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_huntinghut")) {
-            $("#upgrade tbody #btn_upgrade_huntinghut").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_huntinghut")) {
+            $("#upgrade .tbody #btn_upgrade_huntinghut").closest(".tr").remove();
         }
     }
     if (wood >= 150 && stone >= 150 && storage.count === true && storage_up.count < 9) {
-        if ($("#upgrade tbody #btn_upgrade_storage").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_storage);
+        if ($("#upgrade .tbody #btn_upgrade_storage").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_storage);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_storage")) {
-            $("#upgrade tbody #btn_upgrade_storage").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_storage")) {
+            $("#upgrade .tbody #btn_upgrade_storage").closest(".tr").remove();
         }
     }
     if (wood >= 200 && stone >= 50 && lumberjackhut.count === true && lumberjackhut_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_lumberjackhut").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_lumberjackhut);
+        if ($("#upgrade .tbody #btn_upgrade_lumberjackhut").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_lumberjackhut);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_lumberjackhut")) {
-            $("#upgrade tbody #btn_upgrade_lumberjackhut").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_lumberjackhut")) {
+            $("#upgrade .tbody #btn_upgrade_lumberjackhut").closest(".tr").remove();
         }
     }
     if (wood >= 250 && stone >= 75 && sheepstall.count === true && sheepstall_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_sheepstall").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_sheepstall);
+        if ($("#upgrade .tbody #btn_upgrade_sheepstall").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_sheepstall);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_sheepstall")) {
-            $("#upgrade tbody #btn_upgrade_sheepstall").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_sheepstall")) {
+            $("#upgrade .tbody #btn_upgrade_sheepstall").closest(".tr").remove();
         }
     }
     if (wood >= 300 && stone >= 100 && quarry.count === true && quarry_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_quarry").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_quarry);
+        if ($("#upgrade .tbody #btn_upgrade_quarry").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_quarry);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_quarry")) {
-            $("#upgrade tbody #btn_upgrade_quarry").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_quarry")) {
+            $("#upgrade .tbody #btn_upgrade_quarry").closest(".tr").remove();
         }
     }
     if (wood >= 300 && stone >= 150 && coalmine.count === true && coalmine_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_coalmine").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_coalmine);
+        if ($("#upgrade .tbody #btn_upgrade_coalmine").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_coalmine);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_coalmine")) {
-            $("#upgrade tbody #btn_upgrade_coalmine").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_coalmine")) {
+            $("#upgrade .tbody #btn_upgrade_coalmine").closest(".tr").remove();
         }
     }
     if (wood >= 400 && stone >= 200 && coal >= 50 && ironmine.count === true && ironmine_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_ironmine").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_ironmine);
+        if ($("#upgrade .tbody #btn_upgrade_ironmine").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_ironmine);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_ironmine")) {
-            $("#upgrade tbody #btn_upgrade_ironmine").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_ironmine")) {
+            $("#upgrade .tbody #btn_upgrade_ironmine").closest(".tr").remove();
         }
     }
     if (wood >= 500 && stone >= 400 && coal >= 200 && tailorhouse.count === true && tailorhouse_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_tailorhouse").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_tailorhouse);
+        if ($("#upgrade .tbody #btn_upgrade_tailorhouse").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_tailorhouse);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_tailorhouse")) {
-            $("#upgrade tbody #btn_upgrade_tailorhouse").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_tailorhouse")) {
+            $("#upgrade .tbody #btn_upgrade_tailorhouse").closest(".tr").remove();
         }
     }
     if (wood >= 550 && stone >= 450 && coal >= 250 && iron >= 50 && alchemisthut.count === true && alchemisthut_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_alchemisthut").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_alchemisthut);
+        if ($("#upgrade .tbody #btn_upgrade_alchemisthut").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_alchemisthut);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_alchemisthut")) {
-            $("#upgrade tbody #btn_upgrade_alchemisthut").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_alchemisthut")) {
+            $("#upgrade .tbody #btn_upgrade_alchemisthut").closest(".tr").remove();
         }
     }
     if (wood >= 600 && stone >= 450 && coal >= 250 && iron >= 50 && forge.count === true && forge_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_forge").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_forge);
+        if ($("#upgrade .tbody #btn_upgrade_forge").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_forge);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_forge")) {
-            $("#upgrade tbody #btn_upgrade_forge").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_forge")) {
+            $("#upgrade .tbody #btn_upgrade_forge").closest(".tr").remove();
         }
     }
     if (wood >= 750 && stone >= 500 && coal >= 300 && iron >= 100 && market.count === true && market_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_market").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_market);
+        if ($("#upgrade .tbody #btn_upgrade_market").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_market);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_market")) {
-            $("#upgrade tbody #btn_upgrade_market").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_market")) {
+            $("#upgrade .tbody #btn_upgrade_market").closest(".tr").remove();
         }
     }
     if (wood >= 1000 && stone >= 750 && coal >= 400 && iron >= 250 && scoutpost.count === true && scoutpost_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_scoutpost").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_scoutpost);
+        if ($("#upgrade .tbody #btn_upgrade_scoutpost").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_scoutpost);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_scoutpost")) {
-            $("#upgrade tbody #btn_upgrade_scoutpost").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_scoutpost")) {
+            $("#upgrade .tbody #btn_upgrade_scoutpost").closest(".tr").remove();
         }
     }
     if (wood >= 1500 && stone >= 1200 && coal >= 1000 && iron >= 800 && barracks.count === true && barracks_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_barracks").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_barracks);
+        if ($("#upgrade .tbody #btn_upgrade_barracks").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_barracks);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_barracks")) {
-            $("#upgrade tbody #btn_upgrade_barracks").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_barracks")) {
+            $("#upgrade .tbody #btn_upgrade_barracks").closest(".tr").remove();
         }
     }
     if (wood >= 2500 && stone >= 2000 && coal >= 1500 && iron >= 1200 && stable.count === true && stable_up.count === false) {
-        if ($("#upgrade tbody #btn_upgrade_stable").length <= 0) {
-            $("#upgrade tbody").append(el_upgrade_stable);
+        if ($("#upgrade .tbody #btn_upgrade_stable").length <= 0) {
+            $("#upgrade .tbody").append(el_upgrade_stable);
         }
     } else {
-        if ($("#upgrade tbody #btn_upgrade_stable")) {
-            $("#upgrade tbody #btn_upgrade_stable").closest("tr").remove();
+        if ($("#upgrade .tbody #btn_upgrade_stable")) {
+            $("#upgrade .tbody #btn_upgrade_stable").closest(".tr").remove();
         }
     }
     //}

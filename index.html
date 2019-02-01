@@ -13,25 +13,25 @@
     </head>
     <body>
         <div id="start" class="start">
-			<table>
-				<tbody>
-					<tr>
-						<td><label for="speed">Geschwindigkeit: </label></td>
-						<td><input type="number" value="1000" min="200" max="2000" step="100" id="speed" class="in"></td>
-					</tr>
-					<tr>
-						<td><label for="load">Speicherstand laden:</label></td>
-						<td>
+			<div class="table">
+				<div class="tbody">
+					<div class="tr">
+						<div class="td"><label for="speed">Geschwindigkeit: </label></div>
+						<div class="td"><input type="number" value="1000" min="200" max="2000" step="100" id="speed" class="in"></div>
+					</div>
+					<div class="tr">
+						<div class="td"><label for="load">Speicherstand laden:</label></div>
+						<div class="td">
 							<input id="load" type="file" />
 							<label for="load">(Wenn vorhanden, sonst leer)</label>
-						</td>
-					</tr>
-					<tr>
-						<td><button id="btn_start" class="btn_start">Start</button></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
+						</div>
+					</div>
+					<div class="tr">
+						<div class="td"><button id="btn_start" class="btn_start">Start</button></div>
+						<div class="td"></div>
+					</div>
+				</div>
+			</div>
         </div>
         <div id="main" class="main" hidden="hidden">
             <div class="header"><h1>Incremental Empire</h1></div>
@@ -47,28 +47,28 @@
                 </div>
                 <div id="content" class="content">
                     <div id="build">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gebäude</th>
-                                    <th>Bauzeit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th">Gebäude</div>
+                                    <div class="th">Bauzeit</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                            </div>
+                        </div>
                     </div>
                     <div id="upgrade" hidden="hidden">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gebäude</th>
-                                    <th>Bauzeit</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th">Gebäude</div>
+                                    <div class="th">Bauzeit</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                            </div>
+                        </div>
                     </div>
                     <div id="craft" hidden="hidden">
                         <div id="coll_brew" class="coll_craft" hidden="hidden">
@@ -103,190 +103,190 @@
                         </div>
                     </div>
                     <div id="trade" hidden="hidden">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Gegenstand</th>
-                                    <th>Anzahl</th>
-                                    <th>Kaufen</th>
-                                    <th>Verkaufen</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th">Gegenstand</div>
+                                    <div class="th">Anzahl</div>
+                                    <div class="th">Kaufen</div>
+                                    <div class="th">Verkaufen</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                            </div>
+                        </div>
                     </div>
                     <div id="travel" hidden="hidden">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Ausrüstung</th>
-                                    <th>Anzahl</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Nahrung</td>
-                                    <td>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th">Ausrüstung</div>
+                                    <div class="th">Anzahl</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                                <div class="tr">
+                                    <div class="td">Nahrung</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Lederrüstung</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Lederrüstung</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Eisenrüstung</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Eisenrüstung</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Axt</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Axt</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Schwert</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Schwert</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Morgenstern</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Morgenstern</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Kurzbogen</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Kurzbogen</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Langbogen</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Langbogen</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Armbrust</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Armbrust</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Handelsgeschenk</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Handelsgeschenk</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Friedensgeschenk</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Friedensgeschenk</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Giftgeschenk</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Giftgeschenk</div>
+                                    <div class="td">
                                         <button id="" class="btn_dwn_up">-</button>
                                         <p id="" class="num">0</p>
                                         <button id="" class="btn_dwn_up">+</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Reisen</th>
-                                    <th>Dauer</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Erkunden</td>
-                                    <td>5min</td>
-                                </tr>
-                                <tr>
-                                    <td>Handelsabkommen</td>
-                                    <td>10min</td>
-                                </tr>
-                                <tr>
-                                    <td>Spionieren</td>
-                                    <td>6min</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th">Reisen</div>
+                                    <div class="th">Dauer</div>
+                                </div>
+                            </div>
+                            <div class="tbody">
+                                <div class="tr">
+                                    <div class="td">Erkunden</div>
+                                    <div class="td">5min</div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Handelsabkommen</div>
+                                    <div class="td">10min</div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">Spionieren</div>
+                                    <div class="td">6min</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id="options" hidden="hidden">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Dark/Light Theme</td>
-                                    <td>
+                        <div class="table">
+                            <div class="tbody">
+                                <div class="tr">
+                                    <div class="td">Dark/Light Theme</div>
+                                    <div class="td">
                                         <label id="switch" class="switch">
                                             <input type="checkbox">
                                             <span id="slider" class="slider"></span>
                                         </label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>In Datei speichern:</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">In Datei speichern:</div>
+                                    <div class="td">
                                         <button id="btn_save" class="btn_options">Speichern</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>In Cookie speichern:</td>
-                                    <td>
+                                    </div>
+                                </div>
+                                <div class="tr">
+                                    <div class="td">In Cookie speichern:</div>
+                                    <div class="td">
                                         <button id="" class="btn_options">Speichern</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="left_bottom">
                     <div class="tasks">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Aktivität</th>
-                                    <th>Dauer</th>
-                                </tr>
-                            </thead>
-                            <tbody id="task">
-                            </tbody>
-                        </table>
+                        <div class="table">
+                            <div class="thead">
+                                <div class="tr">
+                                    <div class="th"></div>
+                                    <div class="th">Aktivität</div>
+                                    <div class="th">Dauer</div>
+                                </div>
+                            </div>
+                            <div class="tbody" id="task">
+                            </div>
+                        </div>
                     </div>
                     <div id="phase" class="phase">
                     </div>
@@ -299,7 +299,7 @@
             </div>
             <div id="right" class="right">
                 <div id="villagers" class="villagers">
-                    <p class="th">&#9207;Bewohner</p>
+                    <p class="right-header">&#9207;Bewohner</p>
                     <div id="content_villagers">
                         <div id="row" class="row">
                             <p>Gesamt</p>
@@ -312,7 +312,7 @@
                     </div>
                 </div>
                 <div id="jobs" class="jobs">
-                    <p class="th">&#9207;Jobs</p>
+                    <p class="right-header">&#9207;Jobs</p>
                     <div id="content_jobs">
                         <div id="row" class="row">
                                 <p>Sammler</p>
@@ -429,7 +429,7 @@
                     </div>
                 </div>
                 <div id="supplies" class="supplies">
-                    <p class="th">&#9207;Vorräte</p>
+                    <p class="right-header">&#9207;Vorräte</p>
                     <div id="content_supplies">
                         <div id="row" class="row">
                             <p>IE Münzen</p>
@@ -470,7 +470,7 @@
                     </div>
                 </div>
                 <div id="items" class="items" hidden="hidden">
-                    <p class="th">&#9207;Gegenstände</p>
+                    <p class="right-header">&#9207;Gegenstände</p>
                     <div id="content_items">
                         <div id="row" class="row" hidden="hidden">
                             <p>Medizin</p>
