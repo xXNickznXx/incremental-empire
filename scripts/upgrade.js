@@ -22,7 +22,7 @@ $("#upgrade").on("click", "#btn_upgrade_hut", function () {
     task.append(`<div class='tr hut'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Hütte</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = hut_up.curr_time * (speed / 1000);
@@ -59,7 +59,7 @@ $("#upgrade").on("click", "#btn_upgrade_huntinghut", function () {
     task.append(`<div class='tr huntinghut'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Jagdhütte</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = huntinghut_up.curr_time * (speed / 1000);
@@ -96,7 +96,7 @@ $("#upgrade").on("click", "#btn_upgrade_storage", function () {
     task.append(`<div class='tr storage'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Lager</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = storage_up.curr_time * (speed / 1000);
@@ -133,7 +133,7 @@ $("#upgrade").on("click", "#btn_upgrade_lumberjackhut", function () {
     task.append(`<div class='tr lumberjackhut'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Holzfällerhütte</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = lumberjackhut_up.curr_time * (speed / 1000);
@@ -170,7 +170,7 @@ $("#upgrade").on("click", "#btn_upgrade_sheepstall", function () {
     task.append(`<div class='tr sheepstall'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Schafstall</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = sheepstall_up.curr_time * (speed / 1000);
@@ -207,7 +207,7 @@ $("#upgrade").on("click", "#btn_upgrade_quarry", function () {
     task.append(`<div class='tr quarry'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Steinbruch</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = quarry_up.curr_time * (speed / 1000);
@@ -244,7 +244,7 @@ $("#upgrade").on("click", "#btn_upgrade_coalmine", function () {
     task.append(`<div class='tr coalmine'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Kohlemine</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = coalmine_up.curr_time * (speed / 1000);
@@ -283,7 +283,7 @@ $("#upgrade").on("click", "#btn_upgrade_ironmine", function () {
     task.append(`<div class='tr ironmine'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Eisenmine</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = ironmine_up.curr_time * (speed / 1000);
@@ -322,7 +322,7 @@ $("#upgrade").on("click", "#btn_upgrade_tailorhouse", function () {
     task.append(`<div class='tr tailorhouse'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Schneiderhaus</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = tailorhouse_up.curr_time * (speed / 1000);
@@ -363,7 +363,7 @@ $("#upgrade").on("click", "#btn_upgrade_alchemisthut", function () {
     task.append(`<div class='tr alchemisthut'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Alchemistenhütte</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = alchemisthut_up.curr_time * (speed / 1000);
@@ -404,7 +404,7 @@ $("#upgrade").on("click", "#btn_upgrade_forge", function () {
     task.append(`<div class='tr forge'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Schmiede</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = forge_up.curr_time * (speed / 1000);
@@ -445,7 +445,7 @@ $("#upgrade").on("click", "#btn_upgrade_market", function () {
     task.append(`<div class='tr market'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Markt</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = market_up.curr_time * (speed / 1000);
@@ -486,7 +486,7 @@ $("#upgrade").on("click", "#btn_upgrade_scoutpost", function () {
     task.append(`<div class='tr scoutpost'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Erkundungsposten</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = scoutpost_up.curr_time * (speed / 1000);
@@ -527,7 +527,7 @@ $("#upgrade").on("click", "#btn_upgrade_barracks", function () {
     task.append(`<div class='tr barracks'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau einer Kaserne</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = barracks_up.curr_time * (speed / 1000);
@@ -568,7 +568,7 @@ $("#upgrade").on("click", "#btn_upgrade_stable", function () {
     task.append(`<div class='tr stable'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Ausbau eines Pferdestall</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_build = true;
     timer = stable_up.curr_time * (speed / 1000);

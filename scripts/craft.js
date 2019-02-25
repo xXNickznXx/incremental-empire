@@ -42,7 +42,7 @@ $("#craft").on("click", "#btn_medicine", function () {
     task.append(`<div class='tr medicine'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Medizin</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_brew = true;
     brewer = prod_medicine.curr_time * (speed / 1000);
@@ -110,7 +110,7 @@ $("#craft").on("click", "#btn_poison", function () {
     task.append(`<div class='tr poison'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Gift</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_brew = true;
     brewer = prod_poison.curr_time * (speed / 1000);
@@ -170,7 +170,7 @@ $("#craft").on("click", "#btn_leatherarmor", function () {
     task.append(`<div class='tr leatherarmor'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Lederrüstung</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_leatherarmor.curr_time * (speed / 1000);
@@ -230,7 +230,7 @@ $("#craft").on("click", "#btn_ironarmor", function () {
     task.append(`<div class='tr ironarmor'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Eisenrüstung</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_ironarmor.curr_time * (speed / 1000);
@@ -292,7 +292,7 @@ $("#craft").on("click", "#btn_axe", function () {
     task.append(`<div class='tr axe'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Axt</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_axe.curr_time * (speed / 1000);
@@ -354,7 +354,7 @@ $("#craft").on("click", "#btn_sword", function () {
     task.append(`<div class='tr sword'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Schwert</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_sword.curr_time * (speed / 1000);
@@ -413,7 +413,7 @@ $("#craft").on("click", "#btn_morningstar", function () {
     task.append(`<div class='tr morningstar'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Morgenstern</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_morningstar.curr_time * (speed / 1000);
@@ -475,7 +475,7 @@ $("#craft").on("click", "#btn_shortbow", function () {
     task.append(`<div class='tr shortbow'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Kurzbogen</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_shortbow.curr_time * (speed / 1000);
@@ -537,7 +537,7 @@ $("#craft").on("click", "#btn_longbow", function () {
     task.append(`<div class='tr longbow'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Langbogen</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_longbow.curr_time * (speed / 1000);
@@ -599,7 +599,7 @@ $("#craft").on("click", "#btn_crossbow", function () {
     task.append(`<div class='tr crossbow'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Armbrust</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_crossbow.curr_time * (speed / 1000);
@@ -669,7 +669,7 @@ $("#craft").on("click", "#btn_tradegift", function () {
     task.append(`<div class='tr tradegift'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Handelsgeschenk</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_tradegift.curr_time * (speed / 1000);
@@ -739,7 +739,7 @@ $("#craft").on("click", "#btn_peacegift", function () {
     task.append(`<div class='tr peacegift'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Friedensgeschenk</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_peacegift.curr_time * (speed / 1000);
@@ -812,7 +812,7 @@ $("#craft").on("click", "#btn_poisongift", function () {
     task.append(`<div class='tr poisongift'>
 				<div class='td'>&#x2716;</div>
                 <div class='td'>Herstellung von Giftgeschenk</div>
-                </div class='td time'></div>
+                <div class='td time'></div>
                 </div>`);
     slot_craft = true;
     crafter = prod_poisongift.curr_time * (speed / 1000);
