@@ -23,7 +23,7 @@ if (getCookie("dark") === "true") {
     $("#switch input").prop("checked", false);
 }
 
-$("#btn_save").click(function () {
+function createJsonSave() {
     var saveFile = {
 		$iecoin: iecoin,
         $food: food,
@@ -95,7 +95,12 @@ $("#btn_save").click(function () {
 		$date_month: date.month.current,
 		$date_year: date.year
     },
-        saveJson = JSON.stringify(saveFile, undefined, 3),
+        saveJson = JSON.stringify(saveFile, undefined, 3);
+    return saveJson;
+}
+
+$("#btn_save_file").click(function () {
+    var saveJson = createJsonSave(),
         link = $("<a></a>"),
         text = encodeURIComponent(saveJson);
 
@@ -104,4 +109,9 @@ $("#btn_save").click(function () {
     link.prop("href", "data:application/octet-stream," + text);
     link.appendTo("#options");
     link.get(0).click();
+});
+
+$("#btn_save_cookie").click(function () {
+    var saveJson = createJsonSave();
+    setCookie("save", saveJson, 30);
 });

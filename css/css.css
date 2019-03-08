@@ -83,6 +83,12 @@ button .tooltip:hover {
     padding: 0;
     width: 24px;
 }
+.coming_soon {
+    background: var(--bg);
+    font-size: 70px;
+    height: 90px;
+    text-align: center;
+}
 /* Body */
 body {
     background: var(--bg);

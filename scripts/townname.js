@@ -11,9 +11,3 @@ function nameGen(){
     discovered_towns.push(name);
     $('#travel').append("<p>" + discovered_towns + "</p>");
 }
-nameGen();
-nameGen();
-nameGen();
-nameGen();
-nameGen();
-nameGen();
