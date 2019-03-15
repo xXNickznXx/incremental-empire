@@ -8,9 +8,9 @@ function setCookie(cname, cvalue, exdays) {
 
 function getCookie(cname) {
     "use strict";
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    var i;
+    var name = cname + "=",
+        ca = document.cookie.split(';'),
+        i;
     for(i = 0; i < ca.length; i += 1) {
         var c = ca[i];
         while (c.charAt(0) === ' ') {

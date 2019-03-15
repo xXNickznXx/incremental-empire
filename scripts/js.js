@@ -1310,32 +1310,32 @@ function refresh() {
 /* Show Related Stuff of Buildings */
 function show_related() {
     if (huntinghut.count === true) {
-        $("#leather").closest("#row").removeAttr("hidden");
-        $("#hunter").closest("#row").removeAttr("hidden");
+        $("#leather").closest(".row").removeAttr("hidden");
+        $("#hunter").closest(".row").removeAttr("hidden");
     }
     if (sheepstall.count === true) {
-        $("#cloth").closest("#row").removeAttr("hidden");
-        $("#shepherd").closest("#row").removeAttr("hidden");
+        $("#cloth").closest(".row").removeAttr("hidden");
+        $("#shepherd").closest(".row").removeAttr("hidden");
     }
     if (coalmine.count === true) {
-        $("#coal").closest("#row").removeAttr("hidden");
-        $("#coalminer").closest("#row").removeAttr("hidden");
+        $("#coal").closest(".row").removeAttr("hidden");
+        $("#coalminer").closest(".row").removeAttr("hidden");
     }
     if (ironmine.count === true) {
-        $("#iron").closest("#row").removeAttr("hidden");
-        $("#ironminer").closest("#row").removeAttr("hidden");
+        $("#iron").closest(".row").removeAttr("hidden");
+        $("#ironminer").closest(".row").removeAttr("hidden");
     }
     if (tailorhouse.count === true) {
-        $("#clothes").closest("#row").removeAttr("hidden");
-        $("#tailor").closest("#row").removeAttr("hidden");
+        $("#clothes").closest(".row").removeAttr("hidden");
+        $("#tailor").closest(".row").removeAttr("hidden");
     }
     if (alchemisthut.count === true) {
         $("#btn_craft").removeAttr("hidden");
         $("#coll_brew").removeAttr("hidden");
         $("#items").removeAttr("hidden");
-        $("#medicine").closest("#row").removeAttr("hidden");
-        $("#poison").closest("#row").removeAttr("hidden");
-        $("#alchemist").closest("#row").removeAttr("hidden");
+        $("#medicine").closest(".row").removeAttr("hidden");
+        $("#poison").closest(".row").removeAttr("hidden");
+        $("#alchemist").closest(".row").removeAttr("hidden");
     }
     if (forge.count === true) {
         $("#btn_craft").removeAttr("hidden");
@@ -1343,33 +1343,33 @@ function show_related() {
         $("#coll_weapons").removeAttr("hidden");
         $("#coll_gifts").removeAttr("hidden");
         $("#items").removeAttr("hidden");
-        $("#leatherarmor").closest("#row").removeAttr("hidden");
-        $("#ironarmor").closest("#row").removeAttr("hidden");
-        $("#sword").closest("#row").removeAttr("hidden");
-        $("#axe").closest("#row").removeAttr("hidden");
-        $("#morningstar").closest("#row").removeAttr("hidden");
-        $("#shortbow").closest("#row").removeAttr("hidden");
-        $("#longbow").closest("#row").removeAttr("hidden");
-        $("#crossbow").closest("#row").removeAttr("hidden");
-        $("#tradegift").closest("#row").removeAttr("hidden");
-        $("#peacegift").closest("#row").removeAttr("hidden");
-        $("#poisongift").closest("#row").removeAttr("hidden");
-        $("#smith").closest("#row").removeAttr("hidden");
+        $("#leatherarmor").closest(".row").removeAttr("hidden");
+        $("#ironarmor").closest(".row").removeAttr("hidden");
+        $("#sword").closest(".row").removeAttr("hidden");
+        $("#axe").closest(".row").removeAttr("hidden");
+        $("#morningstar").closest(".row").removeAttr("hidden");
+        $("#shortbow").closest(".row").removeAttr("hidden");
+        $("#longbow").closest(".row").removeAttr("hidden");
+        $("#crossbow").closest(".row").removeAttr("hidden");
+        $("#tradegift").closest(".row").removeAttr("hidden");
+        $("#peacegift").closest(".row").removeAttr("hidden");
+        $("#poisongift").closest(".row").removeAttr("hidden");
+        $("#smith").closest(".row").removeAttr("hidden");
     }
     if (market.count === true) {
         $("#btn_trade").removeAttr("hidden");
     }
     if (scoutpost.count === true) {
         $("#btn_travel").removeAttr("hidden");
-        $("#scout").closest("#row").removeAttr("hidden");
+        $("#scout").closest(".row").removeAttr("hidden");
     }
     if (barracks.count === true) {
-        $("#knight").closest("#row").removeAttr("hidden");
+        $("#knight").closest(".row").removeAttr("hidden");
     }
     if (stable.count === true) {
         $("#items").removeAttr("hidden");
-        $("#horse").closest("#row").removeAttr("hidden");
-        $("#stableman").closest("#row").removeAttr("hidden");
+        $("#horse").closest(".row").removeAttr("hidden");
+        $("#stableman").closest(".row").removeAttr("hidden");
         interval_new_hor = setInterval(new_horses, speed * 60);
     }
 }

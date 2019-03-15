@@ -1,7 +1,8 @@
 var x = 2;
 
 function show_weather() {
-	for (var y = 0; y <= x; y++) {
+    var y;
+	for (y = 0; y <= x; y += 1) {
 		$("#phase").append(`<div>
 								<p>` + date.day[y] + `. ` + date.month.names[date.month.current[y]] + ` ` + date.year[y] + `</p>
 								<p>` + weather.season.names[weather.season.current[y]] + `</p>` +

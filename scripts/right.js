@@ -1,5 +1,5 @@
 function decode(str) {
-    return str.replace(/&#(\d+);/g, function(match, dec) {
+    return str.replace(/&#(\d+);/g, function (match, dec) {
         return String.fromCharCode(dec);
     });
 }
@@ -9,7 +9,7 @@ var str,
 	n3 = true,
 	n4 = true;
 $("#villagers .right-header").click(function () {
-	if (n1 == true) {
+	if (n1 === true) {
         str = "&#9205;Bewohner";
         str = decode(str);
         $("#villagers .right-header").text(str);
@@ -24,7 +24,7 @@ $("#villagers .right-header").click(function () {
 });
 
 $("#jobs .right-header").click(function () {
-	if (n2 == true) {
+	if (n2 === true) {
         str = "&#9205;Jobs";
         str = decode(str);
         $("#jobs .right-header").text(str);
@@ -39,7 +39,7 @@ $("#jobs .right-header").click(function () {
 });
 
 $("#supplies .right-header").click(function () {
-	if (n3 == true) {
+	if (n3 === true) {
         str = "&#9205;Vorräte";
         str = decode(str);
         $("#supplies .right-header").text(str);
@@ -54,16 +54,16 @@ $("#supplies .right-header").click(function () {
 });
 
 $("#items .right-header").click(function () {
-	if (n1 == true) {
+	if (n4 === true) {
         str = "&#9205;Gegenstände";
         str = decode(str);
         $("#items .right-header").text(str);
-		n1 = false;
+		n4 = false;
 	} else {
         str = "&#9207;Gegenstände";
         str = decode(str);
         $("#items .right-header").text(str);
-		n1 = true;
+		n4 = true;
 	}
     $("#content_items").slideToggle();
 });

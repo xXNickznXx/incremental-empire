@@ -13,7 +13,7 @@ $("#jobs").on("click", "#up_gatherer", function () {
     gatherer_plus();
 });
 $("#jobs").on("mousedown", "#up_gatherer", function () {
-    gatherer_t = setTimeout(function () {gatherer_p = setInterval(gatherer_plus, 50);}, 500);
+    gatherer_t = setTimeout(function () {gatherer_p = setInterval(gatherer_plus, 50); }, 500);
 });
 
 function gatherer_minus() {
@@ -28,7 +28,7 @@ $("#jobs").on("click", "#dwn_gatherer", function () {
     gatherer_minus();
 });
 $("#jobs").on("mousedown", "#dwn_gatherer", function () {
-    gatherer_t = setTimeout(function () {gatherer_m = setInterval(gatherer_minus, 50);}, 500);
+    gatherer_t = setTimeout(function () {gatherer_m = setInterval(gatherer_minus, 50); }, 500);
 });
 
 var lumberjack_p,
@@ -46,7 +46,7 @@ $("#jobs").on("click", "#up_lumberjack", function () {
     lumberjack_plus();
 });
 $("#jobs").on("mousedown", "#up_lumberjack", function () {
-    lumberjack_t = setTimeout(function () {lumberjack_p = setInterval(lumberjack_plus, 50);}, 500);
+    lumberjack_t = setTimeout(function () {lumberjack_p = setInterval(lumberjack_plus, 50); }, 500);
 });
 
 function lumberjack_minus() {
@@ -61,7 +61,7 @@ $("#jobs").on("click", "#dwn_lumberjack", function () {
     lumberjack_minus();
 });
 $("#jobs").on("mousedown", "#dwn_lumberjack", function () {
-    lumberjack_t = setTimeout(function () {lumberjack_m = setInterval(lumberjack_minus, 50);}, 500);
+    lumberjack_t = setTimeout(function () {lumberjack_m = setInterval(lumberjack_minus, 50); }, 500);
 });
 
 var quarryman_p,
@@ -79,7 +79,7 @@ $("#jobs").on("click", "#up_quarryman", function () {
     quarryman_plus();
 });
 $("#jobs").on("mousedown", "#up_quarryman", function () {
-    quarryman_t = setTimeout(function () {quarryman_p = setInterval(quarryman_plus, 50);}, 500);
+    quarryman_t = setTimeout(function () {quarryman_p = setInterval(quarryman_plus, 50); }, 500);
 });
 
 function quarryman_minus() {
@@ -94,7 +94,7 @@ $("#jobs").on("click", "#dwn_quarryman", function () {
     quarryman_minus();
 });
 $("#jobs").on("mousedown", "#dwn_quarryman", function () {
-    quarryman_t = setTimeout(function () {quarryman_m = setInterval(quarryman_minus, 50);}, 500);
+    quarryman_t = setTimeout(function () {quarryman_m = setInterval(quarryman_minus, 50); }, 500);
 });
 
 var worker_p,
@@ -112,7 +112,7 @@ $("#jobs").on("click", "#up_worker", function () {
     worker_plus();
 });
 $("#jobs").on("mousedown", "#up_worker", function () {
-    worker_t = setTimeout(function () {worker_p = setInterval(worker_plus, 50);}, 500);
+    worker_t = setTimeout(function () {worker_p = setInterval(worker_plus, 50); }, 500);
 });
 
 function worker_minus() {
@@ -127,7 +127,7 @@ $("#jobs").on("click", "#dwn_worker", function () {
     worker_minus();
 });
 $("#jobs").on("mousedown", "#dwn_worker", function () {
-    worker_t = setTimeout(function () {worker_m = setInterval(worker_minus, 50);}, 500);
+    worker_t = setTimeout(function () {worker_m = setInterval(worker_minus, 50); }, 500);
 });
 
 var hunter_p,
@@ -145,7 +145,7 @@ $("#jobs").on("click", "#up_hunter", function () {
     hunter_plus();
 });
 $("#jobs").on("mousedown", "#up_hunter", function () {
-    hunter_t = setTimeout(function () {hunter_p = setInterval(hunter_plus, 50);}, 500);
+    hunter_t = setTimeout(function () {hunter_p = setInterval(hunter_plus, 50); }, 500);
 });
 
 function hunter_minus() {
@@ -160,7 +160,7 @@ $("#jobs").on("click", "#dwn_hunter", function () {
     hunter_minus();
 });
 $("#jobs").on("mousedown", "#dwn_hunter", function () {
-    hunter_t = setTimeout(function () {hunter_m = setInterval(hunter_minus, 50);}, 500);
+    hunter_t = setTimeout(function () {hunter_m = setInterval(hunter_minus, 50); }, 500);
 });
 
 var shepherd_p,
@@ -178,7 +178,7 @@ $("#jobs").on("click", "#up_shepherd", function () {
     shepherd_plus();
 });
 $("#jobs").on("mousedown", "#up_shepherd", function () {
-    shepherd_t = setTimeout(function () {shepherd_p = setInterval(shepherd_plus, 50);}, 500);
+    shepherd_t = setTimeout(function () {shepherd_p = setInterval(shepherd_plus, 50); }, 500);
 });
 
 function shepherd_minus() {
@@ -193,7 +193,7 @@ $("#jobs").on("click", "#dwn_shepherd", function () {
     shepherd_minus();
 });
 $("#jobs").on("mousedown", "#dwn_shepherd", function () {
-    shepherd_t = setTimeout(function () {shepherd_m = setInterval(shepherd_minus, 50);}, 500);
+    shepherd_t = setTimeout(function () {shepherd_m = setInterval(shepherd_minus, 50); }, 500);
 });
 
 var coalminer_p,
@@ -211,7 +211,7 @@ $("#jobs").on("click", "#up_coalminer", function () {
     coalminer_plus();
 });
 $("#jobs").on("mousedown", "#up_coalminer", function () {
-    coalminer_t = setTimeout(function () {coalminer_p = setInterval(coalminer_plus, 50);}, 500);
+    coalminer_t = setTimeout(function () {coalminer_p = setInterval(coalminer_plus, 50); }, 500);
 });
 
 function coalminer_minus() {
@@ -226,7 +226,7 @@ $("#jobs").on("click", "#dwn_coalminer", function () {
     coalminer_minus();
 });
 $("#jobs").on("mousedown", "#dwn_coalminer", function () {
-    coalminer_t = setTimeout(function () {coalminer_m = setInterval(coalminer_minus, 50);}, 500);
+    coalminer_t = setTimeout(function () {coalminer_m = setInterval(coalminer_minus, 50); }, 500);
 });
 
 var ironminer_p,
@@ -244,7 +244,7 @@ $("#jobs").on("click", "#up_ironminer", function () {
     ironminer_plus();
 });
 $("#jobs").on("mousedown", "#up_ironminer", function () {
-    ironminer_t = setTimeout(function () {ironminer_p = setInterval(ironminer_plus, 50);}, 500);
+    ironminer_t = setTimeout(function () {ironminer_p = setInterval(ironminer_plus, 50); }, 500);
 });
 
 function ironminer_minus() {
@@ -259,7 +259,7 @@ $("#jobs").on("click", "#dwn_ironminer", function () {
     ironminer_minus();
 });
 $("#jobs").on("mousedown", "#dwn_ironminer", function () {
-    ironminer_t = setTimeout(function () {ironminer_m = setInterval(ironminer_minus, 50);}, 500);
+    ironminer_t = setTimeout(function () {ironminer_m = setInterval(ironminer_minus, 50); }, 500);
 });
 
 var tailor_p,
@@ -277,7 +277,7 @@ $("#jobs").on("click", "#up_tailor", function () {
     tailor_plus();
 });
 $("#jobs").on("mousedown", "#up_tailor", function () {
-    tailor_t = setTimeout(function () {tailor_p = setInterval(tailor_plus, 50);}, 500);
+    tailor_t = setTimeout(function () {tailor_p = setInterval(tailor_plus, 50); }, 500);
 });
 
 function tailor_minus() {
@@ -292,7 +292,7 @@ $("#jobs").on("click", "#dwn_tailor", function () {
     tailor_minus();
 });
 $("#jobs").on("mousedown", "#dwn_tailor", function () {
-    tailor_t = setTimeout(function () {tailor_m = setInterval(tailor_minus, 50);}, 500);
+    tailor_t = setTimeout(function () {tailor_m = setInterval(tailor_minus, 50); }, 500);
 });
 
 var alchemist_p,
@@ -310,7 +310,7 @@ $("#jobs").on("click", "#up_alchemist", function () {
     alchemist_plus();
 });
 $("#jobs").on("mousedown", "#up_alchemist", function () {
-    alchemist_t = setTimeout(function () {alchemist_p = setInterval(alchemist_plus, 50);}, 500);
+    alchemist_t = setTimeout(function () {alchemist_p = setInterval(alchemist_plus, 50); }, 500);
 });
 
 function alchemist_minus() {
@@ -325,7 +325,7 @@ $("#jobs").on("click", "#dwn_alchemist", function () {
     alchemist_minus();
 });
 $("#jobs").on("mousedown", "#dwn_alchemist", function () {
-    alchemist_t = setTimeout(function () {alchemist_m = setInterval(alchemist_minus, 50);}, 500);
+    alchemist_t = setTimeout(function () {alchemist_m = setInterval(alchemist_minus, 50); }, 500);
 });
 
 var smith_p,
@@ -343,7 +343,7 @@ $("#jobs").on("click", "#up_smith", function () {
     smith_plus();
 });
 $("#jobs").on("mousedown", "#up_smith", function () {
-    smith_t = setTimeout(function () {smith_p = setInterval(smith_plus, 50);}, 500);
+    smith_t = setTimeout(function () {smith_p = setInterval(smith_plus, 50); }, 500);
 });
 
 function smith_minus() {
@@ -358,7 +358,7 @@ $("#jobs").on("click", "#dwn_smith", function () {
     smith_minus();
 });
 $("#jobs").on("mousedown", "#dwn_smith", function () {
-    smith_t = setTimeout(function () {smith_m = setInterval(smith_minus, 50);}, 500);
+    smith_t = setTimeout(function () {smith_m = setInterval(smith_minus, 50); }, 500);
 });
 
 var scout_p,
@@ -376,7 +376,7 @@ $("#jobs").on("click", "#up_scout", function () {
     scout_plus();
 });
 $("#jobs").on("mousedown", "#up_scout", function () {
-    scout_t = setTimeout(function () {scout_p = setInterval(scout_plus, 50);}, 500);
+    scout_t = setTimeout(function () {scout_p = setInterval(scout_plus, 50); }, 500);
 });
 
 function scout_minus() {
@@ -391,7 +391,7 @@ $("#jobs").on("click", "#dwn_scout", function () {
     scout_minus();
 });
 $("#jobs").on("mousedown", "#dwn_scout", function () {
-    scout_t = setTimeout(function () {scout_m = setInterval(scout_minus, 50);}, 500);
+    scout_t = setTimeout(function () {scout_m = setInterval(scout_minus, 50); }, 500);
 });
 
 var knight_p,
@@ -409,7 +409,7 @@ $("#jobs").on("click", "#up_knight", function () {
     knight_plus();
 });
 $("#jobs").on("mousedown", "#up_knight", function () {
-    knight_t = setTimeout(function () {knight_p = setInterval(knight_plus, 50);}, 500);
+    knight_t = setTimeout(function () {knight_p = setInterval(knight_plus, 50); }, 500);
 });
 
 function knight_minus() {
@@ -424,7 +424,7 @@ $("#jobs").on("click", "#dwn_knight", function () {
     knight_minus();
 });
 $("#jobs").on("mousedown", "#dwn_knight", function () {
-    knight_t = setTimeout(function () {knight_m = setInterval(knight_minus, 50);}, 500);
+    knight_t = setTimeout(function () {knight_m = setInterval(knight_minus, 50); }, 500);
 });
 
 var stableman_p,
@@ -442,7 +442,7 @@ $("#jobs").on("click", "#up_stableman", function () {
     stableman_plus();
 });
 $("#jobs").on("mousedown", "#up_stableman", function () {
-    stableman_t = setTimeout(function () {stableman_p = setInterval(stableman_plus, 50);}, 500);
+    stableman_t = setTimeout(function () {stableman_p = setInterval(stableman_plus, 50); }, 500);
 });
 
 function stableman_minus() {
@@ -457,7 +457,7 @@ $("#jobs").on("click", "#dwn_stableman", function () {
     stableman_minus();
 });
 $("#jobs").on("mousedown", "#dwn_stableman", function () {
-    stableman_t = setTimeout(function () {stableman_m = setInterval(stableman_minus, 50);}, 500);
+    stableman_t = setTimeout(function () {stableman_m = setInterval(stableman_minus, 50); }, 500);
 });
 
 $("html").mouseup(function () {
