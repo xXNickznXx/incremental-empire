@@ -6,17 +6,18 @@ Ein Textbasiertes Spiel, in dem man den Aufbau eines Imperiums kontrolliert
 und auf verschiedenste Herausforderungen trifft.
 ```
 
-| ToDo  | Progress | Done                      | Optional       |
-| ----- | -------- | ------------------------- | -------------- |
-|Handeln|          |Bewohnerverwaltung         |Weitere Optionen|
-|Reisen |          |Ressourcenregulierung      |Tier Mechaniken |
-|Events |          |Gebäude bauen & verbessern |Ruf Mechanik    |
-|       |          |Optionen                   |                |
-|       |          |Manuelles Speichern & Laden|                |
-|       |          |Mobileansicht              |                |
-|       |          |Crafting                   |                |
-|       |          |Handeln                    |                |
-|       |          |Wetter                     |                |
+| ToDo    | Progress | Done                        | Optional         |
+| ------- | -------- | --------------------------- | ---------------- |
+| Handeln |          | Bewohnerverwaltung          | Weitere Optionen |
+| Reisen  |          | Ressourcenregulierung       | Tier Mechaniken  |
+| Events  |          | Gebäude bauen & verbessern  | Ruf Mechanik     |
+|         |          | Optionen                    |                  |
+|         |          | Autosave                    |                  |
+|         |          | Manuelles Speichern & Laden |                  |
+|         |          | Mobileansicht               |                  |
+|         |          | Crafting                    |                  |
+|         |          | Handeln                     |                  |
+|         |          | Wetter                      |                  |
 
 ## Features:
 ### Bewohnerverwaltung
@@ -25,6 +26,7 @@ und auf verschiedenste Herausforderungen trifft.
 ### Optionen
 - Geschwindigkeit
 - Light/Dark-Theme
+### Autosave
 ### Manuelles Speichern & Laden
 ### Mobileansicht
 ### Crafting

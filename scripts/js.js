@@ -1,5 +1,4 @@
-/* Convert int to time */
-function secondsTommss(total) {
+function intToTime(total) {
     var m = Math.floor(total / 60),
         s = total - (m * 60),
         result;
@@ -15,45 +14,47 @@ function secondsTommss(total) {
     return result;
 }
 
-/* Check Message count */
-function check_msg() {
+function checkMsgCount() {
     while ($("#msg p").length > 9) {
         $("#msg p").last().remove();
     }
 }
 
-/* Check Weather count */
-function check_weather() {
+function checkWeatherForecastCount() {
     while ($("#phase div").length > 3) {
         $("#phase div").first().remove();
     }
 }
 
-/* Check Windowsize and if the right container is not already moved */
-function window_resize() {
-	if (win.matches && $("#content #right").length <= 0) {
+function setRightContainerToWindowsize() {
+    if (win.matches && $("#content #right").length <= 0) {
         $("#right").prependTo("#content");
         $("#right").attr("hidden", true);
     } else if (!win.matches && $("#content #right").length > 0) {
-        $("#right").appendTo("#main");
+        $("#right").appendTo("main");
         $("#right").removeAttr("hidden");
+        if ($("#btn_mobile").hasClass("selected")) {
+            $("#btn_mobile").removeClass("selected");
+            $("#btn_build").addClass("selected");
+            $("#build").removeAttr("hidden");
+        }
     }
-	if (win.matches) {
-		$("#content").css({height: ""});
-	} else {
-		$("#content").css({height: "calc(100vh - 370px - " + $(".nav").outerHeight() + "px"});
-	}
+    if (win.matches) {
+        $("#content").css({height: ""});
+    } else {
+        $("#content").css({height: "calc(100vh - 370px - " + $(".nav").outerHeight() + "px"});
+    }
 }
 
 /* Window resize */
 $(window).on("resize", function () {
-    window_resize();
+    setRightContainerToWindowsize();
 });
 
 /* Refresher */
+//TODO refresh() Remove or make it smaller
 function refresh() {
     // Supplies
-    //{
     $("#iecoin").text(iecoin);
     $("#food").text(food);
     $("#wood").text(wood);
@@ -63,10 +64,8 @@ function refresh() {
     $("#coal").text(coal);
     $("#iron").text(iron);
     $("#clothes").text(clothes);
-    //}
 
     // Items
-    //{
     $("#medicine").text(medicine);
     $("#poison").text(poison);
     $("#leatherarmor").text(leatherarmor);
@@ -81,10 +80,8 @@ function refresh() {
     $("#peacegift").text(peacegift);
     $("#poisongift").text(poisongift);
     $("#horse").text(horse);
-    //}
 
     // Villagers/Jobs
-    //{
     $("#villager").text(villager.count + "/" + villager.max);
     $("#villager_unused").text(villager.unused + "/" + villager.count);
     $("#gatherer").text(gatherer);
@@ -101,10 +98,8 @@ function refresh() {
     $("#scout").text(scout);
     $("#knight").text(knight);
     $("#stableman").text(stableman);
-    //}
 
     // Down/Up Buttons Dis-/Enabled
-    //{
     if (gatherer === 0) {
         $("#dwn_gatherer").prop("disabled", true);
     } else {
@@ -190,7 +185,7 @@ function refresh() {
         $("#up_scout").prop("disabled", true);
         $("#up_knight").prop("disabled", true);
         $("#up_stableman").prop("disabled", true);
-    }else if (villager.unused > 0) {
+    }else {
         $("#up_gatherer").prop("disabled", false);
         $("#up_lumberjack").prop("disabled", false);
         $("#up_quarryman").prop("disabled", false);
@@ -206,21 +201,17 @@ function refresh() {
         $("#up_knight").prop("disabled", false);
         $("#up_stableman").prop("disabled", false);
     }
-    if (slot_build === true || slot_craft === true || slot_brew === true) {
-        if (slot_build === true) {
-            $("#up_worker").prop("disabled", true);
-        }
-        if (slot_craft === true) {
-            $("#up_smith").prop("disabled", true);
-        }
-        if (slot_brew === true) {
-            $("#up_alchemist").prop("disabled", true);
-        }
+    if (slot_build === true) {
+        $("#up_worker").prop("disabled", true);
     }
-    //}
+    if (slot_craft === true) {
+        $("#up_smith").prop("disabled", true);
+    }
+    if (slot_brew === true) {
+        $("#up_alchemist").prop("disabled", true);
+    }
 
     // Current Time to build/upgrade
-    //{
     if (worker > 1) {
         hut.curr_time = hut.time / worker * (speed / 1000);
         huntinghut.curr_time = huntinghut.time / worker * (speed / 1000);
@@ -237,7 +228,7 @@ function refresh() {
         scoutpost.curr_time = scoutpost.time / worker * (speed / 1000);
         barracks.curr_time = barracks.time / worker * (speed / 1000);
         stable.curr_time = stable.time / worker * (speed / 1000);
-        
+
         hut_up.curr_time = hut_up.time / worker * (speed / 1000);
         huntinghut_up.curr_time = huntinghut_up.time / worker * (speed / 1000);
         lumberjackhut_up.curr_time = lumberjackhut_up.time / worker * (speed / 1000);
@@ -269,7 +260,7 @@ function refresh() {
         scoutpost.curr_time = scoutpost.time * (speed / 1000);
         barracks.curr_time = barracks.time * (speed / 1000);
         stable.curr_time = stable.time * (speed / 1000);
-        
+
         hut_up.curr_time = hut_up.time * (speed / 1000);
         huntinghut_up.curr_time = huntinghut_up.time * (speed / 1000);
         lumberjackhut_up.curr_time = lumberjackhut_up.time * (speed / 1000);
@@ -286,45 +277,41 @@ function refresh() {
         barracks_up.curr_time = barracks_up.time * (speed / 1000);
         stable_up.curr_time = stable_up.time * (speed / 1000);
     }
-    //}
 
     // Display Build/Upgrade Time
-    //{
-    $("#time_hut").text(secondsTommss(hut.curr_time));
-    $("#time_huntinghut").text(secondsTommss(huntinghut.curr_time));
-    $("#time_storage").text(secondsTommss(storage.curr_time));
-    $("#time_lumberjackhut").text(secondsTommss(lumberjackhut.curr_time));
-    $("#time_sheepstall").text(secondsTommss(sheepstall.curr_time));
-    $("#time_quarry").text(secondsTommss(quarry.curr_time));
-    $("#time_coalmine").text(secondsTommss(coalmine.curr_time));
-    $("#time_ironmine").text(secondsTommss(ironmine.curr_time));
-    $("#time_tailorhouse").text(secondsTommss(tailorhouse.curr_time));
-    $("#time_alchemisthut").text(secondsTommss(alchemisthut.curr_time));
-    $("#time_forge").text(secondsTommss(forge.curr_time));
-    $("#time_market").text(secondsTommss(market.curr_time));
-    $("#time_scoutpost").text(secondsTommss(scoutpost.curr_time));
-    $("#time_barracks").text(secondsTommss(barracks.curr_time));
-    $("#time_stable").text(secondsTommss(stable.curr_time));
-    
-    $("#time_upgrade_hut").text(secondsTommss(hut_up.curr_time));
-    $("#time_upgrade_huntinghut").text(secondsTommss(huntinghut_up.curr_time));
-    $("#time_upgrade_storage").text(secondsTommss(storage_up.curr_time));
-    $("#time_upgrade_lumberjackhut").text(secondsTommss(lumberjackhut_up.curr_time));
-    $("#time_upgrade_sheepstall").text(secondsTommss(sheepstall_up.curr_time));
-    $("#time_upgrade_quarry").text(secondsTommss(quarry_up.curr_time));
-    $("#time_upgrade_coalmine").text(secondsTommss(coalmine_up.curr_time));
-    $("#time_upgrade_ironmine").text(secondsTommss(ironmine_up.curr_time));
-    $("#time_upgrade_tailorhouse").text(secondsTommss(tailorhouse_up.curr_time));
-    $("#time_upgrade_alchemisthut").text(secondsTommss(alchemisthut_up.curr_time));
-    $("#time_upgrade_forge").text(secondsTommss(forge_up.curr_time));
-    $("#time_upgrade_market").text(secondsTommss(market_up.curr_time));
-    $("#time_upgrade_scoutpost").text(secondsTommss(scoutpost_up.curr_time));
-    $("#time_upgrade_barracks").text(secondsTommss(barracks_up.curr_time));
-    $("#time_upgrade_stable").text(secondsTommss(stable_up.curr_time));
-    //}
+    $("#time_hut").text(intToTime(hut.curr_time));
+    $("#time_huntinghut").text(intToTime(huntinghut.curr_time));
+    $("#time_storage").text(intToTime(storage.curr_time));
+    $("#time_lumberjackhut").text(intToTime(lumberjackhut.curr_time));
+    $("#time_sheepstall").text(intToTime(sheepstall.curr_time));
+    $("#time_quarry").text(intToTime(quarry.curr_time));
+    $("#time_coalmine").text(intToTime(coalmine.curr_time));
+    $("#time_ironmine").text(intToTime(ironmine.curr_time));
+    $("#time_tailorhouse").text(intToTime(tailorhouse.curr_time));
+    $("#time_alchemisthut").text(intToTime(alchemisthut.curr_time));
+    $("#time_forge").text(intToTime(forge.curr_time));
+    $("#time_market").text(intToTime(market.curr_time));
+    $("#time_scoutpost").text(intToTime(scoutpost.curr_time));
+    $("#time_barracks").text(intToTime(barracks.curr_time));
+    $("#time_stable").text(intToTime(stable.curr_time));
+
+    $("#time_upgrade_hut").text(intToTime(hut_up.curr_time));
+    $("#time_upgrade_huntinghut").text(intToTime(huntinghut_up.curr_time));
+    $("#time_upgrade_storage").text(intToTime(storage_up.curr_time));
+    $("#time_upgrade_lumberjackhut").text(intToTime(lumberjackhut_up.curr_time));
+    $("#time_upgrade_sheepstall").text(intToTime(sheepstall_up.curr_time));
+    $("#time_upgrade_quarry").text(intToTime(quarry_up.curr_time));
+    $("#time_upgrade_coalmine").text(intToTime(coalmine_up.curr_time));
+    $("#time_upgrade_ironmine").text(intToTime(ironmine_up.curr_time));
+    $("#time_upgrade_tailorhouse").text(intToTime(tailorhouse_up.curr_time));
+    $("#time_upgrade_alchemisthut").text(intToTime(alchemisthut_up.curr_time));
+    $("#time_upgrade_forge").text(intToTime(forge_up.curr_time));
+    $("#time_upgrade_market").text(intToTime(market_up.curr_time));
+    $("#time_upgrade_scoutpost").text(intToTime(scoutpost_up.curr_time));
+    $("#time_upgrade_barracks").text(intToTime(barracks_up.curr_time));
+    $("#time_upgrade_stable").text(intToTime(stable_up.curr_time));
 
     // Build Buttons Dis-/Enabled
-    //{
     if (wood >= hut.costs.wood && stone >= hut.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_hut").prop("disabled", false);
     } else {
@@ -400,10 +387,8 @@ function refresh() {
     } else {
         $("#btn_stable").prop("disabled", true);
     }
-    //}
 
     // Build Buttons Show/Hide
-    //{
     if (wood >= hut.costs.wood / 2 && stone >= hut.costs.stone / 2) {
         if ($("#build .tbody #btn_hut").length <= 0) {
             $("#build .tbody").append(el_build_hut);
@@ -539,10 +524,8 @@ function refresh() {
             $("#build .tbody #btn_stable").closest(".tr").remove();
         }
     }
-    //}
 
     // Upgrade Buttons Dis-/Enabled
-    //{
     if (wood >= hut_up.costs.wood && stone >= hut_up.costs.stone && worker > 0 && slot_build === false) {
         $("#btn_upgrade_hut").prop("disabled", false);
     } else {
@@ -618,10 +601,8 @@ function refresh() {
     } else {
         $("#btn_upgrade_stable").prop("disabled", true);
     }
-    //}
 
     // Upgrade Buttons Show/Hide
-    //{
     if (wood >= hut_up.costs.wood / 2 && stone >= hut_up.costs.stone / 2 && hut.count > 0) {
         if ($("#upgrade .tbody #btn_upgrade_hut").length <= 0) {
             $("#upgrade .tbody").append(el_upgrade_hut);
@@ -757,10 +738,8 @@ function refresh() {
             $("#upgrade .tbody #btn_upgrade_stable").closest(".tr").remove();
         }
     }
-    //}
 
     //Current Time to brew
-    //{
     if (alchemist > 1) {
         prod_medicine.curr_time = prod_medicine.time / alchemist * prod_medicine.count / brew_time;
         prod_poison.curr_time = prod_poison.time / alchemist * prod_poison.count / brew_time;
@@ -768,10 +747,8 @@ function refresh() {
         prod_medicine.curr_time = prod_medicine.time * prod_medicine.count / brew_time;
         prod_poison.curr_time = prod_poison.time * prod_poison.count / brew_time;
     }
-    //}
 
     //Current Time to craft
-    //{
     if (smith > 1) {
         prod_leatherarmor.curr_time = prod_leatherarmor.time / smith * prod_leatherarmor.count / craft_time;
         prod_ironarmor.curr_time = prod_ironarmor.time / smith * prod_ironarmor.count / craft_time;
@@ -797,27 +774,23 @@ function refresh() {
         prod_peacegift.curr_time = prod_peacegift.time * prod_peacegift.count / craft_time;
         prod_poisongift.curr_time = prod_poisongift.time * prod_poisongift.count / craft_time;
     }
-    //}
 
     //Display Brew/Craft Time
-    //{
-    $("#time_medicine").text(secondsTommss(prod_medicine.curr_time));
-    $("#time_poison").text(secondsTommss(prod_poison.curr_time));
-    $("#time_leatherarmor").text(secondsTommss(prod_leatherarmor.curr_time));
-    $("#time_ironarmor").text(secondsTommss(prod_ironarmor.curr_time));
-    $("#time_axe").text(secondsTommss(prod_axe.curr_time));
-    $("#time_sword").text(secondsTommss(prod_sword.curr_time));
-    $("#time_morningstar").text(secondsTommss(prod_morningstar.curr_time));
-    $("#time_shortbow").text(secondsTommss(prod_shortbow.curr_time));
-    $("#time_longbow").text(secondsTommss(prod_longbow.curr_time));
-    $("#time_crossbow").text(secondsTommss(prod_crossbow.curr_time));
-    $("#time_tradegift").text(secondsTommss(prod_tradegift.curr_time));
-    $("#time_peacegift").text(secondsTommss(prod_peacegift.curr_time));
-    $("#time_poisongift").text(secondsTommss(prod_poisongift.curr_time));
-    //}
+    $("#time_medicine").text(intToTime(prod_medicine.curr_time));
+    $("#time_poison").text(intToTime(prod_poison.curr_time));
+    $("#time_leatherarmor").text(intToTime(prod_leatherarmor.curr_time));
+    $("#time_ironarmor").text(intToTime(prod_ironarmor.curr_time));
+    $("#time_axe").text(intToTime(prod_axe.curr_time));
+    $("#time_sword").text(intToTime(prod_sword.curr_time));
+    $("#time_morningstar").text(intToTime(prod_morningstar.curr_time));
+    $("#time_shortbow").text(intToTime(prod_shortbow.curr_time));
+    $("#time_longbow").text(intToTime(prod_longbow.curr_time));
+    $("#time_crossbow").text(intToTime(prod_crossbow.curr_time));
+    $("#time_tradegift").text(intToTime(prod_tradegift.curr_time));
+    $("#time_peacegift").text(intToTime(prod_peacegift.curr_time));
+    $("#time_poisongift").text(intToTime(prod_poisongift.curr_time));
 
     // Brew/Craft Buttons Dis-/Enabled
-    //{
     if (food >= prod_medicine.costs.food * prod_medicine.count && stone >= prod_medicine.costs.stone * prod_medicine.count && cloth >= prod_medicine.costs.cloth * prod_medicine.count && alchemist > 0 && prod_medicine.count > 0 && slot_brew === false) {
         $("#btn_medicine").prop("disabled", false);
     } else {
@@ -883,10 +856,8 @@ function refresh() {
     } else {
         $("#btn_poisongift").prop("disabled", true);
     }
-    //}
 
     // Brew/Craft Buttons Show/Hide
-    //{
     if (food >= prod_medicine.costs.food / 2 && stone >= prod_medicine.costs.stone / 2 && cloth >= prod_medicine.costs.cloth / 2) {
         if ($("#craft #row_medicine").length <= 0) {
             $("#craft #content_brew").append(el_craft_medicine);
@@ -1004,76 +975,72 @@ function refresh() {
             $("#craft #row_poisongift").remove();
         }
     }
-    //}
-    
+
     //Current Trade Price
-    //{
     $("#btn_buy_food").html(a_market.food.buy_price);
     $("#btn_sell_food").html(a_market.food.sell_price);
-    
+
     $("#btn_buy_wood").html(a_market.wood.buy_price);
     $("#btn_sell_wood").html(a_market.wood.sell_price);
-    
+
     $("#btn_buy_stone").html(a_market.stone.buy_price);
     $("#btn_sell_stone").html(a_market.stone.sell_price);
-    
+
     $("#btn_buy_leather").html(a_market.leather.buy_price);
     $("#btn_sell_leather").html(a_market.leather.sell_price);
-    
+
     $("#btn_buy_cloth").html(a_market.cloth.buy_price);
     $("#btn_sell_cloth").html(a_market.cloth.sell_price);
-    
+
     $("#btn_buy_coal").html(a_market.coal.buy_price);
     $("#btn_sell_coal").html(a_market.coal.sell_price);
-    
+
     $("#btn_buy_iron").html(a_market.iron.buy_price);
     $("#btn_sell_iron").html(a_market.iron.sell_price);
-    
+
     $("#btn_buy_clothes").html(a_market.clothes.buy_price);
     $("#btn_sell_clothes").html(a_market.clothes.sell_price);
-    
+
     $("#btn_buy_medicine").html(a_market.medicine.buy_price);
     $("#btn_sell_medicine").html(a_market.medicine.sell_price);
-    
+
     $("#btn_buy_poison").html(a_market.poison.buy_price);
     $("#btn_sell_poison").html(a_market.poison.sell_price);
-    
+
     $("#btn_buy_leatherarmor").html(a_market.leatherarmor.buy_price);
     $("#btn_sell_leatherarmor").html(a_market.leatherarmor.sell_price);
-    
+
     $("#btn_buy_ironarmor").html(a_market.ironarmor.buy_price);
     $("#btn_sell_ironarmor").html(a_market.ironarmor.sell_price);
-    
+
     $("#btn_buy_axe").html(a_market.axe.buy_price);
     $("#btn_sell_axe").html(a_market.axe.sell_price);
-    
+
     $("#btn_buy_sword").html(a_market.sword.buy_price);
     $("#btn_sell_sword").html(a_market.sword.sell_price);
-    
+
     $("#btn_buy_morningstar").html(a_market.morningstar.buy_price);
     $("#btn_sell_morningstar").html(a_market.morningstar.sell_price);
-    
+
     $("#btn_buy_shortbow").html(a_market.shortbow.buy_price);
     $("#btn_sell_shortbow").html(a_market.shortbow.sell_price);
-    
+
     $("#btn_buy_longbow").html(a_market.longbow.buy_price);
     $("#btn_sell_longbow").html(a_market.longbow.sell_price);
-    
+
     $("#btn_buy_crossbow").html(a_market.crossbow.buy_price);
     $("#btn_sell_crossbow").html(a_market.crossbow.sell_price);
-    
+
     $("#btn_buy_tradegift").html(a_market.tradegift.buy_price);
     $("#btn_sell_tradegift").html(a_market.tradegift.sell_price);
-    
+
     $("#btn_buy_peacegift").html(a_market.peacegift.buy_price);
     $("#btn_sell_peacegift").html(a_market.peacegift.sell_price);
-    
+
     $("#btn_buy_poisongift").html(a_market.poisongift.buy_price);
     $("#btn_sell_poisongift").html(a_market.poisongift.sell_price);
-    //}
-    
+
     // Trade Button Dis-/Enabled
-    //{
     if (food + a_market.food.number <= supplies_max && iecoin >= a_market.food.buy_price) {
         $("#btn_buy_food").prop("disabled", false);
     } else {
@@ -1084,7 +1051,7 @@ function refresh() {
     } else {
         $("#btn_sell_food").prop("disabled", true);
     }
-    
+
     if (wood + a_market.wood.number <= supplies_max && iecoin >= a_market.wood.buy_price) {
         $("#btn_buy_wood").prop("disabled", false);
     } else {
@@ -1095,7 +1062,7 @@ function refresh() {
     } else {
         $("#btn_sell_wood").prop("disabled", true);
     }
-    
+
     if (stone + a_market.stone.number <= supplies_max && iecoin >= a_market.stone.buy_price) {
         $("#btn_buy_stone").prop("disabled", false);
     } else {
@@ -1106,7 +1073,7 @@ function refresh() {
     } else {
         $("#btn_sell_stone").prop("disabled", true);
     }
-    
+
     if (leather + a_market.leather.number <= supplies_max && iecoin >= a_market.leather.buy_price) {
         $("#btn_buy_leather").prop("disabled", false);
     } else {
@@ -1117,7 +1084,7 @@ function refresh() {
     } else {
         $("#btn_sell_leather").prop("disabled", true);
     }
-    
+
     if (cloth + a_market.cloth.number <= supplies_max && iecoin >= a_market.cloth.buy_price) {
         $("#btn_buy_cloth").prop("disabled", false);
     } else {
@@ -1128,7 +1095,7 @@ function refresh() {
     } else {
         $("#btn_sell_cloth").prop("disabled", true);
     }
-    
+
     if (coal + a_market.coal.number <= supplies_max && iecoin >= a_market.coal.buy_price) {
         $("#btn_buy_coal").prop("disabled", false);
     } else {
@@ -1139,7 +1106,7 @@ function refresh() {
     } else {
         $("#btn_sell_coal").prop("disabled", true);
     }
-    
+
     if (iron + a_market.iron.number <= supplies_max && iecoin >= a_market.iron.buy_price) {
         $("#btn_buy_iron").prop("disabled", false);
     } else {
@@ -1150,7 +1117,7 @@ function refresh() {
     } else {
         $("#btn_sell_iron").prop("disabled", true);
     }
-    
+
     if (clothes + a_market.clothes.number <= supplies_max && iecoin >= a_market.clothes.buy_price) {
         $("#btn_buy_clothes").prop("disabled", false);
     } else {
@@ -1161,7 +1128,7 @@ function refresh() {
     } else {
         $("#btn_sell_clothes").prop("disabled", true);
     }
-    
+
     if (medicine + a_market.medicine.number <= supplies_max && iecoin >= a_market.medicine.buy_price) {
         $("#btn_buy_medicine").prop("disabled", false);
     } else {
@@ -1172,7 +1139,7 @@ function refresh() {
     } else {
         $("#btn_sell_medicine").prop("disabled", true);
     }
-    
+
     if (poison + a_market.poison.number <= supplies_max && iecoin >= a_market.poison.buy_price) {
         $("#btn_buy_poison").prop("disabled", false);
     } else {
@@ -1183,7 +1150,7 @@ function refresh() {
     } else {
         $("#btn_sell_poison").prop("disabled", true);
     }
-    
+
     if (leatherarmor + a_market.leatherarmor.number <= supplies_max && iecoin >= a_market.leatherarmor.buy_price) {
         $("#btn_buy_leatherarmor").prop("disabled", false);
     } else {
@@ -1194,7 +1161,7 @@ function refresh() {
     } else {
         $("#btn_sell_leatherarmor").prop("disabled", true);
     }
-    
+
     if (ironarmor + a_market.ironarmor.number <= supplies_max && iecoin >= a_market.ironarmor.buy_price) {
         $("#btn_buy_ironarmor").prop("disabled", false);
     } else {
@@ -1205,7 +1172,7 @@ function refresh() {
     } else {
         $("#btn_sell_ironarmor").prop("disabled", true);
     }
-    
+
     if (axe + a_market.axe.number <= supplies_max && iecoin >= a_market.axe.buy_price) {
         $("#btn_buy_axe").prop("disabled", false);
     } else {
@@ -1216,7 +1183,7 @@ function refresh() {
     } else {
         $("#btn_sell_axe").prop("disabled", true);
     }
-    
+
     if (sword + a_market.sword.number <= supplies_max && iecoin >= a_market.sword.buy_price) {
         $("#btn_buy_sword").prop("disabled", false);
     } else {
@@ -1227,7 +1194,7 @@ function refresh() {
     } else {
         $("#btn_sell_sword").prop("disabled", true);
     }
-    
+
     if (morningstar + a_market.morningstar.number <= supplies_max && iecoin >= a_market.morningstar.buy_price) {
         $("#btn_buy_morningstar").prop("disabled", false);
     } else {
@@ -1238,7 +1205,7 @@ function refresh() {
     } else {
         $("#btn_sell_morningstar").prop("disabled", true);
     }
-    
+
     if (shortbow + a_market.shortbow.number <= supplies_max && iecoin >= a_market.shortbow.buy_price) {
         $("#btn_buy_shortbow").prop("disabled", false);
     } else {
@@ -1249,7 +1216,7 @@ function refresh() {
     } else {
         $("#btn_sell_shortbow").prop("disabled", true);
     }
-    
+
     if (longbow + a_market.longbow.number <= supplies_max && iecoin >= a_market.longbow.buy_price) {
         $("#btn_buy_longbow").prop("disabled", false);
     } else {
@@ -1260,7 +1227,7 @@ function refresh() {
     } else {
         $("#btn_sell_longbow").prop("disabled", true);
     }
-    
+
     if (crossbow + a_market.crossbow.number <= supplies_max && iecoin >= a_market.crossbow.buy_price) {
         $("#btn_buy_crossbow").prop("disabled", false);
     } else {
@@ -1271,7 +1238,7 @@ function refresh() {
     } else {
         $("#btn_sell_crossbow").prop("disabled", true);
     }
-    
+
     if (tradegift + a_market.tradegift.number <= supplies_max && iecoin >= a_market.tradegift.buy_price) {
         $("#btn_buy_tradegift").prop("disabled", false);
     } else {
@@ -1282,7 +1249,7 @@ function refresh() {
     } else {
         $("#btn_sell_tradegift").prop("disabled", true);
     }
-    
+
     if (peacegift + a_market.peacegift.number <= supplies_max && iecoin >= a_market.peacegift.buy_price) {
         $("#btn_buy_peacegift").prop("disabled", false);
     } else {
@@ -1293,7 +1260,7 @@ function refresh() {
     } else {
         $("#btn_sell_peacegift").prop("disabled", true);
     }
-    
+
     if (poisongift + a_market.poisongift.number <= supplies_max && iecoin >= a_market.poisongift.buy_price) {
         $("#btn_buy_poisongift").prop("disabled", false);
     } else {
@@ -1304,38 +1271,36 @@ function refresh() {
     } else {
         $("#btn_sell_poisongift").prop("disabled", true);
     }
-    //}
 }
 
-/* Show Related Stuff of Buildings */
-function show_related() {
+function showRelatedAfterBuildOrLoad() {
     if (huntinghut.count === true) {
-        $("#leather").closest(".row").removeAttr("hidden");
-        $("#hunter").closest(".row").removeAttr("hidden");
+        $("#leather").closest(".tr").removeAttr("hidden");
+        $("#hunter").closest(".tr").removeAttr("hidden");
     }
     if (sheepstall.count === true) {
-        $("#cloth").closest(".row").removeAttr("hidden");
-        $("#shepherd").closest(".row").removeAttr("hidden");
+        $("#cloth").closest(".tr").removeAttr("hidden");
+        $("#shepherd").closest(".tr").removeAttr("hidden");
     }
     if (coalmine.count === true) {
-        $("#coal").closest(".row").removeAttr("hidden");
-        $("#coalminer").closest(".row").removeAttr("hidden");
+        $("#coal").closest(".tr").removeAttr("hidden");
+        $("#coalminer").closest(".tr").removeAttr("hidden");
     }
     if (ironmine.count === true) {
-        $("#iron").closest(".row").removeAttr("hidden");
-        $("#ironminer").closest(".row").removeAttr("hidden");
+        $("#iron").closest(".tr").removeAttr("hidden");
+        $("#ironminer").closest(".tr").removeAttr("hidden");
     }
     if (tailorhouse.count === true) {
-        $("#clothes").closest(".row").removeAttr("hidden");
-        $("#tailor").closest(".row").removeAttr("hidden");
+        $("#clothes").closest(".tr").removeAttr("hidden");
+        $("#tailor").closest(".tr").removeAttr("hidden");
     }
     if (alchemisthut.count === true) {
         $("#btn_craft").removeAttr("hidden");
         $("#coll_brew").removeAttr("hidden");
         $("#items").removeAttr("hidden");
-        $("#medicine").closest(".row").removeAttr("hidden");
-        $("#poison").closest(".row").removeAttr("hidden");
-        $("#alchemist").closest(".row").removeAttr("hidden");
+        $("#medicine").closest(".tr").removeAttr("hidden");
+        $("#poison").closest(".tr").removeAttr("hidden");
+        $("#alchemist").closest(".tr").removeAttr("hidden");
     }
     if (forge.count === true) {
         $("#btn_craft").removeAttr("hidden");
@@ -1343,41 +1308,40 @@ function show_related() {
         $("#coll_weapons").removeAttr("hidden");
         $("#coll_gifts").removeAttr("hidden");
         $("#items").removeAttr("hidden");
-        $("#leatherarmor").closest(".row").removeAttr("hidden");
-        $("#ironarmor").closest(".row").removeAttr("hidden");
-        $("#sword").closest(".row").removeAttr("hidden");
-        $("#axe").closest(".row").removeAttr("hidden");
-        $("#morningstar").closest(".row").removeAttr("hidden");
-        $("#shortbow").closest(".row").removeAttr("hidden");
-        $("#longbow").closest(".row").removeAttr("hidden");
-        $("#crossbow").closest(".row").removeAttr("hidden");
-        $("#tradegift").closest(".row").removeAttr("hidden");
-        $("#peacegift").closest(".row").removeAttr("hidden");
-        $("#poisongift").closest(".row").removeAttr("hidden");
-        $("#smith").closest(".row").removeAttr("hidden");
+        $("#leatherarmor").closest(".tr").removeAttr("hidden");
+        $("#ironarmor").closest(".tr").removeAttr("hidden");
+        $("#sword").closest(".tr").removeAttr("hidden");
+        $("#axe").closest(".tr").removeAttr("hidden");
+        $("#morningstar").closest(".tr").removeAttr("hidden");
+        $("#shortbow").closest(".tr").removeAttr("hidden");
+        $("#longbow").closest(".tr").removeAttr("hidden");
+        $("#crossbow").closest(".tr").removeAttr("hidden");
+        $("#tradegift").closest(".tr").removeAttr("hidden");
+        $("#peacegift").closest(".tr").removeAttr("hidden");
+        $("#poisongift").closest(".tr").removeAttr("hidden");
+        $("#smith").closest(".tr").removeAttr("hidden");
     }
     if (market.count === true) {
         $("#btn_trade").removeAttr("hidden");
     }
     if (scoutpost.count === true) {
         $("#btn_travel").removeAttr("hidden");
-        $("#scout").closest(".row").removeAttr("hidden");
+        $("#scout").closest(".tr").removeAttr("hidden");
     }
     if (barracks.count === true) {
-        $("#knight").closest(".row").removeAttr("hidden");
+        $("#knight").closest(".tr").removeAttr("hidden");
     }
     if (stable.count === true) {
         $("#items").removeAttr("hidden");
-        $("#horse").closest(".row").removeAttr("hidden");
-        $("#stableman").closest(".row").removeAttr("hidden");
+        $("#horse").closest(".tr").removeAttr("hidden");
+        $("#stableman").closest(".tr").removeAttr("hidden");
         interval_new_hor = setInterval(new_horses, speed * 60);
     }
 }
 
-/* Game Over */
-function game_over() {
-    msg.prepend("<p>Dein Dorf ist gestorben.</p>");
-    check_msg();
+function gameOver() {
+    msg.prepend("<p>All deine Bewohner sind gestorben.</p>");
+    checkMsgCount();
     refresh();
     clearInterval(interval_build);
     clearInterval(interval_upgrade);
@@ -1395,129 +1359,129 @@ function game_over() {
 /* Die possibilities */
 function die(type) {
     if (type === "starve") {
-		for (var x = 0; x < villager.count; x += 20) {
-			var rnd = Math.floor((Math.random() * 10) + 1);
-			if (rnd >= 1 && rnd < 5) {
-				if (villager.count > 0) {
-					villager.count -= 1;
-					if (villager.unused > 0) {
-						villager.unused -= 1;
-						msg.prepend("<p>Bewohner ist verhungert.</p>");
-						check_msg();
-					} else {
-						if (gatherer > 0) {
-							gatherer -= 1;
-							msg.prepend("<p>Sammler ist verhungert.</p>");
-						} else if (lumberjack > 0) {
-							lumberjack -= 1;
-							msg.prepend("<p>Holzfäller ist verhungert.</p>");
-						} else if (quarryman > 0) {
-							quarryman -= 1;
-							msg.prepend("<p>Steinbrucharbeiter ist verhungert.</p>");
-						} else if (worker > 0) {
-							worker -= 1;
-							msg.prepend("<p>Arbeiter ist verhungert.</p>");
-						} else if (hunter > 0) {
-							hunter -= 1;
-							msg.prepend("<p>Jäger ist verhungert.</p>");
-						} else if (shepherd > 0) {
-							shepherd -= 1;
-							msg.prepend("<p>Schäfer ist verhungert.</p>");
-						} else if (coalminer > 0) {
-							coalminer -= 1;
-							msg.prepend("<p>Kohleminenarbeiter ist verhungert.</p>");
-						} else if (ironminer > 0) {
-							ironminer -= 1;
-							msg.prepend("<p>Eisenminenarbeiter ist verhungert.</p>");
-						} else if (tailor > 0) {
-							tailor -= 1;
-							msg.prepend("<p>Schneider ist verhungert.</p>");
-						} else if (alchemist > 0) {
-							alchemist -= 1;
-							msg.prepend("<p>Alchemist ist verhungert.</p>");
-						} else if (smith > 0) {
-							smith -= 1;
-							msg.prepend("<p>Schmied ist verhungert.</p>");
-						} else if (scout > 0) {
-							scout -= 1;
-							msg.prepend("<p>Kundschafter ist verhungert.</p>");
-						} else if (knight > 0) {
-							knight -= 1;
-							msg.prepend("<p>Krieger ist verhungert.</p>");
-						} else if (stableman > 0) {
-							stableman -= 1;
-							msg.prepend("<p>Stallbetreuer ist verhungert.</p>");
-						}
-						check_msg();
-					}
-					if (villager.count === 0) {
-						game_over();
-					}
-				}
-			}
-		}
+        for (var x = 0; x < villager.count; x += 20) {
+            var rnd = Math.floor((Math.random() * 10) + 1);
+            if (rnd >= 1 && rnd < 5) {
+                if (villager.count > 0) {
+                    villager.count -= 1;
+                    if (villager.unused > 0) {
+                        villager.unused -= 1;
+                        msg.prepend("<p>Bewohner ist verhungert.</p>");
+                        checkMsgCount();
+                    } else {
+                        if (gatherer > 0) {
+                            gatherer -= 1;
+                            msg.prepend("<p>Sammler ist verhungert.</p>");
+                        } else if (lumberjack > 0) {
+                            lumberjack -= 1;
+                            msg.prepend("<p>Holzfäller ist verhungert.</p>");
+                        } else if (quarryman > 0) {
+                            quarryman -= 1;
+                            msg.prepend("<p>Steinbrucharbeiter ist verhungert.</p>");
+                        } else if (worker > 0) {
+                            worker -= 1;
+                            msg.prepend("<p>Arbeiter ist verhungert.</p>");
+                        } else if (hunter > 0) {
+                            hunter -= 1;
+                            msg.prepend("<p>Jäger ist verhungert.</p>");
+                        } else if (shepherd > 0) {
+                            shepherd -= 1;
+                            msg.prepend("<p>Schäfer ist verhungert.</p>");
+                        } else if (coalminer > 0) {
+                            coalminer -= 1;
+                            msg.prepend("<p>Kohleminenarbeiter ist verhungert.</p>");
+                        } else if (ironminer > 0) {
+                            ironminer -= 1;
+                            msg.prepend("<p>Eisenminenarbeiter ist verhungert.</p>");
+                        } else if (tailor > 0) {
+                            tailor -= 1;
+                            msg.prepend("<p>Schneider ist verhungert.</p>");
+                        } else if (alchemist > 0) {
+                            alchemist -= 1;
+                            msg.prepend("<p>Alchemist ist verhungert.</p>");
+                        } else if (smith > 0) {
+                            smith -= 1;
+                            msg.prepend("<p>Schmied ist verhungert.</p>");
+                        } else if (scout > 0) {
+                            scout -= 1;
+                            msg.prepend("<p>Kundschafter ist verhungert.</p>");
+                        } else if (knight > 0) {
+                            knight -= 1;
+                            msg.prepend("<p>Krieger ist verhungert.</p>");
+                        } else if (stableman > 0) {
+                            stableman -= 1;
+                            msg.prepend("<p>Stallbetreuer ist verhungert.</p>");
+                        }
+                        checkMsgCount();
+                    }
+                    if (villager.count === 0) {
+                        gameOver();
+                    }
+                }
+            }
+        }
     } else if (type === "freeze") {
-		for (var x = 0; x < villager.count; x += 30) {
-			var rnd = Math.floor((Math.random() * 10) + 1);
-			if (rnd >= 1 && rnd < 5) {
-				if (villager.count > 0) {
-					villager.count -= 1;
-					if (villager.unused > 0) {
-						villager.unused -= 1;
-						msg.prepend("<p>Bewohner ist erfroren.</p>");
-						check_msg();
-					} else {
-						if (gatherer > 0) {
-							gatherer -= 1;
-							msg.prepend("<p>Sammler ist erfroren.</p>");
-						} else if (lumberjack > 0) {
-							lumberjack -= 1;
-							msg.prepend("<p>Holzfäller ist erfroren.</p>");
-						} else if (quarryman > 0) {
-							quarryman -= 1;
-							msg.prepend("<p>Steinbrucharbeiter ist erfroren.</p>");
-						} else if (worker > 0) {
-							worker -= 1;
-							msg.prepend("<p>Arbeiter ist erfroren.</p>");
-						} else if (hunter > 0) {
-							hunter -= 1;
-							msg.prepend("<p>Jäger ist erfroren.</p>");
-						} else if (shepherd > 0) {
-							shepherd -= 1;
-							msg.prepend("<p>Schäfer ist erfroren.</p>");
-						} else if (coalminer > 0) {
-							coalminer -= 1;
-							msg.prepend("<p>Kohleminenarbeiter ist erfroren.</p>");
-						} else if (ironminer > 0) {
-							ironminer -= 1;
-							msg.prepend("<p>Eisenminenarbeiter ist erfroren.</p>");
-						} else if (tailor > 0) {
-							tailor -= 1;
-							msg.prepend("<p>Schneider ist erfroren.</p>");
-						} else if (alchemist > 0) {
-							alchemist -= 1;
-							msg.prepend("<p>Alchemist ist erfroren.</p>");
-						} else if (smith > 0) {
-							smith -= 1;
-							msg.prepend("<p>Schmied ist erfroren.</p>");
-						} else if (scout > 0) {
-							scout -= 1;
-							msg.prepend("<p>Kundschafter ist erfroren.</p>");
-						} else if (knight > 0) {
-							knight -= 1;
-							msg.prepend("<p>Krieger ist erfroren.</p>");
-						} else if (stableman > 0) {
-							stableman -= 1;
-							msg.prepend("<p>Stallbetreuer ist erfroren.</p>");
-						}
-						check_msg();
-					}
-					if (villager.count === 0) {
-						game_over();
-					}
-				}
-			}
-		}
+        for (var x = 0; x < villager.count; x += 30) {
+            var rnd = Math.floor((Math.random() * 10) + 1);
+            if (rnd >= 1 && rnd < 5) {
+                if (villager.count > 0) {
+                    villager.count -= 1;
+                    if (villager.unused > 0) {
+                        villager.unused -= 1;
+                        msg.prepend("<p>Bewohner ist erfroren.</p>");
+                        checkMsgCount();
+                    } else {
+                        if (gatherer > 0) {
+                            gatherer -= 1;
+                            msg.prepend("<p>Sammler ist erfroren.</p>");
+                        } else if (lumberjack > 0) {
+                            lumberjack -= 1;
+                            msg.prepend("<p>Holzfäller ist erfroren.</p>");
+                        } else if (quarryman > 0) {
+                            quarryman -= 1;
+                            msg.prepend("<p>Steinbrucharbeiter ist erfroren.</p>");
+                        } else if (worker > 0) {
+                            worker -= 1;
+                            msg.prepend("<p>Arbeiter ist erfroren.</p>");
+                        } else if (hunter > 0) {
+                            hunter -= 1;
+                            msg.prepend("<p>Jäger ist erfroren.</p>");
+                        } else if (shepherd > 0) {
+                            shepherd -= 1;
+                            msg.prepend("<p>Schäfer ist erfroren.</p>");
+                        } else if (coalminer > 0) {
+                            coalminer -= 1;
+                            msg.prepend("<p>Kohleminenarbeiter ist erfroren.</p>");
+                        } else if (ironminer > 0) {
+                            ironminer -= 1;
+                            msg.prepend("<p>Eisenminenarbeiter ist erfroren.</p>");
+                        } else if (tailor > 0) {
+                            tailor -= 1;
+                            msg.prepend("<p>Schneider ist erfroren.</p>");
+                        } else if (alchemist > 0) {
+                            alchemist -= 1;
+                            msg.prepend("<p>Alchemist ist erfroren.</p>");
+                        } else if (smith > 0) {
+                            smith -= 1;
+                            msg.prepend("<p>Schmied ist erfroren.</p>");
+                        } else if (scout > 0) {
+                            scout -= 1;
+                            msg.prepend("<p>Kundschafter ist erfroren.</p>");
+                        } else if (knight > 0) {
+                            knight -= 1;
+                            msg.prepend("<p>Krieger ist erfroren.</p>");
+                        } else if (stableman > 0) {
+                            stableman -= 1;
+                            msg.prepend("<p>Stallbetreuer ist erfroren.</p>");
+                        }
+                        checkMsgCount();
+                    }
+                    if (villager.count === 0) {
+                        gameOver();
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -1537,56 +1501,56 @@ function supplie_prod() {
     }
     if ((food + (gatherer * 2) + hunter) < supplies_max) {
         food += (gatherer * 2) + hunter;
-	} else {
-		food = supplies_max;
-	}
+    } else {
+        food = supplies_max;
+    }
     if ((wood + lumberjack * wood_bonus) < supplies_max) {
         wood += lumberjack * wood_bonus;
-	} else {
-		wood = supplies_max;
+    } else {
+        wood = supplies_max;
     }
     var rnd_stone = Math.floor((Math.random() * 2) + 1),
-		rnd_coal = Math.floor((Math.random() * 4) + 1),
-		rnd_iron = Math.floor((Math.random() * 6) + 1);
-	if (rnd_stone === 1) {
-		if ((stone + quarryman * stone_bonus) < supplies_max) {
-			stone += quarryman * stone_bonus;
-		} else {
-			stone = supplies_max;
-		}
-	}
+        rnd_coal = Math.floor((Math.random() * 4) + 1),
+        rnd_iron = Math.floor((Math.random() * 6) + 1);
+    if (rnd_stone === 1) {
+        if ((stone + quarryman * stone_bonus) < supplies_max) {
+            stone += quarryman * stone_bonus;
+        } else {
+            stone = supplies_max;
+        }
+    }
     if ((leather + hunter * leather_bonus) < supplies_max) {
         leather += hunter * leather_bonus;
-	} else {
-		leather = supplies_max;
-	}
+    } else {
+        leather = supplies_max;
+    }
     if ((cloth + shepherd * cloth_bonus) < supplies_max) {
         cloth += shepherd * cloth_bonus;
-	} else {
-		cloth = supplies_max;
-	}
-	if (rnd_coal === 1) {
-		if ((coal + coalminer * coal_bonus) < supplies_max) {
-			coal += coalminer * coal_bonus;
-		} else {
-			coal = supplies_max;
-		}
-	}
-	if (rnd_iron === 1) {
-		if ((iron + ironminer * iron_bonus) < supplies_max) {
+    } else {
+        cloth = supplies_max;
+    }
+    if (rnd_coal === 1) {
+        if ((coal + coalminer * coal_bonus) < supplies_max) {
+            coal += coalminer * coal_bonus;
+        } else {
+            coal = supplies_max;
+        }
+    }
+    if (rnd_iron === 1) {
+        if ((iron + ironminer * iron_bonus) < supplies_max) {
             iron += ironminer * iron_bonus;
-		} else {
-			iron = supplies_max;
-		}
+        } else {
+            iron = supplies_max;
+        }
     }
     if ((clothes + tailor * clothes_bonus) < supplies_max) {
         clothes += tailor * clothes_bonus;
-	} else {
-		clothes = supplies_max;
-	}
+    } else {
+        clothes = supplies_max;
+    }
 }
 
-/* Villager add */ 
+/* Villager add */
 function new_villagers() {
     var rnd = Math.floor((Math.random() * 6) + 1), amount;
     if (rnd === 1) {
@@ -1595,35 +1559,35 @@ function new_villagers() {
             villager.count += amount;
             villager.unused += amount;
             msg.prepend("<p>" + amount + " Fremde sind aufgetaucht.</p>");
-            check_msg();
+            checkMsgCount();
         }
     } else if (rnd === 2 || rnd === 3) {
         if (villager.count < villager.max) {
             villager.count += 1;
             villager.unused += 1;
             msg.prepend("<p>Ein Fremder ist aufgetaucht.</p>");
-            check_msg();
+            checkMsgCount();
         }
     }
 }
 
-/* Horse add */ 
+/* Horse add */
 function new_horses() {
-	for (var x = 0; x < stableman; x++) {
-		var rnd = Math.floor((Math.random() * 20) + 1), amount;
-		if (rnd === 1) {
-			amount = Math.floor((Math.random() * 2) + 2);
-			if (horse + amount <= villager.max) {
-				horse += amount;
-				msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
-				check_msg();
-			}
-		} else if (rnd >= 2 && rnd < 5) {
-			if (horse < villager.max) {
-				horse += 1;
-				msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
-				check_msg();
-			}
-		}
-	}
+    for (var x = 0; x < stableman; x++) {
+        var rnd = Math.floor((Math.random() * 20) + 1), amount;
+        if (rnd === 1) {
+            amount = Math.floor((Math.random() * 2) + 2);
+            if (horse + amount <= villager.max) {
+                horse += amount;
+                msg.prepend("<p>" + amount + " Pferde wurden gezüchtet.</p>");
+                checkMsgCount();
+            }
+        } else if (rnd >= 2 && rnd < 5) {
+            if (horse < villager.max) {
+                horse += 1;
+                msg.prepend("<p>Ein Pferd wurde gezüchtet.</p>");
+                checkMsgCount();
+            }
+        }
+    }
 }

@@ -1,102 +1,95 @@
-$("#btn_start").click(function () {
-    if ($("#speed").val() < 200 || $("#speed").val() > 2000) {
-        if ($("#start p").length <= 0) {
-            $("#start").append("<p>Geschwindigkeit zwischen 200 und 2000.</p>");
-        }
-    } else {
-        speed = $("#speed").val();
+speed = $("#speed").val() * 1000;
 
-        if ($("#load")[0].files.length !== 0) {
-            var file = $("#load")[0].files[0],
-                reader = new FileReader();
+if (getLocalStorage("save") !== null) {
+    var save = JSON.parse(getLocalStorage("save"));
 
-            reader.onload = function (e) {
-                var contents = JSON.parse(e.target.result);
-				iecoin = contents.$iecoin;
-                food = contents.$food;
-                wood = contents.$wood;
-                stone = contents.$stone;
-                leather = contents.$leather;
-                cloth = contents.$cloth;
-                coal = contents.$coal;
-                iron = contents.$iron;
-                clothes = contents.$clothes;
-                medicine = contents.$medicine;
-                poison = contents.$poison;
-                leatherarmor = contents.$leatherarmor;
-                ironarmor = contents.$ironarmor;
-                sword = contents.$sword;
-                axe = contents.$axe;
-                morningstar = contents.$morningstar;
-                shortbow = contents.$shortbow;
-                longbow = contents.$longbow;
-                crossbow = contents.$crossbow;
-                tradegift = contents.$tradegift;
-                peacegift = contents.$peacegift;
-                poisongift = contents.$poisongift;
-                horse = contents.$horse;
-                supplies_max = contents.$supplies_max;
-				
-				a_market = contents.$a_market;
-				
-				villager = contents.$villager;
+    iecoin = save.$iecoin;
+    food = save.$food;
+    wood = save.$wood;
+    stone = save.$stone;
+    leather = save.$leather;
+    cloth = save.$cloth;
+    coal = save.$coal;
+    iron = save.$iron;
+    clothes = save.$clothes;
+    medicine = save.$medicine;
+    poison = save.$poison;
+    leatherarmor = save.$leatherarmor;
+    ironarmor = save.$ironarmor;
+    sword = save.$sword;
+    axe = save.$axe;
+    morningstar = save.$morningstar;
+    shortbow = save.$shortbow;
+    longbow = save.$longbow;
+    crossbow = save.$crossbow;
+    tradegift = save.$tradegift;
+    peacegift = save.$peacegift;
+    poisongift = save.$poisongift;
+    horse = save.$horse;
+    supplies_max = save.$supplies_max;
 
-                gatherer = contents.$gatherer;
-                lumberjack = contents.$lumberjack;    wood_bonus = contents.$wood_bonus;
-                quarryman = contents.$quarryman;      stone_bonus = contents.$stone_bonus;
-                worker = contents.$worker;
-                hunter = contents.$hunter;            leather_bonus = contents.$leather_bonus;
-                shepherd = contents.$shepherd;        cloth_bonus = contents.$cloth_bonus;
-                coalminer = contents.$coalminer;      coal_bonus = contents.$coal_bonus;
-                ironminer = contents.$ironminer;      iron_bonus = contents.$iron_bonus;
-                tailor = contents.$tailor;            clothes_bonus = contents.$clothes_bonus;
-                alchemist = contents.$alchemist;      brew_time = contents.$brew_time;
-                smith = contents.$smith;              craft_time = contents.$craft_time;
-                scout = contents.$scout;              travel_time = contents.$travel_time;
-                knight = contents.$knight;            damage_bonus = contents.$damage_bonus;
-                stableman = contents.$stableman;      breed_bonus = contents.$breed_bonus;
+    a_market = save.$a_market;
 
-                trade_bonus = contents.$trade_bonus;
+    villager = save.$villager;
 
-                hut.count = contents.$hut;
-                huntinghut.count = contents.$huntinghut;        huntinghut_up.count = contents.$huntinghut_up;
-                storage.count = contents.$storage;              storage_up.count = contents.$storage_up;
-                lumberjackhut.count = contents.$lumberjackhut;  lumberjackhut_up.count = contents.$lumberjackhut_up;
-                sheepstall.count = contents.$sheepstall;        sheepstall_up.count = contents.$sheepstall_up;
-                quarry.count = contents.$quarry;                quarry_up.count = contents.$quarry_up;
-                coalmine.count = contents.$coalmine;            coalmine_up.count = contents.$coalmine_up;
-                ironmine.count = contents.$ironmine;            ironmine_up.count = contents.$ironmine_up;
-                tailorhouse.count = contents.$tailorhouse;      tailorhouse_up.count = contents.$tailorhouse_up;
-                alchemisthut.count = contents.$alchemisthut;    alchemisthut_up.count = contents.$alchemisthut_up;
-                forge.count = contents.$forge;                  forge_up.count = contents.$forge_up;
-                market.count = contents.$market;                market_up.count = contents.$market_up;
-                scoutpost.count = contents.$scoutpost;          scoutpost_up.count = contents.$scoutpost_up;
-                barracks.count = contents.$barracks;            barracks_up.count = contents.$barracks_up;
-                stable.count = contents.$stable;                stable_up.count = contents.$stable_up;
-				
-				
-				weather.season.current = contents.$weather_season;
-				weather.tempr = contents.$weather_tempr;
-				weather.type.current = contents.$weather_type;
-		
-				date.day = contents.$date_day;
-				date.month.current = contents.$date_month;
-				date.year = contents.$date_year;
-            };
-            reader.readAsText(file);
-        }
+    gatherer = save.$gatherer;
+    lumberjack = save.$lumberjack;    wood_bonus = save.$wood_bonus;
+    quarryman = save.$quarryman;      stone_bonus = save.$stone_bonus;
+    worker = save.$worker;
+    hunter = save.$hunter;            leather_bonus = save.$leather_bonus;
+    shepherd = save.$shepherd;        cloth_bonus = save.$cloth_bonus;
+    coalminer = save.$coalminer;      coal_bonus = save.$coal_bonus;
+    ironminer = save.$ironminer;      iron_bonus = save.$iron_bonus;
+    tailor = save.$tailor;            clothes_bonus = save.$clothes_bonus;
+    alchemist = save.$alchemist;      brew_time = save.$brew_time;
+    smith = save.$smith;              craft_time = save.$craft_time;
+    scout = save.$scout;              travel_time = save.$travel_time;
+    knight = save.$knight;            damage_bonus = save.$damage_bonus;
+    stableman = save.$stableman;      breed_bonus = save.$breed_bonus;
 
-        $("#main").show();
-        $("#start").hide();
-        
-        setTimeout(function() {window_resize();}, 50);
-        setTimeout(function() {show_related();}, 50);
-        setTimeout(function() {gen_market();}, 50);
-        setTimeout(function() {show_weather();}, 50);
+    trade_bonus = save.$trade_bonus;
 
-        interval_refr = setInterval(refresh, 100);
-        interval_supp_prod = setInterval(supplie_prod, speed * 5);
-        interval_new_vil = setInterval(new_villagers, speed * 30);
-        interval_weath = setInterval(weath, speed * 120);
-    }
-});
+    hut.count = save.$hut;
+    huntinghut.count = save.$huntinghut;        huntinghut_up.count = save.$huntinghut_up;
+    storage.count = save.$storage;              storage_up.count = save.$storage_up;
+    lumberjackhut.count = save.$lumberjackhut;  lumberjackhut_up.count = save.$lumberjackhut_up;
+    sheepstall.count = save.$sheepstall;        sheepstall_up.count = save.$sheepstall_up;
+    quarry.count = save.$quarry;                quarry_up.count = save.$quarry_up;
+    coalmine.count = save.$coalmine;            coalmine_up.count = save.$coalmine_up;
+    ironmine.count = save.$ironmine;            ironmine_up.count = save.$ironmine_up;
+    tailorhouse.count = save.$tailorhouse;      tailorhouse_up.count = save.$tailorhouse_up;
+    alchemisthut.count = save.$alchemisthut;    alchemisthut_up.count = save.$alchemisthut_up;
+    forge.count = save.$forge;                  forge_up.count = save.$forge_up;
+    market.count = save.$market;                market_up.count = save.$market_up;
+    scoutpost.count = save.$scoutpost;          scoutpost_up.count = save.$scoutpost_up;
+    barracks.count = save.$barracks;            barracks_up.count = save.$barracks_up;
+    stable.count = save.$stable;                stable_up.count = save.$stable_up;
+
+
+    weather.season.current = save.$weather_season;
+    weather.tempr = save.$weather_tempr;
+    weather.type.current = save.$weather_type;
+
+    date.day = save.$date_day;
+    date.month.current = save.$date_month;
+    date.year = save.$date_year;
+}
+
+setTimeout(setRightContainerToWindowsize, 50);
+setTimeout(showRelatedAfterBuildOrLoad, 50);
+setTimeout(genMarket, 50);
+setTimeout(showWeather, 50);
+
+interval_refr = setInterval(refresh, 100);
+interval_supp_prod = setInterval(supplie_prod, speed * 5);
+interval_new_vil = setInterval(new_villagers, speed * 30);
+interval_weath = setInterval(weath, speed * 120);
+
+function autosave() {
+    var saveJson = createJsonSave();
+    setLocalStorage("save", saveJson);
+    $("dialog").attr("open", true);
+    setTimeout(function() {$("dialog").attr("open", false);}, 2000);
+}
+
+setInterval(autosave, 1000 * 300);

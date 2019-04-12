@@ -4,64 +4,38 @@
     --fg: #222222;
 }
 * {
-	box-sizing: border-box;
-	color: var(--fg);
-    font: 100% sans-serif;
+    box-sizing: border-box;
+    color: var(--fg);
+    font: 14px sans-serif;
     margin: 0;
-	outline: 0;
+    outline: 0;
     padding: 0;
 }
 /* Allgemein */
-html {
-	font-size: 87.5%;
-}
 p {
     line-height: 24px;
 }
+h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+}
+h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+}
 button {
-    background: none;
-    border: 1px solid var(--fg);
+    background: var(--bg);
+    border: none;
+    height: 24px;
 }
 button:hover {
     cursor: pointer;
 }
 button:disabled {
-    border-color: var(--bg);
+    background: var(--bg2);
+    border: 1px solid var(--bg);
     color: var(--bg);
     cursor: not-allowed;
-}
-.num {
-    text-align: right;
-    width: 30px;
-}
-.in {
-	background: var(--bg2);
-    border: 1px solid var(--fg);
-    padding: 5px;
-    width: 60px;
-}
-ul {
-    list-style-position: inside;
-}
-.table {
-    border-collapse: collapse;
-	display: table;
-}
-.thead {
-  display: table-header-group;
-}
-.tbody {
-  display: table-row-group;
-}
-.tr {
-  display: table-row;
-}
-.th, .td {
-  display: table-cell;
-}
-.th{
-    font-weight: bold;
-    text-align: left;
 }
 button .tooltip {
     background-color: var(--bg);
@@ -79,9 +53,48 @@ button .tooltip:hover {
     display: none;
 }
 .btn_dwn_up {
-    height: 24px;
-    padding: 0;
     width: 24px;
+}
+.num {
+    text-align: right;
+    width: 30px;
+}
+ul {
+    list-style-position: inside;
+}
+dialog {
+    border: 2px solid var(--bg);
+    margin: auto;
+    padding: 20px;
+}
+.table {
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.thead {
+    display: table-header-group;
+}
+.tbody {
+    display: table-row-group;
+}
+.tr {
+    display: table-row;
+}
+.tr[hidden="hidden"] {
+    display: none;
+}
+.th, .td {
+    display: table-cell;
+    vertical-align: middle;
+}
+.td {
+    height: 36px;
+}
+.th{
+    font-weight: bold;
+    height: 28px;
+    text-align: left;
 }
 .coming_soon {
     background: var(--bg);
@@ -96,27 +109,8 @@ body {
     max-width: 1000px;
     min-width: 800px;
 }
-/* ->Start */
-.start {
-    background: var(--bg2);
-    bottom: 0;
-    height: 110px;
-    left: 0;
-    margin: auto;
-    padding: 5px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 420px;
-}
-.start .td:nth-child(odd) {
-    width: 140px;
-}
-.start .btn_start {
-    padding: 5px;
-}
 /* ->Main */
-.main:after {
+main:after {
     clear: both;
     content: "";
     display: block;
@@ -128,17 +122,11 @@ body {
     padding: 5px;
     text-align: center;
 }
-h1 {
-    font-size: 2.2em;
-}
 /* ->->Left */
 .left {
     float: left;
-	margin-top: 5px;
+    margin-top: 5px;
     width: calc(100% - 255px);
-}
-.left .table {
-    width: 100%;
 }
 /* ->->->nav */
 .nav {
@@ -147,12 +135,12 @@ h1 {
     text-align: center;
 }
 .nav button {
-	border-color: transparent transparent black transparent;
+    background: none;
     height: 32px;
     width: 86px;
 }
-.nav button.selected {
-	border-color: black black transparent black;
+.nav .selected {
+    background: var(--bg);
 }
 /* ->->->content */
 .content {
@@ -166,13 +154,11 @@ h1 {
     width: 130px;
 }
 .btn_craft {
-    border: none;
     height: 32px;
-    padding: 5px;
     width: 100%;
 }
 .coll_craft {
-    border: 1px solid var(--fg);
+    border: 1px solid var(--bg);
 }
 .coll_craft.m {
     margin-top: 5px;
@@ -189,11 +175,7 @@ h1 {
     float: left;
 }
 #travel .td:last-child > * {
-	float: left;
-}
-.btn_options {
-    height: 32px;
-    width: 90px;
+    float: left;
 }
 /* ->->->left_bottom */
 .left_bottom {
@@ -212,14 +194,14 @@ h1 {
     width: calc((100% - 5px) / 2);
 }
 .tasks .td:first-child {
-	cursor: pointer;
+    cursor: pointer;
 }
 .phase {
     margin-left: 5px;
 }
 .phase div {
-	padding: 0 5px;
-	float: left;
+    float: left;
+    padding: 0 5px;
 }
 .phase div:first-child {
     border-right: 5px solid var(--bg);
@@ -244,7 +226,7 @@ h1 {
     width: 100%;
 }
 .msg p {
-    height: 24px;
+    height: 28px;
 }
 /* ->->Right */
 .right {
@@ -254,8 +236,21 @@ h1 {
     overflow: auto;
     width: 250px;
 }
+.right h2 {
+    cursor: pointer;
+}
 .right > :first-child {
-	margin: 0;
+    margin: 0;
+}
+.right .td {
+    display: inline-block;
+    height: 28px;
+}
+.right .td:nth-child(2) {
+    float: right;
+}
+.right .td:nth-child(2) > * {
+    float: left;
 }
 /* ->->->villagers, jobs, supplies, items */
 .villagers, .jobs, .supplies, .items {
@@ -263,57 +258,58 @@ h1 {
     margin-top: 5px;
     padding: 5px;
 }
-.right-header {
-    font-weight: bold;
-}
-.row, .right p {
+.right p {
     height: 24px;
-}
-.row p:first-child {
-    float: left;
-}
-.row p:nth-child(even) {
-    float: right;
-}
-/* ->->->jobs */
-.jobs .row div > * {
-    float: left;
-}
-.jobs .row div:last-child {
-    float: right;
 }
 /* Switch */
-.switch {
-    display: inline-block;
-    height: 32px;
-    position: relative;
+.isDark {
+    height: 30px;
+    visibility: hidden;
     width: 60px;
 }
-.switch input {
-    display:none;
+.switch {
+    background: var(--bg);
+    border-radius: 15px;
+    display: inline-block;
+    height: 30px;
+    margin-left: -60px;
+    position: absolute;
+    width: 60px;
 }
-.slider {
-	background: var(--bg);
-    border-radius: 34px;
+.switch .slider {
+    background: var(--bg2);
+    border-radius: 50%;
+    height: 26px;
+    left: 2px;
+    position: relative;
+    top: 2px;
+    transition: .2s;
+    width: 26px;
+}
+/* Slider */
+.speed {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--bg);
+    border-radius: 15px;
+    height: 30px;
+    margin: 2px 0;
+    width: 90%;
+}
+.speed::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--bg2);
+    border: 2px solid var(--bg);
+    border-radius: 50%;
     cursor: pointer;
     height: 30px;
-    position: absolute;
-    transition: .2s;
-    width: 60px;
+    width: 30px;
 }
-.slider:before {
-	background: var(--bg2);
-    border-radius: 50%;
-    bottom: 3px;
-    content: "";
-    height: 24px;
-    left: 3px;
-    position: absolute;
-    transition: .2s;
-    width: 24px;
-}
-input:checked + .slider:before {
-    transform: translateX(30px);
+#lbl_speed {
+    display: inline-block;
+    vertical-align: super;
+    width: 26px;
 }
 /* Mobile */
 .btn_mobile {
@@ -327,9 +323,6 @@ input:checked + .slider:before {
         max-width: unset;
         min-width: unset;
     }
-	.start {
-		width: 300px;
-	}
     .header {
         height: 30px;
     }

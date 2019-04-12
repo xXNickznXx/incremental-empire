@@ -8,8 +8,8 @@ $("#btn_build").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").attr("hidden", true);
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_craft").removeAttr("class");
     $("#btn_trade").removeAttr("class");
@@ -27,8 +27,8 @@ $("#btn_upgrade").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").attr("hidden", true);
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_craft").removeAttr("class");
     $("#btn_trade").removeAttr("class");
@@ -46,8 +46,8 @@ $("#btn_craft").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").attr("hidden", true);
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_trade").removeAttr("class");
@@ -65,8 +65,8 @@ $("#btn_trade").click(function () {
     $("#trade").removeAttr("hidden");
     $("#travel").attr("hidden", true);
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_craft").removeAttr("class");
@@ -84,8 +84,8 @@ $("#btn_travel").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").removeAttr("hidden");
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_craft").removeAttr("class");
@@ -103,8 +103,8 @@ $("#btn_options").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").attr("hidden", true);
     $("#options").removeAttr("hidden");
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_craft").removeAttr("class");
@@ -121,8 +121,8 @@ $("#btn_mobile").click(function () {
     $("#trade").attr("hidden", true);
     $("#travel").attr("hidden", true);
     $("#options").attr("hidden", true);
-	
-	$(this).addClass("selected");
+    
+    $(this).addClass("selected");
     $("#btn_build").removeAttr("class");
     $("#btn_upgrade").removeAttr("class");
     $("#btn_craft").removeAttr("class");

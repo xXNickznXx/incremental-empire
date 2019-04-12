@@ -1,4 +1,4 @@
-function gen_market() {
+function genMarket() {
     for (var key in a_market) {
         if (a_market.hasOwnProperty(key)) {
             $("#trade .tbody").append(`<div class='tr'>
