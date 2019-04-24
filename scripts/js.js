@@ -1339,6 +1339,13 @@ function showRelatedAfterBuildOrLoad() {
     }
 }
 
+function sav() {
+    var saveJson = createJsonSave();
+    setLocalStorage("save", saveJson);
+    $("dialog").attr("open", true);
+    setTimeout(function() {$("dialog").attr("open", false);}, 4000);
+}
+
 function gameOver() {
     msg.prepend("<p>All deine Bewohner sind gestorben.</p>");
     checkMsgCount();
@@ -1543,8 +1550,9 @@ function supplie_prod() {
             iron = supplies_max;
         }
     }
-    if ((clothes + tailor * clothes_bonus) < supplies_max) {
+    if ((clothes + tailor * clothes_bonus) < supplies_max && cloth >= tailor) {
         clothes += tailor * clothes_bonus;
+        cloth -= tailor;
     } else {
         clothes = supplies_max;
     }

@@ -85,11 +85,4 @@ interval_supp_prod = setInterval(supplie_prod, speed * 5);
 interval_new_vil = setInterval(new_villagers, speed * 30);
 interval_weath = setInterval(weath, speed * 120);
 
-function autosave() {
-    var saveJson = createJsonSave();
-    setLocalStorage("save", saveJson);
-    $("dialog").attr("open", true);
-    setTimeout(function() {$("dialog").attr("open", false);}, 2000);
-}
-
-setInterval(autosave, 1000 * 300);
+setInterval(sav, 1000 * 120);

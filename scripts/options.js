@@ -186,8 +186,7 @@ $("#btn_export").click(function () {
 });
 
 $("#btn_save").click(function () {
-    var saveJson = createJsonSave();
-    setLocalStorage("save", saveJson);
+    sav();
 });
 /* Dark Theme Switch */
 $("#switch").click(function () {
@@ -224,4 +223,8 @@ if (getLocalStorage("dark") === "true") {
 $("#speed").on("input", function () {
     speed = $("#speed").val() * 1000;
     $("#lbl_speed").text($("#speed").val() + "s");
+});
+/* Popout */
+$("#btn_popout").click(function () {
+    window.open(window.location.href, "", "height=600,width=395");
 });
