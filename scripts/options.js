@@ -1,7 +1,5 @@
 /* Load Savefile */
 $("#btn_load").click(function () {
-    speed = $("#speed").val() * 1000;
-
     if ($("#load")[0].files.length !== 0) {
         var file = $("#load")[0].files[0],
             reader = new FileReader();
@@ -219,11 +217,6 @@ if (getLocalStorage("dark") === "true") {
     $("#isDark").prop("checked", false);
     $("#slider").css("transform", "");
 }
-/* Speed Slider */
-$("#speed").on("input", function () {
-    speed = $("#speed").val() * 1000;
-    $("#lbl_speed").text($("#speed").val() + "s");
-});
 /* Popout */
 $("#btn_popout").click(function () {
     window.open(window.location.href, "", "height=600,width=395");

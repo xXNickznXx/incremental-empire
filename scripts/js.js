@@ -42,7 +42,7 @@ function setRightContainerToWindowsize() {
     if (win.matches) {
         $("#content").css({height: ""});
     } else {
-        $("#content").css({height: "calc(100vh - 370px - " + $(".nav").outerHeight() + "px"});
+        $("#content").css({height: "calc(100vh - 375px - " + $(".nav").outerHeight() + "px"});
     }
 }
 

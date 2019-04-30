@@ -668,9 +668,9 @@ var iecoin = 0,
         year: [1950, 1950, 1950]
     },
 
-    speed,
+    speed = 1000,
 
     task = $("#task"),
     msg = $("#msg"),
 
-    win = window.matchMedia("(max-width: 400px)");
+    win = window.matchMedia("(max-width: 500px)");

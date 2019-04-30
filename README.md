@@ -24,8 +24,8 @@ und auf verschiedenste Herausforderungen trifft.
 ### Ressourcenregulierung
 ### Gebäude bauen & verbessern
 ### Optionen
-- Geschwindigkeit
 - Light/Dark-Theme
+- Automatisches Speichern
 ### Autosave
 ### Manuelles Speichern & Laden
 ### Mobileansicht
@@ -81,9 +81,6 @@ und auf verschiedenste Herausforderungen trifft.
 ## Optionale Features
 ### Weitere Optionen
 - Schwierigkeit
-- Automatisches Speichern
-  - Cookie
-  - Zielordner
 ### Tier Mechaniken
 - Verbesserte Pferde Mechanik
 - Schafe Mechanik

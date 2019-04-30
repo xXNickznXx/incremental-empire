@@ -1,5 +1,3 @@
-speed = $("#speed").val() * 1000;
-
 if (getLocalStorage("save") !== null) {
     var save = JSON.parse(getLocalStorage("save"));
 
