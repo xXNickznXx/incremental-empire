@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Incremental Empire</title>
-        <link rel="stylesheet" type="text/css" href="css/css.css">
+        <link rel="stylesheet" type="text/css" href="css/css.css"><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
         <link rel="shortcut icon" type="image/png" href="icons/favicon_16.png">
         <link rel="icon" sizes="192x192" href="icons/favicon_192.png">
         <link rel="icon" sizes="128x128" href="icons/favicon_128.png">
@@ -100,6 +100,13 @@
                     </div>
                     <div id="travel" hidden="hidden">
                         <div class="coming_soon">In Entwicklung</div>
+                        <button id="btn_map">Map teaser</button>
+                        <div id="overlay" class="overlay" hidden="hidden">
+                            <div id="ov_content" class="ov_content">
+                                <pre>  ¦ A   ¦ B   ¦ C   ¦ D   ¦ E   ¦ F   ¦ G   ¦ H   ¦</pre>
+                                <pre>--+-----+-----+-----+-----+-----+-----+-----+-----+</pre>
+                            </div>
+                        </div>
                         <!--div class="table">
                             <div class="thead">
                                 <div class="tr">
@@ -289,7 +296,7 @@
                 </div>
                 <div id="bottom" class="bottom">
                     <div id="msg" class="msg">
-                        <div class="overlay"></div>
+                        <div class="msg_overlay"></div>
                     </div>
                 </div>
             </div>
@@ -536,7 +543,8 @@
                 </details>
             </div>
         </main>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="scripts/saveto.js"></script>
         <script src="scripts/vars.js"></script>
         <script src="scripts/elements.js"></script>
@@ -548,6 +556,7 @@
         <script src="scripts/upgrade.js"></script>
         <script src="scripts/craft.js"></script>
         <script src="scripts/trade.js"></script>
+        <script src="scripts/travel.js"></script>
         <script src="scripts/options.js"></script>
         <script src="scripts/jobs.js"></script>
         <script src="scripts/start.js"></script>

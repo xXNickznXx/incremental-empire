@@ -193,27 +193,27 @@ $("#switch").click(function () {
     if (checkbox.prop("checked") == true) {
         $("#slider").css("transform", "translateX(30px)");
         setLocalStorage("dark", "true");
-        document.documentElement.style.setProperty("--bg", "#444444");
-        document.documentElement.style.setProperty("--bg2", "#222222");
-        document.documentElement.style.setProperty("--fg", "white");
+        document.documentElement.style.setProperty("--bg", "rgba(68, 68, 68, 1)");
+        document.documentElement.style.setProperty("--bg2", "rgba(34, 34, 34, 1)");
+        document.documentElement.style.setProperty("--fg", "rgba(255, 255, 255, 1)");
     } else {
         $("#slider").css("transform", "");
         setLocalStorage("dark", "false");
-        document.documentElement.style.setProperty("--bg", "gainsboro");
-        document.documentElement.style.setProperty("--bg2", "white");
-        document.documentElement.style.setProperty("--fg", "#222222");
+        document.documentElement.style.setProperty("--bg", "rgba(220, 220, 220, 1)");
+        document.documentElement.style.setProperty("--bg2", "rgba(255, 255, 255, 1)");
+        document.documentElement.style.setProperty("--fg", "rgba(34, 34, 34, 1)");
     }
 });
 if (getLocalStorage("dark") === "true") {
-    document.documentElement.style.setProperty("--bg", "#444444");
-    document.documentElement.style.setProperty("--bg2", "#222222");
-    document.documentElement.style.setProperty("--fg", "white");
+    document.documentElement.style.setProperty("--bg", "rgba(68, 68, 68, 1)");
+    document.documentElement.style.setProperty("--bg2", "rgba(34, 34, 34, 1)");
+    document.documentElement.style.setProperty("--fg", "rgba(255, 255, 255, 1)");
     $("#isDark").prop("checked", true);
     $("#slider").css("transform", "translateX(30px)");
 } else {
-    document.documentElement.style.setProperty("--bg", "gainsboro");
-    document.documentElement.style.setProperty("--bg2", "white");
-    document.documentElement.style.setProperty("--fg", "#222222");
+    document.documentElement.style.setProperty("--bg", "rgba(220, 220, 220, 1)");
+    document.documentElement.style.setProperty("--bg2", "rgba(255, 255, 255, 1)");
+    document.documentElement.style.setProperty("--fg", "rgba(34, 34, 34, 1)");
     $("#isDark").prop("checked", false);
     $("#slider").css("transform", "");
 }

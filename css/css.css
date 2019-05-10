@@ -1,7 +1,7 @@
 :root {
-    --bg: gainsboro;
-    --bg2: white;
-    --fg: #222222;
+    --bg: "rgba(220, 220, 220, 1)";
+    --bg2: "rgba(255, 255, 255, 1)";
+    --fg: "rgba(34, 34, 34, 1)";
 }
 * {
     box-sizing: border-box;
@@ -68,6 +68,29 @@ dialog {
     border: 2px solid var(--bg);
     margin: auto;
     padding: 20px;
+}
+.overlay {
+    background: var(--fg);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.ov_content {
+    background: var(--bg2);
+    height: 400px;
+    left: calc(50% - 200px);
+    position: absolute;;
+    top: calc(50% - 200px);
+    width: 400px;
+}
+.ov_content pre {
+    font-family: monospace;
+    line-height: 15px;
 }
 .table {
     border-collapse: collapse;
@@ -219,7 +242,7 @@ main:after {
     padding: 5px;
     position: relative;
 }
-.msg .overlay {
+.msg_overlay {
     background: linear-gradient(transparent, var(--bg2));
     height: 100%;
     position: absolute;
